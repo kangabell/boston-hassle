@@ -86,6 +86,11 @@ footer {
 	background: silver;
 }
 
+.view-all { // button
+	padding: 2rem;
+	text-align: center;
+}
+
 
 /******* 
 HOMEPAGE 
@@ -103,15 +108,21 @@ HOMEPAGE
 	}
 }
 
-.articles div:last-child { // button
-	padding: 2rem;
-	text-align: center;
-}
-
 .copyright {
 	padding-top: 2rem;
 	margin-bottom: 3rem;
 }
+
+/******* 
+ARCHIVE 
+*******/
+
+body.archive {
+	article + article {
+		margin-top: 2rem;
+	}
+}
+
 
 /******* 
 GRID 
@@ -166,30 +177,33 @@ header h1:before { // hamburger
 		}
 	}
 
-	.events div {
-		@include grid-row;
-	}
+	body.home {
 
-	.featured article {
-		@include grid-column(4);
-	}
-
-	.music {
-		@include grid-column(8);
-		article {
+		.events div {
 			@include grid-row;
 		}
-	}
 
-	.compass {
-		@include grid-column(4);
-		> div {
-			@include grid-row;
+		.featured article {
+			@include grid-column(4);
 		}
-	}
 
-	.articles article {
-		@include grid-column(3);
+		.music {
+			@include grid-column(8);
+			article {
+				@include grid-row;
+			}
+		}
+
+		.compass {
+			@include grid-column(4);
+			> div {
+				@include grid-row;
+			}
+		}
+
+		.articles article {
+			@include grid-column(3);
+		}
 	}
 
 	footer > div {
@@ -201,13 +215,34 @@ header h1:before { // hamburger
 
 @include breakpoint(large) {
 
-	.big-feature {
-		@include grid-column(8);
-	}
-
 	.events {
 		margin-top: 0;
-		@include grid-column(4);
+	}
+
+	/*** HOMEPAGE ***/
+
+	body.home {
+		.big-feature {
+			@include grid-column(8);
+		}
+
+		.events {
+			@include grid-column(4);
+		}
+	}
+
+	/*** ARCHIVE PAGE ***/
+
+	body.archive {
+		.left {
+			@include grid-column(8);
+		}
+		aside {
+			@include grid-column(4);
+			> div {
+				@include grid-row;
+			}
+		}
 	}
 
 }
