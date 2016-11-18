@@ -7,7 +7,7 @@
 @import "settings";
 @import "foundation";
 @include foundation-global-styles;
-@include foundation-grid;
+// @include foundation-grid;
 
 @font-face {
     font-family: 'BLOKK';
@@ -40,8 +40,8 @@ footer .columns {
 }
 
 @include breakpoint(medium) {
-	header {
-	  height: 12rem;
+	header h1 {
+	  height: 8rem;
 	}
 }
 header, nav, main, main > div, footer, .events > article + article, .music > div + div {
@@ -152,11 +152,18 @@ header h1:before { // hamburger
 
 @include breakpoint(medium) {
 
+	img.left {
+		float: left;
+		margin-right: 1rem;
+		margin-bottom: 1rem;
+		width: 16rem;
+	}
+
 	.events, .featured, .featured article, .music, .compass, .articles article {
 		margin-top: 2rem;
 	}
 
-	.announcement > div, header > div, nav > div, main > div {
+	.announcement > div, header h1, nav > div, main > div {
 		@include grid-row;
 	}
 
@@ -210,6 +217,14 @@ header h1:before { // hamburger
 		@include grid-column(3);
 	}
 
+	/*** ARCHIVE PAGE ***/
+
+	body.archive {
+		main {
+			@include grid-row;
+		}
+	}
+
 } /* end breakpoint(medium) */
 
 
@@ -234,7 +249,7 @@ header h1:before { // hamburger
 	/*** ARCHIVE PAGE ***/
 
 	body.archive {
-		.left {
+		div.left {
 			@include grid-column(8);
 		}
 		aside {
@@ -243,6 +258,15 @@ header h1:before { // hamburger
 				@include grid-row;
 			}
 		}
+	}
+	
+
+	/*** SINGLE PAGE ***/
+
+	body.single article {
+		@include grid-column(10);
+		@include grid-col-pos(center);
+		// @include grid-column($columns:10,$center:true);
 	}
 
 }

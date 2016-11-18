@@ -7,9 +7,9 @@
 </div>
 
 <header>
-  <div>
+  <a href="index.php">
     <h1>Boston Hassle</h1>
-  </div>
+  </a>
   <nav>
     <div>
       <a href="">Link</a>
