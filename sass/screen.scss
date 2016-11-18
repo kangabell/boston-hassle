@@ -1,0 +1,213 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+// @import "compass/reset";
+@import "settings";
+@import "foundation";
+@include foundation-global-styles;
+@include foundation-grid;
+
+@font-face {
+    font-family: 'BLOKK';
+    src: url('../fonts/BLOKK/BLOKKNeue-Regular.eot');
+    src: url('../fonts/BLOKK/BLOKKNeue-Regular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/BLOKK/BLOKKNeue-Regular.woff2') format('woff2'),
+         url('../fonts/BLOKK/BLOKKNeue-Regular.woff') format('woff'),
+         url('../fonts/BLOKK/BLOKKNeue-Regular.otf') format('opentype'),
+         url('../fonts/BLOKK/BLOKKNeue-Regular.ttf') format('truetype'),
+         url('../fonts/BLOKK/BLOKKNeue-Regular.svg#BLOKKRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    @font-face {
+        font-family: 'BLOKK';
+        src: url('../fonts/BLOKK/BLOKKNeue-Regular.svg') format('svg');
+    }
+}
+
+
+/******* 
+GENERAL 
+*******/
+
+footer .columns {
+  height: 17rem;
+}
+
+@include breakpoint(medium) {
+	header {
+	  height: 12rem;
+	}
+}
+header, nav, main, main > div, footer, .events > article + article, .music > div + div {
+  margin-top: 1rem;
+}
+
+button{
+  padding: 0.5em;
+}
+.announcement {
+  background: silver;
+  padding: 0;
+}
+h1, h2, h3 {
+	text-transform: uppercase;
+}
+p {
+	color: gray;
+	font-family: "BLOKK";
+	letter-spacing: -0.1em;
+	line-height: 1.25em;
+}
+button {
+	background: silver;
+}
+a {
+	color: black;
+}
+img, nav {
+	background: gray;
+}
+img {
+	cursor: pointer;
+	width: 100%;
+	height: 10rem;
+}
+nav {
+	padding: 0.5rem;
+}
+
+footer {
+	background: silver;
+}
+
+
+/******* 
+HOMEPAGE 
+*******/
+
+.big-feature img {
+	height: 14rem;
+}
+.music {
+	h4 {
+		margin-bottom: 0;
+	}
+	p {
+		margin-top: 0;
+	}
+}
+
+.articles div:last-child { // button
+	padding: 2rem;
+	text-align: center;
+}
+
+.copyright {
+	padding-top: 2rem;
+	margin-bottom: 3rem;
+}
+
+/******* 
+GRID 
+*******/
+
+.articles > div, footer, .copyright {
+	@include grid-row;
+}
+
+footer > div {
+	@include grid-column(6);
+}
+
+nav {
+	display: none;
+}
+
+header h1:before { // hamburger
+	content: '\2630';
+	cursor: pointer;
+	padding-right: 1rem;
+}
+
+.events, .featured, .featured article, .music, .compass, .articles article {
+	margin-top: 4rem;
+}
+
+@include breakpoint(medium) {
+
+	.events, .featured, .featured article, .music, .compass, .articles article {
+		margin-top: 2rem;
+	}
+
+	.announcement > div, header > div, nav > div, main > div {
+		@include grid-row;
+	}
+
+	header h1:before {
+		display: none;
+	}
+
+	nav {
+		display: block;
+		a {
+			@include grid-column(1);
+		}
+		button {
+			@include grid-column(2);
+			&:first-of-type {
+				@include grid-col-pos(3);
+			}
+		}
+	}
+
+	.events div {
+		@include grid-row;
+	}
+
+	.featured article {
+		@include grid-column(4);
+	}
+
+	.music {
+		@include grid-column(8);
+		article {
+			@include grid-row;
+		}
+	}
+
+	.compass {
+		@include grid-column(4);
+		> div {
+			@include grid-row;
+		}
+	}
+
+	.articles article {
+		@include grid-column(3);
+	}
+
+	footer > div {
+		@include grid-column(3);
+	}
+
+} /* end breakpoint(medium) */
+
+
+@include breakpoint(large) {
+
+	.big-feature {
+		@include grid-column(8);
+	}
+
+	.events {
+		margin-top: 0;
+		@include grid-column(4);
+	}
+
+}
