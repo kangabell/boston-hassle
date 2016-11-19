@@ -8,9 +8,9 @@
   </a>
   <nav>
     <div>
-      <a href="">Link</a>
-      <a href="">Link</a>
-      <a href="">Link</a>
+      <a href="index.php">Home</a>
+      <a href="archive.php">Archive</a>
+      <a href="single.php">Article</a>
       <a href="">Link</a>
       <a href="">Link</a>
       <button>Donate</button>

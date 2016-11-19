@@ -45,7 +45,7 @@
 
     </div>
 
-    <div class="view-all"><button>View All Posts</button></div>
+    <div class="view-all"><button>Next</button></div>
 
   </main>
 

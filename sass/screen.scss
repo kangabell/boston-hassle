@@ -101,10 +101,14 @@ HOMEPAGE
 }
 .music {
 	h4 {
+		margin-top: 0;
 		margin-bottom: 0;
 	}
 	p {
 		margin-top: 0;
+	}
+	img {
+		height: 2.75rem;
 	}
 }
 
@@ -123,12 +127,26 @@ body.archive {
 	}
 }
 
+/******* 
+SINGLE 
+*******/
+
+body.single main h1 {
+	margin-top: 3rem;
+	text-align: center;
+}
+
+.tags {
+	margin-top: 3rem;
+	margin-bottom: 3rem;
+}
+
 
 /******* 
 GRID 
 *******/
 
-.articles > div, footer, .copyright {
+.articles > div, footer, .copyright, .tags {
 	@include grid-row;
 }
 
@@ -148,6 +166,16 @@ header h1:before { // hamburger
 
 .events, .featured, .featured article, .music, .compass, .articles article {
 	margin-top: 4rem;
+}
+
+.music {
+	.text {
+		@include grid-column(10);
+	}
+	img {
+		@include grid-column(2);
+		padding: 0 !important;
+	}
 }
 
 @include breakpoint(medium) {
@@ -209,7 +237,7 @@ header h1:before { // hamburger
 		}
 
 		.articles article {
-			@include grid-column(3);
+			@include grid-column(6);
 		}
 	}
 
@@ -223,6 +251,14 @@ header h1:before { // hamburger
 		main {
 			@include grid-row;
 		}
+	}
+
+	/*** SINGLE PAGE ***/
+
+	body.single article {
+		@include grid-column(10);
+		@include grid-col-pos(center);
+		// @include grid-column($columns:10,$center:true);
 	}
 
 } /* end breakpoint(medium) */
@@ -244,6 +280,9 @@ header h1:before { // hamburger
 		.events {
 			@include grid-column(4);
 		}
+		.articles article {
+			@include grid-column(3);
+		}
 	}
 
 	/*** ARCHIVE PAGE ***/
@@ -259,14 +298,12 @@ header h1:before { // hamburger
 			}
 		}
 	}
-	
 
 	/*** SINGLE PAGE ***/
 
 	body.single article {
-		@include grid-column(10);
+		@include grid-column(8);
 		@include grid-col-pos(center);
-		// @include grid-column($columns:10,$center:true);
 	}
 
 }
