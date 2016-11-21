@@ -226,14 +226,21 @@ header h1:before { // hamburger
 			@include grid-column(4);
 		}
 
-		.music, .film {
+		.music {
+			@include grid-column(8);
+			article {
+				@include grid-row;
+			}
+		}
+
+		.art, .film {
 			@include grid-column(4);
 			article {
 				@include grid-row;
 			}
 		}
 
-		.compass {
+		.compass, .horoscope {
 			@include grid-column(4);
 			> div {
 				@include grid-row;

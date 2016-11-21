@@ -47,13 +47,6 @@
 
       <div class="music">
         <h3>Music</h3>
-        <?php include 'partials/article.php'; ?>
-        <?php include 'partials/article-sm.php'; ?>
-        <?php include 'partials/article-sm.php'; ?>
-      </div>
-
-      <div class="film">
-        <h3>Film</h3>
         <?php include 'partials/article-sm.php'; ?>
         <?php include 'partials/article-sm.php'; ?>
         <?php include 'partials/article-sm.php'; ?>
@@ -64,6 +57,33 @@
         <h3>Boston Compass</h3>
         <img src="img.png">
         <a href="">Read More</a>
+      </div>
+
+    </div>
+
+    <div>
+
+      <div class="horoscope">
+        <h3>Horoscope</h3>
+        <img src="img.png">
+            <p class="meta">incididunt ut labore et dolore magna aliqua.</p>
+        <a href="">Read More</a>
+      </div>
+
+      <div class="art">
+        <h3>Art</h3>
+        <?php include 'partials/article-sm.php'; ?>
+        <?php include 'partials/article-sm.php'; ?>
+        <?php include 'partials/article-sm.php'; ?>
+        <?php include 'partials/article-sm.php'; ?>
+      </div>
+
+      <div class="film">
+        <h3>Film</h3>
+        <?php include 'partials/article-sm.php'; ?>
+        <?php include 'partials/article-sm.php'; ?>
+        <?php include 'partials/article-sm.php'; ?>
+        <?php include 'partials/article-sm.php'; ?>
       </div>
 
     </div>
