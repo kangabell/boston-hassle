@@ -47,6 +47,13 @@
 
       <div class="music">
         <h3>Music</h3>
+        <?php include 'partials/article.php'; ?>
+        <?php include 'partials/article-sm.php'; ?>
+        <?php include 'partials/article-sm.php'; ?>
+      </div>
+
+      <div class="film">
+        <h3>Film</h3>
         <?php include 'partials/article-sm.php'; ?>
         <?php include 'partials/article-sm.php'; ?>
         <?php include 'partials/article-sm.php'; ?>

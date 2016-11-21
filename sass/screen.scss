@@ -44,7 +44,7 @@ footer .columns {
 	  height: 8rem;
 	}
 }
-header, nav, main, main > div, footer, .events > article + article, .music > div + div {
+header, nav, main, main > div, footer, .events > article + article, .music > article + article, .film > article + article {
   margin-top: 1rem;
 }
 
@@ -91,6 +91,11 @@ footer {
 	text-align: center;
 }
 
+.copyright {
+	padding-top: 2rem;
+	margin-bottom: 3rem;
+}
+
 
 /******* 
 HOMEPAGE 
@@ -99,7 +104,7 @@ HOMEPAGE
 .big-feature img {
 	height: 14rem;
 }
-.music {
+.music, .film {
 	h4 {
 		margin-top: 0;
 		margin-bottom: 0;
@@ -107,15 +112,24 @@ HOMEPAGE
 	p {
 		margin-top: 0;
 	}
+}
+
+.compass {
+	text-align: center;
 	img {
-		height: 2.75rem;
+		height: 14rem;
+		margin-top: 2rem;
+		max-width: 12rem;
+	}
+	h3 {
+		text-align: left;
+	}
+	a {
+		display: table;
+		margin-top: 2.25rem;
 	}
 }
 
-.copyright {
-	padding-top: 2rem;
-	margin-bottom: 3rem;
-}
 
 /******* 
 ARCHIVE 
@@ -164,18 +178,8 @@ header h1:before { // hamburger
 	padding-right: 1rem;
 }
 
-.events, .featured, .featured article, .music, .compass, .articles article {
+.events, .featured, .featured article, .music, .film, .compass, .articles article {
 	margin-top: 4rem;
-}
-
-.music {
-	.text {
-		@include grid-column(10);
-	}
-	img {
-		@include grid-column(2);
-		padding: 0 !important;
-	}
 }
 
 @include breakpoint(medium) {
@@ -187,7 +191,7 @@ header h1:before { // hamburger
 		width: 16rem;
 	}
 
-	.events, .featured, .featured article, .music, .compass, .articles article {
+	.events, .featured, .featured article, .music, .film, .compass, .articles article {
 		margin-top: 2rem;
 	}
 
@@ -222,8 +226,8 @@ header h1:before { // hamburger
 			@include grid-column(4);
 		}
 
-		.music {
-			@include grid-column(8);
+		.music, .film {
+			@include grid-column(4);
 			article {
 				@include grid-row;
 			}
