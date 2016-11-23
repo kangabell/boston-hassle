@@ -9,27 +9,79 @@
 @include foundation-global-styles;
 // @include foundation-grid;
 
-@font-face {
-    font-family: 'BLOKK';
-    src: url('../fonts/BLOKK/BLOKKNeue-Regular.eot');
-    src: url('../fonts/BLOKK/BLOKKNeue-Regular.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/BLOKK/BLOKKNeue-Regular.woff2') format('woff2'),
-         url('../fonts/BLOKK/BLOKKNeue-Regular.woff') format('woff'),
-         url('../fonts/BLOKK/BLOKKNeue-Regular.otf') format('opentype'),
-         url('../fonts/BLOKK/BLOKKNeue-Regular.ttf') format('truetype'),
-         url('../fonts/BLOKK/BLOKKNeue-Regular.svg#BLOKKRegular') format('svg');
-    font-weight: normal;
-    font-style: normal;
+
+/******* 
+UTILITIES 
+*******/
+
+$padding: 2rem;
+
+
+/******* 
+TYPOGRAPHY 
+& OTHER BITS
+*******/
+
+body {
+	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+	font-size: 14px;
+	line-height: 1.375em;
+}
+h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
+	font-family: 'DINPro';
+	letter-spacing: 0.0125em;
+	margin-bottom: 0.25em;
+	text-transform: uppercase;
+}
+
+/* Minor Third typography scale */
+
+h1, .h1 {
+	font-size: 2.074rem;
+}
+h2, .h2 {
+	font-size: 1.728rem;
+}
+h3, .h3 {
+	font-size: 1.44rem;
+}
+h4, .h4 {
+	font-size: 1.2rem;
+}
+h5, .h5 {
+	font-size: 1rem;
+}
+.small {
+	font-size: 0.833rem;
+}
+
+p {
 }
 
 
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-    @font-face {
-        font-family: 'BLOKK';
-        src: url('../fonts/BLOKK/BLOKKNeue-Regular.svg') format('svg');
-    }
+
+/******* 
+COMPONENTS 
+*******/
+
+a {
+	color: black;
 }
 
+button {
+	background: silver;
+  	padding: 0.5rem 1rem;
+}
+
+img {
+	cursor: pointer;
+	width: 100%;
+	height: 10rem;
+}
+
+.article-sm h3 {
+	@extend .h5;
+}
 
 /******* 
 GENERAL 
@@ -45,39 +97,18 @@ footer .columns {
 	}
 }
 header, nav, main, main > div, footer, .events > article + article, .music > article + article, .film > article + article {
-  margin-top: 1rem;
+  margin-top: $padding/2;
 }
 
-button{
-  padding: 0.5em;
-}
 .announcement {
   background: silver;
   padding: 0;
 }
-h1, h2, h3 {
-	text-transform: uppercase;
-}
-p {
-	color: gray;
-	font-family: "BLOKK";
-	letter-spacing: -0.1em;
-	line-height: 1.25em;
-}
-button {
-	background: silver;
-}
-a {
-	color: black;
-}
+
 img, nav {
 	background: gray;
 }
-img {
-	cursor: pointer;
-	width: 100%;
-	height: 10rem;
-}
+
 nav {
 	padding: 0.5rem;
 }
@@ -93,7 +124,7 @@ footer {
 
 .copyright {
 	padding-top: 2rem;
-	margin-bottom: 3rem;
+	margin-bottom: $padding*1.5;
 }
 
 
@@ -101,9 +132,17 @@ footer {
 HOMEPAGE 
 *******/
 
-.big-feature img {
-	height: 14rem;
+.big-feature {
+	h3 {
+		@extend .h2;
+	}
+	img {
+		height: 14rem;
+	}
 }
+
+/* Music & Film Columns */
+
 .music, .film {
 	h4 {
 		margin-top: 0;
@@ -114,11 +153,17 @@ HOMEPAGE
 	}
 }
 
+.music h3 {
+	@extend .h5;
+}
+
+/* Compass Column */
+
 .compass {
 	text-align: center;
 	img {
 		height: 14rem;
-		margin-top: 2rem;
+		margin-top: $padding;
 		max-width: 12rem;
 	}
 	h3 {
@@ -126,7 +171,7 @@ HOMEPAGE
 	}
 	a {
 		display: table;
-		margin-top: 2.25rem;
+		margin-top: $padding;
 	}
 }
 
@@ -137,7 +182,7 @@ ARCHIVE
 
 body.archive {
 	article + article {
-		margin-top: 2rem;
+		margin-top: $padding;
 	}
 }
 
@@ -146,13 +191,13 @@ SINGLE
 *******/
 
 body.single main h1 {
-	margin-top: 3rem;
+	margin-top: $padding*1.5;
 	text-align: center;
 }
 
 .tags {
-	margin-top: 3rem;
-	margin-bottom: 3rem;
+	margin-top: $padding*1.5;
+	margin-bottom: $padding*1.5;
 }
 
 
@@ -179,20 +224,20 @@ header h1:before { // hamburger
 }
 
 .events, .featured, .featured article, .music, .film, .compass, .articles article {
-	margin-top: 4rem;
+	margin-top: $padding*2;
 }
 
 @include breakpoint(medium) {
 
 	img.left {
 		float: left;
-		margin-right: 1rem;
-		margin-bottom: 1rem;
+		margin-right: $padding/2;
+		margin-bottom: $padding/2;
 		width: 16rem;
 	}
 
 	.events, .featured, .featured article, .music, .film, .compass, .articles article {
-		margin-top: 2rem;
+		margin-top: $padding;
 	}
 
 	.announcement > div, header h1, nav > div, main > div {
@@ -218,8 +263,14 @@ header h1:before { // hamburger
 
 	body.home {
 
-		.events div {
+		.events article {
 			@include grid-row;
+			.meta {
+				@include grid-column(2);
+			}
+			a {
+				@include grid-column(10);
+			}
 		}
 
 		.featured article {
