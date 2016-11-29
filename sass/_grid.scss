@@ -3,22 +3,17 @@
 GRID 
 *******/
 
-.articles > div, footer, .copyright, .tags {
+nav {
+	height: 100%;
+	width: 100%;
+}
+
+nav a, .articles > div, footer, .copyright, .tags {
 	@include grid-row;
 }
 
 footer > div {
 	@include grid-column(6);
-}
-
-nav {
-	display: none;
-}
-
-header h1:before { // hamburger
-	content: '\2630';
-	cursor: pointer;
-	padding-right: 1rem;
 }
 
 .events, .featured, .featured article, .music, .film, .compass, .articles article {
@@ -38,25 +33,12 @@ header h1:before { // hamburger
 		margin-top: $padding;
 	}
 
-	.announcement > div, header h1, nav > div, main > div {
+	.announcement > div, header h1, main > div {
 		@include grid-row;
 	}
 
 	header h1:before {
 		display: none;
-	}
-
-	nav {
-		display: block;
-		a {
-			@include grid-column(1);
-		}
-		button {
-			@include grid-column(2);
-			&:first-of-type {
-				@include grid-col-pos(3);
-			}
-		}
 	}
 
 	body.home {
@@ -125,6 +107,10 @@ header h1:before { // hamburger
 
 
 @include breakpoint(large) {
+
+	nav {
+		@include grid-column(5);
+	}
 
 	.events {
 		margin-top: 0;

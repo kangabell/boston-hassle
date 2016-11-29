@@ -93,12 +93,11 @@ footer .columns {
   height: 17rem;
 }
 
-@include breakpoint(medium) {
-	header h1 {
-	  height: 8rem;
-	}
+header h1 {
+	height: 4rem;
 }
-header, nav, main, main > div, footer, .events > article + article, .music > article + article, .film > article + article {
+
+header, main, main > div, footer, .events > article + article, .music > article + article, .film > article + article {
   margin-top: $padding/2;
 }
 
@@ -107,12 +106,8 @@ header, nav, main, main > div, footer, .events > article + article, .music > art
   padding: 0;
 }
 
-img, nav {
+img {
 	background: gray;
-}
-
-nav {
-	padding: 0.5rem;
 }
 
 footer {
@@ -127,6 +122,27 @@ footer {
 .copyright {
 	padding-top: 2rem;
 	margin-bottom: $padding*1.5;
+}
+
+/******* 
+NAV 
+*******/
+
+.nav-open nav {
+	display: block;
+}
+
+.nav-closed nav {
+	display: none;
+}
+
+nav {
+	background: gray;
+	padding: 0.5rem;
+	position: absolute;
+	a {
+		padding: $padding $padding/4;
+	}
 }
 
 
