@@ -10,6 +10,8 @@ UTILITIES
 
 $padding: 2rem;
 
+$blue: #6894aa;
+
 
 // @import "compass/reset";
 @import "settings";
@@ -81,6 +83,13 @@ img {
 	height: 10rem;
 }
 
+.meta {
+	color: $blue;
+	font-weight: 600;
+	text-transform: uppercase;
+	@extend .small;
+}
+
 .article-sm h3 {
 	@extend .h5;
 }
@@ -97,7 +106,7 @@ header h1 {
 	height: 4rem;
 }
 
-header, main, main > div, footer, .events > article + article, .music > article + article, .film > article + article {
+header, footer, .events > article + article, .music > article + article, .film > article + article {
   margin-top: $padding/2;
 }
 
@@ -149,6 +158,12 @@ nav {
 /******* 
 HOMEPAGE 
 *******/
+
+body.home {
+	main, main > div {
+	  margin-top: $padding/2;
+	}
+}
 
 .big-feature {
 	h3 {

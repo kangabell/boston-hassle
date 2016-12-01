@@ -45,12 +45,6 @@ footer > div {
 
 		.events article {
 			@include grid-row;
-			.meta {
-				@include grid-column(2);
-			}
-			a {
-				@include grid-column(10);
-			}
 		}
 
 		.featured article {
@@ -142,7 +136,7 @@ footer > div {
 		}
 	}
 
-	/*** ARCHIVE PAGE ***/
+	/*** ARCHIVE PAGES ***/
 
 	body.archive {
 		div.left {
@@ -153,6 +147,16 @@ footer > div {
 			> div {
 				@include grid-row;
 			}
+		}
+	}
+
+	body.calendar article {
+		@include grid-row;
+		img {
+			@include grid-column(4);
+		}
+		div.text {
+			@include grid-column(8);
 		}
 	}
 
