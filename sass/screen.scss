@@ -3,33 +3,96 @@
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
+
+/******* 
+UTILITIES 
+*******/
+
+$padding: 2rem;
+
+$blue: #6894aa;
+
+
 // @import "compass/reset";
 @import "settings";
 @import "foundation";
 @include foundation-global-styles;
 // @include foundation-grid;
+@import "grid";
 
-@font-face {
-    font-family: 'BLOKK';
-    src: url('../fonts/BLOKK/BLOKKNeue-Regular.eot');
-    src: url('../fonts/BLOKK/BLOKKNeue-Regular.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/BLOKK/BLOKKNeue-Regular.woff2') format('woff2'),
-         url('../fonts/BLOKK/BLOKKNeue-Regular.woff') format('woff'),
-         url('../fonts/BLOKK/BLOKKNeue-Regular.otf') format('opentype'),
-         url('../fonts/BLOKK/BLOKKNeue-Regular.ttf') format('truetype'),
-         url('../fonts/BLOKK/BLOKKNeue-Regular.svg#BLOKKRegular') format('svg');
-    font-weight: normal;
-    font-style: normal;
+
+/******* 
+TYPOGRAPHY 
+& OTHER BITS
+*******/
+
+body {
+	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+	font-size: 14px;
+	line-height: 1.375em;
+}
+h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
+	font-family: 'DINPro';
+	letter-spacing: 0.0125em;
+	margin-bottom: 0.25em;
+	text-transform: uppercase;
+}
+
+/* Minor Third typography scale */
+
+h1, .h1 {
+	font-size: 2.074rem;
+}
+h2, .h2 {
+	font-size: 1.728rem;
+}
+h3, .h3 {
+	font-size: 1.44rem;
+}
+h4, .h4 {
+	font-size: 1.2rem;
+}
+h5, .h5 {
+	font-size: 1rem;
+}
+.small {
+	font-size: 0.833rem;
+}
+
+p {
 }
 
 
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-    @font-face {
-        font-family: 'BLOKK';
-        src: url('../fonts/BLOKK/BLOKKNeue-Regular.svg') format('svg');
-    }
+
+/******* 
+COMPONENTS 
+*******/
+
+a {
+	color: black;
 }
 
+button {
+	background: silver;
+  	padding: 0.5rem 1rem;
+}
+
+img {
+	cursor: pointer;
+	width: 100%;
+	height: 10rem;
+}
+
+.meta {
+	color: $blue;
+	font-weight: 600;
+	text-transform: uppercase;
+	@extend .small;
+}
+
+.article-sm h3 {
+	@extend .h5;
+}
 
 /******* 
 GENERAL 
@@ -39,47 +102,21 @@ footer .columns {
   height: 17rem;
 }
 
-@include breakpoint(medium) {
-	header h1 {
-	  height: 8rem;
-	}
-}
-header, nav, main, main > div, footer, .events > article + article, .music > article + article, .film > article + article {
-  margin-top: 1rem;
+header h1 {
+	height: 4rem;
 }
 
-button{
-  padding: 0.5em;
+header, footer, .events > article + article, .music > article + article, .film > article + article {
+  margin-top: $padding/2;
 }
+
 .announcement {
   background: silver;
   padding: 0;
 }
-h1, h2, h3 {
-	text-transform: uppercase;
-}
-p {
-	color: gray;
-	font-family: "BLOKK";
-	letter-spacing: -0.1em;
-	line-height: 1.25em;
-}
-button {
-	background: silver;
-}
-a {
-	color: black;
-}
-img, nav {
-	background: gray;
-}
+
 img {
-	cursor: pointer;
-	width: 100%;
-	height: 10rem;
-}
-nav {
-	padding: 0.5rem;
+	background: gray;
 }
 
 footer {
@@ -93,7 +130,28 @@ footer {
 
 .copyright {
 	padding-top: 2rem;
-	margin-bottom: 3rem;
+	margin-bottom: $padding*1.5;
+}
+
+/******* 
+NAV 
+*******/
+
+.nav-open nav {
+	display: block;
+}
+
+.nav-closed nav {
+	display: none;
+}
+
+nav {
+	background: gray;
+	padding: 0.5rem;
+	position: absolute;
+	a {
+		padding: $padding $padding/4;
+	}
 }
 
 
@@ -101,9 +159,23 @@ footer {
 HOMEPAGE 
 *******/
 
-.big-feature img {
-	height: 14rem;
+body.home {
+	main, main > div {
+	  margin-top: $padding/2;
+	}
 }
+
+.big-feature {
+	h3 {
+		@extend .h2;
+	}
+	img {
+		height: 14rem;
+	}
+}
+
+/* Music & Film Columns */
+
 .music, .film {
 	h4 {
 		margin-top: 0;
@@ -114,11 +186,17 @@ HOMEPAGE
 	}
 }
 
+.music h3 {
+	@extend .h5;
+}
+
+/* Compass Column */
+
 .compass {
 	text-align: center;
 	img {
 		height: 14rem;
-		margin-top: 2rem;
+		margin-top: $padding;
 		max-width: 12rem;
 	}
 	h3 {
@@ -126,7 +204,7 @@ HOMEPAGE
 	}
 	a {
 		display: table;
-		margin-top: 2.25rem;
+		margin-top: $padding;
 	}
 }
 
@@ -137,7 +215,7 @@ ARCHIVE
 
 body.archive {
 	article + article {
-		margin-top: 2rem;
+		margin-top: $padding;
 	}
 }
 
@@ -146,186 +224,11 @@ SINGLE
 *******/
 
 body.single main h1 {
-	margin-top: 3rem;
+	margin-top: $padding*1.5;
 	text-align: center;
 }
 
 .tags {
-	margin-top: 3rem;
-	margin-bottom: 3rem;
-}
-
-
-/******* 
-GRID 
-*******/
-
-.articles > div, footer, .copyright, .tags {
-	@include grid-row;
-}
-
-footer > div {
-	@include grid-column(6);
-}
-
-nav {
-	display: none;
-}
-
-header h1:before { // hamburger
-	content: '\2630';
-	cursor: pointer;
-	padding-right: 1rem;
-}
-
-.events, .featured, .featured article, .music, .film, .compass, .articles article {
-	margin-top: 4rem;
-}
-
-@include breakpoint(medium) {
-
-	img.left {
-		float: left;
-		margin-right: 1rem;
-		margin-bottom: 1rem;
-		width: 16rem;
-	}
-
-	.events, .featured, .featured article, .music, .film, .compass, .articles article {
-		margin-top: 2rem;
-	}
-
-	.announcement > div, header h1, nav > div, main > div {
-		@include grid-row;
-	}
-
-	header h1:before {
-		display: none;
-	}
-
-	nav {
-		display: block;
-		a {
-			@include grid-column(1);
-		}
-		button {
-			@include grid-column(2);
-			&:first-of-type {
-				@include grid-col-pos(3);
-			}
-		}
-	}
-
-	body.home {
-
-		.events div {
-			@include grid-row;
-		}
-
-		.featured article {
-			@include grid-column(4);
-		}
-
-		.music, .film {
-			article {
-				@include grid-row;
-			}
-		}
-
-		.music {
-			@include grid-column(12);
-		}
-
-		.film {
-			@include grid-column(7);
-		}
-
-		.compass {
-			@include grid-column(5);
-			> div {
-				@include grid-row;
-			}
-		}
-
-		.articles article {
-			@include grid-column(6);
-		}
-	}
-
-	footer > div {
-		@include grid-column(3);
-	}
-
-	/*** ARCHIVE PAGE ***/
-
-	body.archive {
-		main {
-			@include grid-row;
-		}
-	}
-
-	/*** SINGLE PAGE ***/
-
-	body.single article {
-		@include grid-column(10);
-		@include grid-col-pos(center);
-		// @include grid-column($columns:10,$center:true);
-	}
-
-} /* end breakpoint(medium) */
-
-
-@include breakpoint(large) {
-
-	.events {
-		margin-top: 0;
-	}
-
-	/*** HOMEPAGE ***/
-
-	body.home {
-		.big-feature {
-			@include grid-column(8);
-		}
-
-		.events {
-			@include grid-column(4);
-		}
-		.articles article {
-			@include grid-column(3);
-		}
-		.music {
-			@include grid-column(5);
-		}
-
-		.film {
-			@include grid-column(4);
-		}
-
-		.compass {
-			@include grid-column(3);
-		}
-	}
-
-	/*** ARCHIVE PAGE ***/
-
-	body.archive {
-		div.left {
-			@include grid-column(8);
-		}
-		aside {
-			@include grid-column(4);
-			> div {
-				@include grid-row;
-			}
-		}
-	}
-
-	/*** SINGLE PAGE ***/
-
-	body.single article {
-		@include grid-column(8);
-		@include grid-col-pos(center);
-	}
-
+	margin-top: $padding*1.5;
+	margin-bottom: $padding*1.5;
 }

@@ -10,17 +10,17 @@
       <div class="big-feature">
         <article>
           <img src="img.png">
-          <h4>(Featured) Article Title</h4>
+          <h3>(Featured) Article Title</h3>
           <p>What else to write here What else to write here What else to write here Whatelseto write here onomotopaeia is a reallylongword</p>
         </article>
       </div>
 
       <div class="events">
-        <h3>Upcoming Go-To Events</h3>
-        <p>Date Name Some Information</p>
-        <p>Date Some Information for People</p>
-        <p>Information and Name</p>
-        <p>What else to write here</p>
+        <h2>Go To</h2>
+        <?php include 'partials/event-sm.php'; ?>
+        <?php include 'partials/event-sm.php'; ?>
+        <?php include 'partials/event-sm.php'; ?>
+        <?php include 'partials/event-sm.php'; ?>
         <a href="">View Calendar</a>
       </div>
     </div>
@@ -28,17 +28,17 @@
     <div class="featured">
       <article>
         <img src="img.png">
-        <h4>(Featured) Article Title</h4>
+        <h3>(Featured) Article Title</h3>
         <p>Date Name Some Information</p>
       </article>
       <article>
         <img src="img.png">
-        <h4>(Featured) Article Title</h4>
+        <h3>(Featured) Article Title</h3>
         <p>Date Some Information for People</p>
       </article>
       <article>
         <img src="img.png">
-        <h4>(Featured) Article Title</h4>
+        <h3>(Featured) Article Title</h3>
         <p>What else to write here</p>
       </article>
     </div>
@@ -46,14 +46,14 @@
     <div>
 
       <div class="music">
-        <h3>Music</h3>
+        <h2>Music</h2>
         <?php include 'partials/article.php'; ?>
         <?php include 'partials/article-sm.php'; ?>
         <?php include 'partials/article-sm.php'; ?>
       </div>
 
       <div class="film">
-        <h3>Film</h3>
+        <h2>Film</h2>
         <?php include 'partials/article-sm.php'; ?>
         <?php include 'partials/article-sm.php'; ?>
         <?php include 'partials/article-sm.php'; ?>
@@ -61,7 +61,7 @@
       </div>
 
       <div class="compass">
-        <h3>Boston Compass</h3>
+        <h2>Boston Compass</h2>
         <img src="img.png">
         <a href="">Read More</a>
       </div>
