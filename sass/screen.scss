@@ -10,8 +10,14 @@ UTILITIES
 
 $padding: 2rem;
 
+/*** COLORS ***/
+
 $blue: #6894aa;
+$black: #282828;
 $gray: #9c9c9c;
+$gray-dk: #262626;
+$white: #ffffff;
+$cream: #e2dfd2;
 
 
 // @import "compass/reset";
@@ -37,6 +43,7 @@ TYPOGRAPHY
 }
 
 body {
+	color: $black;
 	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
 	font-size: 14px;
 	line-height: 1.375em;
@@ -73,6 +80,9 @@ h5, .h5 {
 }
 .small {
 	font-size: 0.695rem;
+	font-weight: 600;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
 }
 
 p {
@@ -87,11 +97,12 @@ COMPONENTS
 *******/
 
 a {
-	color: black;
+	color: $black;
 }
 
 button {
-	background: silver;
+	background: $gray;
+	color: $white;
   	padding: 0.5rem 1rem;
 }
 
@@ -103,9 +114,6 @@ img {
 
 .meta {
 	color: $gray;
-	font-weight: 600;
-	letter-spacing: 0.05em;
-	text-transform: uppercase;
 	@extend .small;
 	&.category {
 		color: $blue;
@@ -120,29 +128,23 @@ img {
 GENERAL 
 *******/
 
-footer .columns {
-  height: 17rem;
+div.announcement {
+	background: $blue;
+	color: $white;
+	padding: 0;
+	@extend .small;
 }
 
 header h1 {
 	height: 4rem;
 }
 
-header, footer, .events > article + article, .music > article + article, .film > article + article {
+footer, .events > article + article, .music > article + article, .film > article + article {
   margin-top: $padding/2;
-}
-
-.announcement {
-  background: silver;
-  padding: 0;
 }
 
 img {
 	background: gray;
-}
-
-footer {
-	background: silver;
 }
 
 .view-all { // button
@@ -151,13 +153,23 @@ footer {
 }
 
 .copyright {
+	background: $cream;
 	padding-top: 2rem;
-	margin-bottom: $padding*1.5;
+	padding-bottom: $padding*1.5;
 }
 
 /******* 
-NAV 
+HEADER 
 *******/
+
+header {
+	background: $gray-dk;
+	color: $white;
+	padding: $padding/2;
+	a {
+		color: $white;
+	}
+}
 
 .nav-open nav {
 	display: block;
@@ -173,6 +185,18 @@ nav {
 	position: absolute;
 	a {
 		padding: $padding $padding/4;
+	}
+}
+
+/******* 
+FOOTER 
+*******/
+
+footer {
+	background: $gray-dk;
+	color: $white;
+	.columns {
+	  height: 17rem;
 	}
 }
 

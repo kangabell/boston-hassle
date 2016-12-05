@@ -1,5 +1,5 @@
 <div class="announcement">
-  <div class="short">Announcement!<button style="float:right">X Close</button></div>
+  Announcement!<button style="float:right">X Close</button>
 </div>
 
 <header>
