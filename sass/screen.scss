@@ -11,6 +11,7 @@ UTILITIES
 $padding: 2rem;
 
 $blue: #6894aa;
+$gray: #9c9c9c;
 
 
 // @import "compass/reset";
@@ -26,40 +27,57 @@ TYPOGRAPHY
 & OTHER BITS
 *******/
 
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i');
+
+@font-face {
+  font-family: 'DIN Cond';
+  src: url('../fonts/din_condensed_bold.woff2') format('woff2'),
+       url('../fonts/din_condensed_bold.woff') format('woff'),
+       url('../fonts/din_condensed_bold.ttf') format('truetype');
+}
+
 body {
 	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
 	font-size: 14px;
 	line-height: 1.375em;
 }
 h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
-	font-family: 'DINPro';
-	letter-spacing: 0.0125em;
-	margin-bottom: 0.25em;
 	text-transform: uppercase;
 }
-
-/* Minor Third typography scale */
+h1, .h1, h2, .h2 {
+	font-family: 'DIN Cond', 'Open Sans', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+	letter-spacing: 0.045em;
+	margin-bottom: 0.75em;
+	margin-top: 0.75em;
+}
+h3, .h3, h4, .h4 {
+	font-weight: 600;
+	letter-spacing: 0.025em;
+	margin-bottom: 0.25em;
+}
 
 h1, .h1 {
-	font-size: 2.074rem;
+	font-size: 2.25rem;
 }
 h2, .h2 {
-	font-size: 1.728rem;
+	font-size: 1.75rem;
 }
 h3, .h3 {
-	font-size: 1.44rem;
+	font-size: 1.25rem;
 }
 h4, .h4 {
-	font-size: 1.2rem;
+	font-size: 1rem;
 }
 h5, .h5 {
 	font-size: 1rem;
 }
 .small {
-	font-size: 0.833rem;
+	font-size: 0.695rem;
 }
 
 p {
+	margin-bottom: 0.5em;
+	margin-top: 0;
 }
 
 
@@ -84,14 +102,18 @@ img {
 }
 
 .meta {
-	color: $blue;
+	color: $gray;
 	font-weight: 600;
+	letter-spacing: 0.05em;
 	text-transform: uppercase;
 	@extend .small;
+	&.category {
+		color: $blue;
+	}
 }
 
 .article-sm h3 {
-	@extend .h5;
+	@extend .h4;
 }
 
 /******* 
@@ -167,7 +189,7 @@ body.home {
 
 .big-feature {
 	h3 {
-		@extend .h2;
+		@extend .h1;
 	}
 	img {
 		height: 14rem;
@@ -181,13 +203,6 @@ body.home {
 		margin-top: 0;
 		margin-bottom: 0;
 	}
-	p {
-		margin-top: 0;
-	}
-}
-
-.music h3 {
-	@extend .h5;
 }
 
 /* Compass Column */

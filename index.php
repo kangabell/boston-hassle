@@ -10,8 +10,10 @@
       <div class="big-feature">
         <article>
           <img src="img.png">
+          <p class="meta category">Film Flam</p>
           <h3>(Featured) Article Title</h3>
           <p>What else to write here What else to write here What else to write here Whatelseto write here onomotopaeia is a reallylongword</p>
+          <p class="meta">W. Logan Freeman</p>
         </article>
       </div>
 
@@ -30,16 +32,19 @@
         <img src="img.png">
         <h3>(Featured) Article Title</h3>
         <p>Date Name Some Information</p>
+        <p class="meta">Kylie Obermeier</p>
       </article>
       <article>
         <img src="img.png">
         <h3>(Featured) Article Title</h3>
         <p>Date Some Information for People</p>
+        <p class="meta">Kylie Obermeier</p>
       </article>
       <article>
         <img src="img.png">
         <h3>(Featured) Article Title</h3>
         <p>What else to write here</p>
+        <p class="meta">Kylie Obermeier</p>
       </article>
     </div>
 
