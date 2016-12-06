@@ -42,9 +42,6 @@ add_filter( 'excerpt_length', 'bhass_shorten_excerpt', 999 );
 // modify output of WordPress Popular Posts plugin
 add_filter( 'wpp_custom_html', 'bhass_popular_posts_html', 10, 2 );
 
-// hide editor on certain pages
-add_action( 'admin_init', 'hide_editor' );
-
 // add custom post types
 add_action( 'init', 'create_posttype' );
 
@@ -85,68 +82,7 @@ function bhass_excerpt_more($more) {
 
 // Shorten excerpt length to 100 characters
 function bhass_shorten_excerpt( $length ) {
-    return 15; // this can be more flexible than hero_excerpt because it is written intentionally
-}
-
-// Shorten Hero Content to just an excerpt. Used in Athvia page case study tiles.
-function hero_excerpt() {
-  global $post;
-  $text = get_field('hero_content');
-  if ( '' != $text ) {
-    $text = strip_shortcodes( $text );
-    $text = apply_filters('the_content', $text);
-    $text = str_replace(']]>', ']]>>', $text);
-    $excerpt_length = 9;
-    $excerpt_more = ' ...';
-    $text = wp_trim_words( $text, $excerpt_length, $excerpt_more );
-  }
-  return apply_filters('the_excerpt', $text);
-}
-
-function custom_excerpt($new_length = 43, $new_more = '...') {
-  add_filter('excerpt_length', function () use ($new_length) {
-    return $new_length;
-  }, 999);
-  add_filter('excerpt_more', function () use ($new_more) {
-    return $new_more;
-  });
-  $output = get_the_excerpt();
-  $output = apply_filters('wptexturize', $output);
-  $output = apply_filters('convert_chars', $output);
-  $output = '<p>' . $output . '</p>';
-  echo $output;
-}
-
-/*
- * Modified the_author_posts_link(). Needed to allow usage of the usual l10n process with printf().
- */
-function bhass_get_the_author_posts_link() {
-    global $authordata;
-    if ( !is_object( $authordata ) )
-        return false;
-    $link = sprintf(
-        '<a href="%1$s" title="%2$s" rel="author">%3$s</a>',
-        get_author_posts_url( $authordata->ID, $authordata->user_nicename ),
-        esc_attr( sprintf( __( 'Posts by %s', 'bhass' ), get_the_author() ) ),
-        get_the_author()
-    );
-    return $link;
-}
-
-/**
- * Hide editor on specific pages.
- */
-
-function hide_editor() {
-
-  $post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'] ;
-  if( !isset( $post_id ) ) return;
-
-  $template_file = get_post_meta($post_id, '_wp_page_template', true);
-  if( ($template_file == 'front-page.php') || ($template_file == 'athiva-page.php') || ($template_file == 'startups-page.php') || ($template_file == 'blog.php') ) {
-    remove_post_type_support('page', 'editor');
-  }
-  
+    return 15;
 }
 
 
