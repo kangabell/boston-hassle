@@ -1,7 +1,7 @@
 <article>
-	<p class="meta category">Boston/NE Bands</p>
-  	<img src="img.png">
-  	<h3>Article Title</h3>
-  	<p>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-  	<p class="meta">Dan Shea</p>
+	<p class="meta category"><?php echo category_name(); ?></p>
+  	<img src="<?php echo get_stylesheet_directory_uri(); ?>/library/img.png">
+  	<h3><?php echo short_title(); ?></h3>
+  	<p><?php the_excerpt(); ?></p>
+  	<p class="meta"><?php echo get_the_author(); ?></p>
 </article>

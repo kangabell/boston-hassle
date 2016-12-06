@@ -1,5 +1,5 @@
 <article>
-  	<img src="img.png">
+  	<img src="<?php echo get_stylesheet_directory_uri(); ?>/library/img.png">
 	<div class="text">
 	  	<h2>Event Title</h2>
 	  	<p class="meta">Dec 3 8pm - 10pm</p>

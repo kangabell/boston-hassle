@@ -4,16 +4,18 @@ GRID
 *******/
 
 nav {
-	height: 100%;
 	width: 100%;
 }
 
-nav a, .articles > div, footer, .copyright, .tags {
+.articles > div, footer > div, .subfooter > div, .tags {
 	@include grid-row;
 }
 
-footer > div {
+footer section {
 	@include grid-column(6);
+	&:first-child {
+		@include grid-column(12);
+	}
 }
 
 .events, .featured, .featured article, .music, .film, .compass, .articles article {
@@ -77,8 +79,11 @@ footer > div {
 		}
 	}
 
-	footer > div {
+	footer section {
 		@include grid-column(3);
+		&:first-child {
+			@include grid-column(6);
+		}
 	}
 
 	/*** ARCHIVE PAGE ***/

@@ -8,8 +8,6 @@
 UTILITIES 
 *******/
 
-$padding: 2rem;
-
 /*** COLORS ***/
 
 $blue: #6894aa;
@@ -18,6 +16,12 @@ $gray: #9c9c9c;
 $gray-dk: #262626;
 $white: #ffffff;
 $cream: #e2dfd2;
+
+/*** OTHER ***/
+
+$padding: 2rem;
+$radius: 0.25em;
+$border: 1px solid rgba($gray,0.75);
 
 
 // @import "compass/reset";
@@ -49,6 +53,7 @@ body {
 	line-height: 1.375em;
 }
 h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
+	line-height: 1.25em;
 	text-transform: uppercase;
 }
 h1, .h1, h2, .h2 {
@@ -90,6 +95,11 @@ p {
 	margin-top: 0;
 }
 
+ul {
+	list-style-type: none;
+	padding-left: 0;
+}
+
 
 
 /******* 
@@ -98,12 +108,17 @@ COMPONENTS
 
 a {
 	color: $black;
+	text-decoration: none;
 }
 
 button {
 	background: $gray;
+	border-radius: $radius;
 	color: $white;
-  	padding: 0.5rem 1rem;
+  	font-weight: 600;
+  	letter-spacing: 0.05em;
+  	padding: 0.275rem 1rem;
+  	text-transform: uppercase;
 }
 
 img {
@@ -152,10 +167,11 @@ img {
 	text-align: center;
 }
 
-.copyright {
+.subfooter {
 	background: $cream;
-	padding-top: 2rem;
+	padding-top: $padding/2;
 	padding-bottom: $padding*1.5;
+	@extend .small;
 }
 
 /******* 
@@ -180,11 +196,32 @@ header {
 }
 
 nav {
-	background: gray;
-	padding: 0.5rem;
+	background: rgba($gray-dk,0.98);
+	padding: $padding/2 $padding $padding*2;
 	position: absolute;
+	top: 0;
+	left: 0;
+	section {
+		padding-top: $padding;
+		padding-bottom: $padding;
+		width: 18rem;
+		+ section {
+			border-top: $border;
+		}
+	}
 	a {
-		padding: $padding $padding/4;
+		color: $cream;
+		display: block;
+		@extend .h2;
+	}
+	button {
+		background: $cream;
+		color: $gray-dk;
+		font-size: 1.025rem;
+		margin-bottom: $padding*.75;
+	}
+	.toggle-nav {
+		float: right;
 	}
 }
 
@@ -195,8 +232,13 @@ FOOTER
 footer {
 	background: $gray-dk;
 	color: $white;
+	padding-top: $padding/4;
+	padding-bottom: $padding*1.5;
 	.columns {
 	  height: 17rem;
+	}
+	a {
+		color: $white;
 	}
 }
 

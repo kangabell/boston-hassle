@@ -9,11 +9,13 @@
     <div>
       <div class="big-feature">
         <article>
-          <img src="img.png">
-          <p class="meta category">Film Flam</p>
-          <h3>(Featured) Article Title</h3>
-          <p>What else to write here What else to write here What else to write here Whatelseto write here onomotopaeia is a reallylongword</p>
-          <p class="meta">W. Logan Freeman</p>
+          <?php 
+            query_posts ('posts_per_page=1&cat=4');
+            if (have_posts()) : while (have_posts()) : the_post();
+              include 'partials/article.php';
+            endwhile; endif;
+            wp_reset_query();
+          ?>
         </article>
       </div>
 
@@ -28,46 +30,46 @@
     </div>
 
     <div class="featured">
-      <article>
-        <img src="img.png">
-        <h3>(Featured) Article Title</h3>
-        <p>Date Name Some Information</p>
-        <p class="meta">Kylie Obermeier</p>
-      </article>
-      <article>
-        <img src="img.png">
-        <h3>(Featured) Article Title</h3>
-        <p>Date Some Information for People</p>
-        <p class="meta">Kylie Obermeier</p>
-      </article>
-      <article>
-        <img src="img.png">
-        <h3>(Featured) Article Title</h3>
-        <p>What else to write here</p>
-        <p class="meta">Kylie Obermeier</p>
-      </article>
+      <?php 
+        query_posts ('posts_per_page=3&cat=4&offset=1');
+        if (have_posts()) : while (have_posts()) : the_post();
+          include 'partials/article.php';
+        endwhile; endif;
+        wp_reset_query();
+      ?>
     </div>
 
     <div>
 
       <div class="music">
         <h2>Music</h2>
-        <?php include 'partials/article.php'; ?>
-        <?php include 'partials/article-sm.php'; ?>
-        <?php include 'partials/article-sm.php'; ?>
+        <?php
+          $loop = new WP_Query( array('posts_per_page'=>3,'cat'=>198) );
+          while ($loop->have_posts()) : 
+            $loop->the_post();
+            if ($loop->current_post == 0) {
+              include 'partials/article.php';
+            } else {
+              include 'partials/article-sm.php';
+            }
+          endwhile; wp_reset_postdata();
+        ?>
       </div>
 
       <div class="film">
         <h2>Film</h2>
-        <?php include 'partials/article-sm.php'; ?>
-        <?php include 'partials/article-sm.php'; ?>
-        <?php include 'partials/article-sm.php'; ?>
-        <?php include 'partials/article-sm.php'; ?>
+        <?php
+          query_posts ('posts_per_page=4&cat=5');
+          if (have_posts()) : while (have_posts()) : the_post();
+            include 'partials/article-sm.php';
+          endwhile; endif;
+          wp_reset_query();
+        ?>
       </div>
 
       <div class="compass">
         <h2>Boston Compass</h2>
-        <img src="img.png">
+        <img src="<?php echo get_stylesheet_directory_uri(); ?>/library/img.png">
         <a href="">Read More</a>
       </div>
 
@@ -75,14 +77,12 @@
 
     <div class="articles">
       <div>
-        <?php include 'partials/article.php'; ?>
-        <?php include 'partials/article.php'; ?>
-        <?php include 'partials/article.php'; ?>
-        <?php include 'partials/article.php'; ?>
-        <?php include 'partials/article.php'; ?>
-        <?php include 'partials/article.php'; ?>
-        <?php include 'partials/article.php'; ?>
-        <?php include 'partials/article.php'; ?>
+        <?php 
+          query_posts ('posts_per_page=8');
+          if (have_posts()) : while (have_posts()) : the_post();
+            include 'partials/article.php';
+          endwhile; endif;
+        ?>
       </div>
       <div class="view-all"><button>View All Posts</button></div>
     </div>
