@@ -46,6 +46,8 @@
     </div>
   </footer>
 
+  <?php wp_footer(); ?>
+
   <div class="copyright">&copy; 2016 BRAIN Arts</div>
 
   </body>
