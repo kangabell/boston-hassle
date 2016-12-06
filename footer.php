@@ -48,8 +48,5 @@
 
   <div class="copyright">&copy; 2016 BRAIN Arts</div>
 
-  <script src="node_modules/foundation-sites/node_modules/jquery/dist/jquery.min.js"></script>
-  <script src="js/scripts.js"></script>
-
   </body>
 </html>

@@ -159,39 +159,13 @@ function bhass_scripts_and_styles() {
   if (!is_admin()) {
 
     // main stylesheet
-    wp_register_style( 'bhass-stylesheet', get_stylesheet_directory_uri() . '/library/stylesheets/style.css', array(), '', 'all' );
-
-    // waypoints
-    wp_register_script( 'waypoints', 'https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.0/jquery.waypoints.min.js' , array( 'jquery' ), '', true );
-
-    // counter-up
-    wp_register_script( 'counterup', get_stylesheet_directory_uri() . '/library/scripts/jquery.counterup.min.js', array( 'jquery' ), '', true );
-
-    // typed.js
-    wp_register_script( 'typed', get_stylesheet_directory_uri() . '/library/scripts/typed.min.js', array( 'jquery' ), '', true );
-
-    // vide
-    wp_register_script( 'vide', get_stylesheet_directory_uri() . '/library/scripts/jquery.vide.min.js', array( 'jquery' ), '', true );
-
-    // bx slider
-    wp_register_script( 'bxslider', get_stylesheet_directory_uri() . '/library/scripts/jquery.bxslider.min.js', array( 'jquery' ), '', true );
+    wp_register_style( 'bhass-stylesheet', get_stylesheet_directory_uri() . '/library/stylesheets/screen.css', array(), '', 'all' );
 
     // theme scripts file
-    wp_register_script( 'bhass-js', get_stylesheet_directory_uri() . '/library/scripts/scripts.min.js', array( 'jquery' ), '', true );
+    wp_register_script( 'bhass-js', get_stylesheet_directory_uri() . '/library/scripts/scripts.js', array( 'jquery' ), '', true );
 
     // enqueue styles and scripts
     wp_enqueue_style( 'bhass-stylesheet' );
-    wp_enqueue_script( 'waypoints' );
-
-    if ( is_page_template('front-page.php') ) {
-        wp_enqueue_script( 'counterup' );
-        wp_enqueue_script( 'vide' );
-        wp_enqueue_script( 'bxslider' );
-    }
-    if ( is_page_template('athiva-page.php') ) {
-        wp_enqueue_script( 'typed' );
-    }
-
     wp_enqueue_script( 'bhass-js' );
 
     // create site url variable to be used in js
