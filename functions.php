@@ -85,6 +85,27 @@ function bhass_shorten_excerpt( $length ) {
     return 15;
 }
 
+// Get name of first category in categories array
+function category_name() {
+
+    $category = get_the_category();
+
+    //get the first category
+    $name = $category[0]->cat_name;
+    $cat_id = get_cat_ID( $name );
+    $link = get_category_link( $cat_id );
+
+    return $name;
+
+}
+
+function short_title() {
+
+    $title = get_the_title();
+    return mb_strimwidth($title, 0, 60, '...');
+
+}
+
 
 /*********************
 SCRIPTS & ENQUEUEING
