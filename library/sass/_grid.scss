@@ -4,11 +4,10 @@ GRID
 *******/
 
 nav {
-	height: 100%;
 	width: 100%;
 }
 
-nav a, .articles > div, footer, .copyright, .tags {
+.articles > div, footer, .copyright, .tags {
 	@include grid-row;
 }
 
