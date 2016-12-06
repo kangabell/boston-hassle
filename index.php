@@ -9,11 +9,13 @@
     <div>
       <div class="big-feature">
         <article>
-          <img src="<?php echo get_stylesheet_directory_uri(); ?>/library/img.png">
-          <p class="meta category">Film Flam</p>
-          <h3>(Featured) Article Title</h3>
-          <p>What else to write here What else to write here What else to write here Whatelseto write here onomotopaeia is a reallylongword</p>
-          <p class="meta">W. Logan Freeman</p>
+          <?php 
+            query_posts ('posts_per_page=1&cat=4');
+            if (have_posts()) : while (have_posts()) : the_post();
+              include 'partials/article.php';
+            endwhile; endif;
+            wp_reset_query();
+          ?>
         </article>
       </div>
 
@@ -28,24 +30,13 @@
     </div>
 
     <div class="featured">
-      <article>
-        <img src="<?php echo get_stylesheet_directory_uri(); ?>/library/img.png">
-        <h3>(Featured) Article Title</h3>
-        <p>Date Name Some Information</p>
-        <p class="meta">Kylie Obermeier</p>
-      </article>
-      <article>
-        <img src="<?php echo get_stylesheet_directory_uri(); ?>/library/img.png">
-        <h3>(Featured) Article Title</h3>
-        <p>Date Some Information for People</p>
-        <p class="meta">Kylie Obermeier</p>
-      </article>
-      <article>
-        <img src="<?php echo get_stylesheet_directory_uri(); ?>/library/img.png">
-        <h3>(Featured) Article Title</h3>
-        <p>What else to write here</p>
-        <p class="meta">Kylie Obermeier</p>
-      </article>
+      <?php 
+        query_posts ('posts_per_page=3&cat=4&offset=1');
+        if (have_posts()) : while (have_posts()) : the_post();
+          include 'partials/article.php';
+        endwhile; endif;
+        wp_reset_query();
+      ?>
     </div>
 
     <div>
