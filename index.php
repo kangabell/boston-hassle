@@ -75,14 +75,19 @@
 
     <div class="articles">
       <div>
-        <?php include 'partials/article.php'; ?>
-        <?php include 'partials/article.php'; ?>
-        <?php include 'partials/article.php'; ?>
-        <?php include 'partials/article.php'; ?>
-        <?php include 'partials/article.php'; ?>
-        <?php include 'partials/article.php'; ?>
-        <?php include 'partials/article.php'; ?>
-        <?php include 'partials/article.php'; ?>
+        <?php 
+          global $query_string;
+          query_posts ('posts_per_page=8');
+          if (have_posts()) : while (have_posts()) : the_post();
+            $title = get_the_title();
+            $category = get_the_category();
+            //get the first category
+            $name = $category[0]->cat_name;
+            $cat_id = get_cat_ID( $name );
+            $link = get_category_link( $cat_id );
+        ?>
+          <?php include 'partials/article.php'; ?>
+        <?php endwhile; endif; ?>
       </div>
       <div class="view-all"><button>View All Posts</button></div>
     </div>
