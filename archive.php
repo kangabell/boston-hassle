@@ -1,9 +1,3 @@
-<?php include 'header.php'; ?>
-
-<body class="archive">
-
-<?php include 'partials/nav.php'; ?>
-
 <main>
     <div>
       <div class="left">

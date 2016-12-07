@@ -1,8 +1,4 @@
-<?php include 'header.php'; ?>
-
-<body class="archive calendar">
-
-<?php include 'partials/nav.php'; ?>
+<!-- note: needs to have body .archive and .calendar body classes -->
 
 <main>
   <h2>Events</h2>

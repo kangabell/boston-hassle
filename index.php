@@ -1,10 +1,6 @@
 
 <?php include 'header.php'; ?>
 
-<body class="home">
-
-<?php include 'partials/nav.php'; ?>
-
 <main>
     <div class="hero">
       <?php 

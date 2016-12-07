@@ -1,9 +1,3 @@
-<?php include 'header.php'; ?>
-
-<body class="single">
-
-<?php include 'partials/nav.php'; ?>
-
 <main>
   <article>
     <h1>Article Title</h1>
