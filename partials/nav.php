@@ -2,7 +2,7 @@
   Announcement!<button style="float:right">X Close</button>
 </div>
 
-<header>
+<header id="header">
 
   <a href="index.php">
     <h1><a class="toggle-nav" href="javascript:void(0)" style="font-family: sans-serif;">&#8801;</a> Boston Hassle</h1>
