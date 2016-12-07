@@ -29,8 +29,6 @@ add_action('after_setup_theme','bhass_theme_support');
 add_action( 'widgets_init', 'bhass_register_sidebars' );
 // adding the search form
 add_filter( 'get_search_form', 'bhass_wpsearch' );
-// filtering the search results
-add_filter('pre_get_posts','bhass_filtersearch');
 
 // cleaning up random code around images & blockquotes
 add_filter('the_content', 'bhass_filter_ptags_on_images');
@@ -41,9 +39,6 @@ add_filter('excerpt_more', 'bhass_excerpt_more');
 add_filter( 'excerpt_length', 'bhass_shorten_excerpt', 999 );
 // modify output of WordPress Popular Posts plugin
 add_filter( 'wpp_custom_html', 'bhass_popular_posts_html', 10, 2 );
-
-// add custom post types
-add_action( 'init', 'create_posttype' );
 
 
 
