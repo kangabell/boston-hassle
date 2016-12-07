@@ -6,11 +6,11 @@
 <?php include 'partials/nav.php'; ?>
 
 <main>
-    <div>
+    <div class="hero">
       <?php 
         query_posts ('posts_per_page=1&cat=4');
         if (have_posts()) : while (have_posts()) : the_post();
-          $class = 'big-feature';
+          $class = 'hero';
           include 'partials/article.php';
         endwhile; endif;
         wp_reset_query();
