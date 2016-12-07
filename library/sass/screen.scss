@@ -149,10 +149,6 @@ div.announcement {
 	@extend .small;
 }
 
-header h1 {
-	height: 4rem;
-}
-
 footer, .events > article + article, .music > article + article, .film > article + article {
   margin-top: $padding/2;
 }
@@ -173,10 +169,13 @@ footer, .events > article + article, .music > article + article, .film > article
 HEADER 
 *******/
 
-header {
+#header {
 	background: $gray-dk;
 	color: $white;
 	padding: $padding/2;
+	h1 {
+		height: 4rem;
+	}
 	a {
 		color: $white;
 	}
@@ -301,9 +300,11 @@ body.archive {
 SINGLE 
 *******/
 
-body.single main h1 {
-	margin-top: $padding*1.5;
-	text-align: center;
+body.single main {
+	h1, h1 + .meta {
+		margin-top: $padding*1.5;
+		text-align: center;
+	}
 }
 
 .tags {

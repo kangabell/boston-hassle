@@ -35,12 +35,8 @@ footer section {
 		margin-top: $padding;
 	}
 
-	.announcement > div, header h1, main > div {
+	.announcement > div, #header h1, main > div {
 		@include grid-row;
-	}
-
-	header h1:before {
-		display: none;
 	}
 
 	body.home {
