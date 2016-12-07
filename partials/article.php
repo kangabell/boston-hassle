@@ -5,7 +5,7 @@
 
   	<div class="text">
   		<?php if ( $class == 'hero' ) { echo category_name(); }; ?>
-  		<h3><?php echo short_title(); ?></h3>
+  		<h3><a href="<?php the_permalink(); ?>"><?php echo short_title(); ?></a></h3>
   		<?php the_excerpt(); ?>
   		<p class="meta"><?php echo get_the_author(); ?></p>
   	</div>

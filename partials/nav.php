@@ -5,7 +5,10 @@
 <header id="header">
 
   <a href="index.php">
-    <h1><a class="toggle-nav" href="javascript:void(0)" style="font-family: sans-serif;">&#8801;</a> Boston Hassle</h1>
+    <h1>
+      <a class="toggle-nav" href="javascript:void(0)" style="font-family: sans-serif;">&#8801;</a> 
+      <a href="<?php echo get_home_url(); ?>">Boston Hassle</a>
+    </h1>
   </a>
 
   <nav>
