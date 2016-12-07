@@ -126,6 +126,10 @@ img {
 	width: 100%;
 }
 
+iframe {
+	max-width: 100%;
+}
+
 .meta {
 	color: $gray;
 	@extend .small;
@@ -300,14 +304,33 @@ body.archive {
 SINGLE 
 *******/
 
-body.single main {
-	h1, h1 + .meta {
+body.single {
+	main header {
 		margin-top: $padding*1.5;
-		text-align: center;
+		margin-bottom: $padding*1.5;
+		.meta {
+			font-size: 1rem;
+		}
+	}
+	main h1 {
+		font-size: 2.85rem;
+		margin-bottom: $padding/2;
+	}
+	article {
+		p {
+			font-size: 1rem;
+			margin-bottom: $padding;
+		}
+		img {
+			margin-bottom: $padding/2;
+		}
 	}
 }
 
 .tags {
 	margin-top: $padding*1.5;
-	margin-bottom: $padding*1.5;
+	margin-bottom: $padding*3;
+	a {
+		color: $blue;
+	}
 }

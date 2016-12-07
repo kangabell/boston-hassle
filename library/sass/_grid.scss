@@ -7,6 +7,10 @@ nav {
 	width: 100%;
 }
 
+main {
+	padding: $padding/2;
+}
+
 .articles > div, footer > div, .subfooter > div, .tags {
 	@include grid-row;
 }
@@ -17,6 +21,8 @@ footer section {
 		@include grid-column(12);
 	}
 }
+
+/*** HOMEPAGE ***/
 
 .music, .film, .compass, .articles article {
 	margin-top: $padding*2;
@@ -102,10 +108,13 @@ footer section {
 
 	/*** SINGLE PAGE ***/
 
-	body.single article {
-		@include grid-column(10);
-		@include grid-col-pos(center);
+	body.single {
+		main {
+			@include grid-column(11);
+			@include grid-col-pos(center);
+		}
 	}
+
 
 } /* end breakpoint(medium) */
 
@@ -166,9 +175,15 @@ footer section {
 
 	/*** SINGLE PAGE ***/
 
-	body.single article {
-		@include grid-column(8);
-		@include grid-col-pos(center);
+	body.single {
+		main {
+			@include grid-column(10);
+			@include grid-col-pos(center);
+		}
+		article p {
+			@include grid-column(11);
+			@include grid-col-pos(center);
+		}
 	}
 
 }
