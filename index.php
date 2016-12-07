@@ -7,17 +7,26 @@
 
 <main>
     <div>
-      <div class="big-feature">
-        <article>
-          <?php 
-            query_posts ('posts_per_page=1&cat=4');
-            if (have_posts()) : while (have_posts()) : the_post();
-              include 'partials/article.php';
-            endwhile; endif;
-            wp_reset_query();
-          ?>
-        </article>
-      </div>
+      <?php 
+        query_posts ('posts_per_page=1&cat=4');
+        if (have_posts()) : while (have_posts()) : the_post();
+          $class = 'big-feature';
+          include 'partials/article.php';
+        endwhile; endif;
+        wp_reset_query();
+      ?>
+    </div>
+
+    <div class="secondary">
+
+      <?php 
+        query_posts ('posts_per_page=2&cat=4&offset=1');
+        if (have_posts()) : while (have_posts()) : the_post();
+          $class = 'featured';
+          include 'partials/article.php';
+        endwhile; endif;
+        wp_reset_query();
+      ?>
 
       <div class="events">
         <h2>Go To</h2>
@@ -27,16 +36,7 @@
         <?php include 'partials/event-sm.php'; ?>
         <a href="">View Calendar</a>
       </div>
-    </div>
 
-    <div class="featured">
-      <?php 
-        query_posts ('posts_per_page=3&cat=4&offset=1');
-        if (have_posts()) : while (have_posts()) : the_post();
-          include 'partials/article.php';
-        endwhile; endif;
-        wp_reset_query();
-      ?>
     </div>
 
     <div>

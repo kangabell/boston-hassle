@@ -18,7 +18,7 @@ footer section {
 	}
 }
 
-.events, .featured, .featured article, .music, .film, .compass, .articles article {
+.music, .film, .compass, .articles article {
 	margin-top: $padding*2;
 }
 
@@ -31,7 +31,7 @@ footer section {
 		width: 16rem;
 	}
 
-	.events, .featured, .featured article, .music, .film, .compass, .articles article {
+	.music, .film, .compass, .articles article {
 		margin-top: $padding;
 	}
 
@@ -45,12 +45,21 @@ footer section {
 
 	body.home {
 
-		.events article {
-			@include grid-row;
+		.big-feature {
+			img {
+				@include grid-column(7);
+			}
+			div.text {
+				@include grid-column(5);
+			}
 		}
 
-		.featured article {
+		.secondary .featured, .events {
 			@include grid-column(4);
+		}
+
+		.events article {
+			@include grid-row;
 		}
 
 		.music, .film {
@@ -99,7 +108,6 @@ footer section {
 	body.single article {
 		@include grid-column(10);
 		@include grid-col-pos(center);
-		// @include grid-column($columns:10,$center:true);
 	}
 
 } /* end breakpoint(medium) */
@@ -111,20 +119,14 @@ footer section {
 		@include grid-column(5);
 	}
 
-	.events {
-		margin-top: 0;
-	}
-
 	/*** HOMEPAGE ***/
 
 	body.home {
 		.big-feature {
-			@include grid-column(8);
+			@include grid-column(11);
+			@include grid-col-pos(center);
 		}
 
-		.events {
-			@include grid-column(4);
-		}
 		.articles article {
 			@include grid-column(3);
 		}

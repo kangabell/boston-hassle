@@ -50,21 +50,21 @@ body {
 	color: $black;
 	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
 	font-size: 14px;
-	line-height: 1.375em;
 }
 h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
-	line-height: 1.25em;
 	text-transform: uppercase;
 }
 h1, .h1, h2, .h2 {
 	font-family: 'DIN Cond', 'Open Sans', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
 	letter-spacing: 0.045em;
+	line-height: 1.025em;
 	margin-bottom: 0.75em;
-	margin-top: 0.75em;
+	margin-top: 0;
 }
 h3, .h3, h4, .h4 {
 	font-weight: 600;
 	letter-spacing: 0.025em;
+	line-height: 1.25em;
 	margin-bottom: 0.25em;
 }
 
