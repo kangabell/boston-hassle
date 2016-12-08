@@ -46,10 +46,13 @@ TYPOGRAPHY
        url('../fonts/din_condensed_bold.ttf') format('truetype');
 }
 
+html {
+	font-size: 14px;
+}
+
 body {
 	color: $black;
 	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
-	font-size: 14px;
 }
 h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
 	text-transform: uppercase;
@@ -73,25 +76,23 @@ h1, .h1 {
 	font-size: 2.25rem;
 }
 h2, .h2 {
-	font-size: 1.75rem;
+	font-size: 2rem;
 }
 h3, .h3 {
 	font-size: 1.25rem;
 }
-h4, .h4 {
-	font-size: 1rem;
-}
-h5, .h5 {
+h4, .h4, h5, .h5, h6, .h6 {
 	font-size: 1rem;
 }
 .small {
-	font-size: 0.695rem;
+	font-size: 0.75rem;
 	font-weight: 600;
 	letter-spacing: 0.05em;
 	text-transform: uppercase;
 }
 
 p {
+	font-size: 1rem;
 	margin-bottom: 0.75em;
 	margin-top: 0;
 }
@@ -154,7 +155,7 @@ div.announcement {
 	@extend .small;
 }
 
-footer, .events > article + article, .music > article + article, .film > article + article {
+footer, .music > article + article, .film > article + article {
   margin-top: $padding/2;
 }
 
@@ -263,6 +264,27 @@ div.hero {
 	margin-bottom: $padding*1.5;
 	h3 {
 		@extend .h1;
+	}
+}
+
+div.events {
+	h2 a:after {
+		color: $gray;
+		content: '\2192';
+		margin-left: 0.25em;
+		vertical-align: text-top;
+	}
+	.meta {
+		color: $blue;
+		margin-bottom: 0.25em;
+	}
+	.tribe-events-cost {
+		color: $gray;
+	}
+	article + article {
+		border-top: $border;
+		padding-top: $padding/2;
+		margin-top: $padding/2;
 	}
 }
 
