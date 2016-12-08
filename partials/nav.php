@@ -8,8 +8,8 @@
     <h1>
       <a class="logo" href="<?php echo get_home_url(); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/library/hassle-logo.png"></a>
     </h1>
+    <?php echo get_search_form(); ?>
   </div>
-
 </header>
 
 <nav>
