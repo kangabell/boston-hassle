@@ -1,10 +1,14 @@
 <article>
-  	<img src="<?php echo get_stylesheet_directory_uri(); ?>/library/img.png">
+  	<?php echo tribe_event_featured_image(); ?>
 	<div class="text">
-	  	<h2>Event Title</h2>
-	  	<p class="meta">Dec 3 8pm - 10pm</p>
-	  	<p class="meta">Harvard Film Archive, 24 Quincy Street</p>
-		<p class="meta">Cambridge, MA 02138 United States</p>
-	  	<p>A local tradition: a free showcase of beloved and obscure holiday specials from years past! All films screened on 16mm and 35mm! </p>
+	  	<p class="meta">
+	  		<?php echo tribe_events_event_schedule_details(); ?>
+	  		<?php if ( tribe_get_cost() ) : ?>
+	  			<span class="tribe-events-cost"><?php echo tribe_get_cost( null, true ) ?></span>
+	  		<?php endif; ?>
+	  	</p>
+	  	<h3><a href="<?php echo esc_url( tribe_get_event_link() ); ?>"><?php the_title(); ?></a></h3>
+	  	<p class="meta category"><?php echo tribe_get_venue(); ?></p>
+	  	<?php echo tribe_events_get_the_excerpt( null, wp_kses_allowed_html( 'post' ) ); ?>
   	</div>
 </article>
