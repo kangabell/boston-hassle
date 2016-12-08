@@ -11,7 +11,7 @@ main {
 	padding: $padding/2;
 }
 
-.articles > div, footer > div, .subfooter > div, .tags {
+#header > div, .articles > div, footer > div, .subfooter > div, .tags {
 	@include grid-row;
 }
 
