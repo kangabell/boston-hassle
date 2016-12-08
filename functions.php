@@ -201,13 +201,13 @@ add_filter( 'wp_title', 'bhass_wp_title', 10, 2 );
 
 function bhass_register_sidebars() {
     register_sidebar(array(
-        'id' => 'sidebar_blog',
-        'name' => __('Blog Sidebar', 'bhass'),
-        'description' => __('The widget area for the blog pages.', 'bhass'),
+        'id' => 'sidebar',
+        'name' => __('Sidebar', 'bhass'),
+        'description' => __('The sidebar for the archive/category pages.', 'bhass'),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget' => '</div>',
-        'before_title' => '<h2 class="widgettitle">',
-        'after_title' => '</h2>',
+        'before_title' => '<h3 class="widgettitle">',
+        'after_title' => '</h3>',
     ));
     register_sidebar(array(
         'id' => 'footer_links',

@@ -66,6 +66,7 @@ h3, .h3, h4, .h4 {
 	letter-spacing: 0.025em;
 	line-height: 1.25em;
 	margin-bottom: 0.25em;
+	margin-top: 0;
 }
 
 h1, .h1 {
@@ -123,7 +124,7 @@ button {
 
 img {
 	height: auto;
-	width: 100%;
+	max-width: 100%;
 }
 
 iframe {
@@ -133,7 +134,7 @@ iframe {
 .meta {
 	color: $gray;
 	@extend .small;
-	&.category {
+	&.category, &.category a {
 		color: $blue;
 	}
 }
@@ -253,6 +254,9 @@ body.home {
 		max-height: 3em;
 		overflow: hidden;
 	}
+	article img {
+		margin-bottom: $padding/4;
+	}
 }
 
 div.hero {
@@ -294,10 +298,9 @@ div.hero {
 ARCHIVE 
 *******/
 
-body.archive {
-	article + article {
-		margin-top: $padding;
-	}
+body.archive main header {
+	margin-top: $padding;
+	margin-bottom: $padding;
 }
 
 /******* 
