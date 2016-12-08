@@ -30,16 +30,18 @@ footer section {
 
 /*** ARCHIVE PAGES ***/
 
-body.archive article {
-	@include grid-row;
-	img {
-		@include grid-column(4,0);
-	}
-	div.text {
-		@include grid-column(8);
-	}
-	+ article {
-		margin-top: $padding;
+body.archive, body.search-results {
+	article {
+		@include grid-row;
+		img {
+			@include grid-column(4,0);
+		}
+		div.text {
+			@include grid-column(8);
+		}
+		+ article {
+			margin-top: $padding;
+		}
 	}
 }
 
@@ -113,9 +115,9 @@ body.archive article {
 		}
 	}
 
-	/*** ARCHIVE PAGE ***/
+	/*** ARCHIVE PAGES ***/
 
-	body.archive {
+	body.archive, body.search-results {
 		main {
 			@include grid-row;
 		}
@@ -166,7 +168,7 @@ body.archive article {
 
 	/*** ARCHIVE PAGES ***/
 
-	body.archive {
+	body.archive, body.search-results {
 		div.left {
 			@include grid-column(8,0);
 		}

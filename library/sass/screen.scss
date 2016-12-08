@@ -126,7 +126,7 @@ h3, .h3, h4, .h4 {
 }
 
 h1, .h1 {
-	font-size: 2.25rem;
+	font-size: 3.25rem;
 }
 h2, .h2 {
 	font-size: 2rem;
@@ -402,9 +402,11 @@ div.events {
 ARCHIVE 
 *******/
 
-body.archive main header {
-	margin-top: $padding;
-	margin-bottom: $padding;
+body.archive, body.search-results {
+	main header {
+		margin-top: $padding;
+		margin-bottom: $padding;
+	}
 }
 
 /******* 
