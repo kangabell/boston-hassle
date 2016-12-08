@@ -15,6 +15,17 @@ jQuery(document).ready( function($) {
 
 	});
 
+	$('body').click(function(e) {
+
+		var target = $(e.target);
+
+		if ( $('body').hasClass('nav-open') ) {
+			if ( (target.closest('nav').length === 0) && (target.closest('.toggle-nav').length === 0) ) { // if clicking anywhere but nav
+				closeNav();
+			}
+		}
+	});
+
 	/*** EQUALIZE ELEMENT HEIGHTS ***/
 
 	equalize('body.home .articles article');
