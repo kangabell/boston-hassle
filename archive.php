@@ -1,47 +1,37 @@
+<?php get_header(); ?>
+
 <main>
-    <div>
-      <div class="left">
-        <?php include 'partials/article.php'; ?>
-        <?php include 'partials/article.php'; ?>
-        <?php include 'partials/article.php'; ?>
-        <?php include 'partials/article.php'; ?>
-        <?php include 'partials/article.php'; ?>
-        <?php include 'partials/article.php'; ?>
-        <?php include 'partials/article.php'; ?>
-        <?php include 'partials/article.php'; ?>
-        <?php include 'partials/article.php'; ?>
-        <?php include 'partials/article.php'; ?>
-      </div>
+  
+  <header>
+    <h1>
+      <?php 
+        if (is_category()) { 
+          single_cat_title();
+        } elseif (is_tag()) {
+          single_tag_title();
+        } elseif (is_author()) {
+          global $post;
+          $author_id = $post->post_author;
+          echo get_the_author_meta('display_name', $author_id);
+        } else {
+          echo 'Archives';
+        }
+      ?>
+    </h1>
+  </header>
 
-      <aside>
+  <div class="left">
+    <?php
+      if (have_posts()) : while (have_posts()) : the_post();
+        $class = 'archive';
+        include 'partials/article.php';
+      endwhile; endif;
+    ?>
+  </div>
 
-        <div class="events">
-          <h3>Upcoming Go-To Events</h3>
-          <p>Date Name Some Information</p>
-          <p>Date Some Information for People</p>
-          <p>Information and Name</p>
-          <p>What else to write here</p>
-          <a href="">View Calendar</a>
-        </div>
+  <?php get_sidebar(); ?>
 
-        <div class="categories">
-          <h3>Categories</h3>
-          <ul>
-            <li><a href="">Link</a></li>
-            <li><a href="">Link</a></li>
-            <li><a href="">Link</a></li>
-            <li><a href="">Link</a></li>
-            <li><a href="">Link</a></li>
-          </ul>
-        </div>
+</main>
 
-      </aside>
-
-    </div>
-
-    <div class="view-all"><button>Next</button></div>
-
-  </main>
-
-  <?php include 'footer.php'; ?>
+<?php get_footer(); ?>
 

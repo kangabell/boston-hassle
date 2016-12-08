@@ -25,12 +25,25 @@
       ?>
 
       <div class="events">
-        <h2>Go To</h2>
-        <?php include 'partials/event-sm.php'; ?>
-        <?php include 'partials/event-sm.php'; ?>
-        <?php include 'partials/event-sm.php'; ?>
-        <?php include 'partials/event-sm.php'; ?>
-        <a href="">View Calendar</a>
+        <h2><a href="/events">Go To</a></h2>
+        <?php
+          $events = tribe_get_events( array(
+              'posts_per_page' => 5,
+              'start_date' => date( 'Y-m-d H:i:s' ) // upcoming
+          ) );
+          foreach ( $events as $post ) {
+              setup_postdata( $post );
+        ?>
+          <article>
+            <p class="meta">
+              <?php echo tribe_events_event_schedule_details(); ?>
+              <?php if ( tribe_get_cost() ) : ?>
+                <span class="tribe-events-cost"><?php echo tribe_get_cost( null, true ) ?></span>
+              <?php endif; ?>
+            </p>
+            <h3 class="h5"><a href="<?php echo esc_url( tribe_get_event_link() ); ?>"><?php the_title(); ?></a></h3>
+          </article>
+        <?php } wp_reset_postdata(); ?>
       </div>
 
     </div>

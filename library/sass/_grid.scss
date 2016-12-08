@@ -28,6 +28,21 @@ footer section {
 	margin-top: $padding*2;
 }
 
+/*** ARCHIVE PAGES ***/
+
+body.archive article {
+	@include grid-row;
+	img {
+		@include grid-column(4,0);
+	}
+	div.text {
+		@include grid-column(8);
+	}
+	+ article {
+		margin-top: $padding;
+	}
+}
+
 @include breakpoint(medium) {
 
 	img.left {
@@ -153,7 +168,7 @@ footer section {
 
 	body.archive {
 		div.left {
-			@include grid-column(8);
+			@include grid-column(8,0);
 		}
 		aside {
 			@include grid-column(4);

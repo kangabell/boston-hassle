@@ -36,7 +36,7 @@ add_filter('the_content', 'bhass_filter_ptags_on_blockquotes');
 // cleaning up excerpt
 add_filter('excerpt_more', 'bhass_excerpt_more');
 // shorter excerpt
-add_filter( 'excerpt_length', 'bhass_shorten_excerpt', 999 );
+add_filter( 'excerpt_length', 'bhass_lengthen_excerpt', 999 );
 // modify output of WordPress Popular Posts plugin
 add_filter( 'wpp_custom_html', 'bhass_popular_posts_html', 10, 2 );
 
@@ -76,8 +76,8 @@ function bhass_excerpt_more($more) {
 }
 
 // Shorten excerpt length to 100 characters
-function bhass_shorten_excerpt( $length ) {
-    return 52;
+function bhass_lengthen_excerpt( $length ) {
+    return 82;
 }
 
 // Get name of first category in categories array
@@ -201,13 +201,13 @@ add_filter( 'wp_title', 'bhass_wp_title', 10, 2 );
 
 function bhass_register_sidebars() {
     register_sidebar(array(
-        'id' => 'sidebar_blog',
-        'name' => __('Blog Sidebar', 'bhass'),
-        'description' => __('The widget area for the blog pages.', 'bhass'),
+        'id' => 'sidebar',
+        'name' => __('Sidebar', 'bhass'),
+        'description' => __('The sidebar for the archive/category pages.', 'bhass'),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget' => '</div>',
-        'before_title' => '<h2 class="widgettitle">',
-        'after_title' => '</h2>',
+        'before_title' => '<h3 class="widgettitle">',
+        'after_title' => '</h3>',
     ));
     register_sidebar(array(
         'id' => 'footer_links',
