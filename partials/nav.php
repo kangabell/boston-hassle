@@ -12,7 +12,7 @@
   </div>
 </header>
 
-<nav>
+<nav id="nav">
 
   <button class="toggle-nav">x Close</button>
 

@@ -178,7 +178,7 @@ a {
 	text-decoration: none;
 }
 
-button {
+button, .button {
 	background: $gray;
 	border-radius: $radius;
 	color: $white;
@@ -268,15 +268,15 @@ HEADER
 	}
 }
 
-nav, .nav-closed nav {
+#nav, .nav-closed #nav {
 	display: none;
 }
 
-.nav-open nav {
+.nav-open #nav {
 	display: block;
 }
 
-nav {
+#nav {
 	background: rgba($gray-dk,0.98);
 	padding: $padding/2 $padding $padding*2;
 	position: absolute;

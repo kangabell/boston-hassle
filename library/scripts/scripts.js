@@ -20,7 +20,7 @@ jQuery(document).ready( function($) {
 		var target = $(e.target);
 
 		if ( $('body').hasClass('nav-open') ) {
-			if ( (target.closest('nav').length === 0) && (target.closest('.toggle-nav').length === 0) ) { // if clicking anywhere but nav
+			if ( (target.closest('#nav').length === 0) && (target.closest('.toggle-nav').length === 0) ) { // if clicking anywhere but nav
 				closeNav();
 			}
 		}

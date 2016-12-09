@@ -25,11 +25,13 @@
       if (have_posts()) : while (have_posts()) : the_post();
         $class = 'archive';
         include 'partials/article.php';
-      endwhile; endif;
+      endwhile;
+        get_template_part('partials/pagination');
+      endif;
     ?>
   </div>
 
-  <?php get_sidebar(); ?>
+  <?php get_sidebar(); ?> 
 
 </main>
 
