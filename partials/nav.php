@@ -21,9 +21,7 @@
   </section>
 
   <section class="categories">
-    <a href="archive.php">New Music</a>
-    <a href="archive.php">Art</a>
-    <a href="archive.php">Film Flam</a>
+    <?php bhass_main_nav_categories(); ?>
   </section>
 
   <section class="pages">
