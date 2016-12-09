@@ -27,6 +27,9 @@ add_action('wp_enqueue_scripts', 'bhass_scripts_and_styles', 999);
 add_action('after_setup_theme','bhass_theme_support');
 // adding sidebars to Wordpress (these are created in functions.php)
 add_action( 'widgets_init', 'bhass_register_sidebars' );
+// fix to get pagination with custom permalink structure
+add_action('pre_get_posts','custom_pre_get_posts');
+add_filter('request', 'custom_request');
 // adding the search form
 add_filter( 'get_search_form', 'bhass_wpsearch' );
 
@@ -238,6 +241,27 @@ function bhass_register_sidebars() {
     ));
 }
 
+/************* PAGINATION *****************/
+
+// Allow pagination with custom permalink structure. Seems hacky but it works!
+// https://www.bamboomanchester.uk/fix-404-errors-wordpress-pagination/
+
+function custom_pre_get_posts( $query ) {  
+    if ( $query->is_main_query() && !$query->is_feed() && !is_admin() && is_category() ) {
+        $query->set( 'paged', str_replace( '/', '', get_query_var( 'page' ) ) );  
+    }
+}
+
+function custom_request($query_string ) { 
+    if ( isset( $query_string['page'] ) ) {
+        if( ''!=$query_string['page'] ) {
+            if( isset( $query_string['name'] ) ) { 
+                unset( $query_string['name'] ); 
+            } 
+        } 
+    } 
+    return $query_string; 
+}
 
 /************* SEARCH FORM LAYOUT *****************/
 
