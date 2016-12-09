@@ -164,16 +164,15 @@ MENUS & NAVIGATION
 *********************/
 
 // the main menu
-function bhass_main_nav() {
+function bhass_main_nav_links() {
     // display the wp3 menu if available
     wp_nav_menu(array(
-        'container' => false,                           // remove nav container
-        'container_class' => 'menu clearfix',           // class of container
-        'menu' => __( 'The Main Menu', 'bhass' ),  // nav name
-        'menu_class' => 'nav top-nav clearfix',         // adding custom nav class
-        'theme_location' => 'main-nav',                 // where it's located in the theme
-        'depth' => 2,                                   // limit the depth of the nav
-        'fallback_cb' => 'bhass_main_nav_fallback'      // fallback function
+        'container' => false,
+        'container_class' => 'menu clearfix',
+        'menu' => __( 'The Main Menu Links Area', 'bhass' ),
+        'theme_location' => 'main-nav',
+        'depth' => 2,
+        'fallback_cb' => 'bhass_main_nav_fallback'
     ));
 } /* end bhass main nav */
 

@@ -27,11 +27,7 @@
   </section>
 
   <section class="pages">
-    <a href="">About</a>
-    <a href="">Boston Compass</a>
-    <a href="">Black Market</a>
-    <a href="">Web Market</a>
-    <a href="">Telethon</a>
+    <?php bhass_main_nav_links(); ?>
   </section>
 
   <section class="buttons">
