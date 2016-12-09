@@ -31,8 +31,7 @@
   </section>
 
   <section class="buttons">
-    <button>Donate!</button><br />
-    <button>Volunteer!</button>
+    <?php bhass_main_nav_buttons(); ?>
   </section>
 
 </nav>

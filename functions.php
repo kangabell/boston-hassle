@@ -147,7 +147,8 @@ function bhass_theme_support() {
     // registering wp3+ menus
     register_nav_menus(
         array(
-            'main-nav' => __( 'The Main Menu', 'bhass' ),   // main nav in header
+            'main-nav-links' => __( 'Main Menu Links', 'bhass' ),
+            'main-nav-buttons' => __( 'Main Menu Buttons', 'bhass' ),
         )
     );
 
@@ -163,16 +164,24 @@ function bhass_theme_support() {
 MENUS & NAVIGATION
 *********************/
 
-// the main menu
+// main menu links area
 function bhass_main_nav_links() {
-    // display the wp3 menu if available
     wp_nav_menu(array(
         'container' => false,
-        'container_class' => 'menu clearfix',
-        'menu' => __( 'The Main Menu Links Area', 'bhass' ),
-        'theme_location' => 'main-nav',
+        'menu' => __( 'Main Menu Links Area', 'bhass' ),
+        'theme_location' => 'main-nav-links',
         'depth' => 2,
-        'fallback_cb' => 'bhass_main_nav_fallback'
+        // 'fallback_cb' => 'bhass_main_nav_fallback'
+    ));
+}
+
+// main menu buttons area
+function bhass_main_nav_buttons() {
+    wp_nav_menu(array(
+        'container' => false,
+        'menu' => __( 'Main Menu Buttons Area', 'bhass' ),
+        'theme_location' => 'main-nav-buttons',
+        'depth' => 1,
     ));
 } /* end bhass main nav */
 

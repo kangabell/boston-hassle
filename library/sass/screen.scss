@@ -290,21 +290,24 @@ HEADER
 			border-top: $border;
 		}
 	}
-	a {
+	section:not(.buttons) a {
 		color: $cream;
 		display: block;
 		@extend .h2;
 	}
-	button {
+	section.buttons a {
 		background: $cream;
 		color: $gray-dk;
+		display: inline-block;
 		font-size: 1.025rem;
 		margin-bottom: $padding*.75;
+		@extend .button;
 	}
 	.toggle-nav {
 		float: right;
 	}
 }
+
 
 /******* 
 FOOTER 
