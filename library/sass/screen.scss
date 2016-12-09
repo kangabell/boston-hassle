@@ -413,7 +413,7 @@ body.archive, body.search-results {
 SINGLE 
 *******/
 
-body.single {
+body.single, body.page {
 	main header {
 		margin-top: $padding*1.5;
 		margin-bottom: $padding*1.5;
@@ -427,7 +427,7 @@ body.single {
 	}
 	article {
 		p {
-			font-size: 1rem;
+			font-size: 1.05rem;
 			margin-bottom: $padding;
 		}
 		img {
