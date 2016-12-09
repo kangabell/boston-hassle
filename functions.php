@@ -228,8 +228,17 @@ function bhass_register_sidebars() {
         'description' => __('The sidebar for the archive/category pages.', 'bhass'),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget' => '</div>',
-        'before_title' => '<h3 class="widgettitle">',
-        'after_title' => '</h3>',
+        'before_title' => '<h2>',
+        'after_title' => '</h2>',
+    ));
+    register_sidebar(array(
+        'id' => 'sidebar_events',
+        'name' => __('Events Sidebar', 'bhass'),
+        'description' => __('The sidebar for the events page.', 'bhass'),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h2>',
+        'after_title' => '</h2>',
     ));
     register_sidebar(array(
         'id' => 'footer_links',
