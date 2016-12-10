@@ -3,16 +3,8 @@
  * List View Template
  *
  */
-if ( ! defined( 'ABSPATH' ) ) {
-  die( '-1' );
-}
 
-do_action( 'tribe_events_before_template' );
 ?>
-
-  <!-- Tribe Bar -->
-<?php tribe_get_template_part( 'modules/bar' ); ?>
-
 
 <main>
   
@@ -23,9 +15,11 @@ do_action( 'tribe_events_before_template' );
   <div id="tribe-events-content" class="left">
 
       <?php
-      /**
-       * Fires before any content is printed inside the list view.
-       */
+      if ( ! defined( 'ABSPATH' ) ) {
+        die( '-1' );
+      }
+
+      do_action( 'tribe_events_before_template' );
       do_action( 'tribe_events_list_before_the_content' );
       ?>
 
@@ -42,7 +36,7 @@ do_action( 'tribe_events_before_template' );
 
   </div>
 
-  <?php //get_sidebar('events'); ?>
+  <?php get_sidebar('events'); ?>
 
 </main>
 <?php
