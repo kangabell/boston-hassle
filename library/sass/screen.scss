@@ -178,7 +178,7 @@ a {
 	text-decoration: none;
 }
 
-button, .button {
+button, .button, input[type='submit'] {
 	background: $gray;
 	border-radius: $radius;
 	color: $white;
@@ -186,6 +186,13 @@ button, .button {
   	letter-spacing: 0.05em;
   	padding: 0.275rem 1rem;
   	text-transform: uppercase;
+}
+
+label {
+	color: $gray;
+	display: block;
+	margin-bottom: 0.125em;;
+	@extend .small;
 }
 
 iframe {
@@ -410,6 +417,14 @@ body.archive, body.search-results {
 		margin-top: $padding;
 		margin-bottom: $padding;
 	}
+}
+
+/******* 
+EVENTS PAGE 
+*******/
+
+.tribe-bar-filter {
+	margin-bottom: $padding/3;
 }
 
 /******* 

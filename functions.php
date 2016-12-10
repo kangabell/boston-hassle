@@ -32,6 +32,8 @@ add_action('pre_get_posts','custom_pre_get_posts');
 add_filter('request', 'custom_request');
 // adding the search form
 add_filter( 'get_search_form', 'bhass_wpsearch' );
+// edit events filters labels
+add_filter( 'tribe-events-bar-filters', 'bhass_events_filters' );
 
 // cleaning up random code around images & blockquotes
 add_filter('the_content', 'bhass_filter_ptags_on_images');
@@ -300,6 +302,42 @@ function bhass_wpsearch($form) {
     <button type="submit"><span class="visually-hidden">Go</span><span class="icon-search"></span></button>
     </form>';
     return $form;
+}
+
+
+/************* UPDATE EVENTS FILTERS LABELS *****************/
+  
+function bhass_events_filters( $filters ) {
+  
+    $value = '';
+      
+    if ( ! empty( $_REQUEST['tribe-bar-geoloc'] ) ) {
+        $value = esc_attr( $_REQUEST['tribe-bar-geoloc'] );
+    }
+  
+    // remove the placeholder attributes
+    $geoloc = sprintf(
+        '<input type="text" name="tribe-bar-geoloc" id="tribe-bar-geoloc" value="%s">',
+        esc_attr( $value )
+    );
+    $search = sprintf(
+        '<input type="text" name="tribe-bar-search" id="tribe-bar-search" value="%s">',
+        esc_attr( $value )
+    );
+    $date = sprintf(
+        '<input type="text" name="tribe-bar-date" id="tribe-bar-search" value="%s">',
+        esc_attr( $value )
+    );
+  
+    $filters['tribe-bar-geoloc']['caption'] = 'Location';
+    $filters['tribe-bar-geoloc']['html']    = $geoloc;
+    $filters['tribe-bar-search']['caption'] = 'Keyword';
+    $filters['tribe-bar-search']['html'] = $search;
+    $filters['tribe-bar-date']['caption'] = 'Date';
+    $filters['tribe-bar-date']['html'] = $date;
+    
+  
+    return $filters;
 }
 
 
