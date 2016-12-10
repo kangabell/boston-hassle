@@ -36,7 +36,7 @@ $border: 1px solid rgba($gray,0.75);
   font-style: normal;
 }
 
-[class^="icon-"], [class*=" icon-"] {
+[class^="icon-"], [class*=" icon-"], [class^="tribe-icon-"], [class*=" tribe-icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
   speak: none;
@@ -51,13 +51,13 @@ $border: 1px solid rgba($gray,0.75);
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-calendar:before {
+.icon-calendar:before, .tribe-icon-month:before {
   content: "\e902";
 }
 .icon-search:before {
   content: "\e903";
 }
-.icon-list:before {
+.icon-list:before, .tribe-icon-list:before {
   content: "\e901";
 }
 .icon-cancel-circle:before {
@@ -178,7 +178,7 @@ a {
 	text-decoration: none;
 }
 
-button, .button {
+button, .button, input[type='submit'] {
 	background: $gray;
 	border-radius: $radius;
 	color: $white;
@@ -186,6 +186,13 @@ button, .button {
   	letter-spacing: 0.05em;
   	padding: 0.275rem 1rem;
   	text-transform: uppercase;
+}
+
+label {
+	color: $gray;
+	display: block;
+	margin-bottom: 0.125em;;
+	@extend .small;
 }
 
 iframe {
@@ -410,6 +417,39 @@ body.archive, body.search-results {
 		margin-top: $padding;
 		margin-bottom: $padding;
 	}
+}
+
+div.widget {
+	margin-bottom: $padding*2;
+}
+
+/******* 
+EVENTS PAGE 
+*******/
+
+body.events-archive main {
+	position: relative;
+}
+
+.tribe-bar-filters {
+	margin-bottom: $padding*2;
+}
+.tribe-bar-filter {
+	margin-bottom: $padding/3;
+}
+#tribe-bar-views {
+	position: absolute;
+	top: $padding*1.75;
+	right: 0;
+}
+.tribe-bar-views-list li:not(.tribe-bar-active) {
+	opacity: 0.5;
+}
+.tribe-bar-views-list li:hover {
+	opacity: 1;
+}
+#tribe-bar-collapse-toggle, .tribe-bar-views-select {
+	display: none;
 }
 
 /******* 
