@@ -31,7 +31,7 @@ $current_url = tribe_events_get_current_filter_url();
 		</div>
 
 		<!-- Views -->
-		<?php if ( count( $views ) > 1 ) { ?>
+		<?php if ( count( $views ) > 1 ) : ?>
 			<div id="tribe-bar-views">
 				<div class="tribe-bar-views-inner tribe-clearfix">
 					<h3 class="tribe-events-visuallyhidden"><?php esc_html_e( 'Event Views Navigation', 'the-events-calendar' ) ?></h3>
@@ -46,7 +46,7 @@ $current_url = tribe_events_get_current_filter_url();
 				</div>
 				<!-- .tribe-bar-views-inner -->
 			</div><!-- .tribe-bar-views -->
-		<?php } // if ( count( $views ) > 1 ) ?>
+		<?php endif; ?>
 
 		<?php if ( ! empty( $filters ) ) { ?>
 			<div class="tribe-bar-filters">
