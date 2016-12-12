@@ -315,22 +315,15 @@ function bhass_events_filters( $filters ) {
         $value = esc_attr( $_REQUEST['tribe-bar-geoloc'] );
     }
   
-    // remove the placeholder attributes
-    $geoloc = sprintf(
-        '<input type="text" name="tribe-bar-geoloc" id="tribe-bar-geoloc" value="%s">',
-        esc_attr( $value )
-    );
     $search = sprintf(
         '<input type="text" name="tribe-bar-search" id="tribe-bar-search" value="%s">',
         esc_attr( $value )
     );
     $date = sprintf(
-        '<input type="text" name="tribe-bar-date" id="tribe-bar-search" value="%s">',
+        '<input type="text" name="tribe-bar-date" id="tribe-bar-date" value="%s">',
         esc_attr( $value )
     );
   
-    $filters['tribe-bar-geoloc']['caption'] = 'Location';
-    $filters['tribe-bar-geoloc']['html']    = $geoloc;
     $filters['tribe-bar-search']['caption'] = 'Keyword';
     $filters['tribe-bar-search']['html'] = $search;
     $filters['tribe-bar-date']['caption'] = 'Date';
