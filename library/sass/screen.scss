@@ -238,6 +238,11 @@ footer, .music > article + article, .film > article + article {
 	@extend .small;
 }
 
+main > header {
+	margin-top: $padding;
+	margin-bottom: $padding;
+}
+
 /******* 
 HEADER 
 *******/
@@ -411,13 +416,6 @@ div.events {
 /******* 
 ARCHIVE 
 *******/
-
-body.archive, body.search-results {
-	main header {
-		margin-top: $padding;
-		margin-bottom: $padding;
-	}
-}
 
 aside .widget {
 	margin-bottom: $padding*2;

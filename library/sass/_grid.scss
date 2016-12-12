@@ -8,6 +8,7 @@ nav {
 }
 
 main {
+	min-height: 25rem;
 	padding: $padding/2;
 }
 
@@ -128,7 +129,7 @@ body.archive, body.search-results {
 
 	/*** SINGLE PAGE & DEFAULT PAGES ***/
 
-	body.single, body.page {
+	body.single, body.page, body.error404 {
 		main {
 			@include grid-column(11);
 			@include grid-col-pos(center);
