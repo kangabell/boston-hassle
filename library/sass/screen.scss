@@ -323,7 +323,7 @@ FOOTER
 footer {
 	background: $gray-dk;
 	color: $white;
-	padding-top: $padding/4;
+	padding-top: $padding;
 	padding-bottom: $padding*1.5;
 	.columns {
 	  height: 17rem;
@@ -419,7 +419,7 @@ body.archive, body.search-results {
 	}
 }
 
-div.widget {
+aside .widget {
 	margin-bottom: $padding*2;
 }
 

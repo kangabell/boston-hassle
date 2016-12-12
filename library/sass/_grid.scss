@@ -113,6 +113,9 @@ body.archive, body.search-results {
 		&:first-child {
 			@include grid-column(6);
 		}
+		p {
+			max-width: 30rem;
+		}
 	}
 
 	/*** ARCHIVE PAGES ***/
