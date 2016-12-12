@@ -243,31 +243,31 @@ function bhass_register_sidebars() {
         'after_title' => '</h2>',
     ));
     register_sidebar(array(
-        'id' => 'footer_links',
-        'name' => __('Footer Links', 'bhass'),
-        'description' => __('Links for the footer go here.', 'bhass'),
+        'id' => 'footer_left',
+        'name' => __('Footer: Left', 'bhass'),
+        'description' => __('Left section of the footer.', 'bhass'),
         'before_widget' => '<div class="widget %2$s">',
         'after_widget' => '</div>',
-        'before_title' => '',
-        'after_title' => '',
+       'before_title' => '<h4>',
+        'after_title' => '</h4>',
     ));
     register_sidebar(array(
-        'id' => 'footer_address',
-        'name' => __('Footer Address', 'bhass'),
-        'description' => __('Company address for the footer.', 'bhass'),
+        'id' => 'footer_middle',
+        'name' => __('Footer: Middle', 'bhass'),
+        'description' => __('Middle section of the footer.', 'bhass'),
         'before_widget' => '<div class="widget %2$s">',
         'after_widget' => '</div>',
-        'before_title' => '',
-        'after_title' => '',
+        'before_title' => '<h4>',
+        'after_title' => '</h4>',
     ));
     register_sidebar(array(
-        'id' => 'footer_phone-email',
-        'name' => __('Footer Contact Info', 'bhass'),
-        'description' => __('Company phone number and email address for the footer.', 'bhass'),
+        'id' => 'footer_right',
+        'name' => __('Footer: Right', 'bhass'),
+        'description' => __('Right section of the footer.', 'bhass'),
         'before_widget' => '<div class="widget %2$s">',
         'after_widget' => '</div>',
-        'before_title' => '',
-        'after_title' => '',
+        'before_title' => '<h4>',
+        'after_title' => '</h4>',
     ));
 }
 
