@@ -48,20 +48,12 @@ $current_url = tribe_events_get_current_filter_url();
 			</div><!-- .tribe-bar-views -->
 		<?php endif; ?>
 
-		<?php if ( ! empty( $filters ) ) { ?>
+		<?php if ( ! empty( $filters ) ) : ?>
 			<div class="tribe-bar-filters">
-				<h2>Filter</h2>
-				<?php foreach ( $filters as $filter ) : ?>
-					<div class="tribe-bar-filter <?php echo esc_attr( $filter['name'] ) ?>-filter">
-						<label class="label-<?php echo esc_attr( $filter['name'] ) ?>" for="<?php echo esc_attr( $filter['name'] ) ?>"><?php echo $filter['caption'] ?></label>
-						<?php echo $filter['html'] ?>
-					</div>
-				<?php endforeach; ?>
+				<input type="text" name="tribe-bar-search" id="tribe-bar-search">
 				<input class="tribe-events-button tribe-no-param" type="submit" name="submit-bar" value="<?php printf( esc_attr__( 'Search', 'the-events-calendar' ), tribe_get_event_label_plural() ); ?>" />
-				<!-- .tribe-bar-submit -->
 			</div>
-			<!-- .tribe-bar-filters-inner -->
-		<?php } // if ( !empty( $filters ) ) ?>
+		<?php endif; ?>
 
 	</form>
 	<!-- #tribe-bar-form -->

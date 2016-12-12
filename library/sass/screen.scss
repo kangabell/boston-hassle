@@ -16,6 +16,7 @@ $gray: #9c9c9c;
 $gray-dk: #262626;
 $white: #ffffff;
 $cream: #e2dfd2;
+$red: #e56c56;
 
 /*** OTHER ***/
 
@@ -432,9 +433,7 @@ body.events-archive main {
 .tribe-bar-filters {
 	margin-bottom: $padding*2;
 }
-.tribe-bar-filter {
-	margin-bottom: $padding/3;
-}
+
 #tribe-bar-views {
 	position: absolute;
 	top: $padding*1.75;
@@ -448,6 +447,14 @@ body.events-archive main {
 }
 #tribe-bar-collapse-toggle, .tribe-bar-views-select {
 	display: none;
+}
+
+.tribe-events-notices { // overrides
+    background: transparent;
+    border: none;
+    color: $red;
+    margin: 0;
+    padding: 0;
 }
 
 /******* 
