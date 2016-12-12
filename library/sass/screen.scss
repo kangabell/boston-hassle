@@ -16,6 +16,7 @@ $gray: #9c9c9c;
 $gray-dk: #262626;
 $white: #ffffff;
 $cream: #e2dfd2;
+$red: #e56c56;
 
 /*** OTHER ***/
 
@@ -446,6 +447,14 @@ body.events-archive main {
 }
 #tribe-bar-collapse-toggle, .tribe-bar-views-select {
 	display: none;
+}
+
+.tribe-events-notices { // overrides
+    background: transparent;
+    border: none;
+    color: $red;
+    margin: 0;
+    padding: 0;
 }
 
 /******* 
