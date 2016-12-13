@@ -438,6 +438,7 @@ body.events-archive main {
 	position: absolute;
 	top: $padding*1.75;
 	right: 0;
+	z-index: 1;
 }
 .tribe-bar-views-list li:not(.tribe-bar-active) {
 	opacity: 0.5;
@@ -455,6 +456,15 @@ body.events-archive main {
     color: $red;
     margin: 0;
     padding: 0;
+}
+
+body.events-gridview {
+	.tribe-bar-filters {
+		display: none; // hide filters (search) on month/calendar view
+	}
+	#tribe-bar-views {
+		top: 0;
+	}
 }
 
 /******* 
