@@ -1,8 +1,9 @@
 <article class="<?php echo $class; ?>">
 
 	<?php if ( $class != 'hero' && $class != 'archive' ) { echo category_name(); }; ?>
-  	<img src="https://bostonhassle.com/wp-content/uploads/2016/12/manchester0002-768x512.jpg">
-
+  	<a class="thumbnail" href="<?php the_permalink(); ?>">
+      <?php the_post_thumbnail(); ?>
+    </a>
   	<div class="text">
   		<?php if ( $class == 'hero' ) { 
   			echo category_name(); 

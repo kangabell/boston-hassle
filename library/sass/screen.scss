@@ -212,6 +212,14 @@ iframe {
 	@extend .h4;
 }
 
+article:not(.hero) .thumbnail {
+	background: $gray;
+	display: block;
+	height: 150px;
+	margin-bottom: $padding/4;
+	overflow: hidden;
+}
+
 /******* 
 GENERAL 
 *******/

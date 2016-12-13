@@ -34,7 +34,7 @@ footer section {
 body.archive, body.search-results {
 	article {
 		@include grid-row;
-		img {
+		.thumbnail {
 			@include grid-column(4,0);
 		}
 		div.text {
@@ -66,7 +66,7 @@ body.archive, body.search-results {
 	body.home {
 
 		.hero {
-			img {
+			.thumbnail {
 				@include grid-column(7);
 			}
 			div.text {
