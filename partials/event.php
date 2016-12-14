@@ -1,5 +1,7 @@
 <article>
-  	<?php echo tribe_event_featured_image(); ?>
+	<div class="thumbnail">
+	  	<?php echo tribe_event_featured_image(); ?>
+	</div>
 	<div class="text">
 	  	<p class="meta">
 	  		<?php echo tribe_events_event_schedule_details(); ?>
