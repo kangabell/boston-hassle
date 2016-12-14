@@ -93,7 +93,6 @@
           endwhile; endif;
         ?>
       </div>
-      <div class="view-all"><button>View All Posts</button></div>
     </div>
 
   </main>

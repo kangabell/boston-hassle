@@ -2,7 +2,7 @@
 
 	<?php if ( $class != 'hero' && $class != 'archive' ) { echo category_name(); }; ?>
   	<a class="thumbnail" href="<?php the_permalink(); ?>">
-      <?php the_post_thumbnail(); ?>
+      <?php the_post_thumbnail('grid-thumb'); ?>
     </a>
   	<div class="text">
   		<?php if ( $class == 'hero' ) { 

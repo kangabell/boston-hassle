@@ -149,10 +149,6 @@ body.archive, body.search-results {
 	/*** HOMEPAGE ***/
 
 	body.home {
-		.hero {
-			@include grid-column(11);
-			@include grid-col-pos(center);
-		}
 
 		.articles article {
 			@include grid-column(3);

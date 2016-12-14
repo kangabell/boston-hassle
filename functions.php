@@ -80,7 +80,7 @@ function bhass_excerpt_more($more) {
 
 // Shorten excerpt length to 100 characters
 function bhass_lengthen_excerpt( $length ) {
-    return 82;
+    return 64;
 }
 
 // Get name of first category in categories array
@@ -156,7 +156,7 @@ function bhass_theme_support() {
     // featured images
     add_theme_support( 'post-thumbnails' ); 
 
-    add_image_size( 'grid-thumb', 600, 440, array( 'center', 'center') );
+    add_image_size( 'grid-thumb', 560, 300, array( 'center', 'center') );
     
 } /* end bhass theme support */
 
