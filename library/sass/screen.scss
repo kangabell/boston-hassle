@@ -10,12 +10,11 @@ UTILITIES
 
 /*** COLORS ***/
 
-$blue: #6894aa;
 $black: #282828;
-$gray: #9c9c9c;
-$gray-dk: #262626;
+$gray: #77746a;
+$gray-dk: #312d22;
 $white: #ffffff;
-$cream: #e2dfd2;
+$cream: #f7f5ef;
 $red: #e56c56;
 
 /*** OTHER ***/
@@ -105,6 +104,7 @@ html {
 }
 
 body {
+	background: $cream;
 	color: $black;
 	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
 }
@@ -204,7 +204,7 @@ iframe {
 	color: $gray;
 	@extend .small;
 	&.category, &.category a {
-		color: $blue;
+		color: $black;
 	}
 }
 
@@ -225,9 +225,10 @@ GENERAL
 *******/
 
 div.announcement {
-	background: $blue;
+	background: $gray-dk;
 	color: $white;
-	padding: 0;
+	padding: 0.25rem;
+	text-align: right;
 	@extend .small;
 }
 
@@ -241,7 +242,8 @@ footer, .music > article + article, .film > article + article {
 }
 
 .subfooter {
-	background: $cream;
+	background: $gray-dk;
+	color: $white;
 	padding-top: $padding/2;
 	padding-bottom: $padding*1.5;
 	@extend .small;
@@ -257,9 +259,9 @@ HEADER
 *******/
 
 #header {
-	background: $gray-dk;
-	height: 7rem;
-	padding: $padding/2;
+	background: url('../banner.jpg') $gray center;
+	background-size: cover;
+	height: 11rem;
 	> div {
 		position: relative;
 	}
@@ -268,24 +270,15 @@ HEADER
 		font-size: 4rem;
 		line-height: 1;
 		position: absolute;
-		top: 0;
-		left: 0;
-	}
-	#searchform {
-		position: absolute;
-		top: 0;
-		right: 0;
+		top: $padding/4;
+		right: $padding/4;
 	}
 	h1 {
 		margin-bottom: 0;
 	}
-	.logo {
-		display: block;
-		margin: 0 auto;
-		width: 10rem;
-	}
-	a {
-		color: $cream;
+	.logo img {
+		height: auto;
+		width: 245px;
 	}
 }
 
@@ -335,7 +328,8 @@ FOOTER
 *******/
 
 footer {
-	background: $gray-dk;
+	background: url('../texture.jpg') $gray-dk;
+	background-size: cover;
 	color: $white;
 	padding-top: $padding;
 	padding-bottom: $padding*1.5;
@@ -381,7 +375,7 @@ div.events {
 		vertical-align: text-top;
 	}
 	.meta {
-		color: $blue;
+		color: $black;
 		margin-bottom: 0.25em;
 	}
 	.tribe-events-cost {
@@ -505,7 +499,4 @@ body.single, body.page {
 .tags {
 	margin-top: $padding*1.5;
 	margin-bottom: $padding*3;
-	a {
-		color: $blue;
-	}
 }

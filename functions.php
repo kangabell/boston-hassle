@@ -295,7 +295,7 @@ function custom_request($query_string ) {
 
 // Search Form
 function bhass_wpsearch($form) {
-    $form = '<span class="icon-search"></span><form role="search" method="get" id="searchform" action="' . home_url( '/' ) . '" >
+    $form = '<form role="search" method="get" id="searchform" action="' . home_url( '/' ) . '" >
     <input type="search" value="' . get_search_query() . '" name="s" id="s" placeholder="Search..." />
     <button type="submit"><span class="visually-hidden">Go</span><span class="icon-search"></span></button>
     </form>';
