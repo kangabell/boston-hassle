@@ -11,6 +11,7 @@ UTILITIES
 /*** COLORS ***/
 
 $black: #282828;
+$silver: #ccc7b5;
 $gray: #77746a;
 $gray-dk: #312d22;
 $white: #ffffff;
@@ -148,6 +149,29 @@ p {
 ul {
 	list-style-type: none;
 	padding-left: 0;
+}
+
+.single main, .page main {
+	a {
+		border-bottom: 1px solid $gray;
+		&:hover {
+			border-color: $black;
+		}
+	}
+	ul {
+		margin-left: 0;
+		padding-left: 0.75em;
+		text-indent: -0.75em;
+		li:before {
+			content: '-';
+			padding-right: 0.5em;
+		}
+	}
+}
+
+blockquote {
+	border-left: 4px solid $silver;
+	padding-left: $padding/2;
 }
 
 .small {
@@ -503,7 +527,10 @@ body.single, body.page {
 	}
 }
 
-.tags {
+div.tags {
 	margin-top: $padding*1.5;
 	margin-bottom: $padding*3;
+	a {
+		border: none;
+	}
 }
