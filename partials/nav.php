@@ -1,14 +1,13 @@
 <div class="announcement">
-  Announcement!<button style="float:right">X Close</button>
+  Announcement! From the crew. Clik herrr.
 </div>
 
 <header id="header">
   <div>
     <a class="toggle-nav" href="javascript:void(0)">&#8801;</a> 
     <h1>
-      <a class="logo" href="<?php echo get_home_url(); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/library/hassle-logo.png"></a>
+      <a class="logo" href="<?php echo get_home_url(); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/library/bhass-logo.jpg"></a>
     </h1>
-    <?php echo get_search_form(); ?>
   </div>
 </header>
 
@@ -27,6 +26,8 @@
   <section class="pages">
     <?php bhass_main_nav_links(); ?>
   </section>
+
+  <?php echo get_search_form(); ?>
 
   <section class="buttons">
     <?php bhass_main_nav_buttons(); ?>
