@@ -377,6 +377,10 @@ div.events {
 		margin-left: 0.25em;
 		vertical-align: text-top;
 	}
+	h3 { // cut off long titles
+		max-height: 2.5em;
+		overflow: hidden;
+	}
 	.meta {
 		color: $black;
 		margin-bottom: 0.25em;

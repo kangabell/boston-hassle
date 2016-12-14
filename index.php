@@ -4,7 +4,7 @@
 <main>
     <div class="hero">
       <?php 
-        query_posts ('posts_per_page=1&cat=4');
+        query_posts ('posts_per_page=1&cat=11517');
         if (have_posts()) : while (have_posts()) : the_post();
           $class = 'hero';
           include 'partials/article.php';
@@ -16,7 +16,7 @@
     <div class="secondary">
 
       <?php 
-        query_posts ('posts_per_page=2&cat=4&offset=1');
+        query_posts ('posts_per_page=2&cat=11517&offset=1');
         if (have_posts()) : while (have_posts()) : the_post();
           $class = 'featured';
           include 'partials/article.php';
@@ -53,7 +53,7 @@
       <div class="music">
         <h2>Music</h2>
         <?php
-          $loop = new WP_Query( array('posts_per_page'=>3,'cat'=>198) );
+          $loop = new WP_Query( array('posts_per_page'=>3,'cat'=>11522) );
           while ($loop->have_posts()) : 
             $loop->the_post();
             if ($loop->current_post == 0) {
@@ -68,7 +68,7 @@
       <div class="film">
         <h2>Film</h2>
         <?php
-          query_posts ('posts_per_page=4&cat=5');
+          query_posts ('posts_per_page=4&cat=11515');
           if (have_posts()) : while (have_posts()) : the_post();
             include 'partials/article-sm.php';
           endwhile; endif;
