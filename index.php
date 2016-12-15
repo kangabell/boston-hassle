@@ -1,3 +1,14 @@
+<?php
+
+    $film_id = get_cat_ID( 'Film Flam' );
+    $music_id = get_cat_ID( 'New Music' );
+
+    $film_link = get_category_link( $film_id );
+    $music_link = get_category_link( $music_id );
+?>
+
+<!-- Print a link to this category -->
+<a href="<?php echo esc_url( $category_link ); ?>" title="Category Name">Category Name</a>
 
 <?php include 'header.php'; ?>
 
@@ -51,7 +62,7 @@
     <div>
 
       <div class="music">
-        <h2>Music</h2>
+        <h2><a href="<?php echo $music_link; ?>">Music</a></h2>
         <?php
           $loop = new WP_Query( array('posts_per_page'=>3,'cat'=>11522) );
           while ($loop->have_posts()) : 
@@ -66,7 +77,7 @@
       </div>
 
       <div class="film">
-        <h2>Film</h2>
+        <h2><a href="<?php echo $film_link; ?>">Film</a></h2>
         <?php
           query_posts ('posts_per_page=4&cat=11515');
           if (have_posts()) : while (have_posts()) : the_post();
