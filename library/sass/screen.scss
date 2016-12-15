@@ -318,8 +318,7 @@ HEADER
 		padding-left: 0.125em;
 		padding-right: 0.125em;
 		position: absolute;
-		top: 50%;
-	  	transform: translateY(-50%);
+		top: $padding/2;
 		right: $padding/4;
 	}
 	h1 {
@@ -347,7 +346,7 @@ HEADER
 
 #nav {
 	background: rgba($gray-dk,0.98);
-	padding: $padding/2 $padding $padding*2;
+	padding: $padding*2 $padding;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -382,6 +381,16 @@ HEADER
 			opacity: 1;
 		}
 	}
+	&:after {
+		content: '';
+		// display: block;
+		width: 100vw;
+		height: 100vh;
+		background: rgba($cream,0.8);
+		position: absolute;
+		top: 0;
+		z-index: -1;
+		left: 100%;}
 }
 
 
