@@ -263,12 +263,18 @@ GENERAL
 
 div.announcement {
 	background: $gray-dk;
-	color: $white;
+	color: $cream;
 	padding: 0.5rem;
 	p {
 		@extend .small;
 		margin-bottom: 0;
 		text-align: center;
+	}
+	a {
+		color: $cream;
+		font-size: 1rem;
+		margin-left: $padding/3;
+		vertical-align: -2px;
 	}
 }
 @include breakpoint(medium) {
