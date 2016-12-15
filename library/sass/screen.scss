@@ -33,6 +33,23 @@ $border: 1px solid rgba($gray,0.5);
 	}
 }
 
+@mixin bullet-list {
+	margin-left: 0;
+	padding-left: 0.75em;
+	text-indent: -0.75em;
+	li:before {
+		content: '-';
+		padding-right: 0.5em;
+	}
+}
+
+@mixin underline {
+	border-bottom: 1px solid $gray;
+	&:hover {
+		border-color: $black;
+	}
+}
+
 /*** ICON FONT ***/
 
 @font-face {
@@ -165,19 +182,10 @@ ul {
 
 .single main, .page main {
 	a {
-		border-bottom: 1px solid $gray;
-		&:hover {
-			border-color: $black;
-		}
+		@include underline;
 	}
 	ul {
-		margin-left: 0;
-		padding-left: 0.75em;
-		text-indent: -0.75em;
-		li:before {
-			content: '-';
-			padding-right: 0.5em;
-		}
+		@include bullet-list;
 	}
 }
 
@@ -409,12 +417,25 @@ footer {
 	background-size: cover;
 	color: $white;
 	padding-top: $padding;
-	padding-bottom: $padding*1.5;
+	padding-bottom: $padding;
 	.columns {
 	  height: 17rem;
 	}
 	a {
 		color: $white;
+		@include underline;
+	}
+	ul {
+		@include bullet-list;
+	}
+	.footer-left {
+		h4 {
+			margin-bottom: 1em;
+		}
+		a {
+			display: inline-block;
+			margin-top: 1em;
+		}
 	}
 }
 

@@ -1,12 +1,12 @@
   <footer>
     <div>
-      <section>
+      <section class="footer-left">
         <?php dynamic_sidebar( 'footer_left' ); ?>
       </section>
-      <section>
+      <section class="footer-middle">
         <?php dynamic_sidebar( 'footer_middle' ); ?>
       </section>
-      <section>
+      <section class="footer-right">
         <?php dynamic_sidebar( 'footer_right' ); ?>
       </section>
     </div>
