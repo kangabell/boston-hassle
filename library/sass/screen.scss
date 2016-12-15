@@ -22,7 +22,16 @@ $red: #e56c56;
 
 $padding: 2rem;
 $radius: 0.25em;
-$border: 1px solid rgba($gray,0.75);
+$border: 1px solid rgba($gray,0.5);
+
+@mixin arrow {
+	&:after {
+		color: $gray;
+		content: '\2192';
+		margin-left: 0.25em;
+		vertical-align: text-top;
+	}
+}
 
 /*** ICON FONT ***/
 
@@ -121,7 +130,6 @@ h1, .h1, h2, .h2 {
 }
 h3, .h3, h4, .h4 {
 	font-weight: 600;
-	letter-spacing: 0.025em;
 	line-height: 1.25em;
 	margin-bottom: 0.25em;
 	margin-top: 0;
@@ -134,7 +142,7 @@ h2, .h2 {
 	font-size: 2rem;
 }
 h3, .h3 {
-	font-size: 1.2rem;
+	font-size: 1.1rem;
 }
 h4, .h4, h5, .h5, h6, .h6 {
 	font-size: 1rem;
@@ -238,6 +246,7 @@ iframe {
 
 article:not(.hero) .thumbnail {
 	background: $gray;
+	border: 6px solid $white;
 	display: block;
 	height: 150px;
 	margin-bottom: $padding/4;
@@ -302,7 +311,7 @@ HEADER
 	}
 	.logo img {
 		height: auto;
-		width: 245px;
+		width: 230px;
 	}
 }
 
@@ -320,6 +329,7 @@ HEADER
 	position: absolute;
 	top: 0;
 	left: 0;
+	z-index: 1;
 	section {
 		padding-top: $padding;
 		padding-bottom: $padding;
@@ -375,12 +385,12 @@ body.home {
 	  margin-top: $padding;
 	}
 	article:not(.hero) p { // shorten excerpt length
-		margin-bottom: 0.25em;
 		max-height: 3em;
 		overflow: hidden;
 	}
 	article img {
 		margin-bottom: $padding/4;
+		width: 100%;
 	}
 }
 
@@ -395,22 +405,18 @@ div.hero {
 }
 
 div.events {
-	h2 a:after {
-		color: $gray;
-		content: '\2192';
-		margin-left: 0.25em;
-		vertical-align: text-top;
+	h2 a {
+		@include arrow;
 	}
 	h3 { // cut off long titles
 		max-height: 2.5em;
 		overflow: hidden;
 	}
 	.meta {
-		color: $black;
 		margin-bottom: 0.25em;
 	}
 	.tribe-events-cost {
-		color: $gray;
+		color: $black;
 	}
 	article + article {
 		border-top: $border;
@@ -421,7 +427,10 @@ div.events {
 
 /* Music & Film Columns */
 
-.music, .film {
+div.music, div.film {
+	h2 a {
+		@include arrow;
+	}
 	h4 {
 		margin-top: 0;
 		margin-bottom: 0;
@@ -430,7 +439,7 @@ div.events {
 
 /* Compass Column */
 
-.compass {
+div.compass {
 	text-align: center;
 	img {
 		height: 14rem;
