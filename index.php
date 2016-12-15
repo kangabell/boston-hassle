@@ -88,6 +88,7 @@
       <div>
         <?php 
           query_posts ('posts_per_page=8');
+          $class = 'default';
           if (have_posts()) : while (have_posts()) : the_post();
             include 'partials/article.php';
           endwhile; endif;
