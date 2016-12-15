@@ -13,7 +13,7 @@
 <main>
     <div class="hero">
       <?php 
-        query_posts ('posts_per_page=1&cat=$featured_id');
+        query_posts ('posts_per_page=1&ignore_sticky_posts=true&cat=$featured_id');
         if (have_posts()) : while (have_posts()) : the_post();
           $class = 'hero';
           include 'partials/article.php';
@@ -25,7 +25,7 @@
     <div class="secondary">
 
       <?php 
-        query_posts ('posts_per_page=2&cat=$featured_id&offset=1');
+        query_posts ('posts_per_page=2&ignore_sticky_posts=true&cat=$featured_id&offset=1');
         if (have_posts()) : while (have_posts()) : the_post();
           $class = 'featured';
           include 'partials/article.php';
@@ -62,7 +62,7 @@
       <div class="music">
         <h2><a href="<?php echo $music_link; ?>">Music</a></h2>
         <?php
-          $loop = new WP_Query( array('posts_per_page'=>3,'cat'=>$music_id) );
+          $loop = new WP_Query( array('posts_per_page'=>3, 'ignore_sticky_posts'=>true, 'cat'=>$music_id) );
           while ($loop->have_posts()) : 
             $loop->the_post();
             if ($loop->current_post == 0) {
@@ -77,7 +77,7 @@
       <div class="film">
         <h2><a href="<?php echo $film_link; ?>">Film</a></h2>
         <?php
-          query_posts ('posts_per_page=6&cat=$film_id');
+          query_posts ('posts_per_page=6&ignore_sticky_posts=true&cat=$film_id');
           if (have_posts()) : while (have_posts()) : the_post();
             include 'partials/article-sm.php';
           endwhile; endif;
@@ -96,7 +96,7 @@
     <div class="articles">
       <div>
         <?php 
-          query_posts ('posts_per_page=8');
+          query_posts ('posts_per_page=8&ignore_sticky_posts=true');
           $class = 'default';
           if (have_posts()) : while (have_posts()) : the_post();
             include 'partials/article.php';
