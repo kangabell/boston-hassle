@@ -80,7 +80,7 @@
       <div class="film">
         <h2><a href="<?php echo $film_link; ?>">Film</a></h2>
         <?php
-          query_posts ('posts_per_page=4&cat=$film_id');
+          query_posts ('posts_per_page=6&cat=$film_id');
           if (have_posts()) : while (have_posts()) : the_post();
             include 'partials/article-sm.php';
           endwhile; endif;

@@ -100,7 +100,7 @@ function category_name() {
 function short_title() {
 
     $title = get_the_title();
-    return mb_strimwidth($title, 0, 60, '...');
+    return mb_strimwidth($title, 0, 68, '...');
 
 }
 
