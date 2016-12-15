@@ -61,20 +61,24 @@ $border: 1px solid rgba($gray,0.5);
   -moz-osx-font-smoothing: grayscale;
 }
 
+
+.icon-menu:before {
+  content: "\2630";
+}
 .icon-calendar:before, .tribe-icon-month:before {
-  content: "\e902";
+  content: "\1f4c5";
 }
 .icon-search:before {
   content: "\e903";
 }
 .icon-list:before, .tribe-icon-list:before {
-  content: "\e901";
+  content: "\2254";
 }
-.icon-cancel-circle:before {
-  content: "\e905";
+.icon-cancel:before {
+  content: "\2612";
 }
 .icon-arrow-right:before {
-  content: "\e908";
+  content: "\27f6";
 }
 .icon-facebook:before {
   content: "\e904";
@@ -260,9 +264,17 @@ GENERAL
 div.announcement {
 	background: $gray-dk;
 	color: $white;
-	padding: 0.25rem;
-	text-align: right;
-	@extend .small;
+	padding: 0.5rem;
+	p {
+		@extend .small;
+		margin-bottom: 0;
+		text-align: center;
+	}
+}
+@include breakpoint(medium) {
+	div.announcement p {
+		text-align: right;
+	}
 }
 
 footer, .music > article + article, .film > article + article {
@@ -299,19 +311,29 @@ HEADER
 		position: relative;
 	}
 	.toggle-nav {
+		background: rgba($cream,0.8);
 		font-family: sans-serif; // to get unicode symbol
-		font-size: 4rem;
-		line-height: 1;
+		font-size: 3rem;
+		line-height: 0.85;
+		padding-left: 0.125em;
+		padding-right: 0.125em;
 		position: absolute;
-		top: $padding/4;
+		top: 50%;
+	  	transform: translateY(-50%);
 		right: $padding/4;
 	}
 	h1 {
 		margin-bottom: 0;
+		text-align: center;
 	}
 	.logo img {
 		height: auto;
 		width: 230px;
+	}
+}
+@include breakpoint(medium) {
+	#header h1 {
+		text-align: left;
 	}
 }
 
@@ -352,7 +374,13 @@ HEADER
 		@extend .button;
 	}
 	.toggle-nav {
+		color: $cream;
+		font-size: 1.75rem;
 		float: right;
+		opacity: 0.8;
+		&:hover {
+			opacity: 1;
+		}
 	}
 }
 

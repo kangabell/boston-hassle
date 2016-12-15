@@ -1,10 +1,13 @@
 <div class="announcement">
-  Announcement! From the crew. Clik herrr.
+  <p>Announcement! From the crew. Might be a little long, so typing some stuff now. Clik herrr.</p>
 </div>
 
 <header id="header">
   <div>
-    <a class="toggle-nav" href="javascript:void(0)">&#8801;</a> 
+    <a class="toggle-nav" href="javascript:void(0)">
+      <span class="icon-menu"></span> 
+      <span class="visually-hidden">Menu</span>
+    </a> 
     <h1>
       <a class="logo" href="<?php echo get_home_url(); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/library/bhass-logo.jpg"></a>
     </h1>
@@ -13,7 +16,10 @@
 
 <nav id="nav">
 
-  <button class="toggle-nav">x Close</button>
+  <a class="toggle-nav" href="javascript:void(0)">
+    <span class="icon-cancel"></span> 
+    <span class="visually-hidden">Close</span>
+  </a>
 
   <section>
     <a href="/events">Calendar</a>

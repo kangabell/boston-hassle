@@ -8,9 +8,6 @@
     $music_link = get_category_link( $music_id );
 ?>
 
-<!-- Print a link to this category -->
-<a href="<?php echo esc_url( $category_link ); ?>" title="Category Name">Category Name</a>
-
 <?php include 'header.php'; ?>
 
 <main>
