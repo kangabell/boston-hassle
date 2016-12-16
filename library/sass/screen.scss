@@ -50,6 +50,13 @@ $border: 1px solid rgba($gray,0.5);
 	}
 }
 
+@mixin truncate($height) {
+  height: $height;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 /*** ICON FONT ***/
 
 @font-face {
@@ -138,6 +145,7 @@ body {
 	background: $cream;
 	color: $black;
 	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+	word-break: break-word; // wrap extra-long words so they don't break layout
 }
 h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
 	text-transform: uppercase;
@@ -157,7 +165,7 @@ h3, .h3, h4, .h4 {
 }
 
 h1, .h1 {
-	font-size: 3.25rem;
+	font-size: 2.85rem;;
 }
 h2, .h2 {
 	font-size: 2rem;
@@ -274,15 +282,20 @@ div.announcement {
 	color: $cream;
 	padding: 0.5rem;
 	p {
-		@extend .small;
 		margin-bottom: 0;
+		padding-right: $padding;
 		text-align: center;
+		@extend .small;
+		@include truncate(1.5em);
 	}
 	a {
 		color: $cream;
 		font-size: 1rem;
 		margin-left: $padding/3;
 		vertical-align: -2px;
+		position: absolute;
+		top: $padding/8;
+		right: $padding/4;
 	}
 }
 @include breakpoint(medium) {
@@ -318,16 +331,17 @@ HEADER
 *******/
 
 #header {
-	background: url('../banner.jpg') $gray center;
+	background: url('../banner.jpg') $gray;
+	background-position: left;
 	background-size: cover;
-	height: 11rem;
+	padding-bottom: $padding/4;
 	> div {
 		position: relative;
 	}
 	.toggle-nav {
 		background: rgba($cream,0.8);
 		font-family: sans-serif; // to get unicode symbol
-		font-size: 3rem;
+		font-size: 2.375rem;
 		line-height: 0.85;
 		padding-left: 0.125em;
 		padding-right: 0.125em;
@@ -341,12 +355,18 @@ HEADER
 	}
 	.logo img {
 		height: auto;
-		width: 230px;
+		width: 200px;
 	}
 }
 @include breakpoint(medium) {
-	#header h1 {
-		text-align: left;
+	#header {
+		background-position: center;
+		h1 {
+			text-align: left;
+		}
+		.logo img {
+			width: 230px;
+		}
 	}
 }
 
@@ -594,8 +614,7 @@ body.single, body.page {
 			font-size: 1rem;
 		}
 	}
-	main h1 {
-		font-size: 2.85rem;
+	main {
 		margin-bottom: $padding/2;
 	}
 	article {
