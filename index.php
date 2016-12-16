@@ -13,7 +13,13 @@
 <main>
     <div class="hero">
       <?php 
-        query_posts ('posts_per_page=1&ignore_sticky_posts=true&cat=$featured_id');
+      echo $featured_id;
+        $args = array(
+          'posts_per_page' => 1,
+          'ignore_sticky_posts' => true,
+          'cat' => $featured_id
+        );
+        query_posts ($args);
         if (have_posts()) : while (have_posts()) : the_post();
           $class = 'hero';
           include 'partials/article.php';
