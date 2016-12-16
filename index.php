@@ -13,7 +13,6 @@
 <main>
     <div class="hero">
       <?php 
-      echo $featured_id;
         $args = array(
           'posts_per_page' => 1,
           'ignore_sticky_posts' => true,
@@ -31,7 +30,13 @@
     <div class="secondary">
 
       <?php 
-        query_posts ('posts_per_page=2&ignore_sticky_posts=true&cat=$featured_id&offset=1');
+        $args = array(
+          'posts_per_page' => 2,
+          'ignore_sticky_posts' => true,
+          'cat' => $featured_id,
+          'offset' => 1
+        );
+        query_posts ($args);
         if (have_posts()) : while (have_posts()) : the_post();
           $class = 'featured';
           include 'partials/article.php';
