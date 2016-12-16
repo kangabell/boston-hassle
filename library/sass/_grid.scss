@@ -154,7 +154,7 @@ body.archive, body.search-results {
 			@include grid-column(3);
 		}
 		.music {
-			@include grid-column(5);
+			@include grid-column(4);
 		}
 
 		.film {
@@ -162,7 +162,7 @@ body.archive, body.search-results {
 		}
 
 		.compass {
-			@include grid-column(3);
+			@include grid-column(4);
 		}
 	}
 

@@ -73,14 +73,10 @@
       <div class="music">
         <h2><a href="<?php echo $music_link; ?>">Music</a></h2>
         <?php
-          $loop = new WP_Query( array('posts_per_page'=>3, 'ignore_sticky_posts'=>true, 'cat'=>$music_id) );
+          $loop = new WP_Query( array('posts_per_page'=>6, 'ignore_sticky_posts'=>true, 'cat'=>$music_id) );
           while ($loop->have_posts()) : 
             $loop->the_post();
-            if ($loop->current_post == 0) {
-              include 'partials/article.php';
-            } else {
-              include 'partials/article-sm.php';
-            }
+            include 'partials/article-sm.php';
           endwhile; wp_reset_postdata();
         ?>
       </div>
@@ -88,11 +84,11 @@
       <div class="film">
         <h2><a href="<?php echo $film_link; ?>">Film</a></h2>
         <?php
-          query_posts ('posts_per_page=6&ignore_sticky_posts=true&cat=$film_id');
-          if (have_posts()) : while (have_posts()) : the_post();
+          $loop = new WP_Query( array('posts_per_page'=>6, 'ignore_sticky_posts'=>true, 'cat'=>$film_id) );
+          while ($loop->have_posts()) : 
+            $loop->the_post();
             include 'partials/article-sm.php';
-          endwhile; endif;
-          wp_reset_query();
+          endwhile; wp_reset_postdata();
         ?>
       </div>
 
