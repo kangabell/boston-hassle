@@ -27,7 +27,7 @@
     <span class="visually-hidden">Close</span>
   </a>
 
-  <section>
+  <section class="calendar">
     <a href="/events">Calendar</a>
   </section>
 

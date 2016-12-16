@@ -237,7 +237,7 @@ button, .button, input[type='submit'] {
 	color: $white;
   	font-weight: 600;
   	letter-spacing: 0.05em;
-  	padding: 0.275rem 1rem;
+  	padding: 0.125rem 0.75rem;
   	text-transform: uppercase;
 }
 
@@ -271,6 +271,16 @@ article:not(.hero) .thumbnail {
 	height: 150px;
 	margin-bottom: $padding/4;
 	overflow: hidden;
+}
+
+#searchform {
+	input {
+		padding: 0.25em;
+	}
+	button {
+		background: transparent; // remove button style, since we're using an icon
+		font-size: 1.25em;
+	}
 }
 
 /******* 
@@ -380,29 +390,36 @@ HEADER
 
 #nav {
 	background: rgba($gray-dk,0.98);
-	padding: $padding*2 $padding;
+	padding: $padding*1.5 $padding;
+	min-height: 100vh;
 	position: absolute;
 	top: 0;
 	left: 0;
 	z-index: 1;
 	section {
-		padding-top: $padding;
-		padding-bottom: $padding;
+		padding-top: $padding/2;
+		padding-bottom: $padding/2;
 		width: 18rem;
 		+ section {
 			border-top: $border;
 		}
 	}
-	section:not(.buttons) a {
-		color: $cream;
-		display: block;
-		@extend .h2;
+	section:not(.buttons) {
+		a {
+			color: $cream;
+			@extend .h3;
+		}
+		li + li {
+			margin-top: 1em;
+		}
+	}
+	section.calendar {
+		margin-top: $padding/2;
 	}
 	section.buttons a {
 		background: $cream;
 		color: $gray-dk;
 		display: inline-block;
-		font-size: 1.025rem;
 		margin-bottom: $padding*.75;
 		@extend .button;
 	}
