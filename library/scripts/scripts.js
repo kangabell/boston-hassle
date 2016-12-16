@@ -29,6 +29,7 @@ jQuery(document).ready( function($) {
 	/*** EQUALIZE ELEMENT HEIGHTS ***/
 
 	equalize('body.home .articles article');
+	equalize('body.home .fresh-stream article');
 
 
 	/*** KEYBOARD SHORTCUTS ***/

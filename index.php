@@ -3,9 +3,13 @@
     $film_id = get_cat_ID( 'Film Flam' );
     $music_id = get_cat_ID( 'New Music' );
     $featured_id = get_cat_ID( 'Featured' );
+    $freshstream_id = get_cat_ID( 'Fresh Stream' );
+    $art_id = get_cat_ID( 'Art Attack' );
 
     $film_link = get_category_link( $film_id );
     $music_link = get_category_link( $music_id );
+    $freshstream_link = get_category_link( $freshstream_id );
+    $art_link = get_category_link( $art_id );
 ?>
 
 <?php include 'header.php'; ?>
@@ -28,13 +32,30 @@
     </div>
 
     <div class="secondary">
-
       <?php 
         $args = array(
           'posts_per_page' => 2,
           'ignore_sticky_posts' => true,
           'cat' => $featured_id,
           'offset' => 1
+        );
+        query_posts ($args);
+        if (have_posts()) : while (have_posts()) : the_post();
+          $class = 'featured';
+          include 'partials/article.php';
+        endwhile; endif;
+        wp_reset_query();
+      ?>
+    </div>
+
+    <div class="tertiary">
+
+      <?php 
+        $args = array(
+          'posts_per_page' => 2,
+          'ignore_sticky_posts' => true,
+          'cat' => $featured_id,
+          'offset' => 3
         );
         query_posts ($args);
         if (have_posts()) : while (have_posts()) : the_post();
@@ -110,6 +131,42 @@
           endwhile; endif;
         ?>
       </div>
+    </div>
+
+    <div>
+
+      <div class="fresh-stream">
+        <h2><a href="<?php echo $freshstream_link; ?>">Fresh Stream</a></h2>
+        <?php
+          $loop = new WP_Query( array('posts_per_page'=>4, 'ignore_sticky_posts'=>true, 'cat'=>$freshstream_id) );
+          while ($loop->have_posts()) : 
+            $loop->the_post();
+        ?>
+          <article>
+              <a class="thumbnail" href="<?php the_permalink(); ?>">
+                <?php the_post_thumbnail('grid-thumb'); ?>
+              </a>
+              <div class="text">
+                <h3><a href="<?php the_permalink(); ?>"><?php echo short_title(); ?></a></h3>
+              </div>
+              <p class="meta"><?php echo get_the_author(); ?></p>
+          </article>
+        <?php
+          endwhile; wp_reset_postdata();
+        ?>
+      </div>
+
+      <div class="art">
+        <h2><a href="<?php echo $art_link; ?>">Art</a></h2>
+        <?php
+          $loop = new WP_Query( array('posts_per_page'=>9, 'ignore_sticky_posts'=>true, 'cat'=>$art_id) );
+          while ($loop->have_posts()) : 
+            $loop->the_post();
+            include 'partials/article-sm.php';
+          endwhile; wp_reset_postdata();
+        ?>
+      </div>
+
     </div>
 
   </main>
