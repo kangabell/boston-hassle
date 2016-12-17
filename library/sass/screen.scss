@@ -50,7 +50,7 @@ $border: 1px solid rgba($gray,0.5);
 	}
 }
 
-@mixin truncate($height) {
+@mixin truncate($height:null) {
   height: $height;
   white-space: nowrap;
   overflow: hidden;
@@ -290,13 +290,13 @@ GENERAL
 div.announcement {
 	background: $gray-dk;
 	color: $cream;
-	padding: 0.5rem;
 	p {
 		margin-bottom: 0;
-		padding-right: $padding;
+		padding: 0.5rem $padding 0.5rem 0.5rem;
+		position: relative;
 		text-align: center;
 		@extend .small;
-		@include truncate(1.5em);
+		@include truncate();
 	}
 	a {
 		color: $cream;
@@ -377,8 +377,13 @@ HEADER
 		.logo img {
 			width: 230px;
 		}
+		.toggle-nav {
+			font-size: 2rem;
+		}
 	}
 }
+
+/*** Overlay Nav ***/
 
 #nav, .nav-closed #nav {
 	display: none;
@@ -394,7 +399,7 @@ HEADER
 	min-height: 100vh;
 	position: absolute;
 	top: 0;
-	left: 0;
+	right: 0;
 	z-index: 1;
 	section {
 		padding-top: $padding/2;
@@ -432,16 +437,57 @@ HEADER
 			opacity: 1;
 		}
 	}
-	&:after {
+	&:after { // overlay
 		content: '';
-		// display: block;
 		width: 100vw;
 		height: 100vh;
 		background: rgba($cream,0.8);
 		position: absolute;
 		top: 0;
 		z-index: -1;
-		left: 100%;}
+		right: 100%;
+	}
+}
+
+/*** Desktop Primary Nav ***/
+
+#header .desktop {
+	position: absolute;
+	right: 0.5em;
+	bottom: 0;
+	.menu, .calendar {
+		float: right;
+	}
+	a {
+		background: rgba($cream, 0.75);
+		padding: 0.125em 0.75em;
+		@extend .h4;
+		&:hover {
+			background-color: rgba($cream, 1);
+		}
+	}
+	ul {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+	li { // some weird stuff happening here to make things look a little more hand-made and "fucked up"
+		display: inline-block;
+		margin-left: 1em;
+		&:first-child {
+			transform: rotate(-2deg);
+		}
+		&:nth-of-type(3) {
+			margin-left: 0.75em;
+			margin-bottom: 4px;
+			transform: translateY(-2px);
+		}
+		&:nth-of-type(3) a {
+			padding-right: 0.65em;
+		}
+	}
+	.calendar {
+		margin-left: 1.25em;
+	}
 }
 
 

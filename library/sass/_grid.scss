@@ -3,8 +3,12 @@
 GRID 
 *******/
 
-nav {
+#nav {
 	width: 100%;
+}
+
+#header .desktop {
+	display: none;
 }
 
 main {
@@ -47,6 +51,18 @@ body.archive, body.search-results {
 }
 
 @include breakpoint(medium) {
+
+	#header .desktop {
+		display: block;
+	}
+
+	#nav .mobile {
+		display: none;
+	}
+
+	#nav {
+		@include grid-column(5);
+	}
 
 	img.left {
 		float: left;
@@ -159,10 +175,6 @@ body.archive, body.search-results {
 
 
 @include breakpoint(large) {
-
-	nav {
-		@include grid-column(5);
-	}
 
 	/*** HOMEPAGE ***/
 
