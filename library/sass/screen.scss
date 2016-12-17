@@ -50,7 +50,7 @@ $border: 1px solid rgba($gray,0.5);
 	}
 }
 
-@mixin truncate($height) {
+@mixin truncate($height:null) {
   height: $height;
   white-space: nowrap;
   overflow: hidden;
@@ -290,13 +290,13 @@ GENERAL
 div.announcement {
 	background: $gray-dk;
 	color: $cream;
-	padding: 0.5rem;
 	p {
 		margin-bottom: 0;
-		padding-right: $padding;
+		padding: 0.5rem $padding 0.5rem 0.5rem;
+		position: relative;
 		text-align: center;
 		@extend .small;
-		@include truncate(1.5em);
+		@include truncate();
 	}
 	a {
 		color: $cream;
