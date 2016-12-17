@@ -95,7 +95,11 @@
       <div class="music">
         <h2><a href="<?php echo $music_link; ?>">Music</a></h2>
         <?php // all Music articles
-          $loop = new WP_Query( array('posts_per_page'=>6, 'ignore_sticky_posts'=>true, 'cat'=>$music_id) );
+          $loop = new WP_Query( array(
+            'posts_per_page'=>6, 
+            'ignore_sticky_posts'=>true, 
+            'cat'=>$music_id
+          ) );
           while ($loop->have_posts()) : 
             $loop->the_post();
             include 'partials/article-sm.php';
@@ -106,7 +110,11 @@
       <div class="film">
         <h2><a href="<?php echo $film_link; ?>">Film</a></h2>
         <?php // all Film articles
-          $loop = new WP_Query( array('posts_per_page'=>6, 'ignore_sticky_posts'=>true, 'cat'=>$film_id) );
+          $loop = new WP_Query( array(
+            'posts_per_page'=>6, 
+            'ignore_sticky_posts'=>true, 
+            'cat'=>$film_id
+          ) );
           while ($loop->have_posts()) : 
             $loop->the_post();
             include 'partials/article-sm.php';
@@ -124,8 +132,12 @@
 
     <div class="articles">
       <div>
-        <?php // all articles, except featured ones
-          $loop = new WP_Query( array('posts_per_page'=>8, 'ignore_sticky_posts'=>true, 'category__not_in' => array($featured_id) ) );
+        <?php // all articles, except Featured & Fresh Stream ones
+          $loop = new WP_Query( array(
+            'posts_per_page'=>8, 
+            'ignore_sticky_posts'=>true, 
+            'category__not_in' => array($featured_id, $freshstream_id) 
+          ) );
           while ($loop->have_posts()) : 
             $class = 'default';
             $loop->the_post();
@@ -140,7 +152,11 @@
       <div class="fresh-stream">
         <h2><a href="<?php echo $freshstream_link; ?>">Fresh Stream</a></h2>
         <?php // all Fresh Stream articles
-          $loop = new WP_Query( array('posts_per_page'=>4, 'ignore_sticky_posts'=>true, 'cat'=>$freshstream_id) );
+          $loop = new WP_Query( array(
+            'posts_per_page'=>4, 
+            'ignore_sticky_posts'=>true, 
+            'cat'=>$freshstream_id
+          ) );
           while ($loop->have_posts()) : 
             $loop->the_post();
         ?>
@@ -161,7 +177,11 @@
       <div class="art">
         <h2><a href="<?php echo $art_link; ?>">Art</a></h2>
         <?php // all Art articles
-          $loop = new WP_Query( array('posts_per_page'=>9, 'ignore_sticky_posts'=>true, 'cat'=>$art_id) );
+          $loop = new WP_Query( array(
+            'posts_per_page'=>9, 
+            'ignore_sticky_posts'=>true, 
+            'cat'=>$art_id
+          ) );
           while ($loop->have_posts()) : 
             $loop->the_post();
             include 'partials/article-sm.php';
@@ -173,8 +193,13 @@
 
     <div class="articles">
       <div>
-        <?php // more articles, but not Featured ones
-        $loop = new WP_Query( array('posts_per_page'=>8, 'ignore_sticky_posts'=>true, 'offset' => 8, 'category__not_in' => array($featured_id) ) );
+        <?php // more articles, but not Featured or Fresh Stream ones
+        $loop = new WP_Query( array(
+          'posts_per_page'=>8, 
+          'ignore_sticky_posts'=>true, 
+          'offset' => 8, 
+          'category__not_in' => array($featured_id, $freshstream_id) 
+        ) );
         while ($loop->have_posts()) : 
           $class = 'default';
           $loop->the_post();
