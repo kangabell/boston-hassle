@@ -9,6 +9,7 @@
 </div>
 
 <header id="header">
+  
   <div>
     <a class="toggle-nav" href="javascript:void(0)">
       <span class="icon-menu"></span> 
@@ -17,6 +18,12 @@
     <h1>
       <a class="logo" href="<?php echo get_home_url(); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/library/bhass-logo.jpg"></a>
     </h1>
+
+    <div class="desktop">
+      <a href="/events" class="calendar">Calendar</a>
+      <?php bhass_main_nav_categories(); ?>
+    </div>
+
   </div>
 </header>
 
@@ -27,11 +34,11 @@
     <span class="visually-hidden">Close</span>
   </a>
 
-  <section class="calendar">
+  <section class="calendar mobile">
     <a href="/events">Calendar</a>
   </section>
 
-  <section class="categories">
+  <section class="categories mobile">
     <?php bhass_main_nav_categories(); ?>
   </section>
 
