@@ -169,6 +169,18 @@
 
     </div>
 
+    <div class="articles">
+      <div>
+        <?php 
+          query_posts ('posts_per_page=8&ignore_sticky_posts=true&offset=8');
+          $class = 'default';
+          if (have_posts()) : while (have_posts()) : the_post();
+            include 'partials/article.php';
+          endwhile; endif;
+        ?>
+      </div>
+    </div>
+
   </main>
 
 <?php get_footer(); ?>

@@ -483,7 +483,6 @@ HOMEPAGE
 
 body.home {
 	main {
-	  margin-top: $padding;
 	  padding-bottom: $padding*2;
 	}
 	article:not(.hero) p { // shorten excerpt length
@@ -614,7 +613,19 @@ body.events-gridview {
 	#tribe-bar-views {
 		top: 0;
 	}
+	&.events-archive #tribe-events-content table .type-tribe_events {
+		padding: 0 4px;
+	}
+	.tribe-events-month-event-title {
+		height: 1.25em;
+		overflow: hidden;
+	}
+	#tribe-events-content .tribe-events-tooltip h4.entry-title {
+		line-height: 1.25em !important;
+		margin-top: 0.25em;
+	}
 }
+
 .tribe-events-past {
 	opacity: 0.3;
 }
