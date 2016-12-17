@@ -399,7 +399,7 @@ HEADER
 	min-height: 100vh;
 	position: absolute;
 	top: 0;
-	left: 0;
+	right: 0;
 	z-index: 1;
 	section {
 		padding-top: $padding/2;
@@ -437,7 +437,7 @@ HEADER
 			opacity: 1;
 		}
 	}
-	&:after {
+	&:after { // overlay
 		content: '';
 		width: 100vw;
 		height: 100vh;
@@ -445,7 +445,8 @@ HEADER
 		position: absolute;
 		top: 0;
 		z-index: -1;
-		left: 100%;}
+		right: 100%;
+	}
 }
 
 /*** Desktop Primary Nav ***/
