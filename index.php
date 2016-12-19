@@ -166,7 +166,7 @@
         <h2><a href="<?php echo $freshstream_link; ?>">Fresh Stream</a></h2>
         <?php // all Fresh Stream articles
           $loop = new WP_Query( array(
-            'posts_per_page'=>4, 
+            'posts_per_page'=>6, 
             'ignore_sticky_posts'=>true, 
             'cat'=>$freshstream_id
           ) );

@@ -29,9 +29,19 @@ footer section {
 
 /*** HOMEPAGE ***/
 
-.music, .film, .compass, .articles article {
-	margin-top: $padding*2;
+body.home {
+	.music, .film, .compass, .articles article {
+		margin-top: $padding*2;
+	}
+
+	div.fresh-stream {
+		@include grid-row;
+		article {
+			@include grid-column(6);
+		}
+	}
 }
+
 
 /*** ARCHIVE PAGES ***/
 
@@ -134,12 +144,8 @@ body.archive, body.search-results {
 			@include grid-column(6);
 		}
 
-		div.fresh-stream, div.art {
-			@include grid-column(6);
-		}
-
 		div.fresh-stream article {
-			@include grid-column(6);
+			@include grid-column(4);
 		}
 	}
 
@@ -193,6 +199,13 @@ body.archive, body.search-results {
 
 		.compass {
 			@include grid-column(4);
+		}
+
+		div.fresh-stream {
+			@include grid-column(7);
+		}
+		div.art {
+			@include grid-column(5);
 		}
 	}
 
