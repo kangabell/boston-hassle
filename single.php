@@ -20,10 +20,11 @@
         <?php the_tags(''); ?>
       </div>
 
-      <div class="comments">
-        <h3>Comments</h3>
-        <div style="height:20rem;background:silver"></div>
-      </div>
+      <?php
+        if ( comments_open() || get_comments_number() ) {
+          comments_template();
+        }
+      ?>
 
     </article>
       
