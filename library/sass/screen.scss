@@ -41,6 +41,9 @@ $border: 1px solid rgba($gray,0.5);
 		content: '-';
 		padding-right: 0.5em;
 	}
+	li + li {
+		margin-top: 0.25em;
+	}
 }
 
 @mixin underline {
@@ -520,6 +523,15 @@ footer {
 			display: inline-block;
 			margin-top: 1em;
 		}
+	}
+	.social a {
+	    font-size: 1.125rem;
+	    border: 0;
+	    margin-right: 0.25em;
+	    opacity: 0.75;
+	    &:hover {
+	    	opacity: 1;
+	    }
 	}
 }
 

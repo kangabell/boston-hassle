@@ -31,7 +31,7 @@ footer section {
 
 body.home {
 	.music, .film, .compass, .articles article {
-		margin-top: $padding*2;
+		margin-top: $padding;
 	}
 
 	div.fresh-stream {
@@ -93,16 +93,6 @@ body.archive, body.search-results {
 
 		main > div {
 			margin-top: $padding;
-		}
-
-		.hero {
-			.thumbnail {
-				@include grid-column(7);
-			}
-			div.text {
-				margin-top: $padding;
-				@include grid-column(5);
-			}
 		}
 
 		.secondary article {
@@ -185,6 +175,16 @@ body.archive, body.search-results {
 	/*** HOMEPAGE ***/
 
 	body.home {
+
+		.hero {
+			.thumbnail {
+				@include grid-column(7);
+			}
+			div.text {
+				margin-top: $padding;
+				@include grid-column(5);
+			}
+		}
 
 		.articles article {
 			@include grid-column(3);
