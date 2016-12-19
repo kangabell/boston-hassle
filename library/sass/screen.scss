@@ -190,6 +190,9 @@ ul {
 	list-style-type: none;
 	padding-left: 0;
 }
+ol {
+	padding-left: 1.125rem;
+}
 
 .single main, .page main {
 	a {
@@ -223,6 +226,19 @@ blockquote {
     width: 1px;
 }
 
+/******* 
+FORMS 
+*******/
+
+input, textarea {
+	border: 1px solid $silver;
+	opacity: 0.8;
+	padding: 0.25em;
+	&:focus {
+		opacity: 1;
+		outline: none;
+	}
+}
 
 
 /******* 
@@ -236,12 +252,17 @@ a {
 
 button, .button, input[type='submit'] {
 	background: $gray;
+	border: 0;
 	border-radius: $radius;
 	color: $white;
   	font-weight: 600;
   	letter-spacing: 0.05em;
   	padding: 0.125rem 0.75rem;
   	text-transform: uppercase;
+  	opacity: 0.8;
+  	&:hover {
+  		opacity: 1;
+  	}
 }
 
 label {
@@ -277,14 +298,9 @@ article:not(.hero) .thumbnail {
 	margin-bottom: $padding/4;
 }
 
-#searchform {
-	input {
-		padding: 0.25em;
-	}
-	button {
-		background: transparent; // remove button style, since we're using an icon
-		font-size: 1.25em;
-	}
+#searchform button {
+	background: transparent; // remove button style, since we're using an icon
+	font-size: 1.25em;
 }
 
 /******* 
@@ -726,5 +742,37 @@ div.tags {
 	margin-bottom: $padding*3;
 	a {
 		border: none;
+	}
+}
+
+section.comments {
+	border-top: $border;
+	padding-top: $padding;
+	h2 {
+		margin-bottom: $padding;
+	}
+	h3 {
+		margin-top: $padding;
+	}
+	.comment {
+		margin-top: $padding/2;
+		max-width: 48rem;
+	}
+	.comment-author {
+		cite {
+			font-style: normal;
+			text-transform: uppercase;
+			font-weight: bold;
+		}
+		.says {
+			display: none;
+		}
+	}
+	.comment-reply-link {
+		@extend .h4;
+	}
+	.comment-notes {
+		color: $gray;
+		@extend .small;
 	}
 }
