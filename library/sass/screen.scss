@@ -265,12 +265,13 @@ iframe {
 }
 
 article:not(.hero) .thumbnail {
-	background: $gray;
+	background-color: $gray;
+	background-size: cover;
+	background-position: center;
 	border: 6px solid $white;
 	display: block;
 	height: 150px;
 	margin-bottom: $padding/4;
-	overflow: hidden;
 }
 
 #searchform {

@@ -1,13 +1,8 @@
 <article class="<?php echo $class; ?>">
 
-	<?php if ( $class != 'hero' && $class != 'archive' ) { echo category_name(); }; ?>
-  	<a class="thumbnail" href="<?php the_permalink(); ?>">
-      <?php the_post_thumbnail('grid-thumb'); ?>
-    </a>
+	<?php if ( $class != 'archive' ) { echo category_name(); }; ?>
+  	<a class="thumbnail" href="<?php the_permalink(); ?>" style="background-image: url('<?php the_post_thumbnail_url(); ?>')"></a>
   	<div class="text">
-  		<?php if ( $class == 'hero' ) { 
-  			echo category_name(); 
-  		} ?>
   		<?php if ( $class == 'archive' ) { 
   			echo '<p class="meta category">' . get_the_category_list(', ') . '</p>';
   		} ?>

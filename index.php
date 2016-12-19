@@ -25,8 +25,21 @@
         );
         query_posts ($args);
         if (have_posts()) : while (have_posts()) : the_post();
-          $class = 'hero';
-          include 'partials/article.php';
+      ?>
+        <article class="hero">
+
+          <a class="thumbnail" href="<?php the_permalink(); ?>">
+            <?php the_post_thumbnail('large'); ?>
+          </a>
+          <div class="text">
+            <?php echo category_name(); ?>
+            <h3><a href="<?php the_permalink(); ?>"><?php echo short_title(); ?></a></h3>
+            <?php the_excerpt(); ?>
+            <p class="meta"><?php echo get_the_author(); ?></p>
+          </div>
+
+        </article>  
+      <?php
         endwhile; endif;
         wp_reset_query();
       ?>
@@ -161,9 +174,7 @@
             $loop->the_post();
         ?>
           <article>
-              <a class="thumbnail" href="<?php the_permalink(); ?>">
-                <?php the_post_thumbnail('grid-thumb'); ?>
-              </a>
+              <a class="thumbnail" href="<?php the_permalink(); ?>" style="background-image: url('<?php the_post_thumbnail_url(); ?>')"></a>
               <div class="text">
                 <h3><a href="<?php the_permalink(); ?>"><?php echo short_title(); ?></a></h3>
               </div>
