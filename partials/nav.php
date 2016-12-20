@@ -1,12 +1,3 @@
-<div class="announcement">
-  <p>
-    Announcement! From the crew. Might be a little long, so typing some stuff now. Clik herrr.
-    <a href="javascript:void(0)">
-      <span class="icon-cancel"></span> 
-      <span class="visually-hidden">Dismiss</span>
-    </a>
-  </p> 
-</div>
 
 <header id="header">
   

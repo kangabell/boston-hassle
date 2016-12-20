@@ -24,6 +24,8 @@ $padding: 2rem;
 $radius: 0.25em;
 $border: 1px solid rgba($gray,0.5);
 
+$topbar-height: 2rem;
+
 @mixin arrow {
 	&:after {
 		color: $gray;
@@ -73,7 +75,7 @@ $border: 1px solid rgba($gray,0.5);
   font-style: normal;
 }
 
-[class^="icon-"], [class*=" icon-"], [class^="tribe-icon-"], [class*=" tribe-icon-"] {
+[class^="icon-"], [class*=" icon-"], [class^="tribe-icon-"], [class*=" tribe-icon-"], .x_close {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
   speak: none;
@@ -101,7 +103,7 @@ $border: 1px solid rgba($gray,0.5);
 .icon-list:before, .tribe-icon-list:before {
   content: "\2254";
 }
-.icon-cancel:before {
+.icon-cancel:before, .x_close:before {
   content: "\2612";
 }
 .icon-arrow-right:before {
@@ -307,33 +309,6 @@ article:not(.hero) .thumbnail {
 GENERAL 
 *******/
 
-div.announcement {
-	background: $gray-dk;
-	color: $cream;
-	p {
-		margin-bottom: 0;
-		padding: 0.5rem $padding 0.5rem 0.5rem;
-		position: relative;
-		text-align: center;
-		@extend .small;
-		@include truncate();
-	}
-	a {
-		color: $cream;
-		font-size: 1rem;
-		margin-left: $padding/3;
-		vertical-align: -2px;
-		position: absolute;
-		top: $padding/8;
-		right: $padding/4;
-	}
-}
-@include breakpoint(medium) {
-	div.announcement p {
-		text-align: right;
-	}
-}
-
 footer, .music > article + article, .film > article + article, .art > article + article {
   margin-top: $padding/2;
 }
@@ -508,6 +483,42 @@ HEADER
 	.calendar {
 		margin-left: 1.25em;
 	}
+}
+
+/*** Top Bar Announcement ***/
+
+div#catapult-cookie-bar {
+	background: $gray-dk;
+	color: $cream;
+	height: $topbar-height;
+	position: absolute;
+	.ctcc-inner {
+		padding: 0.5rem $padding 0.5rem 0.5rem;
+		position: relative;
+		text-align: center;
+		@extend .small;
+		@include truncate();
+	}
+	a {
+		border-bottom: 1px solid $gray;
+		&:hover {
+			border-color: $cream;
+		}
+	}
+	.x_close {
+		color: $cream;
+		cursor: pointer;
+		font-size: 1.125rem;
+		margin-left: $padding/3;
+		vertical-align: -2px;
+		position: absolute;
+		top: $padding/4;
+		right: $padding/4;
+	}
+}
+
+.has-cookie-bar body { // make space for Announcement Top Bar
+	padding-top: $topbar-height;
 }
 
 
