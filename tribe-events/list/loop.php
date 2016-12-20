@@ -19,10 +19,14 @@ global $more;
 $more = false;
 ?>
 
-<?php while ( have_posts() ) : the_post(); ?>
-	<?php do_action( 'tribe_events_inside_before_loop' ); ?>
+<?php while ( have_posts() ) : the_post();
+	do_action( 'tribe_events_inside_before_loop' );
 
-	<?php get_template_part('partials/event'); ?>
+	if ( tribe_event_in_category('hassle-shows') ) {
+		get_template_part('partials/event');
+	} else {
+		get_template_part('partials/event-sm');
+	}
 
-	<?php do_action( 'tribe_events_inside_after_loop' ); ?>
-<?php endwhile; ?>
+	do_action( 'tribe_events_inside_after_loop' );
+endwhile; ?>
