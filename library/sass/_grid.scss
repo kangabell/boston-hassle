@@ -43,23 +43,6 @@ body.home {
 }
 
 
-/*** ARCHIVE PAGES ***/
-
-body.archive, body.search-results {
-	article {
-		@include grid-row;
-		.thumbnail {
-			@include grid-column(4,0);
-		}
-		div.text {
-			@include grid-column(8);
-		}
-		+ article {
-			margin-top: $padding;
-		}
-	}
-}
-
 @include breakpoint(medium) {
 
 	#header .desktop {
@@ -154,6 +137,18 @@ body.archive, body.search-results {
 	body.archive, body.search-results {
 		main {
 			@include grid-row;
+		}
+		article {
+			@include grid-row;
+			.thumbnail {
+				@include grid-column(4,0);
+			}
+			div.text {
+				@include grid-column(8);
+			}
+			+ article {
+				margin-top: $padding;
+			}
 		}
 	}
 

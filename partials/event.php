@@ -1,7 +1,7 @@
 <article>
-	<div class="thumbnail">
-	  	<?php echo tribe_event_featured_image(); ?>
-	</div>
+	<a href="<?php echo esc_url( tribe_get_event_link() ); ?>" class="thumbnail" style="background-image: url('<?php the_post_thumbnail_url(); ?>')">
+	  	<?php //echo tribe_event_featured_image(); ?>
+	</a>
 	<div class="text">
 	  	<p class="meta">
 	  		<?php echo tribe_events_event_schedule_details(); ?>

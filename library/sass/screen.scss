@@ -298,6 +298,7 @@ article:not(.hero) .thumbnail {
 	display: block;
 	height: 150px;
 	margin-bottom: $padding/4;
+	overflow: hidden;
 }
 
 #searchform button {
@@ -604,9 +605,6 @@ div.events {
 	.meta {
 		margin-bottom: 0.25em;
 	}
-	.tribe-events-cost {
-		color: $black;
-	}
 	article + article {
 		border-top: $border;
 		padding-top: $padding/4;
@@ -660,8 +658,14 @@ aside .widget {
 EVENTS PAGE 
 *******/
 
-body.events-archive main {
-	position: relative;
+body.events-archive {
+	main {
+		position: relative;
+	}
+	article .meta + p { // excerpt
+		height: 4.5em;
+		overflow: hidden;
+	}
 }
 
 .tribe-bar-filters {
@@ -682,6 +686,10 @@ body.events-archive main {
 }
 #tribe-bar-collapse-toggle, .tribe-bar-views-select {
 	display: none;
+}
+
+.tribe-events-cost {
+	color: $black;
 }
 
 .tribe-events-notices { // overrides
