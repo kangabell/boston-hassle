@@ -175,6 +175,12 @@ body.single, body.page {
 		margin-bottom: $padding*1.5;
 		.meta {
 			font-size: 1rem;
+			a {
+				border-bottom: none;
+			}
+		}
+		h1 {
+			margin-bottom: $padding/2;
 		}
 	}
 	main {

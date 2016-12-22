@@ -5,11 +5,16 @@
   <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
     <header>
-      <?php echo category_name(); ?>
+      
+      <p class="meta">
+        <span class="datetime"><?php printf(__('<time pubdate>%1$s</time>', 'bhass'), get_the_time('M d, Y')); ?></span>
+        | <span class="category"><?php echo get_the_category_list(', '); ?></span>
+      </p>
 
       <h1><?php the_title(); ?></h1>
 
-      <p class="meta"><?php echo get_the_author(); ?></p>
+      <p class="meta">by <?php the_author_posts_link(); ?></p>
+
     </header>
 
     <article>
