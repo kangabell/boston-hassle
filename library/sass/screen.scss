@@ -205,7 +205,6 @@ table {
 nav.pagination {
 	border-top: $border;
 	margin-top: $padding*2;
-	margin-bottom: $padding*2;
 	padding-top: $padding;
 	@extend .h3;
 	.next-link {
@@ -451,6 +450,7 @@ footer {
 		@include bullet-list;
 	}
 	.footer-left {
+		margin-bottom: $padding/2;
 		h4 {
 			margin-bottom: 1em;
 		}
