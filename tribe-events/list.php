@@ -28,9 +28,13 @@
         <?php do_action( 'tribe_events_before_loop' ); ?>
         <?php tribe_get_template_part( 'list/loop' ) ?>
         <?php do_action( 'tribe_events_after_loop' ); ?>
-      <?php endif; ?>
+      <?php 
+        endif;
+        get_template_part('partials/pagination');
+      ?>
 
       </div>
+
       <!-- #tribe-events-footer -->
       <?php do_action( 'tribe_events_after_footer' ) ?>
 

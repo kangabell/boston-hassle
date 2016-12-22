@@ -119,7 +119,7 @@ body.events-archive {
 .tribe-bar-views-list li:hover {
 	opacity: 1;
 }
-#tribe-bar-collapse-toggle, .tribe-bar-views-select {
+#tribe-bar-collapse-toggle, .tribe-bar-views-select, .tribe-events-ical { // clean out some unwanted stuff
 	display: none;
 }
 
