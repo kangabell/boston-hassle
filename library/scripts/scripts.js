@@ -52,6 +52,7 @@ jQuery(document).ready( function($) {
 	}
 
 	function openNav() {
+		window.scrollTo(0,0);
 		$('body').removeClass('nav-closed').addClass('nav-open');
 	}
 
