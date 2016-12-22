@@ -107,6 +107,19 @@ input, textarea {
 	}
 }
 
+label {
+	display: block;
+	margin-bottom: 0.125em;;
+	@extend .small;
+}
+
+.checkbox {
+	margin-top: $padding/3;
+	span { // checkbox label
+		color: $gray;
+	}
+}
+
 
 /*************
 COMPONENTS 
@@ -133,15 +146,8 @@ button, .button, input[type='submit'] {
   	}
 }
 
-label {
-	color: $gray;
-	display: block;
-	margin-bottom: 0.125em;;
-	@extend .small;
-}
-
 iframe {
-	max-width: 100%;
+	width: 100%;
 }
 
 .meta {
