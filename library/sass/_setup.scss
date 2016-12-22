@@ -1,0 +1,135 @@
+
+/******* 
+UTILITIES
+*******/
+
+/*** FONTS ***/
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i');
+
+@font-face {
+  font-family: 'DIN Cond';
+  src: url('../fonts/din_condensed_bold.woff2') format('woff2'),
+       url('../fonts/din_condensed_bold.woff') format('woff'),
+       url('../fonts/din_condensed_bold.ttf') format('truetype');
+}
+
+/*** COLORS ***/
+
+$black: #282828;
+$silver: #ccc7b5;
+$gray: #77746a;
+$gray-dk: #312d22;
+$white: #ffffff;
+$cream: #f7f5ef;
+$red: #e56c56;
+
+/*** OTHER ***/
+
+$padding: 2rem;
+$radius: 0.25em;
+$border: 1px solid rgba($gray,0.5);
+
+$topbar-height: 2rem;
+
+@mixin arrow {
+	&:after {
+		color: $gray;
+		content: '\2192';
+		margin-left: 0.25em;
+		vertical-align: text-top;
+	}
+}
+
+@mixin bullet-list {
+	margin-left: 0;
+	padding-left: 0.75em;
+	text-indent: -0.75em;
+	li:before {
+		content: '-';
+		padding-right: 0.5em;
+	}
+	li + li {
+		margin-top: 0.25em;
+	}
+}
+
+@mixin underline {
+	border-bottom: 1px solid $gray;
+	&:hover {
+		border-color: $black;
+	}
+}
+
+@mixin truncate($height:null) {
+  height: $height;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/*** ICON FONT ***/
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot');
+  src:  url('../fonts/icomoon.eot#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf') format('truetype'),
+    url('../fonts/icomoon.woff') format('woff'),
+    url('../fonts/icomoon.svg#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"], [class^="tribe-icon-"], [class*=" tribe-icon-"], .x_close {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+.icon-menu:before {
+  content: "\2630";
+}
+.icon-calendar:before, .tribe-icon-month:before {
+  content: "\1f4c5";
+}
+.icon-search:before {
+  content: "\e903";
+}
+.icon-list:before, .tribe-icon-list:before {
+  content: "\2254";
+}
+.icon-cancel:before, .x_close:before {
+  content: "\2612";
+}
+.icon-arrow-right:before {
+  content: "\27f6";
+}
+.icon-facebook:before {
+  content: "\e904";
+}
+.icon-twitter:before {
+  content: "\e906";
+}
+.icon-youtube:before {
+  content: "\e907";
+}
+
+/*** FOUNDATION (by Zurb) ***/
+// used just for the grid system.
+
+@import "settings";
+@import "foundation";
+@include foundation-global-styles;
+@import "grid";
+

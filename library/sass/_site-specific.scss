@@ -1,0 +1,233 @@
+
+
+/******* 
+HOMEPAGE 
+*******/
+
+body.home {
+	main {
+	  padding-bottom: $padding*2;
+	}
+	article:not(.hero) p { // shorten excerpt length
+		max-height: 3em;
+		overflow: hidden;
+	}
+	article img {
+		margin-bottom: $padding/4;
+		width: 100%;
+	}
+	main h2 a {
+		@include arrow;
+	}
+}
+
+div.hero {
+	margin-bottom: $padding*1.5;
+	img {
+		width: 100%;
+	}
+	h3 {
+		@extend .h1;
+	}
+}
+
+div.events {
+	h2 a {
+		@include arrow;
+	}
+	h3 {
+		@include truncate(1.25em);
+	}
+	.meta {
+		margin-bottom: 0.25em;
+	}
+	article + article {
+		border-top: $border;
+		padding-top: $padding/4;
+		margin-top: $padding/4;
+	}
+}
+
+/* Music, Film, & Art Columns */
+
+div.music, div.film, div.art {
+	h4 {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+}
+
+/* Compass Column */
+
+div.compass {
+	text-align: center;
+	img {
+		height: 14rem;
+		margin-top: $padding;
+		max-width: 12rem;
+	}
+	h3 {
+		text-align: left;
+	}
+	a {
+		display: table;
+		margin-top: $padding;
+	}
+}
+
+/* Fresh Stream Column */
+
+div.fresh-stream article {
+	margin-bottom: $padding/2;
+}
+
+
+/******* 
+ARCHIVE 
+*******/
+
+aside .widget {
+	margin-bottom: $padding*2;
+}
+
+/******* 
+EVENTS PAGE 
+*******/
+
+body.events-archive {
+	main {
+		position: relative;
+	}
+	article .meta + p { // excerpt
+		height: 4.5em;
+		overflow: hidden;
+	}
+}
+
+.tribe-bar-filters {
+	margin-bottom: $padding*2;
+}
+
+#tribe-bar-views {
+	position: absolute;
+	top: $padding*1.75;
+	right: 0;
+	z-index: 1;
+}
+.tribe-bar-views-list li:not(.tribe-bar-active) {
+	opacity: 0.5;
+}
+.tribe-bar-views-list li:hover {
+	opacity: 1;
+}
+#tribe-bar-collapse-toggle, .tribe-bar-views-select {
+	display: none;
+}
+
+.tribe-events-cost {
+	color: $black;
+}
+
+.tribe-events-notices { // overrides
+    background: transparent;
+    border: none;
+    color: $red;
+    margin: 0;
+    padding: 0;
+}
+
+body.events-gridview {
+	.tribe-bar-filters {
+		display: none; // hide filters (search) on month/calendar view
+	}
+	#tribe-bar-views {
+		top: 0;
+	}
+	&.events-archive #tribe-events-content table .type-tribe_events {
+		padding: 0 4px;
+	}
+	.tribe-events-month-event-title {
+		height: 1.25em;
+		overflow: hidden;
+	}
+	#tribe-events-content .tribe-events-tooltip h4.entry-title {
+		line-height: 1.25em !important;
+		margin-top: 0.25em;
+	}
+}
+
+.tribe-events-past {
+	opacity: 0.3;
+}
+.tribe-events-month-event-title {
+	line-height: 1;
+}
+.tribe-events-nav-next {
+	margin-left: $padding/2;
+}
+
+/******* 
+SINGLE 
+*******/
+
+body.single, body.page {
+	main header {
+		margin-top: $padding*1.5;
+		margin-bottom: $padding*1.5;
+		.meta {
+			font-size: 1rem;
+		}
+	}
+	main {
+		margin-bottom: $padding/2;
+	}
+	article {
+		p {
+			font-size: 1.05rem;
+			margin-bottom: $padding;
+		}
+		img {
+			margin-bottom: $padding/2;
+		}
+	}
+}
+
+div.tags {
+	margin-top: $padding*1.5;
+	margin-bottom: $padding*3;
+	a {
+		border: none;
+	}
+}
+
+section.comments {
+	border-top: $border;
+	padding-top: $padding;
+	h2 {
+		margin-bottom: $padding;
+	}
+	h3 {
+		margin-top: $padding;
+	}
+	.comment {
+		margin-top: $padding/2;
+		max-width: 48rem;
+	}
+	.comment-author {
+		cite {
+			font-style: normal;
+			text-transform: uppercase;
+			font-weight: bold;
+		}
+		.says {
+			display: none;
+		}
+	}
+	.comment-reply-link {
+		@extend .h4;
+	}
+	.comment-notes {
+		color: $gray;
+		@extend .small;
+	}
+}

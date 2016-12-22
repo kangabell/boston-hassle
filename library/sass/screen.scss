@@ -1,146 +1,11 @@
-/* Welcome to Compass.
- * In this file you should write your main styles. (or centralize your imports)
- * Import this file using the following HTML or equivalent:
- * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import 'setup';
 
 
-/******* 
-UTILITIES 
-*******/
-
-/*** COLORS ***/
-
-$black: #282828;
-$silver: #ccc7b5;
-$gray: #77746a;
-$gray-dk: #312d22;
-$white: #ffffff;
-$cream: #f7f5ef;
-$red: #e56c56;
-
-/*** OTHER ***/
-
-$padding: 2rem;
-$radius: 0.25em;
-$border: 1px solid rgba($gray,0.5);
-
-$topbar-height: 2rem;
-
-@mixin arrow {
-	&:after {
-		color: $gray;
-		content: '\2192';
-		margin-left: 0.25em;
-		vertical-align: text-top;
-	}
-}
-
-@mixin bullet-list {
-	margin-left: 0;
-	padding-left: 0.75em;
-	text-indent: -0.75em;
-	li:before {
-		content: '-';
-		padding-right: 0.5em;
-	}
-	li + li {
-		margin-top: 0.25em;
-	}
-}
-
-@mixin underline {
-	border-bottom: 1px solid $gray;
-	&:hover {
-		border-color: $black;
-	}
-}
-
-@mixin truncate($height:null) {
-  height: $height;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-/*** ICON FONT ***/
-
-@font-face {
-  font-family: 'icomoon';
-  src:  url('../fonts/icomoon.eot');
-  src:  url('../fonts/icomoon.eot#iefix') format('embedded-opentype'),
-    url('../fonts/icomoon.ttf') format('truetype'),
-    url('../fonts/icomoon.woff') format('woff'),
-    url('../fonts/icomoon.svg#icomoon') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
-[class^="icon-"], [class*=" icon-"], [class^="tribe-icon-"], [class*=" tribe-icon-"], .x_close {
-  /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'icomoon' !important;
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-
-.icon-menu:before {
-  content: "\2630";
-}
-.icon-calendar:before, .tribe-icon-month:before {
-  content: "\1f4c5";
-}
-.icon-search:before {
-  content: "\e903";
-}
-.icon-list:before, .tribe-icon-list:before {
-  content: "\2254";
-}
-.icon-cancel:before, .x_close:before {
-  content: "\2612";
-}
-.icon-arrow-right:before {
-  content: "\27f6";
-}
-.icon-facebook:before {
-  content: "\e904";
-}
-.icon-twitter:before {
-  content: "\e906";
-}
-.icon-youtube:before {
-  content: "\e907";
-}
-
-
-// @import "compass/reset";
-@import "settings";
-@import "foundation";
-@include foundation-global-styles;
-// @include foundation-grid;
-@import "grid";
-
-
-/******* 
+/*************
 TYPOGRAPHY 
 & OTHER BITS
-*******/
-
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i');
-
-@font-face {
-  font-family: 'DIN Cond';
-  src: url('../fonts/din_condensed_bold.woff2') format('woff2'),
-       url('../fonts/din_condensed_bold.woff') format('woff'),
-       url('../fonts/din_condensed_bold.ttf') format('truetype');
-}
+*************/
 
 html {
 	font-size: 14px;
@@ -228,9 +93,9 @@ blockquote {
     width: 1px;
 }
 
-/******* 
+/*************
 FORMS 
-*******/
+*************/
 
 input, textarea {
 	border: 1px solid $silver;
@@ -243,9 +108,9 @@ input, textarea {
 }
 
 
-/******* 
+/*************
 COMPONENTS 
-*******/
+*************/
 
 a {
 	color: $black;
@@ -324,9 +189,9 @@ table {
 	}
 }
 
-/******* 
+/*************
 GENERAL 
-*******/
+*************/
 
 footer, .music > article + article, .film > article + article, .art > article + article {
   margin-top: $padding/2;
@@ -350,7 +215,7 @@ main > header {
 	margin-bottom: $padding;
 }
 
-/******* 
+/*************
 HEADER 
 *******/
 
@@ -541,9 +406,9 @@ div#catapult-cookie-bar {
 }
 
 
-/******* 
+/*************
 FOOTER 
-*******/
+*************/
 
 footer {
 	background: url('../texture.jpg') $gray-dk;
@@ -581,235 +446,8 @@ footer {
 	}
 }
 
+/*************
+SITE-SPECIFIC 
+*************/
 
-/******* 
-HOMEPAGE 
-*******/
-
-body.home {
-	main {
-	  padding-bottom: $padding*2;
-	}
-	article:not(.hero) p { // shorten excerpt length
-		max-height: 3em;
-		overflow: hidden;
-	}
-	article img {
-		margin-bottom: $padding/4;
-		width: 100%;
-	}
-	main h2 a {
-		@include arrow;
-	}
-}
-
-div.hero {
-	margin-bottom: $padding*1.5;
-	img {
-		width: 100%;
-	}
-	h3 {
-		@extend .h1;
-	}
-}
-
-div.events {
-	h2 a {
-		@include arrow;
-	}
-	h3 {
-		@include truncate(1.25em);
-	}
-	.meta {
-		margin-bottom: 0.25em;
-	}
-	article + article {
-		border-top: $border;
-		padding-top: $padding/4;
-		margin-top: $padding/4;
-	}
-}
-
-/* Music, Film, & Art Columns */
-
-div.music, div.film, div.art {
-	h4 {
-		margin-top: 0;
-		margin-bottom: 0;
-	}
-}
-
-/* Compass Column */
-
-div.compass {
-	text-align: center;
-	img {
-		height: 14rem;
-		margin-top: $padding;
-		max-width: 12rem;
-	}
-	h3 {
-		text-align: left;
-	}
-	a {
-		display: table;
-		margin-top: $padding;
-	}
-}
-
-/* Fresh Stream Column */
-
-div.fresh-stream article {
-	margin-bottom: $padding/2;
-}
-
-
-/******* 
-ARCHIVE 
-*******/
-
-aside .widget {
-	margin-bottom: $padding*2;
-}
-
-/******* 
-EVENTS PAGE 
-*******/
-
-body.events-archive {
-	main {
-		position: relative;
-	}
-	article .meta + p { // excerpt
-		height: 4.5em;
-		overflow: hidden;
-	}
-}
-
-.tribe-bar-filters {
-	margin-bottom: $padding*2;
-}
-
-#tribe-bar-views {
-	position: absolute;
-	top: $padding*1.75;
-	right: 0;
-	z-index: 1;
-}
-.tribe-bar-views-list li:not(.tribe-bar-active) {
-	opacity: 0.5;
-}
-.tribe-bar-views-list li:hover {
-	opacity: 1;
-}
-#tribe-bar-collapse-toggle, .tribe-bar-views-select {
-	display: none;
-}
-
-.tribe-events-cost {
-	color: $black;
-}
-
-.tribe-events-notices { // overrides
-    background: transparent;
-    border: none;
-    color: $red;
-    margin: 0;
-    padding: 0;
-}
-
-body.events-gridview {
-	.tribe-bar-filters {
-		display: none; // hide filters (search) on month/calendar view
-	}
-	#tribe-bar-views {
-		top: 0;
-	}
-	&.events-archive #tribe-events-content table .type-tribe_events {
-		padding: 0 4px;
-	}
-	.tribe-events-month-event-title {
-		height: 1.25em;
-		overflow: hidden;
-	}
-	#tribe-events-content .tribe-events-tooltip h4.entry-title {
-		line-height: 1.25em !important;
-		margin-top: 0.25em;
-	}
-}
-
-.tribe-events-past {
-	opacity: 0.3;
-}
-.tribe-events-month-event-title {
-	line-height: 1;
-}
-.tribe-events-nav-next {
-	margin-left: $padding/2;
-}
-
-/******* 
-SINGLE 
-*******/
-
-body.single, body.page {
-	main header {
-		margin-top: $padding*1.5;
-		margin-bottom: $padding*1.5;
-		.meta {
-			font-size: 1rem;
-		}
-	}
-	main {
-		margin-bottom: $padding/2;
-	}
-	article {
-		p {
-			font-size: 1.05rem;
-			margin-bottom: $padding;
-		}
-		img {
-			margin-bottom: $padding/2;
-		}
-	}
-}
-
-div.tags {
-	margin-top: $padding*1.5;
-	margin-bottom: $padding*3;
-	a {
-		border: none;
-	}
-}
-
-section.comments {
-	border-top: $border;
-	padding-top: $padding;
-	h2 {
-		margin-bottom: $padding;
-	}
-	h3 {
-		margin-top: $padding;
-	}
-	.comment {
-		margin-top: $padding/2;
-		max-width: 48rem;
-	}
-	.comment-author {
-		cite {
-			font-style: normal;
-			text-transform: uppercase;
-			font-weight: bold;
-		}
-		.says {
-			display: none;
-		}
-	}
-	.comment-reply-link {
-		@extend .h4;
-	}
-	.comment-notes {
-		color: $gray;
-		@extend .small;
-	}
-}
+@import 'site-specific';
