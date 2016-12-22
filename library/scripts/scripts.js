@@ -2,6 +2,8 @@ jQuery(document).ready( function($) {
 
 	/*** NAV ***/
 
+	fullHeight('#nav');
+
 	$('body').addClass('nav-closed');
 
 	$('.toggle-nav').click( function(e) {
@@ -35,7 +37,7 @@ jQuery(document).ready( function($) {
 	/*** KEYBOARD SHORTCUTS ***/
 
 	$(document).keydown(function(e) {
-		if ( e.keyCode == 77 ){ // m
+		if ( e.keyCode == 77 ){ // m key
 			openNav();
 		} else if ( e.keyCode == 27 ){ // esc key
 			closeNav();
@@ -43,6 +45,11 @@ jQuery(document).ready( function($) {
 	});
 
 	/*** FUNCTIONS **/
+
+	function fullHeight(el) {
+		var documentH = $(document).height();
+		$(el).css('height',documentH);
+	}
 
 	function openNav() {
 		$('body').removeClass('nav-closed').addClass('nav-open');
@@ -54,18 +61,18 @@ jQuery(document).ready( function($) {
 
 	function getMaxHeight(s) {
 
-	    var maxHeight = 0;
+		var maxHeight = 0;
 
-	    // get biggest and set as tileHeight
-	    $(s).each(function(){
-	       if ( $(this).height() > maxHeight ) { maxHeight = $(this).height(); }
-	    });
+		// get biggest and set as tileHeight
+		$(s).each(function(){
+			if ( $(this).height() > maxHeight ) { maxHeight = $(this).height(); }
+		});
 
-	    return maxHeight;
+		return maxHeight;
 	}
 
 	function equalize(s) {
-	    $(s).height( getMaxHeight(s) );
+		$(s).height( getMaxHeight(s) );
 	}
 
 } );

@@ -296,7 +296,7 @@ HEADER
 }
 
 #nav {
-	background: rgba($gray-dk,0.98);
+	background: rgba($gray-dk,0.95);
 	padding: $padding*1.5 $padding;
 	min-height: 100vh;
 	position: absolute;
@@ -348,6 +348,12 @@ HEADER
 		top: 0;
 		z-index: -1;
 		right: 100%;
+	}
+}
+
+@include breakpoint(medium) {
+	#nav section.pages {
+		border-top: none;
 	}
 }
 
