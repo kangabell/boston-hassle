@@ -306,6 +306,24 @@ article:not(.hero) .thumbnail {
 	font-size: 1.25em;
 }
 
+table {
+	border: 1px solid $gray-dk;
+	margin-bottom: $padding/2;
+	img {
+		max-width: 160px;
+	}
+	th {
+		@extend .h4;
+	}
+	tr, td {
+		padding: $padding/3;
+	}
+	tr {
+		border-bottom: $border;
+		font-size: 0.85rem;
+	}
+}
+
 /******* 
 GENERAL 
 *******/
