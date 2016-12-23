@@ -5,15 +5,15 @@
 
 		<?php the_comments_navigation(); ?>
 
-		<ol class="comment-list">
+		<ul class="comment-list">
 			<?php
 				wp_list_comments( array(
-					'style'       => 'ol',
+					'style'       => 'ul',
 					'short_ping'  => true,
 					'avatar_size' => 42,
 				) );
 			?>
-		</ol>
+		</ul>
 
 		<?php the_comments_navigation(); ?>
 
@@ -29,6 +29,7 @@
 	<?php
 		comment_form( array(
 			'title_reply_before' => '<h3>',
+			'title_reply' => 'Leave a Comment',
 			'title_reply_after'  => '</h3>',
 		) );
 	?>

@@ -61,6 +61,9 @@ p {
 ul {
 	list-style-type: none;
 	padding-left: 0;
+	ul {
+		margin-left: $padding;
+	}
 }
 ol {
 	padding-left: 1.125rem;
@@ -70,6 +73,9 @@ ol {
 	a {
 		@include underline;
 	}
+}
+
+.single article, .page article {
 	ul {
 		@include bullet-list;
 	}

@@ -222,7 +222,7 @@ section.comments {
 		margin-top: $padding;
 	}
 	.comment {
-		margin-top: $padding/2;
+		margin-top: $padding;
 		max-width: 48rem;
 	}
 	.comment-author {
@@ -238,7 +238,10 @@ section.comments {
 	.comment-reply-link {
 		@extend .h4;
 	}
-	.comment-notes {
+	.comment-meta {
+		margin-bottom: $padding/3;
+	}
+	.comment-notes, .comment-awaiting-moderation, .comment-meta a {
 		color: $gray;
 		@extend .small;
 	}

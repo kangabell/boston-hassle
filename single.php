@@ -25,13 +25,13 @@
         <?php the_tags(''); ?>
       </div>
 
-      <?php
-        if ( comments_open() || get_comments_number() ) {
-          comments_template();
-        }
-      ?>
-
     </article>
+
+    <?php
+      if ( comments_open() || get_comments_number() ) {
+        comments_template();
+      }
+    ?>
       
   </main>
 
