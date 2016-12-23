@@ -165,6 +165,13 @@ body.events-gridview {
 	margin-left: $padding/2;
 }
 
+.tribe-events-single-section-title {
+	border-top: $border;
+	margin-top: $padding;
+	padding-top: $padding;
+	@extend .h2;
+}
+
 /******* 
 SINGLE 
 *******/

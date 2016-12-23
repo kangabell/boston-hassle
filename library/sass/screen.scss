@@ -222,6 +222,16 @@ table {
 	}
 }
 
+/*** Definition Lists ***/
+
+dt {
+	margin-top: $padding/2;
+	@extend .h4;
+}
+dd {
+	margin-left: 0;
+}
+
 /*** Page Navigation **/
 
 nav.pagination {
