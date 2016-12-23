@@ -3,6 +3,9 @@
 <main>
   
   <header>
+    <?php if (is_author()) {
+      echo '<p class="subheading">Articles by</p>';
+    } ?>
     <h1>
       <?php 
         if (is_category()) { 

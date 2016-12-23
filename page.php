@@ -6,6 +6,11 @@
 
     <header>
       <h1><?php the_title(); ?></h1>
+      <?php if ( get_field('subheading') ) : ?>
+      	<p class="subheading">
+	      	<?php the_field('subheading'); ?>
+      	</p>
+      <?php endif; ?>
     </header>
 
     <article>

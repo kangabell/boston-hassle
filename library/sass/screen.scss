@@ -47,6 +47,11 @@ h4, .h4, h5, .h5, h6, .h6 {
 	font-size: 1rem;
 }
 
+.subheading {
+	color: $gray;
+	@extend .h3;
+}
+
 p {
 	font-size: 1rem;
 	margin-bottom: 0.75em;
