@@ -40,6 +40,11 @@ article + article {
 /*** HOMEPAGE ***/
 
 body.home {
+	.hero .thumbnail {
+		display: block;
+		max-height: 20rem;
+		overflow: hidden;
+	}
 	div.tertiary, div.events, .music, .film, .compass, .articles article {
 		margin-top: $padding;
 	}
@@ -100,6 +105,10 @@ body.home {
 
 		article + article, div.events {
 			margin-top: 0; // reset from mobile style
+		}
+
+		.hero .thumbnail {
+			max-height: 30rem;
 		}
 
 		.secondary article {
