@@ -23,13 +23,17 @@ $event_id = get_the_ID();
 
     <header>
 
+      <p class="meta">
+        <?php echo tribe_events_event_schedule_details( $event_id ); ?>
+        <?php if ( tribe_get_cost() ) : ?>
+          <span class="tribe-events-cost"><?php echo tribe_get_cost( null, true ) ?></span>
+        <?php endif; ?>
+      </p>
+      
       <h1><?php the_title(); ?></h1>
 
       <p class="meta">
-      	<?php echo tribe_events_event_schedule_details( $event_id ); ?>
-      	<?php if ( tribe_get_cost() ) : ?>
-      		<span class="tribe-events-cost"><?php echo tribe_get_cost( null, true ) ?></span>
-      	<?php endif; ?>
+        <?php echo tribe_get_venue() ?>
       </p>
     </header>
 
