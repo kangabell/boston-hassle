@@ -71,7 +71,10 @@ ol {
 
 .single main, .page main {
 	a {
-		@include underline;
+		@include link-underline($cream, darken($gray,10));
+		&:hover {
+			color: $black;
+		}
 	}
 }
 
@@ -490,7 +493,10 @@ footer {
 	}
 	a {
 		color: $white;
-		@include underline;
+		border-bottom: 1px solid $gray;
+		&:hover {
+			border-color: $cream;
+		}
 	}
 	ul {
 		@include bullet-list;
