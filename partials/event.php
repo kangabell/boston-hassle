@@ -1,5 +1,5 @@
 <article>
-	<a href="<?php echo esc_url( tribe_get_event_link() ); ?>" class="thumbnail" style="background-image: url('<?php the_post_thumbnail_url(); ?>')"></a>
+	<a href="<?php echo esc_url( tribe_get_event_link() ); ?>" class="thumbnail" style="background-image: url('<?php the_post_thumbnail_url('grid-thumb'); ?>')"></a>
 	<div class="text">
 	  	<p class="meta">
 	  		<?php echo tribe_events_event_schedule_details(); ?>
