@@ -21,11 +21,11 @@
     
       <?php the_content(); ?>
 
-      <div class="tags meta">
-        <?php the_tags(''); ?>
-      </div>
-
     </article>
+
+    <section class="tags meta">
+      <?php the_tags(''); ?>
+    </section>
 
     <?php
       if ( comments_open() || get_comments_number() ) {

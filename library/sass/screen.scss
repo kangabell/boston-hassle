@@ -69,18 +69,20 @@ ol {
 	padding-left: 1.125rem;
 }
 
-.single main, .page main {
-	a {
-		@include link-underline($cream, darken($gray,10));
-		&:hover {
-			color: $black;
-		}
-	}
+::selection {
+	background: $gray;
+	color: $cream;
 }
 
 .single article, .page article {
 	ul {
 		@include bullet-list;
+	}
+	a {
+		@include link-underline($cream, darken($gray,10));
+		&:hover {
+			color: $black;
+		}
 	}
 }
 

@@ -204,12 +204,9 @@ body.single, body.page {
 	}
 }
 
-div.tags {
+section.tags {
 	margin-top: $padding*1.5;
-	margin-bottom: $padding*3;
-	a {
-		border: none;
-	}
+	margin-bottom: $padding;
 }
 
 section.comments {

@@ -78,9 +78,17 @@ $topbar-height: 2rem;
   background-position: 0% 95%;
 }
 
+@mixin text-selection($selection) {
+  &::selection {
+    @include text-underline-crop($selection);
+    background: $selection;
+  }
+}
+
 @mixin link-underline($background, $text){
   @include text-underline-crop($background);
   @include text-underline($background, $text);
+  @include text-selection($gray);
   color: $text;
   text-decoration: none;
   *, *:after, &:after, *:before, &:before {
