@@ -69,6 +69,12 @@ ol {
 	padding-left: 1.125rem;
 }
 
+hr {
+	border-top: 1px solid $silver;
+	margin-top: $padding;
+	margin-bottom: $padding;
+}
+
 ::selection {
 	background: $gray;
 	color: $cream;
