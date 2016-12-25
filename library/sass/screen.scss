@@ -79,7 +79,7 @@ ol {
 		@include bullet-list;
 	}
 	a {
-		@include link-underline($cream, darken($gray,10));
+		@include underline();
 		&:hover {
 			color: $black;
 		}
