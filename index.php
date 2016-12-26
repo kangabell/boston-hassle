@@ -80,7 +80,7 @@
       ?>
 
       <div class="events">
-        <h2><a href="/events">Go To</a></h2>
+        <h2><a href="<?php echo tribe_get_events_link(); ?>">Go To</a></h2>
         <?php // upcoming events in the Go To category
           $events = tribe_get_events( array(
               'posts_per_page' => 5,
