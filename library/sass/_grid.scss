@@ -42,7 +42,8 @@ article + article {
 body.home {
 	.hero .thumbnail {
 		display: block;
-		max-height: 20rem;
+		max-height: 12rem;
+		margin-bottom: $padding/4;
 		overflow: hidden;
 	}
 	div.tertiary, div.events, .music, .film, .compass, .articles article {
