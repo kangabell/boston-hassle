@@ -241,7 +241,7 @@ body.home {
 		div.left {
 			@include grid-column(8,0);
 		}
-		aside {
+		aside.sidebar {
 			@include grid-column(4);
 			> div {
 				@include grid-row;
