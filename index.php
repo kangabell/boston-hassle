@@ -137,8 +137,9 @@
 
       <div class="compass">
         <h2>Boston Compass</h2>
-        <img src="<?php echo get_stylesheet_directory_uri(); ?>/library/img.png">
-        <a href="">Read More</a>
+        <div data-configid="8887085/41956514" style="width:100%; height:308px;" class="issuuembed"></div>
+        <script type="text/javascript" src="//e.issuu.com/embed.js" async="true"></script>
+        <a href="/boston-compass-2/about">Read More</a>
       </div>
 
     </div>

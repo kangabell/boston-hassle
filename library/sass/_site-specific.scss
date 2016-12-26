@@ -56,24 +56,6 @@ div.music, div.film, div.art {
 	}
 }
 
-/* Compass Column */
-
-div.compass {
-	text-align: center;
-	img {
-		height: 14rem;
-		margin-top: $padding;
-		max-width: 12rem;
-	}
-	h3 {
-		text-align: left;
-	}
-	a {
-		display: table;
-		margin-top: $padding;
-	}
-}
-
 /* Fresh Stream Column */
 
 div.fresh-stream article {
