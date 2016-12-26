@@ -107,18 +107,43 @@ body.events-archive {
 	margin-bottom: $padding*2;
 }
 
+/*** Views Selection ***/
 #tribe-bar-views {
 	position: absolute;
 	top: $padding*1.75;
 	right: 0;
 	z-index: 1;
 }
-.tribe-bar-views-list li:not(.tribe-bar-active) {
-	opacity: 0.5;
+.tribe-bar-views-list li {
+	display: inline;
+	font-size: 1.25rem;
+	margin-right: $padding/3;
+	&:not(.tribe-bar-active) {
+		opacity: 0.5;
+	}
+	&:hover {
+		opacity: 1;
+	}
 }
-.tribe-bar-views-list li:hover {
-	opacity: 1;
+.tribe-bar-views-option-list a {
+	&:before {
+		@extend [class^="icon-"];
+		@extend .icon-list;
+	}
+	span {
+		@extend .visually-hidden;
+	}
 }
+.tribe-bar-views-option-month a {
+	&:before {
+		@extend [class^="icon-"];
+		@extend .icon-calendar;
+	}
+	span {
+		@extend .visually-hidden;
+	}
+}
+
 #tribe-bar-collapse-toggle, .tribe-bar-views-select, .tribe-events-ical { // clean out some unwanted stuff
 	display: none;
 }

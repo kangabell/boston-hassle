@@ -86,7 +86,7 @@ $topbar-height: 2rem;
   font-style: normal;
 }
 
-[class^="icon-"], [class*=" icon-"], [class^="tribe-icon-"], [class*=" tribe-icon-"], .x_close {
+[class^="icon-"], [class*=" icon-"], .x_close {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
   speak: none;
@@ -105,13 +105,13 @@ $topbar-height: 2rem;
 .icon-menu:before {
   content: "\2630";
 }
-.icon-calendar:before, .tribe-icon-month:before {
+.icon-calendar:before {
   content: "\1f4c5";
 }
 .icon-search:before {
   content: "\e903";
 }
-.icon-list:before, .tribe-icon-list:before {
+.icon-list:before {
   content: "\2254";
 }
 .icon-cancel:before, .x_close:before {
