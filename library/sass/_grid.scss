@@ -203,7 +203,7 @@ body.home {
 	body.home {
 
 		.hero {
-			.thumbnail {
+			div.image {
 				@include grid-column(7);
 			}
 			div.text {

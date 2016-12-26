@@ -28,9 +28,11 @@
       ?>
         <article class="hero">
 
-          <a class="thumbnail" href="<?php the_permalink(); ?>">
-            <?php the_post_thumbnail('large'); ?>
-          </a>
+          <div class="image">
+            <a class="thumbnail" href="<?php the_permalink(); ?>">
+              <?php the_post_thumbnail('large'); ?>
+            </a>
+          </div>
           <div class="text">
             <?php echo category_name(); ?>
             <h3><a href="<?php the_permalink(); ?>"><?php echo short_title(); ?></a></h3>

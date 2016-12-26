@@ -204,11 +204,14 @@ iframe {
 	@extend .h4;
 }
 
+article .thumbnail {
+	border: 6px solid $white;
+}
+
 article:not(.hero) .thumbnail {
-	background-color: $gray;
+	background-color: $white;
 	background-size: cover;
 	background-position: center;
-	border: 6px solid $white;
 	display: block;
 	height: 150px;
 	margin-bottom: $padding/4;
