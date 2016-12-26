@@ -238,6 +238,15 @@ function bhass_register_sidebars() {
         'after_title' => '</h2>',
     ));
     register_sidebar(array(
+        'id' => 'sidebar_page',
+        'name' => __('Page Sidebar', 'bhass'),
+        'description' => __('The sidebar for the pages using the "Two-Column Page" template.', 'bhass'),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h2>',
+        'after_title' => '</h2>',
+    ));
+    register_sidebar(array(
         'id' => 'footer_left',
         'name' => __('Footer: Left', 'bhass'),
         'description' => __('Left section of the footer.', 'bhass'),

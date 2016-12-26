@@ -165,9 +165,9 @@ body.home {
 		}
 	}
 
-	/*** ARCHIVE PAGES ***/
+	/*** PAGES WITH SIDEBARS ***/
 
-	body.archive, body.search-results {
+	body.archive, body.search-results, body.page-template-page-twocolumn {
 		main {
 			@include grid-row;
 		}
@@ -184,7 +184,7 @@ body.home {
 
 	/*** SINGLE PAGE & DEFAULT PAGES ***/
 
-	body.single, body.page, body.error404 {
+	body.single, body.page:not(.page-template-page-twocolumn), body.error404 {
 		main {
 			@include grid-column(11);
 			@include grid-col-pos(center);
@@ -234,9 +234,9 @@ body.home {
 		}
 	}
 
-	/*** ARCHIVE PAGES ***/
+	/*** PAGES WITH SIDEBARS ***/
 
-	body.archive, body.search-results {
+	body.archive, body.search-results, body.page-template-page-twocolumn {
 		div.left {
 			@include grid-column(8,0);
 		}
@@ -260,7 +260,7 @@ body.home {
 
 	/*** SINGLE & DEFAULT PAGES ***/
 
-	body.single, body.page {
+	body.single, body.page:not(.page-template-page-twocolumn) {
 		main {
 			@include grid-column(8);
 			@include grid-col-pos(center);
