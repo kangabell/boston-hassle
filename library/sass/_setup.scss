@@ -55,6 +55,14 @@ $topbar-height: 2rem;
 	}
 }
 
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
 /*** Underlines for Links ***/
 
 @mixin underline {

@@ -16,6 +16,10 @@ main {
 	padding: $padding/2;
 }
 
+hr  {
+	width: 100%;
+}
+
 #header > div, .announcement > p, .articles > div, footer > div, .subfooter > div, .single article, section.tags {
 	@include grid-row;
 }
@@ -181,6 +185,12 @@ body.home {
 				@include grid-column(8);
 			}
 		}
+	}
+
+	/*** BIO PAGE ***/
+
+	.page-template-page-bio img {
+		@include grid-column(4);
 	}
 
 	/*** SINGLE PAGE & DEFAULT PAGES ***/
