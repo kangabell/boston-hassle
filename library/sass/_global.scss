@@ -148,8 +148,8 @@ label {
 
 /*************
 COMPONENTS 
+reusable bits of stuff
 *************/
-// reusable bits of stuff
 
 a {
 	color: $black;
@@ -228,20 +228,23 @@ article:not(.hero) .thumbnail {
 /*** Tables ***/
 
 table {
-	border: 1px solid $gray-dk;
 	margin-bottom: $padding/2;
 	img {
 		max-width: 160px;
 	}
-	th {
-		@extend .h4;
+	th, tr, td {
+		padding: $padding/2;
 	}
-	tr, td {
-		padding: $padding/3;
+	th {
+		text-align: left;
+		@extend .h4;
 	}
 	tr {
 		border-bottom: $border;
 		font-size: 0.85rem;
+	}
+	th + th, td + td {
+		border-left: 1px solid $silver;
 	}
 }
 
