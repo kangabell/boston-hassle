@@ -194,6 +194,7 @@ body.nav-open {
 /*** Top Bar Announcement ***/
 
 div#catapult-cookie-bar {
+	display: none; // hide on mobile – not enough space
 	background: $gray-dk;
 	color: $cream;
 	height: $topbar-height;
@@ -223,10 +224,15 @@ div#catapult-cookie-bar {
 	}
 }
 
-.has-cookie-bar body { // make space for Announcement Top Bar
-	padding-top: $topbar-height;
-	&.logged-in #catapult-cookie-bar { // compensate for wordpress admin bar
-		top: 30px;
+@include breakpoint(medium) {
+	div#catapult-cookie-bar {
+		display: block;
+	}
+	.has-cookie-bar body { // make space for Announcement Top Bar
+		padding-top: $topbar-height;
+		&.logged-in #catapult-cookie-bar { // compensate for wordpress admin bar
+			top: 30px;
+		}
 	}
 }
 
