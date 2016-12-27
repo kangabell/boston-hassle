@@ -273,6 +273,15 @@ function bhass_register_sidebars() {
         'before_title' => '<h4>',
         'after_title' => '</h4>',
     ));
+    register_sidebar(array(
+        'id' => 'home_widget',
+        'name' => __('Homepage Widget', 'bhass'),
+        'description' => __('Customizable section on the homepage.', 'bhass'),
+        'before_widget' => '<div>',
+        'after_widget' => '</div>',
+        'before_title' => '<h2>',
+        'after_title' => '</h2>',
+    ));
 }
 
 

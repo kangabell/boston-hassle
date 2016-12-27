@@ -50,7 +50,7 @@ body.home {
 		margin-bottom: $padding/4;
 		overflow: hidden;
 	}
-	div.tertiary, div.events, .music, .film, .compass, .articles article {
+	div.tertiary, div.events, .music, .film, .home-widget, .articles article {
 		margin-top: $padding;
 	}
 
@@ -94,7 +94,7 @@ body.home {
 		margin-left: $padding/2;
 	}
 
-	.music, .film, .compass, .articles article {
+	.music, .film, .home-widget, .articles article {
 		margin-top: $padding;
 	}
 
@@ -144,7 +144,7 @@ body.home {
 			@include grid-column(7);
 		}
 
-		.compass {
+		.home-widget {
 			@include grid-column(5);
 			> div {
 				@include grid-row;
@@ -233,7 +233,7 @@ body.home {
 			@include grid-column(4);
 		}
 
-		.compass {
+		.home-widget {
 			@include grid-column(4);
 		}
 
