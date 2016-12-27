@@ -1,7 +1,7 @@
 
-/******* 
+/*************
 HOMEPAGE 
-*******/
+*************/
 
 body.home {
 	main {
@@ -63,17 +63,17 @@ div.fresh-stream article {
 }
 
 
-/******* 
-ARCHIVE 
-*******/
+/*************
+ARCHIVE  
+*************/
 
 aside .widget {
 	margin-bottom: $padding*2;
 }
 
-/******* 
-EVENTS PAGE 
-*******/
+/*************
+EVENTS PAGE  
+*************/
 
 body.events-archive {
 	main {
@@ -179,9 +179,10 @@ body.events-gridview {
 	@extend .h2;
 }
 
-/******* 
-SINGLE 
-*******/
+
+/*************
+SINGLE  
+*************/
 
 body.single, body.page {
 	main header {
