@@ -75,21 +75,47 @@ aside .widget {
 EVENTS PAGE  
 *************/
 
-body.events-archive {
-	main {
-		position: relative;
-	}
-	article .meta + p { // excerpt
+body.events-archive article {
+	.meta + p { // shorten excerpt
 		height: 4.5em;
 		overflow: hidden;
 	}
+	.meta {
+		margin-bottom: $padding/4;
+	}
+	h3 + .meta {
+		margin-top: $padding/4;
+	}
 }
 
-.tribe-bar-filters {
+#tribe-bar-collapse-toggle, .tribe-bar-views-select, .tribe-events-ical { // clean out some unwanted stuff
+	display: none;
+}
+
+.tribe-events-cost {
+	color: $black;
+}
+
+.tribe-events-notices { // overrides for notices style
+    background: transparent;
+    border: none;
+    color: $red;
+    margin: 0;
+    padding: 0;
+}
+
+.tribe-events-nav-next { // pagination
+	margin-left: $padding/2;
+}
+
+.tribe-bar-filters { // search form
 	margin-bottom: $padding*2;
 }
 
 /*** Views Selection ***/
+body.events-archive main {
+	position: relative;
+}
 #tribe-bar-views {
 	position: absolute;
 	top: $padding*1.75;
@@ -126,22 +152,8 @@ body.events-archive {
 	}
 }
 
-#tribe-bar-collapse-toggle, .tribe-bar-views-select, .tribe-events-ical { // clean out some unwanted stuff
-	display: none;
-}
 
-.tribe-events-cost {
-	color: $black;
-}
-
-.tribe-events-notices { // overrides
-    background: transparent;
-    border: none;
-    color: $red;
-    margin: 0;
-    padding: 0;
-}
-
+/*** Calendar/Month/Grid View ***/
 body.events-gridview {
 	.tribe-bar-filters {
 		display: none; // hide filters (search) on month/calendar view
@@ -162,16 +174,22 @@ body.events-gridview {
 	}
 }
 
-.tribe-events-past {
-	opacity: 0.3;
+.tribe-events-past, .tribe-events-past a { // events that have already happened
+	color: $silver;
 }
 .tribe-events-month-event-title {
 	line-height: 1;
 }
-.tribe-events-nav-next {
-	margin-left: $padding/2;
+
+#tribe-events-content .tribe-events-tooltip h4.entry-title {
+	@extend .h4;
 }
 
+.tribe-events-event-thumb img {
+	max-width: 80px;
+}
+
+/*** Single Event Page ***/
 .tribe-events-single-section-title {
 	border-top: $border;
 	margin-top: $padding;

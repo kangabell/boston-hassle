@@ -6,4 +6,5 @@
   		<?php endif; ?>
   	</p>
   	<h3><a href="<?php echo esc_url( tribe_get_event_link() ); ?>"><?php the_title(); ?></a></h3>
+  	<p class="meta category"><?php echo tribe_get_venue(); ?></p>
 </article>
