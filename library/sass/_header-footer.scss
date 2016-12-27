@@ -26,9 +26,12 @@ HEADER
 		margin-bottom: 0;
 		text-align: center;
 	}
-	.logo img {
-		height: auto;
-		width: 200px;
+	.logo {
+		color: $white;
+		img {
+			height: auto;
+			width: 200px;
+		}
 	}
 }
 @include breakpoint(medium) {

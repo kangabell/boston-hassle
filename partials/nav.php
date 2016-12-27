@@ -7,7 +7,13 @@
       <span class="visually-hidden">Menu</span>
     </a> 
     <h1>
-      <a class="logo" href="<?php echo get_home_url(); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/library/bhass-logo.jpg"></a>
+      <a class="logo" href="<?php echo get_home_url(); ?>">
+        <?php if(get_theme_mod( 'bhass_logo' )) : ?>       
+          <img src="<?php echo get_theme_mod( 'bhass_logo' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
+        <?php else : ?>       
+          <?php bloginfo('name'); ?>  
+        <?php endif; ?>
+      </a>
     </h1>
 
     <div class="desktop">
