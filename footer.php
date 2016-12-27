@@ -15,7 +15,7 @@
   <?php wp_footer(); ?>
 
   <div class="subfooter">
-    <div>&copy; 2016 BRAIN Arts</div>
+    <div><?php echo get_theme_mod( 'sub_footer' ); ?></div>
   </div>
 
   </body>

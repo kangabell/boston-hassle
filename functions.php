@@ -25,6 +25,8 @@ add_action('wp_enqueue_scripts', 'bhass_scripts_and_styles', 999);
 
 // launching this stuff after theme setup
 add_action('after_setup_theme','bhass_theme_support');
+// add stuff to the wordpress Customizer
+add_action( 'customize_register', 'bhass_customize_register' );
 // adding sidebars to Wordpress (these are created in functions.php)
 add_action( 'widgets_init', 'bhass_register_sidebars' );
 // adding the search form
@@ -157,6 +159,29 @@ function bhass_theme_support() {
     
 } /* end bhass theme support */
 
+/*********************
+CUSTOMIZER
+*********************/
+
+// add editable subfooter text
+function bhass_customize_register( $wp_customize ) {
+
+    $wp_customize->add_setting( 'sub_footer' );
+
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'sub_footer',
+            array(
+                'label'          => __( 'Sub-footer Text', 'bhass' ),
+                'section'        => 'title_tagline',
+                'settings'       => 'sub_footer',
+                'type'           => 'text'
+            )
+        )
+    );
+
+}
 
 /*********************
 MENUS & NAVIGATION
