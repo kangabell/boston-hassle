@@ -61,7 +61,7 @@ body.home {
 		margin-bottom: $padding/4;
 		overflow: hidden;
 	}
-	div.tertiary, div.events, .music, .film, .home-widget, .articles article {
+	div.secondary, div.events, .music, .film, .home-widget, .articles article {
 		margin-top: $padding;
 	}
 
@@ -135,11 +135,11 @@ body.home {
 			max-height: 30rem;
 		}
 
-		.secondary article {
+		.tertiary article {
 			@include grid-column(6);
 		}
 
-		.tertiary {
+		.secondary {
 			.featured, .events {
 				@include grid-column(4);
 			}

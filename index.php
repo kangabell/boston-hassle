@@ -48,23 +48,6 @@
     </div>
 
     <div class="secondary">
-      <?php // 2 more Featured article
-        $args = array(
-          'posts_per_page' => 2,
-          'ignore_sticky_posts' => true,
-          'cat' => $featured_id,
-          'offset' => 1
-        );
-        query_posts ($args);
-        if (have_posts()) : while (have_posts()) : the_post();
-          $class = 'featured';
-          include 'partials/article.php';
-        endwhile; endif;
-        wp_reset_query();
-      ?>
-    </div>
-
-    <div class="tertiary">
 
       <?php // 2 more Featured article
         $args = array(
@@ -103,6 +86,23 @@
         <?php } wp_reset_postdata(); ?>
       </div>
 
+    </div> <!-- end .tertiary -->
+
+    <div class="tertiary">
+      <?php // 2 more Featured article
+        $args = array(
+          'posts_per_page' => 2,
+          'ignore_sticky_posts' => true,
+          'cat' => $featured_id,
+          'offset' => 1
+        );
+        query_posts ($args);
+        if (have_posts()) : while (have_posts()) : the_post();
+          $class = 'featured';
+          include 'partials/article.php';
+        endwhile; endif;
+        wp_reset_query();
+      ?>
     </div>
 
     <div>
