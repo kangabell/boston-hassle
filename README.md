@@ -22,6 +22,7 @@ Version: 1.0
 
 - [WordPress](https://wordpress.org/)
 - [compass](http://compass-style.org/install/)
+- [Foundation](http://foundation.zurb.com/)
 
 
 ### Developer Notes

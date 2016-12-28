@@ -1,0 +1,7 @@
+{
+  "name": "Boston_Hassle",
+  "version": "1.0.0",
+  "devDependencies": {
+    "foundation-sites": "6.3.0"
+  }
+}
