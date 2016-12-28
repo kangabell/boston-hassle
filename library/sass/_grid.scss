@@ -47,8 +47,8 @@ footer, .music > article + article, .film > article + article, .art > article + 
   margin-top: $padding/2;
 }
 
-main > header {
-	margin-top: $padding;
+main > header, #tribe-events-content > header {
+	margin-top: $padding/2;
 	margin-bottom: $padding;
 }
 
@@ -70,11 +70,19 @@ body.home {
 		article {
 			@include grid-column(6);
 		}
+		article + article {
+			margin-top: 0;
+		}
 	}
 }
 
 
 @include breakpoint(medium) {
+
+	main > header, #tribe-events-content > header {
+		margin-top: $padding*1.5;
+		margin-bottom: $padding*1.5;
+	}
 
 	#header .desktop {
 		display: block;

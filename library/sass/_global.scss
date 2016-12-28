@@ -264,8 +264,17 @@ nav.pagination {
 	border-top: $border;
 	margin-top: $padding*2;
 	padding-top: $padding;
+	border-bottom: $border;
+	margin-bottom: $padding*2;
+	padding-bottom: $padding;
 	@extend .h3;
 	.next-link {
 		float: right;
+	}
+}
+
+@include breakpoint(large) {
+	nav.pagination {
+		border-bottom: none;
 	}
 }

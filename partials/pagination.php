@@ -4,7 +4,7 @@
 		if ( tribe_is_event_query() ) { // if it's an event page
 			previous_posts_link(__('&#8592; Earlier', 'bhass'));
 		} else {
-    		next_posts_link(__('&#8592; Later', 'bhass'));
+    		next_posts_link(__('&#8592; Older', 'bhass'));
 		}
 	?>
     </span>

@@ -203,18 +203,14 @@ SINGLE
 *************/
 
 body.single, body.page {
-	main header {
-		margin-top: $padding*1.5;
-		margin-bottom: $padding*1.5;
-		.meta {
-			font-size: 1rem;
-			a {
-				border-bottom: none;
-			}
+	main header .meta {
+		font-size: 1rem;
+		a {
+			border-bottom: none;
 		}
-		h1 {
-			margin-bottom: $padding/2;
-		}
+	}
+	main header h1 {
+		margin-bottom: $padding/2;
 	}
 	main {
 		margin-bottom: $padding/2;
