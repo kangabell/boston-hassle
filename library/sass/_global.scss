@@ -124,6 +124,7 @@ FORMS
 
 input, textarea {
 	border: 1px solid $silver;
+	max-width: 100%;
 	opacity: 0.8;
 	padding: 0.25em;
 	&:focus {
@@ -132,9 +133,10 @@ input, textarea {
 	}
 }
 
+
 label {
 	display: block;
-	margin-bottom: 0.125em;;
+	margin-bottom: 0.125em;
 	@extend .small;
 }
 
@@ -145,31 +147,9 @@ label {
 	}
 }
 
-
 /*************
-COMPONENTS 
-reusable bits of stuff
+MEDIA
 *************/
-
-a {
-	color: $black;
-	text-decoration: none;
-}
-
-button, .button, input[type='submit'] {
-	background: $gray;
-	border: 0;
-	border-radius: $radius;
-	color: $white;
-  	font-weight: 600;
-  	letter-spacing: 0.05em;
-  	padding: 0.125rem 0.75rem;
-  	text-transform: uppercase;
-  	opacity: 0.8;
-  	&:hover {
-  		opacity: 1;
-  	}
-}
 
 iframe {
 	width: 100%;
@@ -192,6 +172,32 @@ iframe {
     }
 }
 
+
+/*************
+COMPONENTS 
+other reusable bits of stuff
+*************/
+
+a {
+	color: $black;
+	text-decoration: none;
+}
+
+button, .button, input[type='submit'] {
+	background: $gray;
+	border: 0;
+	border-radius: $radius;
+	color: $white;
+  	font-weight: 600;
+  	letter-spacing: 0.05em;
+  	padding: 0.125rem 0.75rem;
+  	text-transform: uppercase;
+  	opacity: 0.8;
+  	&:hover {
+  		opacity: 1;
+  	}
+}
+
 .meta {
 	color: $gray;
 	@extend .small;
@@ -204,19 +210,24 @@ iframe {
 	@extend .h4;
 }
 
-article .thumbnail {
-	border: 6px solid $white;
+article {
+	* {
+		max-width: 100%;
+	}
+	.thumbnail {
+		border: 6px solid $white;
+	}
+	&:not(.hero) .thumbnail {
+		background-color: $white;
+		background-size: cover;
+		background-position: center;
+		display: block;
+		height: 150px;
+		margin-bottom: $padding/4;
+		overflow: hidden;
+	}
 }
 
-article:not(.hero) .thumbnail {
-	background-color: $white;
-	background-size: cover;
-	background-position: center;
-	display: block;
-	height: 150px;
-	margin-bottom: $padding/4;
-	overflow: hidden;
-}
 
 /*** Search Form ***/
 

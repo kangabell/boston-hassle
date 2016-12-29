@@ -22,7 +22,7 @@ Template Name: Two-Column Page
 
     </div>
 
-    <aside role="complementary">
+    <aside class="sidebar" role="complementary">
       <?php dynamic_sidebar( 'sidebar_page' ); ?>
     </aside>
       
