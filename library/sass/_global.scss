@@ -202,6 +202,10 @@ button, .button, input[type='submit'] {
   	}
 }
 
+button {
+	cursor: pointer;
+}
+
 .meta {
 	color: $gray;
 	@extend .small;
