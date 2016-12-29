@@ -289,3 +289,15 @@ nav.pagination {
 		border-bottom: none;
 	}
 }
+
+/*** Widgets ***/
+
+main .widget, .home-widget { // exclude footer widgets
+	a {
+		@extend .h4;
+		@include underline($silver);
+	}
+	li + li {
+		margin-top: 0.75em;
+	}
+}

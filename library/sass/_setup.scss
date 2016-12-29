@@ -65,11 +65,16 @@ $topbar-height: 2rem;
 
 /*** Underlines for Links ***/
 
-@mixin underline {
-  border-bottom: 1px solid $black;
+@mixin underline($color:null) {
+  border-bottom: 1px solid;
   color: darken($gray,10);
   &:hover {
     color: $black;
+  }
+  @if ($color) {
+    border-color: $color;
+  } @else {
+    border-color: $black;
   }
 }
 

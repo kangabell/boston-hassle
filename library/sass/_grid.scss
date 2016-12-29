@@ -32,6 +32,10 @@ footer section {
 	margin-right: auto;
 }
 
+#tribe-events-content {
+	padding: inherit; // override plugin css
+}
+
 /*** Vertical Margins & Heights ***/
 
 main {
