@@ -34,9 +34,12 @@ HEADER
 		}
 	}
 }
-@include breakpoint(medium) {
+@include breakpoint(large) {
 	#header {
 		background-position: center;
+		min-height: 10rem;
+		padding-left: $padding/2;
+		padding-top: $padding/2;
 		h1 {
 			text-align: left;
 		}
@@ -117,7 +120,7 @@ body.nav-open {
 	}
 }
 
-@include breakpoint(medium) {
+@include breakpoint(large) {
 	#nav section.pages {
 		border-top: none;
 	}
@@ -135,7 +138,7 @@ body.nav-open {
 	a {
 		background: rgba($cream, 0.75);
 		padding: 0.125em 0.75em;
-		@extend .h4;
+		@extend .h3;
 		&:hover {
 			background-color: rgba($cream, 1);
 		}

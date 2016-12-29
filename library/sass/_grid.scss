@@ -84,18 +84,6 @@ body.home {
 		margin-bottom: $padding*1.5;
 	}
 
-	#header .desktop {
-		display: block;
-	}
-
-	#nav .mobile {
-		display: none;
-	}
-
-	#nav {
-		@include grid-column(5);
-	}
-
 	img.left {
 		float: left;
 		margin-right: $padding/2;
@@ -226,6 +214,20 @@ body.home {
 
 
 @include breakpoint(large) {
+
+	/*** HEADER / MAIN NAV ***/
+
+	#header .desktop {
+		display: block;
+	}
+
+	#nav .mobile {
+		display: none;
+	}
+
+	#nav {
+		@include grid-column(5);
+	}
 
 	/*** HOMEPAGE ***/
 
