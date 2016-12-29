@@ -1,14 +1,18 @@
-<article class="<?php echo $class; ?>">
+<article class="<?php echo $class; ?>"><a href="<?php the_permalink(); ?>">
 
 	<?php if ( $class != 'archive' ) { echo category_name(); }; ?>
-  	<a class="thumbnail" href="<?php the_permalink(); ?>" style="background-image: url('<?php the_post_thumbnail_url('grid-thumb'); ?>')"></a>
+  	<div class="thumbnail" style="background-image: url('<?php the_post_thumbnail_url('grid-thumb'); ?>')"></div>
   	<div class="text">
-  		<?php if ( $class == 'archive' ) { 
-  			echo '<p class="meta category">' . get_the_category_list(', ') . '</p>';
-  		} ?>
-  		<h3><a href="<?php the_permalink(); ?>"><?php echo short_title(); ?></a></h3>
+  		<?php if ( $class == 'archive' ) : ?>
+        <p class="meta category">
+          <?php foreach((get_the_category()) as $category) {
+              echo $category->cat_name . ', ';
+          } ?>
+        </p>
+  		<?php endif; ?>
+  		<h3><?php echo short_title(); ?></h3>
   		<?php the_excerpt(); ?>
   		<p class="meta"><?php echo get_the_author(); ?></p>
   	</div>
 
-</article>
+</a></article>

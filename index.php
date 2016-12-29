@@ -29,21 +29,21 @@
           query_posts ($args);
           if (have_posts()) : while (have_posts()) : the_post();
         ?>
-          <article class="hero">
+          <article class="hero"><a href="<?php the_permalink(); ?>">
 
             <div class="image">
-              <a class="thumbnail" href="<?php the_permalink(); ?>">
+              <div class="thumbnail">
                 <?php the_post_thumbnail('large'); ?>
-              </a>
+              </div>
             </div>
             <div class="text">
               <?php echo category_name(); ?>
-              <h3><a href="<?php the_permalink(); ?>"><?php echo short_title(); ?></a></h3>
+              <h3><?php echo short_title(); ?></h3>
               <?php the_excerpt(); ?>
               <p class="meta"><?php echo get_the_author(); ?></p>
             </div>
 
-          </article>  
+          </a></article>  
         <?php
           endwhile; endif;
           wp_reset_query();
@@ -182,13 +182,13 @@
           while ($loop->have_posts()) : 
             $loop->the_post();
         ?>
-          <article>
-              <a class="thumbnail" href="<?php the_permalink(); ?>" style="background-image: url('<?php the_post_thumbnail_url(); ?>')"></a>
+          <article><a href="<?php the_permalink(); ?>">
+              <div class="thumbnail" style="background-image: url('<?php the_post_thumbnail_url(); ?>')"></div>
               <div class="text">
                 <h3><a href="<?php the_permalink(); ?>"><?php echo short_title(); ?></a></h3>
               </div>
               <p class="meta"><?php echo get_the_author(); ?></p>
-          </article>
+          </a></article>
         <?php
           endwhile; wp_reset_postdata();
         ?>

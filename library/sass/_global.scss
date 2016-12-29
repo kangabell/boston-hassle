@@ -87,7 +87,7 @@ hr {
 	ul {
 		@include bullet-list;
 	}
-	a {
+	a:not(.button) {
 		@include underline();
 		&:hover {
 			color: $black;
@@ -172,6 +172,10 @@ iframe {
     }
 }
 
+.issuuembed > div > div:nth-of-type(2) {
+    opacity: 0.3; // dim issuu credit thing
+}
+
 
 /*************
 COMPONENTS 
@@ -216,6 +220,7 @@ article {
 	}
 	.thumbnail {
 		border: 6px solid $white;
+		opacity: 0.9;
 	}
 	&:not(.hero) .thumbnail {
 		background-color: $white;
@@ -225,6 +230,9 @@ article {
 		height: 150px;
 		margin-bottom: $padding/4;
 		overflow: hidden;
+	}
+	a:hover .thumbnail {
+		opacity: 1;	
 	}
 }
 
