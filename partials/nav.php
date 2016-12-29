@@ -17,7 +17,7 @@
     </h1>
 
     <div class="desktop">
-      <a href="/events" class="calendar">Calendar</a>
+      <?php bhass_main_nav_top(); ?>
       <?php bhass_main_nav_categories(); ?>
     </div>
 
@@ -32,7 +32,7 @@
   </a>
 
   <section class="calendar mobile">
-    <a href="/events">Calendar</a>
+    <?php bhass_main_nav_top(); ?>
   </section>
 
   <section class="categories mobile">
