@@ -48,13 +48,6 @@ $current_url = tribe_events_get_current_filter_url();
 			</div><!-- .tribe-bar-views -->
 		<?php endif; ?>
 
-		<?php if ( ! empty( $filters ) ) : ?>
-			<div class="tribe-bar-filters">
-				<input type="text" name="tribe-bar-search" id="tribe-bar-search">
-				<input class="tribe-events-button tribe-no-param" type="submit" name="submit-bar" value="<?php printf( esc_attr__( 'Search', 'the-events-calendar' ), tribe_get_event_label_plural() ); ?>" />
-			</div>
-		<?php endif; ?>
-
 	</form>
 	<!-- #tribe-bar-form -->
 
