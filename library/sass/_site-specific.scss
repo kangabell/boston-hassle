@@ -15,8 +15,24 @@ body.home {
 		margin-bottom: $padding/4;
 		width: 100%;
 	}
-	main h2 a {
-		@include arrow;
+}
+
+.view-all {
+	display: inline-block;
+	margin-top: $padding/2;
+	@extend .small;
+	@extend .button;
+}
+
+@include breakpoint(large) {
+	div.category {
+		position: relative;
+	}
+	.view-all {
+		margin-top: 0;
+		position: absolute;
+		right: $padding;
+		top: $padding/4;
 	}
 }
 
@@ -32,12 +48,6 @@ div.hero {
 }
 
 div.events {
-	.view-all {
-		display: inline-block;
-		margin-top: $padding/2;
-		@extend .small;
-		@extend .button;
-	}
 	h3 {
 		@extend .h5;
 		@include truncate(1.25em);
@@ -60,10 +70,7 @@ div.events {
 			display: inline-block;
 		}
 		.view-all {
-			margin-top: 0;
-			position: absolute;
 			right: 0;
-			top: $padding/4;
 		}
 	}
 }

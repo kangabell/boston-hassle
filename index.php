@@ -51,7 +51,7 @@
       </div>
 
       <div class="events">
-        <h2><a href="<?php echo tribe_get_events_link(); ?>">Go To</a></h2>
+        <h2>Go To</h2>
         <?php // upcoming events in the Go To category
           $events = tribe_get_events( array(
               'posts_per_page' => 5,
@@ -114,8 +114,8 @@
 
     <div>
 
-      <div class="music">
-        <h2><a href="<?php echo $music_link; ?>">Music</a></h2>
+      <div class="music category">
+        <h2>Music</h2>
         <?php // all Music articles
           $loop = new WP_Query( array(
             'posts_per_page'=>6, 
@@ -127,10 +127,11 @@
             include 'partials/article-sm.php';
           endwhile; wp_reset_postdata();
         ?>
+        <a class="view-all" href="<?php echo $music_link; ?>">View All Music</a>
       </div>
 
-      <div class="film">
-        <h2><a href="<?php echo $film_link; ?>">Film</a></h2>
+      <div class="film category">
+        <h2>Film</h2>
         <?php // all Film articles
           $loop = new WP_Query( array(
             'posts_per_page'=>6, 
@@ -142,6 +143,7 @@
             include 'partials/article-sm.php';
           endwhile; wp_reset_postdata();
         ?>
+        <a class="view-all" href="<?php echo $film_link; ?>">View All Film</a>
       </div>
 
       <div class="home-widget">
@@ -169,8 +171,8 @@
 
     <div>
 
-      <div class="fresh-stream">
-        <h2><a href="<?php echo $freshstream_link; ?>">Fresh Stream</a></h2>
+      <div class="fresh-stream category">
+        <h2>Fresh Stream</h2>
         <?php // all Fresh Stream articles
           $loop = new WP_Query( array(
             'posts_per_page'=>6, 
@@ -190,10 +192,11 @@
         <?php
           endwhile; wp_reset_postdata();
         ?>
+        <a class="view-all" href="<?php echo $freshstream_link; ?>">View All Fresh Stream</a>
       </div>
 
-      <div class="art">
-        <h2><a href="<?php echo $art_link; ?>">Art</a></h2>
+      <div class="art category">
+        <h2>Art</h2>
         <?php // all Art articles
           $loop = new WP_Query( array(
             'posts_per_page'=>9, 
@@ -205,6 +208,7 @@
             include 'partials/article-sm.php';
           endwhile; wp_reset_postdata();
         ?>
+        <a class="view-all" href="<?php echo $art_link; ?>">View All Art</a>
       </div>
 
     </div>
