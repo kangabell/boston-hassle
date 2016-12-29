@@ -272,6 +272,9 @@ body.home {
 		div.left {
 			@include grid-column(8,0);
 		}
+		div.right {
+			@include grid-column(8);
+		}
 		aside.sidebar {
 			@include grid-column(4);
 			> div {
@@ -287,6 +290,16 @@ body.home {
 		}
 		div.text {
 			@include grid-column(8);
+		}
+	}
+
+	body.events-list {
+		div.right {
+			float: right;
+		}
+		aside.sidebar {
+			float: left;
+			padding-left: 0;
 		}
 	}
 

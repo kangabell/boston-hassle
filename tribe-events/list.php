@@ -12,7 +12,7 @@
     <h1><?php echo tribe_get_events_title(); ?></h1>
   </header>
 
-  <div id="tribe-events-content" class="left">
+  <div id="tribe-events-content" class="right">
 
       <?php
       if ( ! defined( 'ABSPATH' ) ) {
