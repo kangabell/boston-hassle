@@ -124,17 +124,15 @@ body.home {
 		}
 
 		.hero .thumbnail {
-			max-height: 30rem;
+			max-height: 28rem;
 		}
 
 		.tertiary article {
 			@include grid-column(6);
 		}
 
-		.secondary {
-			.featured, .events {
-				@include grid-column(4);
-			}
+		.secondary article {
+			@include grid-column(4);
 		}
 
 		.events article {
@@ -237,7 +235,8 @@ body.home {
 
 	body.home {
 
-		.hero {
+		div.hero {
+			@include grid-column(9);
 			div.image {
 				@include grid-column(7);
 			}
@@ -245,6 +244,10 @@ body.home {
 				margin-top: $padding;
 				@include grid-column(5);
 			}
+		}
+
+		div.events {
+			@include grid-column(3);
 		}
 
 		.articles article {

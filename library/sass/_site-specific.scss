@@ -22,7 +22,8 @@ body.home {
 
 div.hero {
 	margin-bottom: $padding*1.5;
-	img {
+	div.image img { // extra specificity for override
+		margin-bottom: 0;
 		width: 100%;
 	}
 	h3 {
@@ -31,10 +32,14 @@ div.hero {
 }
 
 div.events {
-	h2 a {
-		@include arrow;
+	.view-all {
+		display: inline-block;
+		margin-top: $padding/2;
+		@extend .small;
+		@extend .button;
 	}
 	h3 {
+		@extend .h5;
 		@include truncate(1.25em);
 	}
 	.meta {
@@ -44,6 +49,22 @@ div.events {
 		border-top: $border;
 		padding-top: $padding/4;
 		margin-top: $padding/4;
+	}
+}
+
+@include breakpoint(large) {
+	div.events {
+		border-left: 1px solid $silver;
+		position: relative;
+		h2 {
+			display: inline-block;
+		}
+		.view-all {
+			margin-top: 0;
+			position: absolute;
+			right: 0;
+			top: $padding/4;
+		}
 	}
 }
 

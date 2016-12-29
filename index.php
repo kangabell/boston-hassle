@@ -16,53 +16,39 @@
 <?php include 'header.php'; ?>
 
 <main>
-    <div class="hero">
-      <?php // most recent Featured article
-        $args = array(
-          'posts_per_page' => 1,
-          'ignore_sticky_posts' => true,
-          'cat' => $featured_id
-        );
-        query_posts ($args);
-        if (have_posts()) : while (have_posts()) : the_post();
-      ?>
-        <article class="hero">
 
-          <div class="image">
-            <a class="thumbnail" href="<?php the_permalink(); ?>">
-              <?php the_post_thumbnail('large'); ?>
-            </a>
-          </div>
-          <div class="text">
-            <?php echo category_name(); ?>
-            <h3><a href="<?php the_permalink(); ?>"><?php echo short_title(); ?></a></h3>
-            <?php the_excerpt(); ?>
-            <p class="meta"><?php echo get_the_author(); ?></p>
-          </div>
+    <div class="primary">
 
-        </article>  
-      <?php
-        endwhile; endif;
-        wp_reset_query();
-      ?>
-    </div>
+      <div class="hero">
+        <?php // most recent Featured article
+          $args = array(
+            'posts_per_page' => 1,
+            'ignore_sticky_posts' => true,
+            'cat' => $featured_id
+          );
+          query_posts ($args);
+          if (have_posts()) : while (have_posts()) : the_post();
+        ?>
+          <article class="hero">
 
-    <div class="secondary">
+            <div class="image">
+              <a class="thumbnail" href="<?php the_permalink(); ?>">
+                <?php the_post_thumbnail('large'); ?>
+              </a>
+            </div>
+            <div class="text">
+              <?php echo category_name(); ?>
+              <h3><a href="<?php the_permalink(); ?>"><?php echo short_title(); ?></a></h3>
+              <?php the_excerpt(); ?>
+              <p class="meta"><?php echo get_the_author(); ?></p>
+            </div>
 
-      <?php // 2 more Featured article
-        $args = array(
-          'posts_per_page' => 2,
-          'ignore_sticky_posts' => true,
-          'cat' => $featured_id,
-          'offset' => 3
-        );
-        query_posts ($args);
-        if (have_posts()) : while (have_posts()) : the_post();
-          $class = 'featured';
-          include 'partials/article.php';
-        endwhile; endif;
-        wp_reset_query();
-      ?>
+          </article>  
+        <?php
+          endwhile; endif;
+          wp_reset_query();
+        ?>
+      </div>
 
       <div class="events">
         <h2><a href="<?php echo tribe_get_events_link(); ?>">Go To</a></h2>
@@ -81,10 +67,31 @@
                 <span class="tribe-events-cost"><?php echo tribe_get_cost( null, true ) ?></span>
               <?php endif; ?>
             </p>
-            <h3 class="h5"><a href="<?php echo esc_url( tribe_get_event_link() ); ?>"><?php the_title(); ?></a></h3>
+            <h3><a href="<?php echo esc_url( tribe_get_event_link() ); ?>"><?php the_title(); ?></a></h3>
+            <p class="meta category"><?php echo tribe_get_venue(); ?></p>
           </article>
         <?php } wp_reset_postdata(); ?>
+        <a class="view-all" href="<?php echo tribe_get_events_link(); ?>">View All Events</a>
       </div>
+
+    </div> <!-- end .primary -->
+
+    <div class="secondary">
+
+      <?php // 2 more Featured article
+        $args = array(
+          'posts_per_page' => 3,
+          'ignore_sticky_posts' => true,
+          'cat' => $featured_id,
+          'offset' => 1
+        );
+        query_posts ($args);
+        if (have_posts()) : while (have_posts()) : the_post();
+          $class = 'featured';
+          include 'partials/article.php';
+        endwhile; endif;
+        wp_reset_query();
+      ?>
 
     </div> <!-- end .tertiary -->
 
@@ -94,7 +101,7 @@
           'posts_per_page' => 2,
           'ignore_sticky_posts' => true,
           'cat' => $featured_id,
-          'offset' => 1
+          'offset' => 4
         );
         query_posts ($args);
         if (have_posts()) : while (have_posts()) : the_post();

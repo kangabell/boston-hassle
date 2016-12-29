@@ -81,7 +81,7 @@ function bhass_excerpt_more($more) {
 
 // Shorten excerpt length
 function bhass_lengthen_excerpt( $length ) {
-    return 42;
+    return 22;
 }
 
 // Get name of first category in categories array
