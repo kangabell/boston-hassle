@@ -21,6 +21,11 @@
         }
       ?>
     </h1>
+    <?php if (category_description()) : ?>
+      <p class="subheading">
+        <?php echo category_description(); ?>
+      </p>
+    <?php endif; ?>
   </header>
 
   <div class="left">

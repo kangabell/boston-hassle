@@ -19,6 +19,8 @@ if ( ! isset( $content_width ) )
 add_filter('the_generator', 'bhass_rss_version');
 // clean up gallery output in wp
 add_filter('gallery_style', 'bhass_gallery_style');
+// remove p tags from category description
+remove_filter('term_description','wpautop');
 
 // enqueue base scripts and styles
 add_action('wp_enqueue_scripts', 'bhass_scripts_and_styles', 999);
