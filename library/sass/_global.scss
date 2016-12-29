@@ -209,7 +209,7 @@ button {
 .meta {
 	color: $gray;
 	@extend .small;
-	&.category, &.category a {
+	&.category, &.category a, .category {
 		color: $black;
 	}
 }
@@ -308,7 +308,7 @@ main .widget, .home-widget { // exclude footer widgets
 		@extend .h4;
 		@include underline($silver);
 	}
-	li + li {
+	li + li, li > ul {
 		margin-top: 0.75em;
 	}
 }

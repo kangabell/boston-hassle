@@ -4,10 +4,9 @@
   	<div class="thumbnail" style="background-image: url('<?php the_post_thumbnail_url('grid-thumb'); ?>')"></div>
   	<div class="text">
   		<?php if ( $class == 'archive' ) : ?>
-        <p class="meta category">
-          <?php foreach((get_the_category()) as $category) {
-              echo $category->cat_name . ', ';
-          } ?>
+        <p class="meta">
+          <span class="datetime"><?php printf(__('<time pubdate>%1$s</time>', 'bhass'), get_the_time('M d, Y')); ?></span>
+          | <span class="category"><?php echo category_name(); ?></span>
         </p>
   		<?php endif; ?>
   		<h3><?php echo short_title(); ?></h3>

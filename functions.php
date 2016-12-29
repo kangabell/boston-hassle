@@ -94,7 +94,7 @@ function category_name() {
     $cat_id = get_cat_ID( $name );
     $link = get_category_link( $cat_id );
 
-    return '<p class="meta category">' . $name . '</p>';
+    return '<span class="category">' . $name . '</span>';
 
 }
 

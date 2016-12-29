@@ -37,7 +37,7 @@
               </div>
             </div>
             <div class="text">
-              <?php echo category_name(); ?>
+              <p class="meta"><?php echo category_name(); ?></p>
               <h3><?php echo short_title(); ?></h3>
               <?php the_excerpt(); ?>
               <p class="meta"><?php echo get_the_author(); ?></p>
