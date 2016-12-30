@@ -103,6 +103,10 @@ aside .widget {
 EVENTS PAGE  
 *************/
 
+.tribe-events-button {
+	@extend .button;
+}
+
 body.events-archive article {
 	.meta + p { // shorten excerpt
 		height: 4.5em;
@@ -219,10 +223,20 @@ body.events-gridview {
 
 /*** Single Event Page ***/
 .tribe-events-single-section-title {
+	@extend .h2;
+}
+.tribe-events-event-meta, .tribe-events-meta-group + .tribe-events-meta-group {
 	border-top: $border;
 	margin-top: $padding;
 	padding-top: $padding;
-	@extend .h2;
+}
+
+@include breakpoint(large) {
+	.tribe-events-meta-group + .tribe-events-meta-group {
+		border-top: none;
+		margin-top: 0;
+		padding-top: 0;
+	}
 }
 
 

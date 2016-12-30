@@ -290,6 +290,18 @@ body.home {
 		}
 	}
 
+	body.events-list {
+		div.right {
+			float: right;
+		}
+		aside.sidebar {
+			float: left;
+			padding-left: 0;
+		}
+	}
+
+	/*** EVENTS CALENDAR/GRID VIEW ***/
+
 	body.calendar article {
 		@include grid-row;
 		img {
@@ -300,15 +312,12 @@ body.home {
 		}
 	}
 
-	body.events-list {
-		div.right {
-			float: right;
-		}
-		aside.sidebar {
-			float: left;
-			padding-left: 0;
-		}
+	/*** SINGLE EVENT PAGE ***/
+
+	body.events-single .tribe-events-meta-group {
+		@include grid-column(6);
 	}
+
 
 	/*** SINGLE & DEFAULT PAGES ***/
 
