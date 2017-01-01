@@ -202,7 +202,7 @@ button, .button, input[type='submit'] {
   	}
 }
 
-button {
+button, input[type='submit'] {
 	cursor: pointer;
 }
 
@@ -304,7 +304,7 @@ nav.pagination {
 /*** Widgets ***/
 
 main .widget, .home-widget { // exclude footer widgets
-	a {
+	a:not(.button) {
 		@extend .h4;
 		@include underline($silver);
 	}

@@ -123,8 +123,15 @@ body.home {
 			margin-top: 0; // reset from mobile style
 		}
 
-		.hero .thumbnail {
-			max-height: 28rem;
+		div.hero {
+			@include grid-column(8);
+			.thumbnail {
+				max-height: 15rem;
+			}
+		}
+
+		div.events {
+			@include grid-column(4);
 		}
 
 		.tertiary article {
@@ -239,6 +246,9 @@ body.home {
 			@include grid-column(9);
 			div.image {
 				@include grid-column(7);
+			}
+			.thumbnail {
+				max-height: 28rem;
 			}
 			div.text {
 				margin-top: $padding;
