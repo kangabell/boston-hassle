@@ -262,7 +262,7 @@ body.single, body.page {
 		margin-bottom: $padding/2;
 	}
 	article {
-		p {
+		p:not(.small) {
 			font-size: 1.125rem;
 			margin-bottom: $padding/2;
 		}

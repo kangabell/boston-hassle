@@ -4,7 +4,7 @@ HEADER
 *************/
 
 #header {
-	background: url('../banner.jpg') $gray;
+	background: url('../img/banner.jpg') $gray;
 	background-position: left;
 	background-size: cover;
 	padding-bottom: $padding/4;
@@ -220,7 +220,7 @@ FOOTER
 *************/
 
 footer {
-	background: url('../texture.jpg') $gray-dk;
+	background: url('../img/texture.jpg') $gray-dk;
 	background-size: cover;
 	color: $white;
 	padding-top: $padding;
