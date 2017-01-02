@@ -83,7 +83,7 @@ hr {
 	color: $cream;
 }
 
-.single article, .page article {
+.single main, .page main {
 	ul {
 		@include bullet-list;
 	}

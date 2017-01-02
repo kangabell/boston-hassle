@@ -269,8 +269,12 @@ body.single, body.page {
 }
 
 section.tags {
+	line-height: 1.75em;
 	margin-top: $padding*1.5;
 	margin-bottom: $padding;
+	a {
+		white-space: nowrap; // keep all words in each item together
+	}
 }
 
 section.comments {
