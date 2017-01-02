@@ -84,7 +84,7 @@ hr {
 }
 
 .single main, .page main {
-	ul {
+	ul:not(.meta) {
 		@include bullet-list;
 	}
 	a:not(.button):not(.tribe-events-button) {
@@ -172,8 +172,13 @@ iframe {
     }
 }
 
-.issuuembed > div > div:nth-of-type(2) {
-    opacity: 0.3; // dim issuu credit thing
+.issuuembed {
+	a {
+		border-bottom: 0 !important; // override link underlines
+	}
+	> div > div:nth-of-type(2) {
+	    opacity: 0.3; // dim issuu credit thing
+	}
 }
 
 
@@ -211,6 +216,12 @@ button, input[type='submit'] {
 	@extend .small;
 	&.category, &.category a, .category {
 		color: $black;
+	}
+	li { // for single Events categories
+		display: inline;
+		&:not(:last-child):after {
+			content: ', ';
+		}
 	}
 }
 

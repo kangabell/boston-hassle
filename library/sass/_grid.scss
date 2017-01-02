@@ -59,6 +59,12 @@ aside.sidebar {
 	margin-top: $padding*2;
 }
 
+/*** Excerpts ***/
+p.excerpt {
+	display: none; // hide on mobile
+}
+
+
 /*** HOMEPAGE ***/
 
 body.home {
@@ -68,7 +74,7 @@ body.home {
 		margin-bottom: $padding/4;
 		overflow: hidden;
 	}
-	div.secondary, div.events, div.music, div.film, .home-widget, .articles article, div.art {
+	div.secondary, div.tertiary, div.events, div.music, div.film, .home-widget, .articles article, div.art {
 		margin-top: $padding;
 	}
 
@@ -118,6 +124,11 @@ body.home {
 
 	.announcement > div, #header h1, main > div {
 		@include grid-row;
+	}
+
+	/*** Excerpts ***/
+	p.excerpt {
+		display: block;
 	}
 
 	body.home {

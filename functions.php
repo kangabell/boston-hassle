@@ -41,6 +41,9 @@ add_filter('the_content', 'bhass_filter_ptags_on_blockquotes');
 add_filter('excerpt_more', 'bhass_excerpt_more');
 // shorter excerpt
 add_filter( 'excerpt_length', 'bhass_lengthen_excerpt', 999 );
+// add class to excerpt paragraph
+add_filter( "the_excerpt", "add_excerpt_class" );
+add_filter( "tribe_events_get_the_excerpt", "add_event_excerpt_class" );
 // modify output of WordPress Popular Posts plugin
 add_filter( 'wpp_custom_html', 'bhass_popular_posts_html', 10, 2 );
 
@@ -82,6 +85,16 @@ function bhass_excerpt_more($more) {
 // Shorten excerpt length
 function bhass_lengthen_excerpt( $length ) {
     return 22;
+}
+
+// Add a class to excerpt paragraph
+function add_excerpt_class( $excerpt ) {
+    $excerpt = str_replace( "<p", "<p class=\"excerpt\"", $excerpt );
+    return $excerpt;
+}
+function add_event_excerpt_class( $excerpt ) {
+    $excerpt = str_replace( "<p", "<p class=\"excerpt\"", $excerpt );
+    return $excerpt;
 }
 
 // Get name of first category in categories array
