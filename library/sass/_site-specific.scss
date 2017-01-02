@@ -213,8 +213,11 @@ body.events-gridview {
 	line-height: 1;
 }
 
-#tribe-events-content .tribe-events-tooltip h4.entry-title {
-	@extend .h4;
+#tribe-events-content {
+	margin-bottom: 0;
+	.tribe-events-tooltip h4.entry-title {
+		@extend .h4;
+	}
 }
 
 .tribe-events-event-thumb img {
