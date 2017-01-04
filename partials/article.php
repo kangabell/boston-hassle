@@ -1,3 +1,8 @@
+<!--
+MEDIUM-SIZED ARTICLE SNIPPET
+used on the homepage, archive pages, event archive pages, and search results pages
+-->
+
 <article class="<?php echo $class; ?>"><a href="<?php the_permalink(); ?>">
 
 	<?php if ( $class != 'archive' ) { get_template_part('partials/date-category'); } ?>

@@ -1,3 +1,7 @@
+<!--
+PAGE HEADER
+-->
+
 <header>
   <h1><?php the_title(); ?></h1>
   <?php if ( get_field('subtitle') ) : ?>

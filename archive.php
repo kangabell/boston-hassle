@@ -1,3 +1,10 @@
+<!--
+ARCHIVE PAGE TEMPLATE
+Used for all blog type pages, such as category pages (e.g. "Film Flam"),
+tag pages (e.g. "somerville"), author pages (e.g. "Articles by Sam P"), etc.
+Does not include Event pages.
+-->
+
 <?php get_header(); ?>
 
 <main>

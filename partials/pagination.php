@@ -1,3 +1,8 @@
+<!--
+PAGE NAVIGATION
+used on archive, events archive, and search-results pages
+-->
+
 <nav class="pagination">
     <span class="prev-link">
 	<?php 

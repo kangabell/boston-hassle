@@ -1,3 +1,7 @@
+<!--
+SINGLE POST / ARTICLE PAGE
+-->
+
 <?php get_header(); ?>
 
 <main>

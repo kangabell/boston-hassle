@@ -1,3 +1,8 @@
+<!--
+SMALL EVENT SNIPPET
+used for non-featured events in the Events archive page
+-->
+
 <article>
   	<p class="meta">
   		<?php echo tribe_events_event_schedule_details(); ?>

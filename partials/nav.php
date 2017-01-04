@@ -1,3 +1,7 @@
+<!--
+HEADER AND MAIN NAVIGATION
+-->
+
 
 <header id="header">
   

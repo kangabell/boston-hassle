@@ -1,3 +1,8 @@
+<!--
+COMMENTS
+Used on single.php.
+-->
+
 <section class="comments">
 
 	<?php if ( have_comments() ) : ?>
