@@ -3,21 +3,20 @@ HOMEPAGE
 -->
 
 <?php
+  // Category ID's & URL's, for our convenience.
+  // WARNING: The category names listed below much match those in the backend exactly!
 
-    // 
-    // WARNING: The category names listed below much match those in the backend exactly!
+  $film_id = get_cat_ID( 'Film Flam' );
+  $music_id = get_cat_ID( 'Music' );
+  $featured_id = get_cat_ID( 'Featured' );
+  $freshstream_id = get_cat_ID( 'Fresh Stream' );
+  $art_id = get_cat_ID( 'Art' );
+  $goto_id = get_cat_ID( 'Go To' );
 
-    $film_id = get_cat_ID( 'Film Flam' );
-    $music_id = get_cat_ID( 'Music' );
-    $featured_id = get_cat_ID( 'Featured' );
-    $freshstream_id = get_cat_ID( 'Fresh Stream' );
-    $art_id = get_cat_ID( 'Art' );
-    $goto_id = get_cat_ID( 'Go To' );
-
-    $film_link = get_category_link( $film_id );
-    $music_link = get_category_link( $music_id );
-    $freshstream_link = get_category_link( $freshstream_id );
-    $art_link = get_category_link( $art_id );
+  $film_link = get_category_link( $film_id );
+  $music_link = get_category_link( $music_id );
+  $freshstream_link = get_category_link( $freshstream_id );
+  $art_link = get_category_link( $art_id );
 ?>
 
 <?php include 'header.php'; ?>
@@ -100,7 +99,7 @@ HOMEPAGE
         wp_reset_query();
       ?>
 
-    </div> <!-- end .tertiary -->
+    </div>
 
     <div class="tertiary">
       <?php // 2 more Featured article
@@ -236,7 +235,8 @@ HOMEPAGE
         endwhile; wp_reset_postdata();
         ?>
       </div>
-    </div>
+
+    </div> <!-- end row -->
 
   </main>
 

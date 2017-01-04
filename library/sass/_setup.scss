@@ -35,7 +35,7 @@ $topbar-height: 2rem;
 /*** MIXINS ***/
 
 /*** Bulleted Unordered Lists ***/
-// SASS usage:
+// Sass usage:
 // @include bullet-list;
 
 @mixin bullet-list {
@@ -52,7 +52,7 @@ $topbar-height: 2rem;
 }
 
 /*** Underlines for Links ***/
-// SASS usage:
+// Sass usage:
 // @include underline;
 // to add a custom underline color:
 // @include underline($silver);
@@ -71,7 +71,7 @@ $topbar-height: 2rem;
 }
 
 /*** Cut Off Text That's Too Long with an Ellipsis ***/
-// SASS usage:
+// Sass usage:
 // @include truncate;
 // in cases where a height must be specified to cut off properly:
 // @include truncate(1.25em);

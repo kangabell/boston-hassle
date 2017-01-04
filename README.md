@@ -6,7 +6,7 @@ Author: [Kay Belardinelli](http://kangabell.co)
 
 Version: 1.0
 
-2016
+2016-2017
 
 ![Screenshot of Website](screenshot.png)
 

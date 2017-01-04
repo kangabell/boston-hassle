@@ -1,3 +1,7 @@
+<!--
+SEARCH RESULTS PAGE
+-->
+
 <?php get_header(); ?>
 
 <main>
