@@ -89,7 +89,7 @@ hr {
 		@include bullet-list;
 	}
 	a:not(.button):not(.tribe-events-button) {
-		@include underline();
+		@include underline;
 		&:hover {
 			color: $black;
 		}

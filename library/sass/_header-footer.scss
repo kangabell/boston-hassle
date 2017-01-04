@@ -180,7 +180,7 @@ div#catapult-cookie-bar {
 		position: relative;
 		text-align: center;
 		@extend .small;
-		@include truncate();
+		@include truncate;
 	}
 	a {
 		border-bottom: 1px solid $gray;
@@ -197,6 +197,7 @@ div#catapult-cookie-bar {
 		position: absolute;
 		top: $padding/4;
 		right: $padding/4;
+		@extend .icon-cancel;
 	}
 }
 

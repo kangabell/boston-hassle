@@ -13,7 +13,7 @@ URL: http://kangabell.co
 
 // set maximum allowed width for content
 if ( ! isset( $content_width ) )
-    $content_width = 1140;
+    $content_width = 1400;
 
 // remove WP version from RSS
 add_filter('the_generator', 'bhass_rss_version');
