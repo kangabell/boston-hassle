@@ -87,6 +87,7 @@ $topbar-height: 2rem;
 }
 
 /*** ICON FONT ***/
+// to update: import one of the font files into the app at icomoon.io/app
 
 @font-face {
   font-family: 'icomoon';
@@ -141,6 +142,15 @@ $topbar-height: 2rem;
 }
 .icon-youtube:before {
   content: "\e907";
+}
+.icon-reddit:before {
+  content: "\e901";
+}
+.icon-snapchat:before {
+  content: "\e900";
+}
+.icon-instagram:before {
+  content: "\e902";
 }
 
 /*** FOUNDATION (by Zurb) ***/
