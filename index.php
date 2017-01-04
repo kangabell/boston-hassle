@@ -1,10 +1,17 @@
+<!--
+HOMEPAGE
+-->
+
 <?php
 
+    // 
+    // WARNING: The category names listed below much match those in the backend exactly!
+
     $film_id = get_cat_ID( 'Film Flam' );
-    $music_id = get_cat_ID( 'New Music' );
+    $music_id = get_cat_ID( 'Music' );
     $featured_id = get_cat_ID( 'Featured' );
     $freshstream_id = get_cat_ID( 'Fresh Stream' );
-    $art_id = get_cat_ID( 'Art Attack' );
+    $art_id = get_cat_ID( 'Art' );
     $goto_id = get_cat_ID( 'Go To' );
 
     $film_link = get_category_link( $film_id );
