@@ -61,7 +61,14 @@ HOMEPAGE
         <?php // upcoming events in the Go To category
           $events = tribe_get_events( array(
               'posts_per_page' => 5,
-              'start_date' => date( 'Y-m-d H:i:s' ) // upcoming
+              'start_date' => date( 'Y-m-d H:i:s' ), // upcoming
+              'tax_query' => array(
+                array(
+                  'taxonomy' => 'tribe_events_cat',
+                  'field' => 'slug',
+                  'terms' => 'go-to-3',
+                )
+              )
           ) );
           foreach ( $events as $post ) {
               setup_postdata( $post );
