@@ -100,14 +100,18 @@ function add_event_excerpt_class( $excerpt ) {
 // Get name of first category in categories array
 function category_name() {
 
-    $category = get_the_category();
+    if(isset($category, $category[0])) {
+        
+        $category = get_the_category();
 
-    //get the first category
-    $name = $category[0]->cat_name;
-    $cat_id = get_cat_ID( $name );
-    $link = get_category_link( $cat_id );
+        //get the first category
+        $name = $category[0]->cat_name;
+        $cat_id = get_cat_ID( $name );
+        $link = get_category_link( $cat_id );
 
-    return '<span class="category">' . $name . '</span>';
+    
+        return '<span class="category">' . $name . '</span>';
+    }
 
 }
 
