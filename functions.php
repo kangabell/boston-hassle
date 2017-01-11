@@ -129,13 +129,14 @@ function bhass_scripts_and_styles() {
   if (!is_admin()) {
 
     // main stylesheet
-    wp_register_style( 'bhass-stylesheet', get_stylesheet_directory_uri() . '/library/stylesheets/screen.css', array(), '', 'all' );
+    wp_register_style( 'bhass-stylesheet', get_stylesheet_directory_uri() . '/library/stylesheets/screen.css', array(), filemtime( plugin_dir_path( __FILE__ ) .  '/library/stylesheets/screen.css' ), 'all' );
 
     // theme scripts file
     wp_register_script( 'bhass-js', get_stylesheet_directory_uri() . '/library/scripts/scripts.js', array( 'jquery' ), '', true );
 
     // enqueue styles and scripts
     wp_enqueue_style( 'bhass-stylesheet' );
+
     wp_enqueue_script( 'bhass-js' );
 
     // create site url variable to be used in js
