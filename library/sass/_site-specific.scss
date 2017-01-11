@@ -60,6 +60,9 @@ div.events {
 		padding-top: $padding/4;
 		margin-top: $padding/4;
 	}
+	.tribe-events-cost {
+		top: $padding/4;
+	}
 }
 
 @include breakpoint(large) {
@@ -103,6 +106,10 @@ aside .widget {
 EVENTS PAGE  
 *************/
 
+body.home .recurringinfo, body.archive .recurringinfo {
+	display: none; // hide recurring-event info
+}
+
 .tribe-events-button {
 	@extend .button;
 }
@@ -118,6 +125,11 @@ body.events-archive article {
 	h3 + .meta {
 		margin-top: $padding/4;
 	}
+	+ article {
+		border-top: 1px solid $silver;
+		padding-top: $padding/2;
+		margin-top: $padding/2;
+	}
 }
 
 #tribe-bar-collapse-toggle, .tribe-bar-views-select, .tribe-events-ical { // clean out some unwanted stuff
@@ -126,6 +138,14 @@ body.events-archive article {
 
 .tribe-events-cost {
 	color: $black;
+	top: $padding/2;
+	right: 0;
+	position: absolute;
+	@extend .meta;
+}
+
+article:first-of-type .tribe-events-cost {
+	top: 0;
 }
 
 .tribe-events-notices { // overrides for notices style
@@ -233,6 +253,10 @@ body.events-gridview {
 	border-top: $border;
 	margin-top: $padding;
 	padding-top: $padding;
+}
+
+.tribe-events-meta-group {
+	margin-bottom: $padding;
 }
 
 @include breakpoint(large) {

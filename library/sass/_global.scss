@@ -238,6 +238,7 @@ input[type='submit'] {
 }
 
 article {
+	position: relative;
 	* {
 		max-width: 100%;
 	}
@@ -256,6 +257,9 @@ article {
 	}
 	a:hover .thumbnail {
 		opacity: 1;	
+	}
+	p:empty {
+		display: none; // hide empty p's that events plugin generates on recurring events
 	}
 }
 
