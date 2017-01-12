@@ -255,6 +255,19 @@ body.events-gridview {
 .tribe-events-single-section-title {
 	@extend .h2;
 }
+
+body.single-tribe_events {
+	.event-is-recurring {
+		@extend .meta;
+	}
+	.tribe-events-divider {
+		display: none; // hide pipe
+	}
+	.recurring-info-tooltip {
+		text-transform: none;
+	}
+}
+
 .tribe-events-event-meta, .tribe-events-meta-group + .tribe-events-meta-group {
 	border-top: $border;
 	margin-top: $padding;
