@@ -62,6 +62,9 @@ div.events {
 	}
 	.tribe-events-cost {
 		top: $padding/4;
+		right: 0;
+		position: absolute;
+		@extend .meta;
 	}
 }
 
@@ -125,10 +128,8 @@ body.events-archive article {
 	h3 + .meta {
 		margin-top: $padding/4;
 	}
-	+ article {
-		border-top: 1px solid $silver;
-		padding-top: $padding/2;
-		margin-top: $padding/2;
+	.tribe-events-cost {
+		margin-left: 0.5em;
 	}
 }
 
@@ -138,10 +139,6 @@ body.events-archive article {
 
 .tribe-events-cost {
 	color: $black;
-	top: $padding/2;
-	right: 0;
-	position: absolute;
-	@extend .meta;
 }
 
 article:first-of-type .tribe-events-cost {

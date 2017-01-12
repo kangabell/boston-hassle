@@ -44,6 +44,8 @@ add_filter( 'excerpt_length', 'bhass_lengthen_excerpt', 999 );
 // add class to excerpt paragraph
 add_filter( "the_excerpt", "add_excerpt_class" );
 add_filter( "tribe_events_get_the_excerpt", "add_event_excerpt_class" );
+//remove recurring info on events in list
+add_action( 'tribe_before_get_template_part', 'bhass_remove_rec_tooltip' );
 // modify output of WordPress Popular Posts plugin
 add_filter( 'wpp_custom_html', 'bhass_popular_posts_html', 10, 2 );
 
@@ -95,6 +97,11 @@ function add_excerpt_class( $excerpt ) {
 function add_event_excerpt_class( $excerpt ) {
     $excerpt = str_replace( "<p", "<p class=\"excerpt\"", $excerpt );
     return $excerpt;
+}
+
+// Disable Recurring Info on Events List
+function bhass_remove_rec_tooltip( $template ) {
+    Tribe__Events__Pro__Main::instance()->disable_recurring_info_tooltip();
 }
 
 // Get name of first category in categories array
