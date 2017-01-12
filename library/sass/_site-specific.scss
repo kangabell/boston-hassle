@@ -379,3 +379,27 @@ body.search-no-results main {
 	}
 }
 
+/*************
+SUPPORT PAGE
+*************/
+
+/*** Clean Up Total Donations garbage ***/
+
+#migla_donation_form {
+	.migla-panel-heading h2 {
+		font-size: 2rem !important;
+	}
+	.radio-inline label {
+		border: none !important;
+		background: rgba($white,0.8) !important;
+	}
+	.mg_StripeButton span {
+		background: $gray !important;
+	}
+}
+
+section.migla-panel, #sectionstripe {
+	background: transparent !important;
+	border: none !important;
+}
+

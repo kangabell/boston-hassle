@@ -15,8 +15,11 @@ Version: 1.0
 
 - Advanced Custom Fields
 - Cookie Consent
-- The Events Calendar
+- The Events Calendar Pro
 
+### Other Supported Plugins
+
+- Total Donations
 
 ### Other Required Stuff
 
