@@ -167,9 +167,12 @@ body.events-archive main {
 }
 #tribe-bar-views {
 	position: absolute;
-	top: $padding*1.75;
+	top: $padding*.75;
 	right: 0;
 	z-index: 1;
+	label {
+		display: none;
+	}
 }
 .tribe-bar-views-list li {
 	display: inline;
@@ -201,14 +204,20 @@ body.events-archive main {
 	}
 }
 
+@include breakpoint(medium) {
+	#tribe-bar-views {
+		top: $padding*1.75;
+		label {
+			display: block;
+		}
+	}
+}
+
 
 /*** Calendar/Month/Grid View ***/
 body.events-gridview {
 	.tribe-bar-filters {
 		display: none; // hide filters (search) on month/calendar view
-	}
-	#tribe-bar-views {
-		top: 0;
 	}
 	&.events-archive #tribe-events-content table .type-tribe_events {
 		padding: 0 4px;
