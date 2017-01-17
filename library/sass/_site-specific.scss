@@ -36,6 +36,10 @@ body.home {
 	}
 }
 
+.article-sm + .article-sm {
+	margin-top: $padding/2;
+}
+
 div.hero {
 	margin-bottom: $padding*1.5;
 	div.image img { // extra specificity for override
@@ -93,7 +97,7 @@ div.music, div.film, div.art {
 /* Fresh Stream Column */
 
 div.fresh-stream article {
-	margin-bottom: $padding/2;
+	margin-bottom: $padding*.25;
 }
 
 

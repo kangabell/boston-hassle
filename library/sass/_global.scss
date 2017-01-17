@@ -71,6 +71,9 @@ ul {
 }
 ol {
 	padding-left: 1.125rem;
+	li + li {
+		margin-top: 0.75em;
+	}
 }
 
 hr {
