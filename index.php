@@ -11,7 +11,6 @@ HOMEPAGE
   $featured_id = get_cat_ID( 'Featured' );
   $freshstream_id = get_cat_ID( 'Fresh Stream' );
   $art_id = get_cat_ID( 'Art' );
-  $goto_id = get_cat_ID( 'Go To' );
 
   $film_link = get_category_link( $film_id );
   $music_link = get_category_link( $music_id );
@@ -57,7 +56,7 @@ HOMEPAGE
       </div>
 
       <div class="events">
-        <h2>Go To</h2>
+        <h2>Chosen Shows</h2>
         <?php // upcoming events in the Go To category
           $events = tribe_get_events( array(
               'posts_per_page' => 5,
@@ -66,7 +65,7 @@ HOMEPAGE
                 array(
                   'taxonomy' => 'tribe_events_cat',
                   'field' => 'slug',
-                  'terms' => 'go-to-3',
+                  'terms' => 'chosen-shows',
                 )
               )
           ) );
@@ -84,7 +83,7 @@ HOMEPAGE
             <p class="meta category"><?php echo tribe_get_venue(); ?></p>
           </article>
         <?php } wp_reset_postdata(); ?>
-        <a class="view-all" href="<?php echo tribe_get_events_link(); ?>">View All Events</a>
+        <a class="view-all" href="<?php echo tribe_get_events_link(); ?>">View All</a>
       </div>
 
     </div> <!-- end .primary -->
