@@ -108,12 +108,14 @@ function bhass_remove_rec_tooltip( $template ) {
 function category_name() {
         
     $category = get_the_category();
-
-    //get the first category
-    $name = $category[0]->cat_name;
-    $cat_id = get_cat_ID( $name );
-    $link = get_category_link( $cat_id );
-
+    $event_id = get_the_ID();
+    $event_cats = wp_get_object_terms( $event_id, array( 'tribe_events_cat' ) );
+     
+    if ( empty( $event_cats ) ) { // not an event
+        $name = $category[0]->cat_name;
+    } else {
+        $name = $event_cats[0]->name;
+    }
 
     return '<span class="category">' . $name . '</span>';
 
