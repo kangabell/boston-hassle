@@ -32,6 +32,9 @@ HEADER
 			height: auto;
 			width: 200px;
 		}
+		img.desktop {
+			display: none;
+		}
 	}
 }
 @include breakpoint(large) {
@@ -43,8 +46,12 @@ HEADER
 		h1 {
 			text-align: left;
 		}
-		.logo img {
-			width: 230px;
+		.logo img.desktop {
+			display: inline-block;
+			width: 300px;
+		}
+		.logo img.mobile {
+			display: none;
 		}
 		.toggle-nav {
 			font-size: 2rem;
@@ -128,7 +135,7 @@ body.nav-open {
 
 /*** Desktop Primary Nav ***/
 
-#header .desktop {
+#header div.desktop {
 	position: absolute;
 	right: 0.5em;
 	bottom: 0;

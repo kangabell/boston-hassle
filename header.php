@@ -10,7 +10,7 @@
 	<meta charset="<?php bloginfo('charset'); ?>">
 	
 	<title>
-		<?php wp_title('/', true, 'right'); ?>
+		<?php wp_title('//', true, 'right'); ?>
 	</title>
 	
 	<!-- mobile meta -->

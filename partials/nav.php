@@ -12,9 +12,11 @@ HEADER AND MAIN NAVIGATION
     </a> 
     <h1>
       <a class="logo" href="<?php echo get_home_url(); ?>">
-        <?php if(get_theme_mod( 'bhass_logo' )) : ?>       
-          <img src="<?php echo get_theme_mod( 'bhass_logo' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
-        <?php else : ?>       
+        <?php if(get_theme_mod( 'bhass_logo' )) : ?>
+          <!-- two versions of logo – one for desktop, one for mobile/tablet. css is used to swap between the two. -->     
+          <img class="desktop" src="<?php echo get_theme_mod( 'bhass_logo' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
+          <img class="mobile" src="<?php echo get_theme_mod( 'bhass_logo-mobile' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
+        <?php else : ?> 
           <?php bloginfo('name'); ?>  
         <?php endif; ?>
       </a>

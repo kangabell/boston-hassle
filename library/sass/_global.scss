@@ -88,7 +88,7 @@ hr {
 }
 
 .single main, .page main {
-	ul:not(.meta) {
+	ul:not(.meta):not(.comment-list) {
 		@include bullet-list;
 	}
 	a:not(.button):not(.tribe-events-button) {
@@ -111,7 +111,7 @@ blockquote {
 	text-transform: uppercase;
 }
 
-span.quiet {
+span.quiet, p.quiet {
 	color: $gray;
 }
 
@@ -160,24 +160,6 @@ MEDIA
 
 iframe {
 	width: 100%;
-}
-
-.videowrapper { // allows nice, responsive youtube embeds
-    float: none;
-    clear: both;
-    width: 100%;
-    position: relative;
-    padding-bottom: 56.25%;
-    padding-top: 25px;
-    margin-bottom: $padding/2;
-    height: 0;
-    iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
 }
 
 .issuuembed {

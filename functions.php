@@ -198,12 +198,22 @@ function bhass_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'bhass_logo', array(
         'sanitize_callback' => 'esc_url_raw',
     ) );
+    $wp_customize->add_setting( 'bhass_logo-mobile', array(
+        'sanitize_callback' => 'esc_url_raw',
+    ) );
     
     $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'bhass_logo', array(
         'label'    => __( 'Logo', 'bhass' ),
         'section'  => 'title_tagline',
         'priority' => 1,
         'settings' => 'bhass_logo',
+    ) ) );
+
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'bhass_logo-mobile', array(
+        'label'    => __( 'Mobile Logo', 'bhass' ),
+        'section'  => 'title_tagline',
+        'priority' => 2,
+        'settings' => 'bhass_logo-mobile',
     ) ) );
 
 
