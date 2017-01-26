@@ -236,6 +236,13 @@ body.events-gridview {
 	}
 }
 
+#tribe-events-content {
+	padding: 0;
+	table.tribe-events-calendar {
+		margin-bottom: $padding;
+	}
+}
+
 .tribe-events-past, .tribe-events-past a { // events that have already happened
 	color: $silver;
 }
@@ -253,6 +260,44 @@ body.events-gridview {
 .tribe-events-event-thumb img {
 	max-width: 80px;
 }
+
+
+/*** Responsive stuff for Month View ***/
+
+.tribe-mobile-day {
+	h3, > div {
+		margin-bottom: $padding;
+	}
+	.tribe-events-read-more {
+		margin-top: 0.5em;
+		@extend .small;
+	}
+}
+
+#tribe-events-content .tribe-events-calendar td {
+	height: 50px;
+}
+
+/* show a dot to represent a day with events, instead of showing the events themselves */
+.tribe-events-calendar td .tribe-events-viewmore, .tribe-events-calendar td .type-tribe_events {
+	display: none;
+}
+.tribe-events-calendar .tribe-events-has-events:after {
+	content:"";display:block;height:8px;width:8px;padding:0;border-radius:50%;background-color:#333;margin:5px auto;
+}
+
+@include breakpoint(medium) {
+	#tribe-events-content .tribe-events-calendar td {
+		height: 110px;
+	}
+	.tribe-events-calendar td .tribe-events-viewmore, .tribe-events-calendar td .type-tribe_events {
+		display: block;
+	}
+	.tribe-events-calendar .tribe-events-has-events:after {
+		display: none;
+	}
+}
+
 
 /*** Single Event Page ***/
 
