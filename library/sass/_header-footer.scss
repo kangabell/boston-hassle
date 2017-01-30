@@ -32,9 +32,6 @@ HEADER
 			height: auto;
 			width: 200px;
 		}
-		img.desktop {
-			display: none;
-		}
 	}
 }
 @include breakpoint(large) {
@@ -46,12 +43,8 @@ HEADER
 		h1 {
 			text-align: left;
 		}
-		.logo img.desktop {
-			display: inline-block;
-			width: 300px;
-		}
-		.logo img.mobile {
-			display: none;
+		.logo img {
+			width: 230px;
 		}
 		.toggle-nav {
 			font-size: 2rem;
