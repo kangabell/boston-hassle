@@ -266,4 +266,10 @@ footer {
 	padding-top: $padding/2;
 	padding-bottom: $padding*1.5;
 	@extend .small;
+	.cc { // Creative Commons
+		margin-right: $padding/4;
+		img {
+			width: 3rem;
+		}
+	}
 }
