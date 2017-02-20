@@ -87,7 +87,7 @@ hr {
 	color: $cream;
 }
 
-.single main, .page main {
+.single main, .page:not(.home) main {
 	ul:not(.meta):not(.comment-list) {
 		@include bullet-list;
 	}
