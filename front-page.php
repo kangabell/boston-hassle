@@ -5,19 +5,16 @@ Template Name: Homepage
 ?>
 
 <?php
-  // Category ID's & URL's, for our convenience.
-  // WARNING: The category names listed below must match those in the backend exactly!
 
-  $film_id = get_cat_ID( 'Film Flam' );
-  $music_id = get_cat_ID( 'Music' );
   $featured_id = get_cat_ID( 'Featured' );
+  
   $freshstream_id = get_cat_ID( 'Fresh Stream' );
-  $art_id = get_cat_ID( 'Art' );
-
-  $film_link = get_category_link( $film_id );
-  $music_link = get_category_link( $music_id );
   $freshstream_link = get_category_link( $freshstream_id );
-  $art_link = get_category_link( $art_id );
+
+  $cat_1 = get_field('cat_1');
+  $cat_2 = get_field('cat_2');
+  $cat_3 = get_field('cat_3');
+
 ?>
 
 <?php include 'header.php'; ?>
@@ -128,36 +125,36 @@ Template Name: Homepage
 
     <div>
 
-      <div class="music category">
-        <h2>Music</h2>
-        <?php // all Music articles
+      <div class="<?php echo $cat_1->slug; ?> category-1 category">
+        <h2><?php echo $cat_1->name; ?></h2>
+        <?php // all Category #1 articles
           $loop = new WP_Query( array(
             'posts_per_page'=>6, 
             'ignore_sticky_posts'=>true, 
-            'cat'=>$music_id
+            'cat'=>$cat_1->term_id
           ) );
           while ($loop->have_posts()) : 
             $loop->the_post();
             include 'partials/article-sm.php';
           endwhile; wp_reset_postdata();
         ?>
-        <a class="view-all" href="<?php echo $music_link; ?>">View All Music</a>
+        <a class="view-all" href="<?php echo get_category_link( $cat_1->term_id ); ?>">View All <?php echo $cat_1->name; ?></a>
       </div>
 
-      <div class="film category">
-        <h2>Film</h2>
-        <?php // all Film articles
+      <div class="<?php echo $cat_2->slug; ?> category-2 category">
+        <h2><?php echo $cat_2->name; ?></h2>
+        <?php // all Category #2 articles
           $loop = new WP_Query( array(
             'posts_per_page'=>6, 
             'ignore_sticky_posts'=>true, 
-            'cat'=>$film_id
+            'cat'=>$cat_2->term_id
           ) );
           while ($loop->have_posts()) : 
             $loop->the_post();
             include 'partials/article-sm.php';
           endwhile; wp_reset_postdata();
         ?>
-        <a class="view-all" href="<?php echo $film_link; ?>">View All Film</a>
+        <a class="view-all" href="<?php echo get_category_link( $cat_2->term_id ); ?>">View All <?php echo $cat_2->name; ?></a>
       </div>
 
       <div class="home-widget">
@@ -209,20 +206,20 @@ Template Name: Homepage
         <a class="view-all" href="<?php echo $freshstream_link; ?>">View All Fresh Stream</a>
       </div>
 
-      <div class="art category">
-        <h2>Art</h2>
-        <?php // all Art articles
+      <div class="<?php echo $cat_3->slug; ?> category-3 category">
+        <h2><?php echo $cat_3->name; ?></h2>
+        <?php // all Category #3 articles
           $loop = new WP_Query( array(
             'posts_per_page'=>12, 
             'ignore_sticky_posts'=>true, 
-            'cat'=>$art_id
+            'cat'=>$cat_3->term_id
           ) );
           while ($loop->have_posts()) : 
             $loop->the_post();
             include 'partials/article-sm.php';
           endwhile; wp_reset_postdata();
         ?>
-        <a class="view-all" href="<?php echo $art_link; ?>">View All Art</a>
+        <a class="view-all" href="<?php echo get_category_link( $cat_3->term_id ); ?>">View All <?php echo $cat_3->name; ?></a>
       </div>
 
     </div>
