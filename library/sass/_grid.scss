@@ -46,7 +46,7 @@ article + article {
 	margin-top: $padding;
 }
 
-footer, .music > article + article, .film > article + article, .art > article + article {
+footer, div.category > article + article {
   margin-top: $padding/2;
 }
 
@@ -74,7 +74,7 @@ body.home {
 		margin-bottom: $padding/4;
 		overflow: hidden;
 	}
-	div.secondary, div.tertiary, div.events, div.music, div.film, .home-widget, .articles article, div.art {
+	div.secondary, div.tertiary, div.events, div.category, .home-widget, .articles article {
 		margin-top: $padding;
 	}
 
@@ -118,7 +118,7 @@ body.home {
 		margin-left: $padding/2;
 	}
 
-	.music, .film, .home-widget, .articles article {
+	div.category-1, div.category-2, .home-widget, .articles article {
 		margin-top: $padding;
 	}
 
@@ -164,17 +164,17 @@ body.home {
 			@include grid-row;
 		}
 
-		.music, .film {
+		.category-1, .category-2 {
 			article {
 				@include grid-row;
 			}
 		}
 
-		.music {
+		.category-1 {
 			@include grid-column(12);
 		}
 
-		.film {
+		.category-2 {
 			@include grid-column(7);
 		}
 
@@ -192,7 +192,7 @@ body.home {
 		div.fresh-stream {
 			@include grid-column(7);
 		}
-		div.art {
+		.category-3 {
 			margin-top: 0;
 			@include grid-column(5);
 		}
@@ -227,7 +227,7 @@ body.home {
 
 	/*** SINGLE PAGE & DEFAULT PAGES ***/
 
-	body.single, body.page:not(.page-template-page-twocolumn), body.error404 {
+	body.single, body.page:not(.home):not(.page-template-page-twocolumn), body.error404 {
 		main {
 			@include grid-column(11);
 			@include grid-col-pos(center);
@@ -279,11 +279,12 @@ body.home {
 		.articles article {
 			@include grid-column(3);
 		}
-		.music {
+
+		.category-1 {
 			@include grid-column(4);
 		}
 
-		.film {
+		.category-2 {
 			@include grid-column(4);
 		}
 
@@ -342,7 +343,7 @@ body.home {
 
 	/*** SINGLE & DEFAULT PAGES ***/
 
-	body.single, body.page:not(.page-template-page-twocolumn) {
+	body.single, body.page:not(.home):not(.page-template-page-twocolumn) {
 		main {
 			@include grid-column(8);
 			@include grid-col-pos(center);
