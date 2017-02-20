@@ -7,7 +7,7 @@ Template Name: Homepage
 <?php
 
   $featured_id = get_cat_ID( 'Featured' );
-  
+
   $freshstream_id = get_cat_ID( 'Fresh Stream' );
   $freshstream_link = get_category_link( $freshstream_id );
 
@@ -125,37 +125,21 @@ Template Name: Homepage
 
     <div>
 
-      <div class="<?php echo $cat_1->slug; ?> category-1 category">
-        <h2><?php echo $cat_1->name; ?></h2>
-        <?php // all Category #1 articles
-          $loop = new WP_Query( array(
-            'posts_per_page'=>6, 
-            'ignore_sticky_posts'=>true, 
-            'cat'=>$cat_1->term_id
-          ) );
-          while ($loop->have_posts()) : 
-            $loop->the_post();
-            include 'partials/article-sm.php';
-          endwhile; wp_reset_postdata();
-        ?>
-        <a class="view-all" href="<?php echo get_category_link( $cat_1->term_id ); ?>">View All <?php echo $cat_1->name; ?></a>
-      </div>
+      <?php
+        // Category #1
+        $category = $cat_1;
+        $class = 'category-1';
+        $count = 6;
+        include(locate_template('partials/category-section.php'));
+      ?>
 
-      <div class="<?php echo $cat_2->slug; ?> category-2 category">
-        <h2><?php echo $cat_2->name; ?></h2>
-        <?php // all Category #2 articles
-          $loop = new WP_Query( array(
-            'posts_per_page'=>6, 
-            'ignore_sticky_posts'=>true, 
-            'cat'=>$cat_2->term_id
-          ) );
-          while ($loop->have_posts()) : 
-            $loop->the_post();
-            include 'partials/article-sm.php';
-          endwhile; wp_reset_postdata();
-        ?>
-        <a class="view-all" href="<?php echo get_category_link( $cat_2->term_id ); ?>">View All <?php echo $cat_2->name; ?></a>
-      </div>
+      <?php
+        // Category #2
+        $category = $cat_2;
+        $class = 'category-2';
+        $count = 6;
+        include(locate_template('partials/category-section.php'));
+      ?>
 
       <div class="home-widget">
         <?php dynamic_sidebar( 'home_widget' ); ?>
@@ -206,21 +190,13 @@ Template Name: Homepage
         <a class="view-all" href="<?php echo $freshstream_link; ?>">View All Fresh Stream</a>
       </div>
 
-      <div class="<?php echo $cat_3->slug; ?> category-3 category">
-        <h2><?php echo $cat_3->name; ?></h2>
-        <?php // all Category #3 articles
-          $loop = new WP_Query( array(
-            'posts_per_page'=>12, 
-            'ignore_sticky_posts'=>true, 
-            'cat'=>$cat_3->term_id
-          ) );
-          while ($loop->have_posts()) : 
-            $loop->the_post();
-            include 'partials/article-sm.php';
-          endwhile; wp_reset_postdata();
-        ?>
-        <a class="view-all" href="<?php echo get_category_link( $cat_3->term_id ); ?>">View All <?php echo $cat_3->name; ?></a>
-      </div>
+      <?php
+        // Category #3
+        $category = $cat_3;
+        $class = 'category-3';
+        $count = 12;
+        include(locate_template('partials/category-section.php'));
+      ?>
 
     </div>
 
