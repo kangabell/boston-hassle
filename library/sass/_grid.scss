@@ -234,6 +234,14 @@ body.home {
 		}
 	}
 
+	section.related-posts {
+		@include grid-row;
+		article {
+			margin-top: 0;
+			@include grid-column(4);
+		}
+	}
+
 
 } /* end breakpoint(medium) */
 
