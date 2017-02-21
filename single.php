@@ -34,7 +34,47 @@ SINGLE POST / ARTICLE PAGE
     </article>
 
     <section class="tags meta">
+
       <?php the_tags(''); ?>
+
+    </section>
+
+    <section class="related-posts">
+
+      <h2>Related Posts</h2>
+
+      <?php 
+        $orig_post = $post;
+        global $post;
+        $categories = get_the_category($post->ID);
+
+        if ($categories) {
+
+          $category_ids = array();
+
+          foreach($categories as $individual_category) $category_ids[] = $individual_category->term_id;
+
+          $args = array(
+            'category__in' => $category_ids,
+            'post__not_in' => array($post->ID),
+            'posts_per_page' => 3,
+            'ignore_sticky_posts' => true
+          );
+
+          $query = new wp_query( $args );
+
+          if ( $query->have_posts() ) : while( $query->have_posts() ) {
+
+              $query->the_post();
+
+              get_template_part('partials/article');
+
+          } endif;
+        }
+
+      wp_reset_query(); 
+
+      ?>
     </section>
 
     <?php
@@ -42,10 +82,12 @@ SINGLE POST / ARTICLE PAGE
         comments_template();
       }
     ?>
+
+    <?php endwhile; endif; ?>
+
+    
       
   </main>
-
-  <?php endwhile; endif; ?>
 
 <?php get_footer(); ?>
 
