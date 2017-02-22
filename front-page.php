@@ -6,7 +6,7 @@ Template Name: Homepage
 
 <?php
 
-  $featured_id = get_cat_ID( 'Featured' );
+  $featured_ids = get_field('featured_posts', false, false);
 
   $freshstream_id = get_cat_ID( 'Fresh Stream' );
   $freshstream_link = get_category_link( $freshstream_id );
@@ -24,14 +24,18 @@ Template Name: Homepage
     <div class="primary">
 
       <div class="hero">
-        <?php // most recent Featured article
+        <?php // first Featured Post
+
           $args = array(
             'posts_per_page' => 1,
-            'ignore_sticky_posts' => true,
-            'cat' => $featured_id
+            'post__in' => $featured_ids,
+            'orderby' => 'post__in',
+            'ignore_sticky_posts' => true
           );
           query_posts ($args);
+
           if (have_posts()) : while (have_posts()) : the_post();
+          
         ?>
           <article class="hero"><a href="<?php the_permalink(); ?>">
 
@@ -89,38 +93,46 @@ Template Name: Homepage
 
     <div class="secondary">
 
-      <?php // 2 more Featured article
+      <?php // 3 more Featured Posts
+
         $args = array(
           'posts_per_page' => 3,
+          'post__in' => $featured_ids,
+          'orderby' => 'post__in',
           'ignore_sticky_posts' => true,
-          'cat' => $featured_id,
           'offset' => 1
         );
         query_posts ($args);
+
         if (have_posts()) : while (have_posts()) : the_post();
-          $class = 'featured';
           include 'partials/article.php';
         endwhile; endif;
         wp_reset_query();
+
       ?>
 
     </div>
 
     <div class="tertiary">
-      <?php // 2 more Featured article
+
+      <?php // 2 more Featured Posts
+
         $args = array(
           'posts_per_page' => 2,
+          'post__in' => $featured_ids,
+          'orderby' => 'post__in',
           'ignore_sticky_posts' => true,
-          'cat' => $featured_id,
           'offset' => 4
         );
         query_posts ($args);
+
         if (have_posts()) : while (have_posts()) : the_post();
-          $class = 'featured';
           include 'partials/article.php';
         endwhile; endif;
         wp_reset_query();
+
       ?>
+
     </div>
 
     <div>
@@ -149,11 +161,12 @@ Template Name: Homepage
 
     <div class="articles">
       <div>
-        <?php // all articles, except Featured & Fresh Stream ones
+        <?php // General stream of articles
           $loop = new WP_Query( array(
             'posts_per_page'=>8, 
-            'ignore_sticky_posts'=>true, 
-            'category__not_in' => array($featured_id, $freshstream_id) 
+            'ignore_sticky_posts'=>true,
+            'post__not_in' => $featured_ids, // exclude featured posts, since they've already appeared above
+            'category__not_in' => $freshstream_id // exclude fresh stream posts, since they have their own big section
           ) );
           while ($loop->have_posts()) : 
             $class = 'default';
@@ -202,12 +215,13 @@ Template Name: Homepage
 
     <div class="articles">
       <div>
-        <?php // more articles, but not Featured or Fresh Stream ones
+        <?php // General stream of articles, continued
         $loop = new WP_Query( array(
           'posts_per_page'=>8, 
           'ignore_sticky_posts'=>true, 
           'offset' => 8, 
-          'category__not_in' => array($featured_id, $freshstream_id) 
+          'post__not_in' => $featured_ids,
+          'category__not_in' => $freshstream_id
         ) );
         while ($loop->have_posts()) : 
           $class = 'default';
