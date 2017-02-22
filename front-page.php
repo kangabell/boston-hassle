@@ -141,7 +141,6 @@ Template Name: Homepage
         // Category #1
         $category = $cat_1;
         $class = 'category-1';
-        $count = 6;
         include(locate_template('partials/category-section.php'));
       ?>
 
@@ -149,12 +148,11 @@ Template Name: Homepage
         // Category #2
         $category = $cat_2;
         $class = 'category-2';
-        $count = 6;
         include(locate_template('partials/category-section.php'));
       ?>
 
-      <div class="home-widget">
-        <?php dynamic_sidebar( 'home_widget' ); ?>
+      <div class="home-widget-1">
+        <?php dynamic_sidebar( 'home_widget-1' ); ?>
       </div>
 
     </div>
@@ -207,9 +205,12 @@ Template Name: Homepage
         // Category #3
         $category = $cat_3;
         $class = 'category-3';
-        $count = 12;
         include(locate_template('partials/category-section.php'));
       ?>
+
+      <div class="home-widget-2">
+        <?php dynamic_sidebar( 'home_widget-2' ); ?>
+      </div>
 
     </div>
 
