@@ -60,7 +60,7 @@ Template Name: Homepage
 
       <div class="events">
         <h2>Chosen Shows</h2>
-        <?php // upcoming events in the Go To category
+        <?php // upcoming events in the Chosen Shows category
           $events = tribe_get_events( array(
               'posts_per_page' => 5,
               'start_date' => current_time( 'Y-m-d H:i:s' ), // upcoming
