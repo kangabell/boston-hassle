@@ -82,7 +82,7 @@ body.home {
 		margin-top: $padding;
 	}
 
-	div.fresh-stream {
+	div.picture-cat {
 		@include grid-row;
 		article {
 			@include grid-column(6);
@@ -193,7 +193,7 @@ body.home {
 			@include grid-column(6);
 		}
 
-		div.fresh-stream {
+		div.picture-cat {
 			@include grid-column(7);
 		}
 		.category-3, .home-widget-2 {

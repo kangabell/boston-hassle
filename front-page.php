@@ -8,12 +8,10 @@ Template Name: Homepage
 
   $featured_ids = get_field('featured_posts', false, false);
 
-  $freshstream_id = get_cat_ID( 'Fresh Stream' );
-  $freshstream_link = get_category_link( $freshstream_id );
-
   $cat_1 = get_field('cat_1');
   $cat_2 = get_field('cat_2');
   $cat_3 = get_field('cat_3');
+  $picture_cat = get_field('picture_cat');
 
 ?>
 
@@ -164,7 +162,7 @@ Template Name: Homepage
             'posts_per_page'=>8, 
             'ignore_sticky_posts'=>true,
             'post__not_in' => $featured_ids, // exclude featured posts, since they've already appeared above
-            'category__not_in' => $freshstream_id // exclude fresh stream posts, since they have their own big section
+            'category__not_in' => $picture_cat->term_id// exclude, since this has its own bigger section
           ) );
           while ($loop->have_posts()) : 
             $class = 'default';
@@ -177,13 +175,14 @@ Template Name: Homepage
 
     <div>
 
-      <div class="fresh-stream category">
-        <h2>Fresh Stream</h2>
-        <?php // all Fresh Stream articles
+      <!-- Category Section with Pictures -->
+      <div class="<?php echo $picture_cat->slug ?> picture-cat category">
+        <h2><?php echo $picture_cat->name; ?></h2>
+        <?php
           $loop = new WP_Query( array(
-            'posts_per_page'=>6, 
+            'posts_per_page'=> 6, 
             'ignore_sticky_posts'=>true, 
-            'cat'=>$freshstream_id
+            'cat'=>$picture_cat->term_id
           ) );
           while ($loop->have_posts()) : 
             $loop->the_post();
@@ -198,7 +197,7 @@ Template Name: Homepage
         <?php
           endwhile; wp_reset_postdata();
         ?>
-        <a class="view-all" href="<?php echo $freshstream_link; ?>">View All Fresh Stream</a>
+        <a class="view-all" href="<?php echo get_category_link( $picture_cat->term_id ); ?>">View All <?php echo $picture_cat->name; ?></a>
       </div>
 
       <?php
@@ -222,7 +221,7 @@ Template Name: Homepage
           'ignore_sticky_posts'=>true, 
           'offset' => 8, 
           'post__not_in' => $featured_ids,
-          'category__not_in' => $freshstream_id
+          'category__not_in' => $picture_cat->term_id
         ) );
         while ($loop->have_posts()) : 
           $class = 'default';
