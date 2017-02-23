@@ -377,9 +377,17 @@ section.tags {
 	}
 }
 
-section.comments {
+section.related-posts {
 	border-top: $border;
 	padding-top: $padding;
+	border-bottom: $border;
+	padding-bottom: $padding;
+	h2 {
+		text-align: center;
+	}
+}
+
+section.comments {
 	h2 {
 		margin-bottom: $padding;
 	}

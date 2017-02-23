@@ -15,7 +15,7 @@ hr  {
 	width: 100%;
 }
 
-#header > div, .announcement > p, .articles > div, footer > div, .subfooter > div, .single article, section.tags {
+#header > div, .announcement > p, .articles > div, footer > div, .subfooter > div, .single main > article, section.tags {
 	@include grid-row;
 }
 
@@ -62,6 +62,10 @@ aside.sidebar {
 /*** Excerpts ***/
 p.excerpt {
 	display: none; // hide on mobile
+}
+
+.single p.excerpt {
+	display: none; // more specificity to always hide on .single
 }
 
 
@@ -229,7 +233,17 @@ body.home {
 
 	/*** SINGLE PAGE & DEFAULT PAGES ***/
 
-	body.single, body.page:not(.home):not(.page-template-page-twocolumn), body.error404 {
+	body.single {
+		main {
+			@include grid-row;
+		}
+		main header, main > article, section.tags, section.comments { // everything except section.related-posts
+			@include grid-column(11);
+			@include grid-col-pos(center);
+		}
+	}
+
+	body.page:not(.home):not(.page-template-page-twocolumn), body.error404 {
 		main {
 			@include grid-column(11);
 			@include grid-col-pos(center);
@@ -353,7 +367,14 @@ body.home {
 
 	/*** SINGLE & DEFAULT PAGES ***/
 
-	body.single, body.page:not(.home):not(.page-template-page-twocolumn) {
+	body.single {
+		main header, main > article, section.tags, section.comments {
+			@include grid-column(8);
+			@include grid-col-pos(center);
+		}
+	}
+
+	body.page:not(.home):not(.page-template-page-twocolumn) {
 		main {
 			@include grid-column(8);
 			@include grid-col-pos(center);

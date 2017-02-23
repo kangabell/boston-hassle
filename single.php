@@ -41,14 +41,14 @@ SINGLE POST / ARTICLE PAGE
 
     <section class="related-posts">
 
-      <h2>Related Posts</h2>
-
       <?php 
         $orig_post = $post;
         global $post;
         $categories = get_the_category($post->ID);
 
         if ($categories) {
+
+          echo '<h2>You Might Also Like...</h2>';
 
           $category_ids = array();
 
