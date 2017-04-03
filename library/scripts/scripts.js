@@ -31,7 +31,7 @@ jQuery(document).ready( function($) {
 	/*** EQUALIZE ELEMENT HEIGHTS ***/
 
 	equalize('body.home div.articles article');
-	equalize('body.home div.fresh-stream article');
+	equalize('body.home div.picture-cat article');
 
 
 	/*** KEYBOARD SHORTCUTS ***/

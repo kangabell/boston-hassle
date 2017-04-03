@@ -85,18 +85,18 @@ div.events {
 	}
 }
 
-/* Music, Film, & Art Columns */
+/* Homepage Category Columns (e.g. Music, Art, Film) */
 
-div.music, div.film, div.art {
+body.home div.category {
 	h4 {
 		margin-top: 0;
 		margin-bottom: 0;
 	}
 }
 
-/* Fresh Stream Column */
+/* Category-with-Pictures Column (i.e. Fresh Stream) */
 
-div.fresh-stream article {
+div.picture-cat article {
 	margin-bottom: $padding*.25;
 }
 
@@ -377,9 +377,17 @@ section.tags {
 	}
 }
 
-section.comments {
+section.related-posts {
 	border-top: $border;
 	padding-top: $padding;
+	border-bottom: $border;
+	padding-bottom: $padding;
+	h2 {
+		text-align: center;
+	}
+}
+
+section.comments {
 	h2 {
 		margin-bottom: $padding;
 	}

@@ -15,7 +15,7 @@ hr  {
 	width: 100%;
 }
 
-#header > div, .announcement > p, .articles > div, footer > div, .subfooter > div, .single article, section.tags {
+#header > div, .announcement > p, .articles > div, footer > div, .subfooter > div, .single main > article, section.tags {
 	@include grid-row;
 }
 
@@ -46,7 +46,7 @@ article + article {
 	margin-top: $padding;
 }
 
-footer, .music > article + article, .film > article + article, .art > article + article {
+footer, div.category > article + article {
   margin-top: $padding/2;
 }
 
@@ -64,6 +64,10 @@ p.excerpt {
 	display: none; // hide on mobile
 }
 
+.single p.excerpt {
+	display: none; // more specificity to always hide on .single
+}
+
 
 /*** HOMEPAGE ***/
 
@@ -74,11 +78,11 @@ body.home {
 		margin-bottom: $padding/4;
 		overflow: hidden;
 	}
-	div.secondary, div.tertiary, div.events, div.music, div.film, .home-widget, .articles article, div.art {
+	div.secondary, div.tertiary, div.events, div.category, .home-widget-1, .articles article, .home-widget-2 {
 		margin-top: $padding;
 	}
 
-	div.fresh-stream {
+	div.picture-cat {
 		@include grid-row;
 		article {
 			@include grid-column(6);
@@ -118,7 +122,7 @@ body.home {
 		margin-left: $padding/2;
 	}
 
-	.music, .film, .home-widget, .articles article {
+	div.category-1, div.category-2, .home-widget-1, .articles article {
 		margin-top: $padding;
 	}
 
@@ -164,21 +168,21 @@ body.home {
 			@include grid-row;
 		}
 
-		.music, .film {
+		.category-1, .category-2 {
 			article {
 				@include grid-row;
 			}
 		}
 
-		.music {
+		.category-1 {
 			@include grid-column(12);
 		}
 
-		.film {
+		.category-2 {
 			@include grid-column(7);
 		}
 
-		.home-widget {
+		.home-widget-1 {
 			@include grid-column(5);
 			> div {
 				@include grid-row;
@@ -189,12 +193,14 @@ body.home {
 			@include grid-column(6);
 		}
 
-		div.fresh-stream {
+		div.picture-cat {
 			@include grid-column(7);
 		}
-		div.art {
-			margin-top: 0;
+		.category-3, .home-widget-2 {
 			@include grid-column(5);
+		}
+		.category-3 {
+			margin-top: 0;
 		}
 	}
 
@@ -227,10 +233,28 @@ body.home {
 
 	/*** SINGLE PAGE & DEFAULT PAGES ***/
 
-	body.single, body.page:not(.page-template-page-twocolumn), body.error404 {
+	body.single {
+		main {
+			@include grid-row;
+		}
+		main header, main > article, section.tags, section.comments { // everything except section.related-posts
+			@include grid-column(11);
+			@include grid-col-pos(center);
+		}
+	}
+
+	body.page:not(.home):not(.page-template-page-twocolumn), body.error404 {
 		main {
 			@include grid-column(11);
 			@include grid-col-pos(center);
+		}
+	}
+
+	section.related-posts {
+		@include grid-row;
+		article {
+			margin-top: 0;
+			@include grid-column(4);
 		}
 	}
 
@@ -279,15 +303,16 @@ body.home {
 		.articles article {
 			@include grid-column(3);
 		}
-		.music {
+
+		.category-1 {
 			@include grid-column(4);
 		}
 
-		.film {
+		.category-2 {
 			@include grid-column(4);
 		}
 
-		.home-widget {
+		.home-widget-1 {
 			@include grid-column(4);
 		}
 	}
@@ -342,7 +367,14 @@ body.home {
 
 	/*** SINGLE & DEFAULT PAGES ***/
 
-	body.single, body.page:not(.page-template-page-twocolumn) {
+	body.single {
+		main header, main > article, section.tags, section.comments {
+			@include grid-column(8);
+			@include grid-col-pos(center);
+		}
+	}
+
+	body.page:not(.home):not(.page-template-page-twocolumn) {
 		main {
 			@include grid-column(8);
 			@include grid-col-pos(center);
