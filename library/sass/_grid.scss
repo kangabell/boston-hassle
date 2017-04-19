@@ -122,7 +122,7 @@ body.home {
 		margin-left: $padding/2;
 	}
 
-	div.category-1, div.category-2, .home-widget-1, .articles article {
+	div.category-1, div.category-2, div.category-3, .home-widget-1, .articles article {
 		margin-top: $padding;
 	}
 
@@ -164,11 +164,15 @@ body.home {
 			@include grid-column(4);
 		}
 
+		div.comments {
+			@include grid-column(6);
+		}
+
 		.events article {
 			@include grid-row;
 		}
 
-		.category-1, .category-2 {
+		.category-1, .category-2, .category-3 {
 			article {
 				@include grid-row;
 			}
@@ -304,16 +308,12 @@ body.home {
 			@include grid-column(3);
 		}
 
-		.category-1 {
-			@include grid-column(4);
-		}
-
-		.category-2 {
+		.category-1, .category-2, .category-3 {
 			@include grid-column(4);
 		}
 
 		.home-widget-1 {
-			@include grid-column(4);
+			@include grid-column(6);
 		}
 	}
 

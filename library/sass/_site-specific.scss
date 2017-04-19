@@ -100,6 +100,17 @@ div.picture-cat article {
 	margin-bottom: $padding*.25;
 }
 
+/* Newsletter/Mailing List Signup */
+
+div.cta {
+	border-top: $border;
+	padding-top: $padding;
+	text-align: center;
+	p {
+		margin-bottom: $padding/2;
+	}
+}
+
 
 /*************
 ARCHIVE  

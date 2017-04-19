@@ -111,25 +111,82 @@ Template Name: Homepage
 
     </div>
 
-    <div class="tertiary">
+    <div>
 
-      <?php // 2 more Featured Posts
+      <div class="comments">
 
-        $args = array(
-          'posts_per_page' => 2,
-          'post__in' => $featured_ids,
-          'orderby' => 'post__in',
-          'ignore_sticky_posts' => true,
-          'offset' => 4
-        );
-        query_posts ($args);
+        <h2>The People Have Spoken</h2>
 
-        if (have_posts()) : while (have_posts()) : the_post();
-          include 'partials/article.php';
-        endwhile; endif;
-        wp_reset_query();
+        <div>
 
-      ?>
+          <h3>Re: PHILIP LEWIN – AM I REALLY HERE ALL ALONE?</h3>
+
+          <ul class="comment-list">
+                <li class="comment even thread-even depth-1" id="comment-21336">
+              <div id="div-comment-21336" class="comment-body">
+              <div class="comment-author vcard">
+            <img alt="" src="https://secure.gravatar.com/avatar/11982d1f13172fc78228b841747f6d68?s=42&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/11982d1f13172fc78228b841747f6d68?s=84&amp;d=mm&amp;r=g 2x" class="avatar avatar-42 photo" height="42" width="42">      <cite class="fn">Marlowe</cite> <span class="says">says:</span>   </div>
+          
+
+          <p>Thanks for this review, which introduced me to a musician I should have listened to long ago. Lewin connects nicely to the folk roots of the 1960s and the popular rock of the 70s.</p>
+
+
+          </li><!-- #comment-## -->
+          <li class="comment odd alt thread-odd thread-alt depth-1" id="comment-21400">
+              <div id="div-comment-21400" class="comment-body">
+              <div class="comment-author vcard">
+            <img alt="" src="https://secure.gravatar.com/avatar/2c870952ebfd42b26e071d5e1063ed34?s=42&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/2c870952ebfd42b26e071d5e1063ed34?s=84&amp;d=mm&amp;r=g 2x" class="avatar avatar-42 photo" height="42" width="42">     
+             <cite class="fn"><a href="http://www.philipjohnlewin.com" rel="external nofollow" class="url">Philip John Lewin</a></cite> <span class="says">says:</span>    </div>
+          
+
+          <p>Thank you for listening. For the most part I’m finding your comments insightful and food for thought. Only exception is, I can’t ever recall even listening to Astral Weeks! I was more into The Velvet...</p>
+
+          </li><!-- #comment-## -->
+          </ul>
+
+        </div>
+
+        <div>
+
+          <h3>Re: REVIEW: YOUR NAME (2016) DIR. MAKOTO SHINKAI</h3>
+
+          <ul class="comment-list">
+             <li class="comment even thread-even depth-1" id="comment-21346">
+                    <div id="div-comment-21346" class="comment-body">
+                    <div class="comment-author vcard">
+                  <img alt="" src="https://secure.gravatar.com/avatar/3b4a25fd643321b6f154d00e5751034f?s=42&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/3b4a25fd643321b6f154d00e5751034f?s=84&amp;d=mm&amp;r=g 2x" class="avatar avatar-42 photo" height="42" width="42">      <cite class="fn">oddds</cite> <span class="says">says:</span>   </div>
+                
+                <p>This really was so, so so good.</p>
+
+                </li>
+
+          </ul>
+
+        </div>
+
+        <!-- <div>
+
+          <h3>Re: TAMPOPO (1985) DIR. JÛZÔ ITAMI</h3>
+
+          <ul class="comment-list">
+             <li class="comment even thread-even depth-1" id="comment-21344">
+                    <div id="div-comment-21344" class="comment-body">
+                    <div class="comment-author vcard">
+                  <img alt="" src="https://secure.gravatar.com/avatar/00d3498d5577213e6e712c5942310cff?s=42&amp;d=mm&amp;r=g" srcset="https://secure.gravatar.com/avatar/00d3498d5577213e6e712c5942310cff?s=84&amp;d=mm&amp;r=g 2x" class="avatar avatar-42 photo" height="42" width="42">      <cite class="fn"><a href="https://kjchoi10.github.io" rel="external nofollow" class="url">Kevin</a></cite> <span class="says">says:</span>    </div>
+                
+                <p>love this movie! checkout the brattle too they play there sometimes</p>
+
+                </li>
+
+          </ul>
+
+        </div> -->
+
+      </div> <!-- end .comments -->
+
+      <div class="home-widget-1">
+        <?php dynamic_sidebar( 'home_widget-1' ); ?>
+      </div>
 
     </div>
 
@@ -149,9 +206,12 @@ Template Name: Homepage
         include(locate_template('partials/category-section.php'));
       ?>
 
-      <div class="home-widget-1">
-        <?php dynamic_sidebar( 'home_widget-1' ); ?>
-      </div>
+      <?php
+        // Category #3
+        $category = $cat_3;
+        $class = 'category-3';
+        include(locate_template('partials/category-section.php'));
+      ?>
 
     </div>
 
@@ -200,17 +260,14 @@ Template Name: Homepage
         <a class="view-all" href="<?php echo get_category_link( $picture_cat->term_id ); ?>">View All <?php echo $picture_cat->name; ?></a>
       </div>
 
-      <?php
-        // Category #3
-        $category = $cat_3;
-        $class = 'category-3';
-        include(locate_template('partials/category-section.php'));
-      ?>
-
       <div class="home-widget-2">
         <?php dynamic_sidebar( 'home_widget-2' ); ?>
       </div>
 
+    </div>
+
+    <div class="cta">
+      <div style="background:white;width:100%;padding:2rem"><a href="javascript:void(0)"><h2 class="h1">Donate!</h2></a></div>
     </div>
 
     <div class="articles">
@@ -231,6 +288,16 @@ Template Name: Homepage
         ?>
       </div>
 
+    </div>
+
+    <div class="cta">
+      <a href="javascript:void(0)">
+        <p class="h4">The Most Relevant Newsletter of Your Life</p>
+        <h2 class="h1">Join the Boston Hassle Mailing List</h2>
+        <form>
+          <input type="email"><a href="javascript:void(0)" class="button">Subscribe</a>
+        </form>
+      </a>
     </div>
 
   </main>
