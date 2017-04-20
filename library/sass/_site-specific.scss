@@ -102,12 +102,25 @@ div.picture-cat article {
 
 /* Newsletter/Mailing List Signup */
 
-div.cta {
-	border-top: $border;
-	padding-top: $padding;
+.home div.newsletter {
+	background: url('../img/texture-lt.jpg') $cream;
+	background-size: cover;
+	margin-top: $padding*2;
+	padding: $padding;
 	text-align: center;
 	p {
 		margin-bottom: $padding/2;
+	}
+	.icon-envelope {
+		color: $gray;
+		margin-right: $padding/4;
+	}
+	input {
+		min-width: 30%;
+		padding: $padding/3;
+	}
+	.button {
+		margin-left: $padding/2;
 	}
 }
 

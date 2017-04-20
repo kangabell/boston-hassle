@@ -195,6 +195,9 @@ button, .button, input[type='submit'] {
   	&:hover {
   		opacity: 1;
   	}
+  	&.large {
+  		padding: 0.5rem 1rem;
+  	}
 }
 
 button, input[type='submit'] {

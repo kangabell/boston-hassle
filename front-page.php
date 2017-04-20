@@ -290,14 +290,12 @@ Template Name: Homepage
 
     </div>
 
-    <div class="cta">
-      <a href="javascript:void(0)">
-        <p class="h4">The Most Relevant Newsletter of Your Life</p>
-        <h2 class="h1">Join the Boston Hassle Mailing List</h2>
-        <form>
-          <input type="email"><a href="javascript:void(0)" class="button">Subscribe</a>
-        </form>
-      </a>
+    <div class="newsletter">
+      <p class="h4">The Most Relevant Newsletter of Your Life</p>
+      <h2 class="h1">Join the Boston Hassle Mailing List</h2>
+      <p class="form">
+        <input type="email" placeholder="Email Address"><a href="javascript:void(0)" class="button large">Subscribe</a>
+      </p>
     </div>
 
   </main>
