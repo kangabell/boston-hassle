@@ -115,6 +115,9 @@ $topbar-height: 2rem;
 // for accessibility, provide some visually-hidden text:
 // <span class="icon-twitter"></span><span class="visually-hidden">Twitter</span>
 
+.icon-envelope:before {
+  content: "\f0e0";
+}
 .icon-menu:before {
   content: "\2630";
 }
