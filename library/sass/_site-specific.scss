@@ -100,13 +100,27 @@ div.picture-cat article {
 	margin-bottom: $padding*.25;
 }
 
+/* Donation/Support Banner */
+
+.home div.donate {
+	padding: 0;
+	opacity: 0.8;
+	&:hover {
+		opacity: 1;
+	}
+	a {
+		display: block;
+		padding: $padding;
+	}
+	.icon-arrow-right {
+		color: $gray-dk;
+		font-size: 0.85em;
+	}
+}
+
 /* Newsletter/Mailing List Signup */
 
 .home div.newsletter {
-	background: url('../img/texture-lt.jpg') $cream;
-	background-size: cover;
-	margin-top: $padding*2;
-	padding: $padding;
 	text-align: center;
 	p {
 		margin-bottom: $padding/2;

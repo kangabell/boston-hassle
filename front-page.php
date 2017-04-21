@@ -266,8 +266,11 @@ Template Name: Homepage
 
     </div>
 
-    <div class="cta">
-      <div style="background:white;width:100%;padding:2rem"><a href="javascript:void(0)"><h2 class="h1">Donate!</h2></a></div>
+    <div class="donate cta">
+      <a href="/support">
+        <h2 class="h1">Support Local Art &amp; Music <span class="icon-arrow-right"></span> <span class="icon-arrow-right"></span> <span class="icon-arrow-right"></span></h2>
+        <p class="h4">Together We Can Keep Things Strange in Boston and Beyond</p>
+      </a>
     </div>
 
     <div class="articles">
@@ -290,7 +293,7 @@ Template Name: Homepage
 
     </div>
 
-    <div class="newsletter">
+    <div class="newsletter cta">
       <p class="h4">The Most Relevant Newsletter of Your Life</p>
       <h2 class="h1">Join the Boston Hassle Mailing List</h2>
       <p class="form">
