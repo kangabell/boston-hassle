@@ -100,6 +100,23 @@ div.picture-cat article {
 	margin-bottom: $padding*.25;
 }
 
+/* Recent Comments */
+
+div.comments {
+	cite.fn { /* username */
+		font-style: normal;
+		margin-left: $padding/2;
+		padding-left: 0;
+		@extend .h4;
+	}
+	span.says {
+		display: none;
+	}
+	p {
+		margin-left: calc(42px + #{$padding/2}); /* avatar size + padding */
+	}
+}
+
 /* Donation/Support Banner */
 
 .home div.donate {

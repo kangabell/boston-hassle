@@ -164,7 +164,7 @@ Template Name: Homepage
 
         </div>
 
-        <!-- <div>
+        <div>
 
           <h3>Re: TAMPOPO (1985) DIR. JÛZÔ ITAMI</h3>
 
@@ -180,7 +180,7 @@ Template Name: Homepage
 
           </ul>
 
-        </div> -->
+        </div>
 
       </div> <!-- end .comments -->
 
