@@ -113,8 +113,8 @@ Template Name: Homepage
 
     <div>
 
-      <div class="comments">
-        <h2>Recent Comments</h2>
+      <div class="recent-comments">
+        <h2>Word of the Masses</h2>
         <?php echo do_shortcode('[better_recent_comments format="{avatar}{author} @ {post}<br/>{comment}"]'); ?>
       </div>
 
@@ -228,11 +228,9 @@ Template Name: Homepage
     </div>
 
     <div class="newsletter cta">
-      <p class="h4">The Most Relevant Newsletter of Your Life</p>
-      <h2 class="h1">Join the Boston Hassle Mailing List</h2>
-      <p class="form">
-        <input type="email" placeholder="Email Address"><a href="javascript:void(0)" class="button large">Subscribe</a>
-      </p>
+      <p class="h4">The Most Relevant Mailing List of Your Life</p>
+      <h2 class="h1">Get Our Newsletter</h2>
+      <a href="https://bostonhassle.us5.list-manage.com/subscribe?u=b33396a0fbb4b5594a24fb24e&id=dbc4da5ea8" class="button large">Subscribe</a>
     </div>
 
   </main>

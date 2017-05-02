@@ -78,7 +78,7 @@ body.home {
 		margin-bottom: $padding/4;
 		overflow: hidden;
 	}
-	div.secondary, div.tertiary, div.events, div.category, .home-widget-1, .articles article, .home-widget-2 {
+	div.secondary, div.tertiary, div.events, div.category, div.recent-comments, .home-widget-1, .articles article, .home-widget-2 {
 		margin-top: $padding;
 	}
 
@@ -122,7 +122,7 @@ body.home {
 		margin-left: $padding/2;
 	}
 
-	div.category-1, div.category-2, div.category-3, .home-widget-1, .articles article {
+	div.category-1, div.category-2, div.category-3, div.recent-comments, .home-widget-1, .articles article {
 		margin-top: $padding;
 	}
 
@@ -164,10 +164,6 @@ body.home {
 			@include grid-column(4);
 		}
 
-		div.comments {
-			@include grid-column(6);
-		}
-
 		.events article {
 			@include grid-row;
 		}
@@ -186,7 +182,13 @@ body.home {
 			@include grid-column(7);
 		}
 
+		div.recent-comments {
+			margin-top: 0;
+			@include grid-column(6);
+		}
+
 		.home-widget-1 {
+			margin-top: 0;
 			@include grid-column(5);
 			> div {
 				@include grid-row;
