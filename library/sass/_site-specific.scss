@@ -102,19 +102,16 @@ div.picture-cat article {
 
 /* Recent Comments */
 
-div.comments {
-	cite.fn { /* username */
-		font-style: normal;
-		margin-left: $padding/2;
-		padding-left: 0;
+.recent-comments-list {
+	span.comment-post {
 		@extend .h4;
 	}
-	span.says {
-		display: none;
+	li + li {
+		border-top: $border;
+		padding-top: $padding/4;
+		margin-top: $padding/4;
 	}
-	p {
-		margin-left: calc(42px + #{$padding/2}); /* avatar size + padding */
-	}
+
 }
 
 /* Donation/Support Banner */
