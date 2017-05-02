@@ -200,13 +200,6 @@ Template Name: Homepage
 
     </div>
 
-    <div class="donate cta">
-      <a href="/support">
-        <h2 class="h1">Support Local Art &amp; Music <span class="icon-arrow-right"></span> <span class="icon-arrow-right"></span> <span class="icon-arrow-right"></span></h2>
-        <p class="h4">Together We Can Keep Things Strange in Boston and Beyond</p>
-      </a>
-    </div>
-
     <div class="articles">
       <div>
         <?php // General stream of articles, continued

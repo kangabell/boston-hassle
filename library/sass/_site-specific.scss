@@ -114,7 +114,7 @@ div.picture-cat article {
 
 }
 
-/* Donation/Support Banner */
+/* Donation/Support Section */
 
 .home div.donate {
 	padding: 0;
@@ -123,6 +123,7 @@ div.picture-cat article {
 		opacity: 1;
 	}
 	a {
+		border: 6px solid $white;
 		display: block;
 		padding: $padding;
 	}
@@ -135,6 +136,7 @@ div.picture-cat article {
 /* Newsletter/Mailing List Signup */
 
 .home div.newsletter {
+	margin-top: $padding*2;
 	text-align: center;
 	p {
 		margin-bottom: $padding/2;
