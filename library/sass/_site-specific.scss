@@ -58,6 +58,7 @@ div.picture-cat article { // hide last four items, to make room
 div.hero {
 	margin-bottom: $padding*1.5;
 	div.image img { // extra specificity for override
+		margin-top: 0;
 		margin-bottom: 0;
 		width: 100%;
 	}
@@ -126,6 +127,10 @@ div.picture-cat article {
 		padding-top: $padding/4;
 		margin-top: $padding/4;
 	}
+	span.comment-avatar {
+		border-radius: 100%;
+		overflow: hidden;
+	}
 
 }
 
@@ -139,7 +144,7 @@ div.picture-cat article {
 		opacity: 1;
 	}
 	h2 {
-		font-size: 6rem;
+		font-size: 4rem;
 		margin-bottom: 0;
 		position: relative;
 	}
