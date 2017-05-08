@@ -197,7 +197,7 @@ Template Name: Homepage
             $loop->the_post();
         ?>
           <article><a href="<?php the_permalink(); ?>">
-              <div class="thumbnail" style="background-image: url('<?php the_post_thumbnail_url(); ?>')"></div>
+              <div class="thumbnail" style="background-image: url('<?php bhass_article_img(); ?>')"></div>
               <div class="text">
                 <h3><a href="<?php the_permalink(); ?>"><?php echo short_title(); ?></a></h3>
               </div>
