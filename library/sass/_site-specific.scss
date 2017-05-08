@@ -24,8 +24,15 @@ body.home {
 	@extend .button;
 }
 
+div.picture-cat article { // hide last four items, to make room
+	&:nth-last-child(4), &:nth-last-child(3), &:nth-last-child(2), &:last-child {
+		display: none;
+	}
+}
+
 @include breakpoint(large) {
-	div.category {
+	/* move buttons to upper right of their sections */
+	div.category, .home-widget-2 > div /* compass widget */ {
 		position: relative;
 	}
 	.view-all {
@@ -33,6 +40,14 @@ body.home {
 		position: absolute;
 		right: $padding;
 		top: $padding/4;
+	}
+	.home-widget-2 > div .view-all {
+		right: 0;
+	}
+	div.picture-cat article { // show an extra four items
+		&:nth-last-child(4), &:nth-last-child(3), &:nth-last-child(2), &:last-child {
+			display: inline-block;
+		}
 	}
 }
 

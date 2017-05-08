@@ -112,12 +112,6 @@ Template Name: Homepage
     </div>
 
     <div>
-<?php /*
-      <div class="recent-comments">
-        <h2>Word of the Masses</h2>
-        <?php echo do_shortcode('[better_recent_comments format="{avatar}{author} @ {post}<br/>{comment}"]'); ?>
-      </div>
-      */ ?>
 
       <div class="tertiary">
         <?php // 2 more Featured Posts
@@ -195,7 +189,7 @@ Template Name: Homepage
         <h2><?php echo $picture_cat->name; ?></h2>
         <?php
           $loop = new WP_Query( array(
-            'posts_per_page'=> 6, 
+            'posts_per_page'=> 9, 
             'ignore_sticky_posts'=>true, 
             'cat'=>$picture_cat->term_id
           ) );
