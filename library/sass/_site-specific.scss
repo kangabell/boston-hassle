@@ -132,10 +132,16 @@ div.picture-cat article {
 /* Donation/Support Section */
 
 .home div.donate {
+	background: url('../img/texture-blue.jpg') $blue;
 	padding: 0;
 	opacity: 0.8;
 	&:hover {
 		opacity: 1;
+	}
+	h2 {
+		font-size: 6rem;
+		margin-bottom: 0;
+		position: relative;
 	}
 	a {
 		border: 6px solid $white;
@@ -151,8 +157,8 @@ div.picture-cat article {
 /* Newsletter/Mailing List Signup */
 
 .home div.newsletter {
+	background: url('../img/texture-lt.jpg') $cream;
 	margin-top: $padding*2;
-	text-align: center;
 	p {
 		margin-bottom: $padding/2;
 	}

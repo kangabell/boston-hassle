@@ -215,6 +215,13 @@ Template Name: Homepage
 
     </div>
 
+    <div class="donate cta">
+      <a href="/support">
+        <h2>$ Support Local Art &amp; Music $</h2>
+        <p class="h3">Together We Can Keep Things Strange in Boston and Beyond</p>
+      </a>
+    </div>
+
     <div class="articles">
       <div>
         <?php // General stream of articles, continued
