@@ -78,7 +78,7 @@ body.home {
 		margin-bottom: $padding/4;
 		overflow: hidden;
 	}
-	div.secondary, div.tertiary, div.events, div.category, div.recent-comments, .home-widget-1, .articles article, .home-widget-2 {
+	div.secondary, div.events, div.category, div.recent-comments, div.tertiary, .home-widget-1, .articles article, .home-widget-2 {
 		margin-top: $padding;
 	}
 
@@ -122,7 +122,7 @@ body.home {
 		margin-left: $padding/2;
 	}
 
-	div.category-1, div.category-2, div.category-3, div.recent-comments, .home-widget-1, .articles article {
+	div.category-1, div.category-2, div.category-3, div.recent-comments, .articles article {
 		margin-top: $padding;
 	}
 
@@ -156,10 +156,6 @@ body.home {
 			@include grid-column(4);
 		}
 
-		.tertiary article {
-			@include grid-column(6);
-		}
-
 		.secondary article {
 			@include grid-column(4);
 		}
@@ -187,12 +183,17 @@ body.home {
 			@include grid-column(6);
 		}
 
-		.home-widget-1 {
+		div.tertiary {
 			margin-top: 0;
 			@include grid-column(5);
-			> div {
-				@include grid-row;
-			}
+		}
+		.home-widget-1 {
+			margin-top: 0;
+			@include grid-column(7);
+		}
+
+		.home-widget-1 > div {
+			@include grid-row;
 		}
 
 		.articles article {
@@ -314,9 +315,17 @@ body.home {
 			@include grid-column(4);
 		}
 
+		div.tertiary {
+			@include grid-column(7);
+		}
 		.home-widget-1 {
+			@include grid-column(5);
+		}
+
+		div.tertiary article {
 			@include grid-column(6);
 		}
+
 	}
 
 	/*** PAGES WITH SIDEBARS ***/

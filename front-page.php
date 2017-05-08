@@ -112,10 +112,31 @@ Template Name: Homepage
     </div>
 
     <div>
-
+<?php /*
       <div class="recent-comments">
         <h2>Word of the Masses</h2>
         <?php echo do_shortcode('[better_recent_comments format="{avatar}{author} @ {post}<br/>{comment}"]'); ?>
+      </div>
+      */ ?>
+
+      <div class="tertiary">
+        <?php // 2 more Featured Posts
+
+          $args = array(
+            'posts_per_page' => 2,
+            'post__in' => $featured_ids,
+            'orderby' => 'post__in',
+            'ignore_sticky_posts' => true,
+            'offset' => 4
+          );
+          query_posts ($args);
+
+          if (have_posts()) : while (have_posts()) : the_post();
+            include 'partials/article.php';
+          endwhile; endif;
+          wp_reset_query();
+
+        ?>
       </div>
 
       <div class="home-widget-1">
