@@ -91,10 +91,10 @@ Template Name: Homepage
 
     <div class="secondary">
 
-      <?php // 3 more Featured Posts
+      <?php // 2 more Featured Posts
 
         $args = array(
-          'posts_per_page' => 3,
+          'posts_per_page' => 2,
           'post__in' => $featured_ids,
           'orderby' => 'post__in',
           'ignore_sticky_posts' => true,
@@ -109,34 +109,30 @@ Template Name: Homepage
 
       ?>
 
-    </div>
-
-    <div>
-
-      <div class="tertiary">
-        <?php // 2 more Featured Posts
-
-          $args = array(
-            'posts_per_page' => 2,
-            'post__in' => $featured_ids,
-            'orderby' => 'post__in',
-            'ignore_sticky_posts' => true,
-            'offset' => 4
-          );
-          query_posts ($args);
-
-          if (have_posts()) : while (have_posts()) : the_post();
-            include 'partials/article.php';
-          endwhile; endif;
-          wp_reset_query();
-
-        ?>
-      </div>
-
       <div class="home-widget-1">
         <?php dynamic_sidebar( 'home_widget-1' ); ?>
       </div>
 
+    </div>
+
+    <div class="tertiary">
+      <?php // 2 more Featured Posts
+
+        $args = array(
+          'posts_per_page' => 2,
+          'post__in' => $featured_ids,
+          'orderby' => 'post__in',
+          'ignore_sticky_posts' => true,
+          'offset' => 3
+        );
+        query_posts ($args);
+
+        if (have_posts()) : while (have_posts()) : the_post();
+          include 'partials/article.php';
+        endwhile; endif;
+        wp_reset_query();
+
+      ?>
     </div>
 
     <div>
