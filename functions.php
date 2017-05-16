@@ -383,6 +383,17 @@ function bhass_wpsearch($form) {
     return $form;
 }
 
+/************* ARTICLE BACKGROUND IMAGES *****************/
+// show the featured images. if no featured image, show placeholder as fallback
+
+function bhass_article_img() {
+    if ( has_post_thumbnail() ) {
+        the_post_thumbnail_url('grid-thumb');
+    } else {
+        echo get_template_directory_uri() . '/library/img/placeholder.jpg';
+    }
+}
+
 
 
 ?>

@@ -195,6 +195,9 @@ button, .button, input[type='submit'] {
   	&:hover {
   		opacity: 1;
   	}
+  	&.large {
+  		padding: 0.5rem 1rem;
+  	}
 }
 
 button, input[type='submit'] {
@@ -247,6 +250,14 @@ article {
 	p:empty {
 		display: none; // hide empty p's that events plugin generates on recurring events
 	}
+}
+
+/*** Call to Action Banners ***/
+
+div.cta {
+	background-size: cover;
+	padding: $padding;
+	text-align: center;
 }
 
 /*** Search Form ***/

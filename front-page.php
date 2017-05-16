@@ -91,10 +91,10 @@ Template Name: Homepage
 
     <div class="secondary">
 
-      <?php // 3 more Featured Posts
+      <?php // 2 more Featured Posts
 
         $args = array(
-          'posts_per_page' => 3,
+          'posts_per_page' => 2,
           'post__in' => $featured_ids,
           'orderby' => 'post__in',
           'ignore_sticky_posts' => true,
@@ -109,10 +109,13 @@ Template Name: Homepage
 
       ?>
 
+      <div class="home-widget-1">
+        <?php dynamic_sidebar( 'home_widget-1' ); ?>
+      </div>
+
     </div>
 
     <div class="tertiary">
-
       <?php // 2 more Featured Posts
 
         $args = array(
@@ -120,7 +123,7 @@ Template Name: Homepage
           'post__in' => $featured_ids,
           'orderby' => 'post__in',
           'ignore_sticky_posts' => true,
-          'offset' => 4
+          'offset' => 3
         );
         query_posts ($args);
 
@@ -130,7 +133,6 @@ Template Name: Homepage
         wp_reset_query();
 
       ?>
-
     </div>
 
     <div>
@@ -149,9 +151,12 @@ Template Name: Homepage
         include(locate_template('partials/category-section.php'));
       ?>
 
-      <div class="home-widget-1">
-        <?php dynamic_sidebar( 'home_widget-1' ); ?>
-      </div>
+      <?php
+        // Category #3
+        $category = $cat_3;
+        $class = 'category-3';
+        include(locate_template('partials/category-section.php'));
+      ?>
 
     </div>
 
@@ -180,7 +185,7 @@ Template Name: Homepage
         <h2><?php echo $picture_cat->name; ?></h2>
         <?php
           $loop = new WP_Query( array(
-            'posts_per_page'=> 6, 
+            'posts_per_page'=> 9, 
             'ignore_sticky_posts'=>true, 
             'cat'=>$picture_cat->term_id
           ) );
@@ -188,7 +193,7 @@ Template Name: Homepage
             $loop->the_post();
         ?>
           <article><a href="<?php the_permalink(); ?>">
-              <div class="thumbnail" style="background-image: url('<?php the_post_thumbnail_url(); ?>')"></div>
+              <div class="thumbnail" style="background-image: url('<?php bhass_article_img(); ?>')"></div>
               <div class="text">
                 <h3><a href="<?php the_permalink(); ?>"><?php echo short_title(); ?></a></h3>
               </div>
@@ -200,17 +205,17 @@ Template Name: Homepage
         <a class="view-all" href="<?php echo get_category_link( $picture_cat->term_id ); ?>">View All <?php echo $picture_cat->name; ?></a>
       </div>
 
-      <?php
-        // Category #3
-        $category = $cat_3;
-        $class = 'category-3';
-        include(locate_template('partials/category-section.php'));
-      ?>
-
       <div class="home-widget-2">
         <?php dynamic_sidebar( 'home_widget-2' ); ?>
       </div>
 
+    </div>
+
+    <div class="donate cta">
+      <a href="/support">
+        <h2>$ Support Local Art &amp; Music $</h2>
+        <p class="h3">Together We Can Keep Things Strange in Boston and Beyond</p>
+      </a>
     </div>
 
     <div class="articles">
@@ -231,6 +236,12 @@ Template Name: Homepage
         ?>
       </div>
 
+    </div>
+
+    <div class="newsletter cta">
+      <p class="h4">The Most Relevant Mailing List of Your Life</p>
+      <h2 class="h1">Get Our Newsletter</h2>
+      <a href="https://bostonhassle.us5.list-manage.com/subscribe?u=b33396a0fbb4b5594a24fb24e&id=dbc4da5ea8" class="button large">Subscribe</a>
     </div>
 
   </main>

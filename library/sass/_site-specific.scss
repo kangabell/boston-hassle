@@ -24,8 +24,20 @@ body.home {
 	@extend .button;
 }
 
+div.picture-cat article { // hide last four items, to make room
+	&:nth-last-child(4), &:nth-last-child(3), &:nth-last-child(2), &:last-child {
+		display: none;
+	}
+}
+
+@include breakpoint(medium) {
+
+}
+
 @include breakpoint(large) {
-	div.category {
+
+	/* move buttons to upper right of their sections */
+	div.category, .home-widget-2 > div /* compass widget */ {
 		position: relative;
 	}
 	.view-all {
@@ -34,6 +46,16 @@ body.home {
 		right: $padding;
 		top: $padding/4;
 	}
+	.home-widget-2 > div .view-all {
+		right: 0;
+	}
+
+	div.picture-cat article { // show an extra four items
+		&:nth-last-child(4), &:nth-last-child(3), &:nth-last-child(2), &:last-child {
+			display: inline-block;
+		}
+	}
+
 }
 
 .article-sm + .article-sm {
@@ -43,6 +65,7 @@ body.home {
 div.hero {
 	margin-bottom: $padding*1.5;
 	div.image img { // extra specificity for override
+		margin-top: 0;
 		margin-bottom: 0;
 		width: 100%;
 	}
@@ -98,6 +121,70 @@ body.home div.category {
 
 div.picture-cat article {
 	margin-bottom: $padding*.25;
+}
+
+/* Recent Comments */
+
+.recent-comments-list {
+	span.comment-post {
+		@extend .h4;
+	}
+	li + li {
+		border-top: $border;
+		padding-top: $padding/4;
+		margin-top: $padding/4;
+	}
+	span.comment-avatar {
+		border-radius: 100%;
+		overflow: hidden;
+	}
+
+}
+
+/* Donation/Support Section */
+
+.home div.donate {
+	background: url('../img/texture-blue.jpg') $blue;
+	padding: 0;
+	opacity: 0.8;
+	&:hover {
+		opacity: 1;
+	}
+	h2 {
+		font-size: 4rem;
+		margin-bottom: 0;
+		position: relative;
+	}
+	a {
+		border: 6px solid $white;
+		display: block;
+		padding: $padding;
+	}
+	.icon-arrow-right {
+		color: $gray-dk;
+		font-size: 0.85em;
+	}
+}
+
+/* Newsletter/Mailing List Signup */
+
+.home div.newsletter {
+	background: url('../img/texture-lt.jpg') $cream;
+	margin-top: $padding*2;
+	p {
+		margin-bottom: $padding/2;
+	}
+	.icon-envelope {
+		color: $gray;
+		margin-right: $padding/4;
+	}
+	input {
+		min-width: 30%;
+		padding: $padding/3;
+	}
+	.button {
+		margin-left: $padding/2;
+	}
 }
 
 
