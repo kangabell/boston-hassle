@@ -428,14 +428,8 @@ SINGLE
 *************/
 
 body.single, body.page {
-	main header .meta {
-		font-size: 1rem;
-		a {
-			border-bottom: none;
-		}
-	}
-	main header h1 {
-		margin-bottom: $padding/2;
+	main header .meta a {
+		border-bottom: none;
 	}
 	main {
 		margin-bottom: $padding/2;
@@ -455,10 +449,35 @@ body.single, body.page {
 	}
 }
 
+body.single main header {
+	h1 {
+		margin-top: $padding;
+	}
+	.subheading {
+		margin-bottom: $padding;
+	}
+}
+
+@include breakpoint(medium) {
+
+	body.single main {
+		header {
+			text-align: center;
+		}
+		.meta {
+			font-size: 1rem;
+		}
+	}
+
+}
+
 section.tags {
 	line-height: 1.75em;
 	margin-top: $padding*1.5;
 	margin-bottom: $padding;
+	.label {
+		margin-right: 1em;
+	}
 	a {
 		white-space: nowrap; // keep all words in each item together
 	}
