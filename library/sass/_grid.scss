@@ -242,6 +242,12 @@ body.home {
 				margin-left: -10%;
 			}
 		}
+		article div.alignleft {
+			margin-left: -10%;
+		}
+		article div.alignright {
+			margin-right: -10%;
+		}
 	}
 
 	body.page:not(.home):not(.page-template-page-twocolumn), body.error404 {
