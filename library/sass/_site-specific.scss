@@ -436,7 +436,6 @@ body.single, body.page {
 	}
 	article {
 		> p:not(.small) {
-			font-size: 1.125rem;
 			margin-bottom: $padding/2;
 		}
 		img {
@@ -453,12 +452,18 @@ body.single main header {
 	h1 {
 		margin-top: $padding;
 	}
-	.subheading {
-		margin-bottom: $padding;
+	h1 + .meta, .subheading + .meta {
+		margin-top: $padding;
 	}
 }
 
 @include breakpoint(medium) {
+
+	body.single, body.page {
+		article > p:not(.small) {
+			font-size: 1.175rem;
+		}
+	}
 
 	body.single main {
 		header {
