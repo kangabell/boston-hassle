@@ -336,3 +336,11 @@ main .widget, .home-widget { // exclude footer widgets
 		margin-top: 0.75em;
 	}
 }
+
+/*** Avatar Images ***/
+
+
+span.comment-avatar, .comment-author img {
+	border-radius: 100%;
+	overflow: hidden;
+}
