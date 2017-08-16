@@ -16,7 +16,9 @@ used on the homepage, archive pages, event archive pages, search results pages, 
 			if ( has_excerpt() ) {
 				the_excerpt(); 
 			} elseif ( get_field('subtitle') ) {
+				echo '<p class="excerpt">';
 				the_field('subtitle');
+				echo '</p>';
 			} else {
 				the_excerpt();
 			}
