@@ -134,10 +134,6 @@ div.picture-cat article {
 		padding-top: $padding/4;
 		margin-top: $padding/4;
 	}
-	span.comment-avatar {
-		border-radius: 100%;
-		overflow: hidden;
-	}
 
 }
 
@@ -428,21 +424,14 @@ SINGLE
 *************/
 
 body.single, body.page {
-	main header .meta {
-		font-size: 1rem;
-		a {
-			border-bottom: none;
-		}
-	}
-	main header h1 {
-		margin-bottom: $padding/2;
+	main header .meta a {
+		border-bottom: none;
 	}
 	main {
 		margin-bottom: $padding/2;
 	}
 	article {
 		> p:not(.small) {
-			font-size: 1.125rem;
 			margin-bottom: $padding/2;
 		}
 		img {
@@ -455,10 +444,41 @@ body.single, body.page {
 	}
 }
 
+body.single main header {
+	h1 {
+		margin-top: $padding;
+	}
+	h1 + .meta, .subheading + .meta {
+		margin-top: $padding;
+	}
+}
+
+@include breakpoint(medium) {
+
+	body.single, body.page {
+		article > p:not(.small) {
+			font-size: 1.175rem;
+		}
+	}
+
+	body.single main {
+		header {
+			text-align: center;
+		}
+		.meta {
+			font-size: 1rem;
+		}
+	}
+
+}
+
 section.tags {
 	line-height: 1.75em;
 	margin-top: $padding*1.5;
 	margin-bottom: $padding;
+	.label {
+		margin-right: 1em;
+	}
 	a {
 		white-space: nowrap; // keep all words in each item together
 	}
@@ -475,6 +495,7 @@ section.related-posts {
 }
 
 section.comments {
+	margin-top: $padding;
 	h2 {
 		margin-bottom: $padding;
 	}
@@ -488,8 +509,9 @@ section.comments {
 	.comment-author {
 		cite {
 			font-style: normal;
-			text-transform: uppercase;
 			font-weight: bold;
+			margin-left: $padding/4;
+			text-transform: uppercase;
 		}
 		.says {
 			display: none;
@@ -498,14 +520,47 @@ section.comments {
 	.comment-reply-link {
 		@extend .h4;
 	}
-	.comment-meta {
-		margin-bottom: $padding/3;
-	}
 	.comment-notes, .comment-awaiting-moderation, .comment-meta a {
 		color: $gray;
 		@extend .small;
 	}
+	p {
+		margin-top: $padding/2;
+	}
+	.comment-list + .comment-respond {
+		border-top: $border;
+		padding-top: $padding/2;
+		margin-top: $padding*2;
+	}
+	ul.comment-list ul.children {
+		margin-left: $padding;
+		li:before {
+			display: none;
+		}
+	}
 }
+
+@include breakpoint(medium) {
+
+	section.comments {
+		.comment {
+			position: relative;
+		}
+		.comment-meta {
+			position: absolute;
+			top: $padding/2;
+			right: 0;
+		}
+		textarea {
+			width: 40rem;
+		}
+		textarea, input {
+			margin-top: $padding/4;
+			padding: 0.5em;
+		}
+	}
+}
+
 
 /*************
 SEARCH RESULTS  

@@ -232,9 +232,21 @@ body.home {
 		main {
 			@include grid-row;
 		}
-		main header, main > article, section.tags, section.comments { // everything except section.related-posts
-			@include grid-column(11);
+		main > article, section.tags, section.comments { // everything except section.related-posts
+			@include grid-column(10);
 			@include grid-col-pos(center);
+		}
+		article img {
+			&.size-full, &.size-large { // large images pop out of container
+				max-width: 120%;
+				margin-left: -10%;
+			}
+		}
+		article div.alignleft {
+			margin-left: -10%;
+		}
+		article div.alignright {
+			margin-right: -10%;
 		}
 	}
 
@@ -360,8 +372,12 @@ body.home {
 	/*** SINGLE & DEFAULT PAGES ***/
 
 	body.single {
-		main header, main > article, section.tags, section.comments {
-			@include grid-column(8);
+		main header {
+			@include grid-column(9);
+			@include grid-col-pos(center);
+		}
+		main > article, section.tags, section.comments {
+			@include grid-column(7);
 			@include grid-col-pos(center);
 		}
 	}

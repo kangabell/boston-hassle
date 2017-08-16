@@ -50,10 +50,15 @@ h4, .h4, h5, .h5, h6, .h6 {
 	font-size: 1rem;
 }
 
+header h1 {
+	margin-bottom: 0.25em;
+}
+
 .subheading {
 	color: $gray;
-	@extend .h3;
+	font-size: 1.25rem;
 	margin-bottom: 0.75em;
+	text-transform: uppercase;
 }
 
 p {
@@ -330,4 +335,12 @@ main .widget, .home-widget { // exclude footer widgets
 	li + li, li > ul {
 		margin-top: 0.75em;
 	}
+}
+
+/*** Avatar Images ***/
+
+
+span.comment-avatar, .comment-author img {
+	border-radius: 100%;
+	overflow: hidden;
 }

@@ -12,7 +12,9 @@ SINGLE POST / ARTICLE PAGE
       
       <p class="meta">
         <span class="datetime"><?php printf(__('<time pubdate>%1$s</time>', 'bhass'), get_the_time('M d, Y')); ?></span>
-        | <span class="category"><?php echo get_the_category_list(', '); ?></span>
+      </p>
+      <p class="meta">
+        <span class="category"><?php echo get_the_category_list(', '); ?></span>
       </p>
 
       <h1><?php the_title(); ?></h1>
@@ -35,6 +37,7 @@ SINGLE POST / ARTICLE PAGE
 
     <section class="tags meta">
 
+      <span class="label">Tags:</span>
       <?php the_tags(''); ?>
 
     </section>
