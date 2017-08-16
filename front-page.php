@@ -45,7 +45,19 @@ Template Name: Homepage
             <div class="text">
               <?php get_template_part('partials/date-category'); ?>
               <h3><?php echo short_title(); ?></h3>
-              <?php the_excerpt(); ?>
+              <?php
+              // use a custom excerpt if there is one, or if not use the subtitle,
+              // and if there's neither, use the automatic excerpt
+                if ( has_excerpt() ) {
+                  the_excerpt(); 
+                } elseif ( get_field('subtitle') ) {
+                  echo '<p class="excerpt">';
+                  the_field('subtitle');
+                  echo '</p>';
+                } else {
+                  the_excerpt();
+                }
+              ?>
               <p class="meta"><?php echo get_the_author(); ?></p>
             </div>
 
