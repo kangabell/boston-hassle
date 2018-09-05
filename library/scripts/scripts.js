@@ -34,6 +34,11 @@ jQuery(document).ready( function($) {
 	equalize('body.home div.picture-cat article');
 
 
+	/*** EXPAND LARGE ARTICLE IMAGES ***/
+
+	expand('article img');
+	
+
 	/*** KEYBOARD SHORTCUTS ***/
 
 	$(document).keydown(function(e) {
@@ -72,6 +77,17 @@ jQuery(document).ready( function($) {
 
 	function equalize(s) {
 		$(s).height( getMaxHeight(s) );
+	}
+
+	function expand(el) {
+
+		// if it's larger that 650px wide, give it 'expanded' class
+		$(el).each(function(){
+			if ( $(this).width() > 650 ) {
+				$(this).addClass('expanded');
+			}
+		});
+
 	}
 
 } );
