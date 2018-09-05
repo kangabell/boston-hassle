@@ -35,12 +35,14 @@ SINGLE POST / ARTICLE PAGE
 
     </article>
 
-    <section class="tags meta">
+    <?php if ( has_tag() ) : ?>
+      <section class="tags meta">
 
-      <span class="label">Tags:</span>
-      <?php the_tags(''); ?>
+        <span class="label">Tags:</span>
+        <?php the_tags(''); ?>
 
-    </section>
+      </section>
+    <?php endif; ?>
 
     <section class="related-posts">
 
