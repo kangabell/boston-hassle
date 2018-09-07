@@ -236,18 +236,10 @@ body.home {
 			@include grid-column(10);
 			@include grid-col-pos(center);
 		}
-<<<<<<< Updated upstream
-		article img {
-			&.size-full, &.size-large { // large images pop out of container
-				max-width: 120%;
-				margin-left: -10%;
-			}
-=======
 		article img.expanded {
 			max-width: 120%;
 			margin-left: -10%;
 			width: 120%;
->>>>>>> Stashed changes
 		}
 		article div.alignleft {
 			margin-left: -10%;
