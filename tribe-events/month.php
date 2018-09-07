@@ -6,7 +6,7 @@
 
 ?>
 
-<main>
+<div>
 
   <div id="tribe-events-content">
 
@@ -32,7 +32,7 @@
 
   </div>
 
-</main>
+</div>
 <?php
 do_action( 'tribe_events_after_template' );
 

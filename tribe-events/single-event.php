@@ -17,7 +17,7 @@ $event_id = get_the_ID();
 
 <?php get_header(); ?>
 
-<main>
+<div>
 
   <?php while (have_posts()) : the_post(); ?>
 
@@ -57,7 +57,7 @@ $event_id = get_the_ID();
 
     </article>
       
-  </main>
+  </div>
 
   <?php if ( get_post_type() == Tribe__Events__Main::POSTTYPE && tribe_get_option( 'showComments', false ) ) comments_template() ?>
 

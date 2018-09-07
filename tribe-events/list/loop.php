@@ -22,7 +22,11 @@ $more = false;
 <?php while ( have_posts() ) : the_post();
 	do_action( 'tribe_events_inside_before_loop' );
 
-	get_template_part('partials/event');
+	if ( tribe_event_in_category('hassle-shows') ) {
+		$hassle_show = true;
+	}
+
+	include(locate_template('partials/event.php'));
 
 	do_action( 'tribe_events_inside_after_loop' );
 endwhile; ?>

@@ -6,7 +6,7 @@
 
 ?>
 
-<main>
+<div>
   
   <header>
     <h1><?php echo tribe_get_events_title(); ?></h1>
@@ -42,6 +42,6 @@
 
   <?php get_sidebar('events'); ?>
 
-</main>
+</div>
 <?php
 do_action( 'tribe_events_after_template' );
