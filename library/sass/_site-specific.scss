@@ -267,7 +267,7 @@ body.events-archive main {
 }
 #tribe-bar-views {
 	position: absolute;
-	top: -$padding/4;
+	top: $padding/8;
 	right: 0;
 	z-index: 1;
 	@include breakpoint(medium) {
@@ -278,7 +278,7 @@ body.events-archive main {
 	display: flex;
 	justify-content: space-between;
 	text-align: center;
-	width: 6rem;
+	width: 4rem;
 	li {
 		font-size: 1.5rem;
 		&:not(.tribe-bar-active) {
@@ -294,6 +294,13 @@ body.events-archive main {
 	span {
 		@extend .small;
 		display: block;
+
+		@include breakpoint(small down) {
+			@include visually-hidden;
+		}
+	}
+	@include breakpoint(medium) {
+		width: 6rem;
 	}
 }
 .tribe-bar-views-option-list a {

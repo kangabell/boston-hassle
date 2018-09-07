@@ -84,6 +84,18 @@ $topbar-height: 2rem;
   text-overflow: ellipsis;
 }
 
+/* Visually Hidden / Screen-reader Text */
+@mixin visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
 /*** ICON FONT ***/
 // to update: import one of the font files into the app at icomoon.io/app
 
