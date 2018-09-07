@@ -267,22 +267,33 @@ body.events-archive main {
 }
 #tribe-bar-views {
 	position: absolute;
-	top: $padding*.75;
+	top: -$padding/4;
 	right: 0;
 	z-index: 1;
-	label {
-		display: none;
+	@include breakpoint(medium) {
+		top: $padding/2;
 	}
 }
-.tribe-bar-views-list li {
-	display: inline;
-	font-size: 1.25rem;
-	margin-right: $padding/3;
-	&:not(.tribe-bar-active) {
-		opacity: 0.5;
+.tribe-bar-views-list {
+	display: flex;
+	justify-content: space-between;
+	text-align: center;
+	width: 6rem;
+	li {
+		font-size: 1.5rem;
+		&:not(.tribe-bar-active) {
+			opacity: 0.5;
+		}
+		&:hover {
+			opacity: 1;
+		}
+		@include breakpoint(medium) {
+			font-size: 2rem;
+		}
 	}
-	&:hover {
-		opacity: 1;
+	span {
+		@extend .small;
+		display: block;
 	}
 }
 .tribe-bar-views-option-list a {
@@ -290,26 +301,11 @@ body.events-archive main {
 		@extend [class^="icon-"];
 		@extend .icon-list;
 	}
-	span {
-		@extend .visually-hidden;
-	}
 }
 .tribe-bar-views-option-month a {
 	&:before {
 		@extend [class^="icon-"];
 		@extend .icon-calendar;
-	}
-	span {
-		@extend .visually-hidden;
-	}
-}
-
-@include breakpoint(medium) {
-	#tribe-bar-views {
-		top: $padding*1.75;
-		label {
-			display: block;
-		}
 	}
 }
 

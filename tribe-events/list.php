@@ -6,9 +6,9 @@
 
 ?>
 
-<div>
+<div id="tribe-events-content" class="tribe-events-list">
   
-  <header>
+  <header class="calendar-header">
     <h1><?php echo tribe_get_events_title(); ?></h1>
   </header>
 
