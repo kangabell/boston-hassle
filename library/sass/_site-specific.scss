@@ -261,22 +261,21 @@ article:first-of-type .tribe-events-cost {
 	margin-bottom: $padding*2;
 }
 
-/*** Views Selection ***/
-body.events-archive main {
-	position: relative;
-}
-#tribe-bar-views {
-	position: absolute;
-	top: $padding/8;
-	right: 0;
-	z-index: 1;
-	@include breakpoint(medium) {
-		top: $padding/2;
+.calendar-header {
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+	h1 {
+		margin-bottom: 0;
 	}
 }
+
+/*** Views Selection ***/
+
 .tribe-bar-views-list {
 	display: flex;
 	justify-content: space-between;
+	margin: 0;
 	text-align: center;
 	width: 4rem;
 	li {
