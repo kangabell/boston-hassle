@@ -4,7 +4,7 @@ used for featured events in the Events archive page
 -->
 
 <article><a href="<?php echo esc_url( tribe_get_event_link() ); ?>">
-	<div class="thumbnail" style="background-image: url('<?php the_post_thumbnail_url('grid-thumb'); ?>')"></div>
+	<div class="thumbnail" style="background-image: url('<?php bhass_article_img(); ?>')"></div>
 	<div class="text">
 	  	<p class="meta">
 	  		<?php echo tribe_events_event_schedule_details(); ?>
