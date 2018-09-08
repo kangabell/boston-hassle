@@ -264,10 +264,39 @@ article:first-of-type .tribe-events-cost {
 .calendar-header {
 	align-items: center;
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: space-between;
 	h1 {
+		flex: 1;
 		margin-bottom: 0;
 	}
+} //.calendar-header
+#menu-events-categories {
+	text-align: center;
+	order: 3;
+	width: 100%;
+	li {
+		@extend .h4;
+		display: inline;
+		line-height: 2.25em;
+		white-space: nowrap;
+	}
+	a {
+		color: $gray;
+		padding: $padding/4;
+		&:hover {
+			color: $gray-dk;
+		}
+	}
+	@include breakpoint(large) {
+			margin-left: $padding;
+			margin-right: $padding;
+			order: 2;
+			width: auto;
+	}
+}
+#tribe-events-bar {
+	order: 2;
 }
 
 /*** Views Selection ***/
