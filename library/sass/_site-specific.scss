@@ -271,7 +271,7 @@ article:first-of-type .tribe-events-cost {
 		margin-bottom: 0;
 	}
 } //.calendar-header
-#menu-events-categories {
+.featured-event-categories {
 	text-align: center;
 	order: 3;
 	width: 100%;
@@ -289,10 +289,10 @@ article:first-of-type .tribe-events-cost {
 		}
 	}
 	@include breakpoint(large) {
-			margin-left: $padding;
-			margin-right: $padding;
-			order: 2;
-			width: auto;
+		margin-left: $padding;
+		margin-right: $padding;
+		order: 2;
+		width: auto;
 	}
 }
 #tribe-events-bar {

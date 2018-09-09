@@ -405,5 +405,32 @@ function bhass_article_img() {
 }
 
 
+/************* FEATURED EVENT CATEGORIES LIST *****************/
+
+function bhass_featured_event_categories() {
+
+    $categories = array (
+        'All Shows' => null,
+        'Hassle Shows' => '21638',
+        'Music Shows' => '9492',
+        'Film Screenings' => '21623',
+        'Art Events' => '21625'
+    );
+
+    echo '<ul class="featured-event-categories">';
+
+    foreach( $categories as $name => $id ) {
+        echo '<li><a href="' ;
+        if ( tribe_is_view('month') ) {
+            echo tribe_get_gridview_link($id);
+        } else {
+            echo tribe_get_listview_link($id);
+        }
+        echo '">' . $name . '</a></li>';
+    }
+
+    echo '</ul>';
+
+}
 
 ?>

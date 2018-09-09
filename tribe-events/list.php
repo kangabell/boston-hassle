@@ -10,7 +10,7 @@
   
   <header class="calendar-header">
     <h1><?php echo tribe_get_events_title(); ?></h1>
-    <?php bhass_calendar_header_nav(); ?>
+    <?php bhass_featured_event_categories(); ?>
     <?php tribe_get_template_part( 'modules/bar' ); ?>
   </header>
 
