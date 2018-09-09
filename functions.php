@@ -175,8 +175,7 @@ function bhass_theme_support() {
             'main-nav-top' => __( 'Main Menu First Section', 'bhass' ),
             'main-nav-categories' => __( 'Main Menu Categories', 'bhass' ),
             'main-nav-links' => __( 'Main Menu Second Links', 'bhass' ),
-            'main-nav-buttons' => __( 'Main Menu Buttons', 'bhass' ),
-            'calendar-header-nav' => __( 'Calendar Header', 'bhass' )
+            'main-nav-buttons' => __( 'Main Menu Buttons', 'bhass' )
         )
     );
 
@@ -269,15 +268,6 @@ function bhass_main_nav_buttons() {
         'menu' => __( 'Main Menu Buttons Area', 'bhass' ),
         'theme_location' => 'main-nav-buttons',
         'depth' => 1,
-    ));
-}
-
-// events calendar header
-function bhass_calendar_header_nav() {
-    wp_nav_menu(array(
-        'container' => false,
-        'menu' => __( 'Events Calendar Header', 'bhass' ),
-        'theme_location' => 'calendar-header-nav'
     ));
 }
 
