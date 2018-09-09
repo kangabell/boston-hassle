@@ -272,12 +272,14 @@ article:first-of-type .tribe-events-cost {
 	}
 } //.calendar-header
 .featured-event-categories {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 	text-align: center;
 	order: 3;
 	width: 100%;
 	li {
 		@extend .h4;
-		display: inline;
 		line-height: 2.25em;
 		white-space: nowrap;
 	}
