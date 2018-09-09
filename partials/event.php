@@ -3,7 +3,7 @@ MEDIUM-SIZED EVENT SNIPPET
 used for events in the Events archive page
 -->
 
-<article <?php if ( isset($hassle_show) ) { echo 'class="featured"'; } ?>>
+<article <?php if ( (isset($hassle_show)) && ($hassle_show == true) ) { echo 'class="featured"'; } ?>>
 	<a href="<?php echo esc_url( tribe_get_event_link() ); ?>">
 		<div class="thumbnail" style="background-image: url('<?php bhass_article_img(); ?>')"></div>
 		<div class="text">
@@ -17,7 +17,7 @@ used for events in the Events archive page
 			<p class="meta category"><?php echo tribe_get_venue(); ?></p>
 			<?php echo tribe_events_get_the_excerpt( null, wp_kses_allowed_html( 'post' ) ); ?>
 			<?php
-			if ( isset($hassle_show) ) :
+			if ( (isset($hassle_show)) && ($hassle_show == true) ) :
 			?>
 				<span class="badge"><?php _e( 'Hassle Show!', 'bhass' ); ?></span>
 			<?php

@@ -24,6 +24,8 @@ $more = false;
 
 	if ( tribe_event_in_category('hassle-shows') ) {
 		$hassle_show = true;
+	} else {
+		$hassle_show = false;
 	}
 
 	include(locate_template('partials/event.php'));
