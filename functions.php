@@ -399,16 +399,21 @@ function bhass_article_img() {
 
 function bhass_featured_event_categories() {
 
+    // list our category names and ID's
     $categories = array (
-        'All Shows' => null,
         'Hassle Shows' => '21638',
         'Music Shows' => '9492',
         'Film Screenings' => '21623',
         'Art Events' => '21625'
     );
 
+    // create wrapper
     echo '<ul class="featured-event-categories">';
 
+    // display view-all link
+    echo '<li><a href="' . tribe_get_events_link() . '">All Shows</a></li>';
+
+    // loop through each category, displaying it as a link inside a list item
     foreach( $categories as $name => $id ) {
         echo '<li><a href="' ;
         if ( tribe_is_view('month') ) {
@@ -419,6 +424,7 @@ function bhass_featured_event_categories() {
         echo '">' . $name . '</a></li>';
     }
 
+    // close wrapper
     echo '</ul>';
 
 }
