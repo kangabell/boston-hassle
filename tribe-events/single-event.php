@@ -56,12 +56,9 @@ $event_id = get_the_ID();
 	    <?php do_action( 'tribe_events_single_event_after_the_meta' ) ?>
 
     </article>
-      
-  </div>
 
   <?php if ( get_post_type() == Tribe__Events__Main::POSTTYPE && tribe_get_option( 'showComments', false ) ) comments_template() ?>
 
   <?php endwhile; ?>
 
-<?php get_footer(); ?>
-
+</div>
