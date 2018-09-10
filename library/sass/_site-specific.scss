@@ -296,6 +296,9 @@ article:first-of-type .tribe-events-cost {
 		margin-right: $padding;
 		order: 2;
 		width: auto;
+		a {
+			padding: $padding/2;
+		}
 	}
 }
 #tribe-events-bar {
