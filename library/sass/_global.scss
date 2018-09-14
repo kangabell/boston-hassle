@@ -121,14 +121,7 @@ span.quiet, p.quiet {
 }
 
 .visually-hidden { /* text for screen readers */
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
+	@include visually-hidden;
 }
 
 /*************
@@ -187,15 +180,18 @@ a {
 	text-decoration: none;
 }
 
-button, .button, input[type='submit'] {
+button, .button, input[type='submit'], .badge {
 	background: $gray;
-	border: 0;
-	border-radius: $radius;
 	color: $white;
   	font-weight: 600;
   	letter-spacing: 0.05em;
   	padding: 0.125rem 0.75rem;
   	text-transform: uppercase;
+}
+
+button, .button, input[type='submit'] {
+	border: 0;
+	border-radius: $radius;
   	opacity: 0.8;
   	&:hover {
   		opacity: 1;

@@ -6,33 +6,30 @@
 
 ?>
 
-<main>
+<div id="tribe-events-content">
 
-  <div id="tribe-events-content">
+    <?php
+    if ( ! defined( 'ABSPATH' ) ) {
+      die( '-1' );
+    }
 
-      <?php
-      if ( ! defined( 'ABSPATH' ) ) {
-        die( '-1' );
-      }
+    do_action( 'tribe_events_before_template' );
+    // do_action( 'tribe_events_list_before_the_content' );
+    ?>
 
-      do_action( 'tribe_events_before_template' );
-      // do_action( 'tribe_events_list_before_the_content' );
-      ?>
+    <!-- Events Loop -->
+    <?php if ( have_posts() ) : ?>
+      <?php do_action( 'tribe_events_before_loop' ); ?>
+      <?php tribe_get_template_part( 'month/content' ); ?>
+      <?php do_action( 'tribe_events_after_loop' ); ?>
+    <?php endif; ?>
 
-      <!-- Events Loop -->
-      <?php if ( have_posts() ) : ?>
-        <?php do_action( 'tribe_events_before_loop' ); ?>
-        <?php tribe_get_template_part( 'month/content' ); ?>
-        <?php do_action( 'tribe_events_after_loop' ); ?>
-      <?php endif; ?>
+    </div>
+    <!-- #tribe-events-footer -->
+    <?php do_action( 'tribe_events_after_footer' ) ?>
 
-      </div>
-      <!-- #tribe-events-footer -->
-      <?php do_action( 'tribe_events_after_footer' ) ?>
+</div>
 
-  </div>
-
-</main>
 <?php
 do_action( 'tribe_events_after_template' );
 

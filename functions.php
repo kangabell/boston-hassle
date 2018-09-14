@@ -175,7 +175,7 @@ function bhass_theme_support() {
             'main-nav-top' => __( 'Main Menu First Section', 'bhass' ),
             'main-nav-categories' => __( 'Main Menu Categories', 'bhass' ),
             'main-nav-links' => __( 'Main Menu Second Links', 'bhass' ),
-            'main-nav-buttons' => __( 'Main Menu Buttons', 'bhass' ),
+            'main-nav-buttons' => __( 'Main Menu Buttons', 'bhass' )
         )
     );
 
@@ -238,7 +238,7 @@ function bhass_main_nav_top() {
         'theme_location' => 'main-nav-top',
         'depth' => 2,
     ));
-} /* end bhass main nav */
+}
 
 // main menu categories area
 function bhass_main_nav_categories() {
@@ -248,7 +248,7 @@ function bhass_main_nav_categories() {
         'theme_location' => 'main-nav-categories',
         'depth' => 2,
     ));
-} /* end bhass main nav */
+}
 
 // main menu links area
 function bhass_main_nav_links() {
@@ -269,7 +269,7 @@ function bhass_main_nav_buttons() {
         'theme_location' => 'main-nav-buttons',
         'depth' => 1,
     ));
-} /* end bhass main nav */
+}
 
 
 /************* MODIFIED TITLE ********************/
@@ -395,5 +395,38 @@ function bhass_article_img() {
 }
 
 
+/************* FEATURED EVENT CATEGORIES LIST *****************/
+
+function bhass_featured_event_categories() {
+
+    // list our category names and ID's
+    $categories = array (
+        'Hassle Shows' => '21638',
+        'Music Shows' => '9492',
+        'Film Screenings' => '21623',
+        'Art Events' => '21625'
+    );
+
+    // create wrapper
+    echo '<ul class="featured-event-categories">';
+
+    // display view-all link
+    echo '<li><a href="' . tribe_get_events_link() . '">All Shows</a></li>';
+
+    // loop through each category, displaying it as a link inside a list item
+    foreach( $categories as $name => $id ) {
+        echo '<li><a href="' ;
+        if ( tribe_is_view('month') ) {
+            echo tribe_get_gridview_link($id);
+        } else {
+            echo tribe_get_listview_link($id);
+        }
+        echo '">' . $name . '</a></li>';
+    }
+
+    // close wrapper
+    echo '</ul>';
+
+}
 
 ?>
