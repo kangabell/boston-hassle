@@ -28,6 +28,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<!-- Notices -->
 	<?php tribe_the_notices() ?>
 
+	<!-- List Header -->
+	<!-- apparently necessary for browser title to function correctly while using pagination -->
+	<div id="tribe-events-header" <?php tribe_events_the_header_attributes() ?>>
+
+		<!-- Header Navigation -->
+		<?php do_action( 'tribe_events_before_header_nav' ); ?>
+		<?php do_action( 'tribe_events_after_header_nav' ); ?>
+
+	</div>
+	<!-- #tribe-events-header -->
+
 	<!-- Events Loop -->
 	<?php if ( have_posts() ) : ?>
 		<?php do_action( 'tribe_events_before_loop' ); ?>
