@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( '-1' );
 } ?>
 
-<div id="tribe-events-content" class="left">
+<div id="tribe-events-content" class="right">
 
 
 	<?php
