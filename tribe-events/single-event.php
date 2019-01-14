@@ -41,7 +41,7 @@ $event_id = get_the_ID();
       </p>
     </header>
 
-    <article>
+    <article class="single-event-article">
 
     	<?php echo tribe_event_featured_image( $event_id, 'full', false ); ?>
 

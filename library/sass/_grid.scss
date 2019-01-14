@@ -15,7 +15,7 @@ hr  {
 	width: 100%;
 }
 
-#header > div, .announcement > p, .articles > div, footer > div, .subfooter > div, .single main > article, section.tags {
+#header > div, .announcement > p, .articles > div, footer > div, .subfooter > div, .single main > article, .single-event-article, section.tags {
 	@include grid-row;
 }
 
@@ -232,7 +232,7 @@ body.home {
 		main {
 			@include grid-row;
 		}
-		main > article, section.tags, section.comments { // everything except section.related-posts
+		main > article, .single-event-article, section.tags, section.comments { // everything except section.related-posts
 			@include grid-column(10);
 			@include grid-col-pos(center);
 		}
