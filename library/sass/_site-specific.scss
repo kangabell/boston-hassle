@@ -200,6 +200,10 @@ body.home .recurringinfo, body.archive .recurringinfo {
 	display: none; // hide recurring-event info
 }
 
+.tribe-events-page-title {
+	text-align: left;
+}
+
 .tribe-events-button {
 	@extend .button;
 }
