@@ -311,47 +311,53 @@ article:first-of-type .tribe-events-cost {
 
 /*** Views Selection ***/
 
+#tribe-bar-views-label, // "View As"
+.tribe-bar-views-toggle { // view toggle
+	display: none;
+}
+
 .tribe-bar-views-list {
 	display: flex;
 	justify-content: space-between;
 	margin: 0;
 	text-align: center;
 	width: 4rem;
-	li {
-		font-size: 1.5rem;
-		&:not(.tribe-bar-active) {
-			opacity: 0.5;
-		}
-		&:hover {
-			opacity: 1;
-		}
-		@include breakpoint(medium) {
-			font-size: 2rem;
-		}
-	}
-	span {
-		@extend .small;
-		display: block;
-
-		@include breakpoint(small down) {
-			@include visually-hidden;
-		}
-	}
 	@include breakpoint(medium) {
 		width: 6rem;
 	}
 }
-.tribe-bar-views-option-list a {
-	&:before {
-		@extend [class^="icon-"];
-		@extend .icon-list;
+
+.tribe-bar-views-option {
+	@extend .small;
+	cursor: pointer;
+	&:not(.tribe-bar-active) {
+		opacity: 0.5;
+	}
+	&.tribe-bar-active { // disable currently-active option
+		cursor: default;
+		pointer-events: none;
+	}
+	&:hover {
+		opacity: 1;
+	}
+	span { // icon
+		display: block;
+		font-size: 1.5rem;
+		margin-bottom: 0.65rem;
+		@include breakpoint(medium) {
+			font-size: 2rem;
+		}
 	}
 }
-.tribe-bar-views-option-month a {
-	&:before {
-		@extend [class^="icon-"];
-		@extend .icon-calendar;
-	}
+
+// Custom icons for view options
+.tribe-icon-list {
+	@extend [class^="icon-"];
+	@extend .icon-list;
+}
+.tribe-icon-month {
+	@extend [class^="icon-"];
+	@extend .icon-calendar;
 }
 
 
