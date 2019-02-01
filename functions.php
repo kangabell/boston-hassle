@@ -364,7 +364,7 @@ function bhass_register_sidebars() {
     register_sidebar(array(
         'id' => 'home_widget-1',
         'name' => __('Homepage Widget #1', 'bhass'),
-        'description' => __('Customizable section on the homepage.', 'bhass'),
+        'description' => __('Single widget section on the homepage.', 'bhass'),
         'before_widget' => '<div>',
         'after_widget' => '</div>',
         'before_title' => '<h2>',
@@ -373,7 +373,16 @@ function bhass_register_sidebars() {
     register_sidebar(array(
         'id' => 'home_widget-2',
         'name' => __('Homepage Widget #2', 'bhass'),
-        'description' => __('Another customizable section on the homepage.', 'bhass'),
+        'description' => __('Another single widget section on the homepage.', 'bhass'),
+        'before_widget' => '<div>',
+        'after_widget' => '</div>',
+        'before_title' => '<h2>',
+        'after_title' => '</h2>',
+    ));
+    register_sidebar(array(
+        'id' => 'home_widget-3',
+        'name' => __('Homepage Widget #3', 'bhass'),
+        'description' => __('Double-widget section on the homepage.', 'bhass'),
         'before_widget' => '<div>',
         'after_widget' => '</div>',
         'before_title' => '<h2>',
