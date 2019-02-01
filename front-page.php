@@ -11,6 +11,7 @@ Template Name: Homepage
   $cat_1 = get_field('cat_1');
   $cat_2 = get_field('cat_2');
   $cat_3 = get_field('cat_3');
+  $cat_4 = get_field('cat_4');
   $picture_cat = get_field('picture_cat');
 
 ?>
@@ -159,12 +160,27 @@ Template Name: Homepage
         include(locate_template('partials/category-section.php'));
       ?>
 
+      <div class="home-widget-1">
+        <?php dynamic_sidebar( 'home_widget-1' ); ?>
+      </div>
+
       <?php
         // Category #3
         $category = $cat_3;
         $class = 'category-3';
         include(locate_template('partials/category-section.php'));
       ?>
+
+      <?php
+        // Category #4
+        $category = $cat_4;
+        $class = 'category-4';
+        include(locate_template('partials/category-section.php'));
+      ?>
+
+      <div class="home-widget-2">
+        <?php dynamic_sidebar( 'home_widget-2' ); ?>
+      </div>
 
     </div>
 
@@ -213,8 +229,8 @@ Template Name: Homepage
         <a class="view-all" href="<?php echo get_category_link( $picture_cat->term_id ); ?>">View All <?php echo $picture_cat->name; ?></a>
       </div>
 
-      <div class="home-widget-2">
-        <?php dynamic_sidebar( 'home_widget-2' ); ?>
+      <div class="home-widget-3">
+        <?php dynamic_sidebar( 'home_widget-3' ); ?>
       </div>
 
     </div>
