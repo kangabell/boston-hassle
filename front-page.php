@@ -144,19 +144,19 @@ Template Name: Homepage
       ?>
     </div>
 
-    <div>
+    <div class="categories">
 
       <?php
         // Category #1
         $category = $cat_1;
-        $class = 'category-1';
+        $class = 'category-1 category-list';
         include(locate_template('partials/category-section.php'));
       ?>
 
       <?php
         // Category #2
         $category = $cat_2;
-        $class = 'category-2';
+        $class = 'category-2 category-list';
         include(locate_template('partials/category-section.php'));
       ?>
 
@@ -167,14 +167,14 @@ Template Name: Homepage
       <?php
         // Category #3
         $category = $cat_3;
-        $class = 'category-3';
+        $class = 'category-3 category-list';
         include(locate_template('partials/category-section.php'));
       ?>
 
       <?php
         // Category #4
         $category = $cat_4;
-        $class = 'category-4';
+        $class = 'category-4 category-list';
         include(locate_template('partials/category-section.php'));
       ?>
 

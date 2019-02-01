@@ -2,8 +2,11 @@
 CATEGORY SECTION
 used on the homepage for category-based columns.
 -->
+<?php
+  $classes = $category->slug . ' ' . $class . ' category';
+?>
 
-<div class="<?php echo $category->slug . ' ' . $class; ?> category">
+<div class="<?php echo $classes; ?>">
   <h2><?php echo $category->name; ?></h2>
   <?php // all articles within given category
     $loop = new WP_Query( array(
