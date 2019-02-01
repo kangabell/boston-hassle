@@ -78,8 +78,8 @@ body.home {
 		margin-bottom: $padding/4;
 		overflow: hidden;
 	}
-	div.events, div.category, div.secondary, .home-widget-1, div.tertiary, 
-	.articles article, .home-widget-2, div.donate {
+	div.events, div.category, div.secondary, .home-widget-1, .home-widget-2, div.tertiary,
+	.articles article, .home-widget-3, div.donate {
 		margin-top: $padding;
 	}
 
@@ -123,10 +123,6 @@ body.home {
 		margin-left: $padding/2;
 	}
 
-	div.category-1, div.category-2, div.category-3, .articles article {
-		margin-top: $padding;
-	}
-
 	.announcement > div, #header h1, main > div {
 		@include grid-row;
 	}
@@ -143,7 +139,7 @@ body.home {
 			margin-top: $padding;
 		}
 
-		article + article, div.events, .home-widget-1 {
+		article + article, div.events {
 			margin-top: 0; // reset from mobile style
 		}
 
@@ -158,7 +154,7 @@ body.home {
 			@include grid-column(4);
 		}
 
-		.secondary article, .home-widget-1 {
+		.secondary article {
 			@include grid-column(4);
 		}
 
@@ -166,18 +162,19 @@ body.home {
 			@include grid-row;
 		}
 
-		.category-1, .category-2, .category-3 {
-			article {
-				@include grid-row;
-			}
+		.categories {
+			display: flex;
+			flex-wrap: wrap;
 		}
 
-		.category-1 {
-			@include grid-column(12);
+		.category-list,
+		.home-widget-1,
+		.home-widget-2 {
+			@include grid-column(6);
 		}
 
-		.category-2 {
-			@include grid-column(7);
+		.category-list article {
+			@include grid-row;
 		}
 
 		div.tertiary article {
@@ -191,12 +188,10 @@ body.home {
 		div.picture-cat {
 			@include grid-column(7);
 		}
-		.category-3, .home-widget-2 {
+		 .home-widget-3 {
 			@include grid-column(5);
 		}
-		.category-3 {
-			margin-top: 0;
-		}
+
 	}
 
 	footer section {
@@ -310,7 +305,7 @@ body.home {
 			@include grid-column(3);
 		}
 
-		.category-1, .category-2, .category-3 {
+		.category-list, .home-widget-1, .home-widget-2 {
 			@include grid-column(4);
 		}
 
