@@ -1,49 +1,33 @@
 <?php
 /**
  * List View Template
+ * The wrapper template for a list of events. This includes the Past Events and Upcoming Events views
+ * as well as those same views filtered to a specific category.
+ *
+ * Override this template in your own theme by creating a file at [your-theme]/tribe-events/list.php
+ *
+ * @package TribeEventsCalendar
+ * @version 4.6.19
  *
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
+
+do_action( 'tribe_events_before_template' );
 ?>
 
-<div id="tribe-events-content" class="tribe-events-list">
-  
-  <header class="calendar-header">
-    <h1><?php echo tribe_get_events_title(); ?></h1>
-    <?php bhass_featured_event_categories(); ?>
-    <?php tribe_get_template_part( 'modules/bar' ); ?>
-  </header>
+<!-- Title Bar -->
+<?php tribe_get_template_part( 'list/title-bar' ); ?>
 
-  <div id="tribe-events-content" class="right">
+<!-- Main Events Content -->
+<?php tribe_get_template_part( 'list/content' ); ?>
 
-      <?php
-      if ( ! defined( 'ABSPATH' ) ) {
-        die( '-1' );
-      }
+<!-- Sidebar -->
+<?php get_sidebar('events'); ?>
 
-      do_action( 'tribe_events_before_template' );
-      do_action( 'tribe_events_list_before_the_content' );
-      ?>
+	<div class="tribe-clear"></div>
 
-      <!-- Events Loop -->
-      <?php if ( have_posts() ) : ?>
-        <?php do_action( 'tribe_events_before_loop' ); ?>
-        <?php tribe_get_template_part( 'list/loop' ) ?>
-        <?php do_action( 'tribe_events_after_loop' ); ?>
-      <?php 
-        endif;
-        get_template_part('partials/pagination');
-      ?>
-
-      </div>
-
-      <!-- #tribe-events-footer -->
-      <?php do_action( 'tribe_events_after_footer' ) ?>
-
-  </div>
-
-  <?php get_sidebar('events'); ?>
-
-</div>
 <?php
 do_action( 'tribe_events_after_template' );

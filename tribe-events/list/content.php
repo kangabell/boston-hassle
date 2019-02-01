@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( '-1' );
 } ?>
 
-<div id="tribe-events-content" class="left">
+<div id="tribe-events-content" class="right">
 
 
 	<?php
@@ -29,18 +29,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<?php tribe_the_notices() ?>
 
 	<!-- List Header -->
-	<?php do_action( 'tribe_events_before_header' ); ?>
+	<!-- apparently necessary for browser title to function correctly while using pagination -->
 	<div id="tribe-events-header" <?php tribe_events_the_header_attributes() ?>>
 
 		<!-- Header Navigation -->
 		<?php do_action( 'tribe_events_before_header_nav' ); ?>
-		<?php tribe_get_template_part( 'list/nav', 'header' ); ?>
 		<?php do_action( 'tribe_events_after_header_nav' ); ?>
 
 	</div>
 	<!-- #tribe-events-header -->
-	<?php do_action( 'tribe_events_after_header' ); ?>
-
 
 	<!-- Events Loop -->
 	<?php if ( have_posts() ) : ?>

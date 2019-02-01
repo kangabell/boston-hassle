@@ -310,6 +310,9 @@ nav.pagination {
 	border-bottom: $border;
 	padding-bottom: $padding;
 	@extend .h3;
+	.prev-link {
+		float: left;
+	}
 	.next-link {
 		float: right;
 	}
