@@ -106,7 +106,7 @@ Template Name: Homepage
       <?php // 2 more Featured Posts
 
         $args = array(
-          'posts_per_page' => 2,
+          'posts_per_page' => 3,
           'post__in' => $featured_ids,
           'orderby' => 'post__in',
           'ignore_sticky_posts' => true,
@@ -120,10 +120,6 @@ Template Name: Homepage
         wp_reset_query();
 
       ?>
-
-      <div class="home-widget-1">
-        <?php dynamic_sidebar( 'home_widget-1' ); ?>
-      </div>
 
     </div>
 
