@@ -198,7 +198,7 @@ var tribe_events_bar_action;
 		function openViewsToggle() {
 			var $currentli = getCurrentViewItem();
 			$tribebarviews
-				.slideDown( 'fast' )
+				// .slideDown( 'fast' ) // removed because it looked weird with our modified UI
 				.attr( 'aria-activedescendant', $currentli.attr( 'id' ) )
 				.focus();
 			$tribebar.addClass( 'tribe-bar-views-open' );
@@ -210,7 +210,7 @@ var tribe_events_bar_action;
 			$tribebarviewstoggle.removeAttr( 'aria-expanded' );
 			$tribebar.removeClass('tribe-bar-views-open');
 			$tribebarviews
-				.slideUp( 'fast' )
+				// .slideUp( 'fast' ) // removed because it looked weird with our modified UI
 				.removeAttr( 'aria-activedescendant' )
 				.find( '.tribe-bar-views-option' ).removeClass( 'tribe-bar-active' );
 			$currentli.addClass( 'tribe-bar-active' );
