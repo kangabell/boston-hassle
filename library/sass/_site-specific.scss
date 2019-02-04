@@ -24,8 +24,8 @@ body.home {
 	@extend .button;
 }
 
-div.picture-cat article { // hide last four items, to make room
-	&:nth-last-child(4), &:nth-last-child(3), &:nth-last-child(2), &:last-child {
+div.picture-cat article { // hide last two items, to make room
+	&:nth-last-of-type(4), &:nth-last-of-type(3), &:nth-last-of-type(2), &:last-of-type {
 		display: none;
 	}
 }
@@ -50,8 +50,8 @@ div.picture-cat article { // hide last four items, to make room
 		right: 0;
 	}
 
-	div.picture-cat article { // show an extra four items
-		&:nth-last-child(4), &:nth-last-child(3), &:nth-last-child(2), &:last-child {
+	div.picture-cat article { // show an extra two items
+		&:nth-last-of-type(4), &:nth-last-of-type(3), &:nth-last-of-type(2), &:last-of-type {
 			display: inline-block;
 		}
 	}

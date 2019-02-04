@@ -209,7 +209,7 @@ Template Name: Homepage
         <h2><?php echo $picture_cat->name; ?></h2>
         <?php
           $loop = new WP_Query( array(
-            'posts_per_page'=> 9, 
+            'posts_per_page'=> 8,
             'ignore_sticky_posts'=>true, 
             'cat'=>$picture_cat->term_id
           ) );
