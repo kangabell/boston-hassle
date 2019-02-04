@@ -380,10 +380,19 @@ function bhass_register_sidebars() {
         'after_title' => '</h2>',
     ));
     register_sidebar(array(
+        'id' => 'home_leaderboard',
+        'name' => __('Homepage Leaderboard', 'bhass'),
+        'description' => __('Leaderboard ad section on the homepage.', 'bhass'),
+        'before_widget' => '<div>',
+        'after_widget' => '</div>',
+        'before_title' => '<h2>',
+        'after_title' => '</h2>',
+    ));
+    register_sidebar(array(
         'id' => 'home_widget-3',
         'name' => __('Homepage Widget #3', 'bhass'),
         'description' => __('Double-widget section on the homepage.', 'bhass'),
-        'before_widget' => '<div>',
+        'before_widget' => '<div class="widget">',
         'after_widget' => '</div>',
         'before_title' => '<h2>',
         'after_title' => '</h2>',

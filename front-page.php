@@ -206,6 +206,7 @@ Template Name: Homepage
 
       <!-- Category Section with Pictures -->
       <div class="<?php echo $picture_cat->slug ?> picture-cat category">
+
         <h2><?php echo $picture_cat->name; ?></h2>
         <?php
           $loop = new WP_Query( array(
@@ -227,6 +228,11 @@ Template Name: Homepage
           endwhile; wp_reset_postdata();
         ?>
         <a class="view-all" href="<?php echo get_category_link( $picture_cat->term_id ); ?>">View All <?php echo $picture_cat->name; ?></a>
+
+        <div class="leaderboard">
+          <?php dynamic_sidebar( 'home_leaderboard' ); ?>
+        </div>
+
       </div>
 
       <div class="home-widget-3">
