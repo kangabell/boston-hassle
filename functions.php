@@ -155,6 +155,16 @@ function bhass_scripts_and_styles() {
   }
 }
 
+function bhass_replace_tribe_events_bar() {
+
+    wp_dequeue_script( 'tribe-events-bar' );
+
+    wp_enqueue_script( 'bhass-events-bar', get_stylesheet_directory_uri() . '/library/scripts/tribe-events-bar.js', array( 'jquery' ), '', true );
+
+}
+
+add_action( 'wp_print_scripts', 'bhass_replace_tribe_events_bar', 100 );
+
 
 /*********************
 THEME SUPPORT
