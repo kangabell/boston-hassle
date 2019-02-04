@@ -78,12 +78,12 @@ body.home {
 		margin-bottom: $padding/4;
 		overflow: hidden;
 	}
-	div.events, div.category, div.secondary, .home-widget-1, .home-widget-2, div.tertiary,
-	.articles article, .home-widget-3, div.leaderboard, div.donate {
+	div.events, div.category, div.secondary, .home-widget-1, .home-rectangle-ad, div.tertiary,
+	.articles article, .home-widget-2, div.leaderboard-ad, div.donate {
 		margin-top: $padding;
 	}
 
-	div.leaderboard {
+	div.leaderboard-ad {
 		@include grid-column(12);
 	}
 
@@ -173,7 +173,7 @@ body.home {
 
 		.category-list,
 		.home-widget-1,
-		.home-widget-2 {
+		.home-rectangle-ad {
 			@include grid-column(6);
 		}
 
@@ -193,12 +193,12 @@ body.home {
 			@include grid-column(3);
 		}
 
-		.home-widget-3 {
+		.home-widget-2 {
 			display: flex;
 			flex-wrap: wrap;
 			justify-content: space-between;
 		}
-		.home-widget-3 .widget {
+		.home-widget-2 .widget {
 			flex-basis: 48%;
 		}
 
@@ -315,14 +315,14 @@ body.home {
 			@include grid-column(3);
 		}
 
-		.category-list, .home-widget-1, .home-widget-2 {
+		.category-list, .home-widget-1, .home-rectangle-ad {
 			@include grid-column(4);
 		}
 
 		div.picture-cat {
 			@include grid-column(8);
 		}
-		.home-widget-3 {
+		.home-widget-2 {
 			@include grid-column(4);
 			flex-direction: column;
 		}

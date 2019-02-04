@@ -371,17 +371,17 @@ function bhass_register_sidebars() {
         'after_title' => '</h2>',
     ));
     register_sidebar(array(
-        'id' => 'home_widget-2',
-        'name' => __('Homepage Widget #2', 'bhass'),
-        'description' => __('Another single widget section on the homepage.', 'bhass'),
+        'id' => 'home_rectangle-ad',
+        'name' => __('Homepage Rectangle Ad', 'bhass'),
+        'description' => __('Rectangle ad section on the homepage.', 'bhass'),
         'before_widget' => '<div>',
         'after_widget' => '</div>',
         'before_title' => '<h2>',
         'after_title' => '</h2>',
     ));
     register_sidebar(array(
-        'id' => 'home_leaderboard',
-        'name' => __('Homepage Leaderboard', 'bhass'),
+        'id' => 'home_leaderboard-ad',
+        'name' => __('Homepage Leaderboard Ad', 'bhass'),
         'description' => __('Leaderboard ad section on the homepage.', 'bhass'),
         'before_widget' => '<div>',
         'after_widget' => '</div>',
@@ -389,8 +389,8 @@ function bhass_register_sidebars() {
         'after_title' => '</h2>',
     ));
     register_sidebar(array(
-        'id' => 'home_widget-3',
-        'name' => __('Homepage Widget #3', 'bhass'),
+        'id' => 'home_widget-2',
+        'name' => __('Homepage Widget #2', 'bhass'),
         'description' => __('Double-widget section on the homepage.', 'bhass'),
         'before_widget' => '<div class="widget">',
         'after_widget' => '</div>',

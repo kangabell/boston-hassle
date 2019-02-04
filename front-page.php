@@ -178,8 +178,8 @@ Template Name: Homepage
         include(locate_template('partials/category-section.php'));
       ?>
 
-      <div class="home-widget-2">
-        <?php dynamic_sidebar( 'home_widget-2' ); ?>
+      <div class="home-rectangle-ad">
+        <?php dynamic_sidebar( 'home_rectangle-ad' ); ?>
       </div>
 
     </div>
@@ -229,14 +229,14 @@ Template Name: Homepage
         ?>
         <a class="view-all" href="<?php echo get_category_link( $picture_cat->term_id ); ?>">View All <?php echo $picture_cat->name; ?></a>
 
-        <div class="leaderboard">
-          <?php dynamic_sidebar( 'home_leaderboard' ); ?>
+        <div class="leaderboard-ad">
+          <?php dynamic_sidebar( 'home_leaderboard-ad' ); ?>
         </div>
 
       </div>
 
-      <div class="home-widget-3">
-        <?php dynamic_sidebar( 'home_widget-3' ); ?>
+      <div class="home-widget-2">
+        <?php dynamic_sidebar( 'home_widget-2' ); ?>
       </div>
 
     </div>

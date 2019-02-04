@@ -27,7 +27,7 @@ body.home {
 @include breakpoint(large) {
 
 	/* move buttons to upper right of their sections */
-	div.category, .home-widget-3 > div /* compass widget */ {
+	div.category, .home-widget-2 > div /* compass widget */ {
 		position: relative;
 	}
 	.view-all {
@@ -36,7 +36,7 @@ body.home {
 		right: $padding;
 		top: $padding/4;
 	}
-	.home-widget-3 > div .view-all {
+	.home-widget-2 > div .view-all {
 		right: 0;
 	}
 
