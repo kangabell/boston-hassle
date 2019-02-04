@@ -159,7 +159,7 @@ function bhass_replace_tribe_events_bar() {
 
     wp_dequeue_script( 'tribe-events-bar' );
 
-    wp_enqueue_script( 'bhass-events-bar', get_stylesheet_directory_uri() . '/library/scripts/tribe-events-bar.js', array( 'jquery' ), '', true );
+    wp_enqueue_script( 'bhass-events-bar', get_stylesheet_directory_uri() . '/library/scripts/tribe-events-bar.min.js', array( 'jquery' ), '', true );
 
 }
 

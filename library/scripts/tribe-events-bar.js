@@ -2,6 +2,8 @@
  * @file Sets up the event bar javascript.
  * This file should load after tribe events core and pro js and before any events view javascript.
  * @version 3.0
+ *
+ * Modifications made in this file for the Boston Hassle theme are denoted with comments.
  */
 
 /**
