@@ -2,9 +2,9 @@
 
 Author: [Kay Belardinelli](http://kangabell.co)
 
-Version: 1.2
+Version: 1.3
 
-2016-2018
+2016-2019
 
 ![Screenshot of Website](screenshot.png)
 
