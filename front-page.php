@@ -144,6 +144,10 @@ Template Name: Homepage
       ?>
     </div>
 
+    <div class="pencil-ad">
+      <?php dynamic_sidebar( 'home_pencil-ad-1' ); ?>
+    </div>
+
     <div class="categories">
 
       <?php
@@ -200,6 +204,10 @@ Template Name: Homepage
           endwhile; wp_reset_postdata();
         ?>
       </div>
+    </div>
+
+    <div class="pencil-ad">
+      <?php dynamic_sidebar( 'home_pencil-ad-2' ); ?>
     </div>
 
     <div>

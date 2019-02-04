@@ -362,6 +362,15 @@ function bhass_register_sidebars() {
         'after_title' => '</h4>',
     ));
     register_sidebar(array(
+        'id' => 'home_pencil-ad-1',
+        'name' => __('Homepage Pencil Ad #1', 'bhass'),
+        'description' => __('Pencil ad section on the homepage.', 'bhass'),
+        'before_widget' => '<div>',
+        'after_widget' => '</div>',
+        'before_title' => '<h2>',
+        'after_title' => '</h2>',
+    ));
+    register_sidebar(array(
         'id' => 'home_widget-1',
         'name' => __('Homepage Widget #1', 'bhass'),
         'description' => __('Single widget section on the homepage.', 'bhass'),
@@ -374,6 +383,15 @@ function bhass_register_sidebars() {
         'id' => 'home_rectangle-ad',
         'name' => __('Homepage Rectangle Ad', 'bhass'),
         'description' => __('Rectangle ad section on the homepage.', 'bhass'),
+        'before_widget' => '<div>',
+        'after_widget' => '</div>',
+        'before_title' => '<h2>',
+        'after_title' => '</h2>',
+    ));
+    register_sidebar(array(
+        'id' => 'home_pencil-ad-2',
+        'name' => __('Homepage Pencil Ad #2', 'bhass'),
+        'description' => __('Second pencil ad section on the homepage.', 'bhass'),
         'before_widget' => '<div>',
         'after_widget' => '</div>',
         'before_title' => '<h2>',
