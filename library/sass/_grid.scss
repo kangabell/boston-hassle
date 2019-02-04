@@ -79,8 +79,12 @@ body.home {
 		overflow: hidden;
 	}
 	div.events, div.category, div.secondary, .home-widget-1, .home-widget-2, div.tertiary,
-	.articles article, .home-widget-3, div.donate {
+	.articles article, .home-widget-3, div.leaderboard, div.donate {
 		margin-top: $padding;
+	}
+
+	div.leaderboard {
+		@include grid-column(12);
 	}
 
 	div.picture-cat {
@@ -185,9 +189,17 @@ body.home {
 			@include grid-column(6);
 		}
 
-		div.picture-cat,
+		div.picture-cat article {
+			@include grid-column(3);
+		}
+
 		.home-widget-3 {
-			@include grid-column(6);
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
+		.home-widget-3 .widget {
+			flex-basis: 48%;
 		}
 
 	}
@@ -312,6 +324,7 @@ body.home {
 		}
 		.home-widget-3 {
 			@include grid-column(4);
+			flex-direction: column;
 		}
 
 		div.picture-cat article {

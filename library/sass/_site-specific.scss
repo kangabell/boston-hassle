@@ -24,16 +24,6 @@ body.home {
 	@extend .button;
 }
 
-div.picture-cat article { // hide last two items, to make room
-	&:nth-last-of-type(4), &:nth-last-of-type(3), &:nth-last-of-type(2), &:last-of-type {
-		display: none;
-	}
-}
-
-@include breakpoint(medium) {
-
-}
-
 @include breakpoint(large) {
 
 	/* move buttons to upper right of their sections */
@@ -48,12 +38,6 @@ div.picture-cat article { // hide last two items, to make room
 	}
 	.home-widget-3 > div .view-all {
 		right: 0;
-	}
-
-	div.picture-cat article { // show an extra two items
-		&:nth-last-of-type(4), &:nth-last-of-type(3), &:nth-last-of-type(2), &:last-of-type {
-			display: inline-block;
-		}
 	}
 
 }
