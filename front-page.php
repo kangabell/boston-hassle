@@ -204,11 +204,9 @@ Template Name: Homepage
           while ($loop->have_posts()) : 
             $loop->the_post();
         ?>
-          <article><a href="<?php the_permalink(); ?>">
+          <article><a href="<?php echo get_permalink(); ?>">
               <div class="thumbnail" style="background-image: url('<?php bhass_article_img(); ?>')"></div>
-              <div class="text">
-                <h3><a href="<?php the_permalink(); ?>"><?php echo short_title(); ?></a></h3>
-              </div>
+              <h3><?php echo short_title(); ?></h3>
               <p class="meta"><?php echo get_the_author(); ?></p>
           </a></article>
         <?php
