@@ -387,7 +387,7 @@ function bhass_register_sidebars() {
 // Search Form
 function bhass_wpsearch($form) {
     $form = '<form role="search" method="get" id="searchform" action="' . home_url( '/' ) . '" >
-    <input type="search" value="' . get_search_query() . '" name="s" id="s" placeholder="Search..." />
+    <label for="s" class="visually-hidden">Search</label><input type="search" value="' . get_search_query() . '" name="s" id="s" placeholder="Search..." />
     <button type="submit"><span class="visually-hidden">Go</span><span class="icon-search"></span></button>
     </form>';
     return $form;
