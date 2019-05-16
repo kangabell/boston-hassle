@@ -31,7 +31,7 @@ A custom WordPress theme, created for The Boston Hassle.
 ## Installation
 - clone the repo into your wp-content/themes folder
 - run `npm install`
-- to track Sass changes and compile them into CSS, run `sass --watch sass:stylesheets` from the `library/` directory
+- since the stylesheet is not tracked, you'll need to create one. make a directory under `library/` called `stylesheets/`, then run `sass --watch sass:stylesheets` to track Sass changes and compile them into CSS
 
 ## Notes
 
