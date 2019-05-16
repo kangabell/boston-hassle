@@ -17,7 +17,7 @@ SINGLE POST / ARTICLE PAGE
         <span class="category"><?php echo get_the_category_list(', '); ?></span>
       </p>
 
-      <h1><?php the_title(); ?></h1>
+      <h1 class="page-title"><?php the_title(); ?></h1>
 
       <?php if ( get_field('subtitle') ) : ?>
         <p class="subheading">

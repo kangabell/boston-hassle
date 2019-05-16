@@ -3,9 +3,11 @@
 SETTINGS & UTILITIES
 ********************/
 
-/*** HEADING FONT ***/
+/*** FONTS ***/
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i');
+
+$font-default: 'Open Sans', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
 
 @font-face {
   font-family: 'DIN Cond';
@@ -14,6 +16,8 @@ SETTINGS & UTILITIES
        url('../fonts/din_condensed_bold.ttf') format('truetype');
   font-weight: bold;
 }
+
+$font-condensed: 'DIN Cond', $font-default;
 
 /*** COLORS ***/
 

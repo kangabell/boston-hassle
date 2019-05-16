@@ -11,20 +11,18 @@ html {
 body {
 	background: $cream;
 	color: $black;
-	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+	font-family: $font-default;
 	word-break: break-word; // wrap extra-long words so they don't break layout
 }
-h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 	text-transform: uppercase;
 }
 h1, .h1, h2, .h2 {
-	font-family: 'DIN Cond', 'Open Sans', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
-	letter-spacing: 0.045em;
 	line-height: 1.025em;
 	margin-bottom: 0.5em;
 	margin-top: 0;
 }
-h3, .h3, h4, .h4 {
+h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 	font-weight: 600;
 	line-height: 1.25em;
 	margin-bottom: 0.25em;
@@ -33,21 +31,39 @@ h3, .h3, h4, .h4 {
 
 h1, .h1 {
 	font-size: 2.5rem;
-}
-@include breakpoint(medium) {
-	h1, .h1 {
-		font-size: 2.85rem;
+	font-weight: normal;
+	&.page-title {
+		font-family: $font-condensed;
+		font-weight: bold;
+		letter-spacing: 0.045em;
+		@include breakpoint(medium) {
+			font-size: 3rem;
+		}
 	}
 }
 
 h2, .h2 {
-	font-size: 2rem;
+	font-family: $font-condensed;
+	font-size: 2.475rem;
+	letter-spacing: 0.045em;
 }
+
 h3, .h3 {
-	font-size: 1.1rem;
+	font-size: 1.85rem;
 }
-h4, .h4, h5, .h5, h6, .h6 {
-	font-size: 1rem;
+
+h4, .h4 {
+	font-family: $font-condensed;
+	font-size: 1.875rem;
+	letter-spacing: 0.045em;
+}
+
+h5, .h5 {
+	font-size: 1.5rem;
+}
+
+h6, .h6 {
+	font-size: 1.375rem;
 }
 
 header h1 {
@@ -56,9 +72,12 @@ header h1 {
 
 .subheading {
 	color: $gray;
-	font-size: 1.25rem;
+	font-size: 1.125rem;
 	margin-bottom: 0.75em;
 	text-transform: uppercase;
+	@include breakpoint(medium) {
+		font-size: 1.25rem;
+	}
 }
 
 p {
@@ -206,7 +225,7 @@ button, input[type='submit'] {
 }
 
 input[type='submit'] {
-	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+	font-family: $font-default;
 }
 
 .meta {
