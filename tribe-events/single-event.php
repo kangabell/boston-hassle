@@ -27,7 +27,7 @@ $event_id = get_the_ID();
         <?php echo tribe_get_event_taxonomy(); ?>
       </ul>
       
-      <h1><?php the_title(); ?></h1>
+      <h1 class="page-title"><?php the_title(); ?></h1>
 
       <p class="meta">
         <?php echo tribe_events_event_schedule_details( $event_id ); ?>
