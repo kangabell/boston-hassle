@@ -13,7 +13,7 @@ Does not include Event pages.
     <?php if (is_author()) {
       echo '<p class="subheading">Articles by</p>';
     } ?>
-    <h1>
+    <h1 class="page-title">
       <?php 
         if (is_category()) { 
           single_cat_title();

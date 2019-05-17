@@ -112,7 +112,7 @@ div.events {
 
 body.home div.category {
 	h2 {
-		font-size: 2rem;
+		@extend .medium-type;
 	}
 	h4 {
 		margin-top: 0;
@@ -130,7 +130,8 @@ div.picture-cat article {
 
 .recent-comments-list {
 	span.comment-post {
-		@extend .h4;
+		font-weight: 600;
+		text-transform: uppercase;
 	}
 	li + li {
 		border-top: $border;
@@ -291,7 +292,7 @@ article:first-of-type .tribe-events-cost {
 	order: 3;
 	width: 100%;
 	li {
-		@extend .h4;
+		@extend .alt-type;
 		line-height: 2.25em;
 		white-space: nowrap;
 	}
@@ -655,7 +656,7 @@ SUPPORT PAGE
 
 #migla_donation_form {
 	.migla-panel-heading h2 {
-		font-size: 2rem !important;
+		font-size: 2rem;
 	}
 	.radio-inline label {
 		border: none !important;

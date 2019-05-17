@@ -313,7 +313,7 @@ function bhass_register_sidebars() {
         'description' => __('The sidebar for the archive/category pages.', 'bhass'),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget' => '</div>',
-        'before_title' => '<h2>',
+        'before_title' => '<h2 class="h4">',
         'after_title' => '</h2>',
     ));
     register_sidebar(array(
@@ -322,7 +322,7 @@ function bhass_register_sidebars() {
         'description' => __('The sidebar for the events page.', 'bhass'),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget' => '</div>',
-        'before_title' => '<h2>',
+        'before_title' => '<h2 class="h4">',
         'after_title' => '</h2>',
     ));
     register_sidebar(array(
@@ -331,7 +331,7 @@ function bhass_register_sidebars() {
         'description' => __('The sidebar for the pages using the "Two-Column Page" template.', 'bhass'),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget' => '</div>',
-        'before_title' => '<h2>',
+        'before_title' => '<h2 class="h4">',
         'after_title' => '</h2>',
     ));
     register_sidebar(array(
@@ -340,8 +340,8 @@ function bhass_register_sidebars() {
         'description' => __('Left section of the footer.', 'bhass'),
         'before_widget' => '<div class="widget %2$s">',
         'after_widget' => '</div>',
-       'before_title' => '<h4>',
-        'after_title' => '</h4>',
+       'before_title' => '<h3>',
+        'after_title' => '</h3>',
     ));
     register_sidebar(array(
         'id' => 'footer_middle',
@@ -349,8 +349,8 @@ function bhass_register_sidebars() {
         'description' => __('Middle section of the footer.', 'bhass'),
         'before_widget' => '<div class="widget %2$s">',
         'after_widget' => '</div>',
-        'before_title' => '<h4>',
-        'after_title' => '</h4>',
+        'before_title' => '<h3>',
+        'after_title' => '</h3>',
     ));
     register_sidebar(array(
         'id' => 'footer_right',
@@ -358,8 +358,8 @@ function bhass_register_sidebars() {
         'description' => __('Right section of the footer.', 'bhass'),
         'before_widget' => '<div class="widget %2$s">',
         'after_widget' => '</div>',
-        'before_title' => '<h4>',
-        'after_title' => '</h4>',
+        'before_title' => '<h3>',
+        'after_title' => '</h3>',
     ));
     register_sidebar(array(
         'id' => 'home_widget-1',

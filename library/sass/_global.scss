@@ -97,6 +97,10 @@ header h1 {
 	line-height: 1.025em;
 }
 
+.medium-type {
+	font-size: 2rem;
+}
+
 p {
 	font-size: 1rem;
 	margin-bottom: 0.75em;
@@ -219,6 +223,7 @@ a {
 button, .button, input[type='submit'], .badge {
 	background: $gray;
 	color: $white;
+	font-size: 1rem;
   	font-weight: 600;
   	letter-spacing: 0.05em;
   	padding: 0.125rem 0.75rem;
@@ -362,10 +367,14 @@ nav.pagination {
 
 /*** Widgets ***/
 
-main .widget, .home-widget { // exclude footer widgets
+main .widget, .home-widget-1, .home-widget-2 { // exclude footer widgets
 	a:not(.button) {
 		@include underline($silver);
-		font-size: 2rem;
+		font-weight: 600;
+		text-transform: uppercase;
+	}
+	h2 {
+		@extend .medium-type;
 	}
 	li + li, li > ul {
 		margin-top: 0.75em;
@@ -373,7 +382,6 @@ main .widget, .home-widget { // exclude footer widgets
 }
 
 /*** Avatar Images ***/
-
 
 span.comment-avatar, .comment-author img {
 	border-radius: 100%;

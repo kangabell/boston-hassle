@@ -13,7 +13,7 @@ used for events in the Events archive page
 					<span class="tribe-events-cost"><?php echo tribe_get_cost( null, true ) ?></span>
 				<?php endif; ?>
 			</p>
-			<h3><?php the_title(); ?></h3>
+			<h3 class="alt-type"><?php the_title(); ?></h3>
 			<p class="meta category"><?php echo tribe_get_venue(); ?></p>
 			<?php echo tribe_events_get_the_excerpt( null, wp_kses_allowed_html( 'post' ) ); ?>
 			<?php

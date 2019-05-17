@@ -7,7 +7,7 @@ SEARCH RESULTS PAGE
 <main>
   
   <header>
-    <h1>
+    <h1 class="page-title">
       <?php _e('Results for:', 'bhass'); ?></span> <?php echo esc_attr(get_search_query()); ?>
     </h1>
   </header>
