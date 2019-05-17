@@ -523,7 +523,8 @@ body.single main header {
 @include breakpoint(medium) {
 
 	body.single, body.page {
-		article > p:not(.small) {
+		.content-area p:not(.small),
+		.content-area li {
 			font-size: 1.175rem;
 		}
 	}
