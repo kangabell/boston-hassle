@@ -93,7 +93,7 @@ body.nav-open {
 	section:not(.buttons) {
 		a {
 			color: $cream;
-			@extend .h3;
+			@extend .alt-type;
 		}
 		li + li {
 			margin-top: 1em;
@@ -138,7 +138,7 @@ body.nav-open {
 	a {
 		background: rgba($cream, 0.75);
 		padding: 0.125em 0.75em;
-		@extend .h3;
+		@extend .alt-type;
 		&:hover {
 			background-color: rgba($cream, 1);
 		}

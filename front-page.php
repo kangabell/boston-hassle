@@ -44,7 +44,7 @@ Template Name: Homepage
             </div>
             <div class="text">
               <?php get_template_part('partials/date-category'); ?>
-              <h3><?php echo short_title(); ?></h3>
+              <h3 class="large-type"><?php echo short_title(); ?></h3>
               <?php
               // use a custom excerpt if there is one, or if not use the subtitle,
               // and if there's neither, use the automatic excerpt
@@ -92,7 +92,7 @@ Template Name: Homepage
                 <span class="tribe-events-cost"><?php echo tribe_get_cost( null, true ) ?></span>
               <?php endif; ?>
             </p>
-            <h3><a href="<?php echo esc_url( tribe_get_event_link() ); ?>"><?php the_title(); ?></a></h3>
+            <h3 class="alt-type"><a href="<?php echo esc_url( tribe_get_event_link() ); ?>"><?php the_title(); ?></a></h3>
             <p class="meta category"><?php echo tribe_get_venue(); ?></p>
           </article>
         <?php } wp_reset_postdata(); ?>
@@ -206,7 +206,7 @@ Template Name: Homepage
         ?>
           <article><a href="<?php echo get_permalink(); ?>">
               <div class="thumbnail" style="background-image: url('<?php bhass_article_img(); ?>')"></div>
-              <h3><?php echo short_title(); ?></h3>
+              <h3 class="alt-type"><?php echo short_title(); ?></h3>
               <p class="meta"><?php echo get_the_author(); ?></p>
           </a></article>
         <?php
@@ -224,7 +224,7 @@ Template Name: Homepage
     <div class="donate cta">
       <a href="/support">
         <h2>$ Support Local Art &amp; Music $</h2>
-        <p class="h3">Together We Can Keep Things Strange in Boston and Beyond</p>
+        <p class="alt-type">Together We Can Keep Things Strange in Boston and Beyond</p>
       </a>
     </div>
 
@@ -249,8 +249,8 @@ Template Name: Homepage
     </div>
 
     <div class="newsletter cta">
-      <p class="h4">The Most Relevant Mailing List of Your Life</p>
-      <h2 class="h1">Get Our Newsletter</h2>
+      <p class="alt-type">The Most Relevant Mailing List of Your Life</p>
+      <h2>Get Our Newsletter</h2>
       <a href="https://bostonhassle.us5.list-manage.com/subscribe?u=b33396a0fbb4b5594a24fb24e&id=dbc4da5ea8" class="button large">Subscribe</a>
     </div>
 

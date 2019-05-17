@@ -33,7 +33,7 @@ Used on single.php.
 
 	<?php
 		comment_form( array(
-			'title_reply_before' => '<h3>',
+			'title_reply_before' => '<h3 class="h4">',
 			'title_reply' => 'Leave a Comment',
 			'title_reply_after'  => '</h3>',
 		) );

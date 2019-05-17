@@ -69,15 +69,15 @@ div.hero {
 		margin-bottom: 0;
 		width: 100%;
 	}
-	h3 {
-		@extend .h1;
-	}
 }
 
 div.events {
+	h2 {
+		font-size: 2rem;
+	}
 	h3 {
-		@extend .h5;
 		@include truncate(1.25em);
+		font-size: 1rem;
 	}
 	.meta {
 		margin-bottom: 0.25em;
@@ -111,6 +111,9 @@ div.events {
 /* Homepage Category Columns (e.g. Music, Art, Film) */
 
 body.home div.category {
+	h2 {
+		font-size: 2rem;
+	}
 	h4 {
 		margin-top: 0;
 		margin-bottom: 0;
@@ -167,7 +170,11 @@ div.picture-cat article {
 .home div.newsletter {
 	background: url('../img/texture-lt.jpg') $cream;
 	margin-top: $padding*2;
+	h2 {
+		@extend .large-type;
+	}
 	p {
+		font-size: 1rem;
 		margin-bottom: $padding/2;
 	}
 	.icon-envelope {
@@ -578,7 +585,7 @@ section.comments {
 		}
 	}
 	.comment-reply-link {
-		@extend .h4;
+		@extend .alt-type;
 	}
 	.comment-notes, .comment-awaiting-moderation, .comment-meta a {
 		color: $gray;
