@@ -195,7 +195,8 @@ Template Name: Homepage
       <!-- Category Section with Pictures -->
       <div class="<?php echo $picture_cat->slug ?> picture-cat category">
         <h2><?php echo $picture_cat->name; ?></h2>
-        <?php
+        <div>
+          <?php
           $loop = new WP_Query( array(
             'posts_per_page'=> 9, 
             'ignore_sticky_posts'=>true, 
@@ -203,15 +204,16 @@ Template Name: Homepage
           ) );
           while ($loop->have_posts()) : 
             $loop->the_post();
-        ?>
-          <article><a href="<?php echo get_permalink(); ?>">
-              <div class="thumbnail" style="background-image: url('<?php bhass_article_img(); ?>')"></div>
-              <h3><?php echo short_title(); ?></h3>
-              <p class="meta"><?php echo get_the_author(); ?></p>
-          </a></article>
-        <?php
+          ?>
+            <article><a href="<?php echo get_permalink(); ?>">
+                <div class="thumbnail" style="background-image: url('<?php bhass_article_img(); ?>')"></div>
+                <h3><?php echo short_title(); ?></h3>
+                <p class="meta"><?php echo get_the_author(); ?></p>
+            </a></article>
+          <?php
           endwhile; wp_reset_postdata();
-        ?>
+          ?>
+        </div>
         <a class="view-all" href="<?php echo get_category_link( $picture_cat->term_id ); ?>">View All <?php echo $picture_cat->name; ?></a>
       </div>
 

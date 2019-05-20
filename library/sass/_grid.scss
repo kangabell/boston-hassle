@@ -85,6 +85,9 @@ body.home {
 
 	div.picture-cat {
 		@include grid-row;
+		> div {
+			@include flex-wrapper;
+		}
 		article {
 			@include grid-column(6);
 		}
@@ -182,6 +185,10 @@ body.home {
 
 		div.tertiary article {
 			@include grid-column(6);
+		}
+
+		.articles > div {
+			@include flex-wrapper;
 		}
 
 		.articles article {

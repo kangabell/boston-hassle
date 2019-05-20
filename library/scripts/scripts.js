@@ -28,11 +28,6 @@ jQuery(document).ready( function($) {
 		}
 	});
 
-	/*** EQUALIZE ELEMENT HEIGHTS ***/
-
-	equalize('body.home div.articles article');
-	equalize('body.home div.picture-cat article');
-
 
 	/*** EXPAND LARGE ARTICLE IMAGES ***/
 
@@ -61,22 +56,6 @@ jQuery(document).ready( function($) {
 
 	function closeNav() {
 		$('body').removeClass('nav-open').addClass('nav-closed');
-	}
-
-	function getMaxHeight(s) {
-
-		var maxHeight = 0;
-
-		// get biggest and set as tileHeight
-		$(s).each(function(){
-			if ( $(this).height() > maxHeight ) { maxHeight = $(this).height(); }
-		});
-
-		return maxHeight;
-	}
-
-	function equalize(s) {
-		$(s).height( getMaxHeight(s) );
 	}
 
 	function expand(el) {

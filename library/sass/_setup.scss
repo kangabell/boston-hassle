@@ -96,6 +96,12 @@ $topbar-height: 2rem;
   width: 1px;
 }
 
+/*** Align Grid of Items of Varying Heights ***/
+@mixin flex-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 /*** ICON FONT ***/
 // to update: import one of the font files into the app at icomoon.io/app
 

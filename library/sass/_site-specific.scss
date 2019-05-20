@@ -24,8 +24,8 @@ body.home {
 	@extend .button;
 }
 
-div.picture-cat article { // hide last four items, to make room
-	&:nth-last-child(4), &:nth-last-child(3), &:nth-last-child(2), &:last-child {
+div.picture-cat article { // hide last three items, to make room
+	&:nth-last-child(3), &:nth-last-child(2), &:last-child {
 		display: none;
 	}
 }
