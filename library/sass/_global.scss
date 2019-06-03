@@ -180,7 +180,7 @@ todo: DRY
 	}
 
 	@include breakpoint(medium) {
-		li {
+		li, blockquote p {
 			font-size: 1.175rem;
 		}
 	}
