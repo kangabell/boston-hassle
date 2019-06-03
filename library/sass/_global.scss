@@ -11,14 +11,14 @@ html {
 body {
 	background: $cream;
 	color: $black;
-	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+	font-family: $font-default;
 	word-break: break-word; // wrap extra-long words so they don't break layout
 }
 h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
 	text-transform: uppercase;
 }
 h1, .h1, h2, .h2 {
-	font-family: 'DIN Cond', 'Open Sans', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+	font-family: $font-condensed;
 	letter-spacing: 0.045em;
 	line-height: 1.025em;
 	margin-bottom: 0.5em;
