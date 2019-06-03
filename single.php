@@ -29,7 +29,7 @@ SINGLE POST / ARTICLE PAGE
 
     </header>
 
-    <article>
+    <article class="content-area">
     
       <?php the_content(); ?>
 
