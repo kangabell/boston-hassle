@@ -179,6 +179,12 @@ todo: DRY
 		font-size: 1.375rem;
 	}
 
+	@include breakpoint(medium) {
+		li {
+			font-size: 1.175rem;
+		}
+	}
+
 } // .content-area
 
 /*************
