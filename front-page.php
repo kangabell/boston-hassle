@@ -73,7 +73,7 @@ Template Name: Homepage
         <?php // upcoming events in the Chosen Shows category
           $events = tribe_get_events( array(
               'posts_per_page' => 5,
-              'start_date' => current_time( 'Y-m-d H:i:s' ), // upcoming
+              'start_date' => current_time( 'Y-m-d' ), // upcoming
               'tax_query' => array(
                 array(
                   'taxonomy' => 'tribe_events_cat',
