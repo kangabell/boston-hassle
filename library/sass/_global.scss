@@ -11,14 +11,14 @@ html {
 body {
 	background: $cream;
 	color: $black;
-	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+	font-family: $font-default;
 	word-break: break-word; // wrap extra-long words so they don't break layout
 }
 h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
 	text-transform: uppercase;
 }
 h1, .h1, h2, .h2 {
-	font-family: 'DIN Cond', 'Open Sans', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+	font-family: $font-condensed;
 	letter-spacing: 0.045em;
 	line-height: 1.025em;
 	margin-bottom: 0.5em;
@@ -123,6 +123,69 @@ span.quiet, p.quiet {
 .visually-hidden { /* text for screen readers */
 	@include visually-hidden;
 }
+
+
+/*************
+ARTICLE
+TYPOGRAPHY
+todo: DRY
+*************/
+
+.content-area {
+
+	h5, .h5 {
+		text-transform: uppercase;
+	}
+	h1, .h1, h2, .h2 {
+		letter-spacing: 0; // reset
+	}
+
+	h1, .h1 {
+		font-family: $font-default; // reset
+		font-size: 2.5rem;
+		font-weight: normal;
+	}
+
+	h2, .h2 {
+		font-family: $font-condensed;
+		font-size: 2.475rem;
+		letter-spacing: 0.045em;
+	}
+
+	h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+		font-weight: 600;
+		line-height: 1.25em;
+		margin-bottom: 0.25em;
+		margin-top: 0;
+	}
+
+	h3, .h3 {
+		font-family: $font-default;
+		font-size: 1.85rem;
+	}
+
+	h4, .h4 {
+		font-family: $font-condensed;
+		font-size: 1.875rem;
+		letter-spacing: 0.045em;
+	}
+
+	h5, .h5 {
+		font-family: $font-default;
+		font-size: 1.5rem;
+	}
+
+	h6, .h6 {
+		font-size: 1.375rem;
+	}
+
+	@include breakpoint(medium) {
+		li, blockquote p {
+			font-size: 1.175rem;
+		}
+	}
+
+} // .content-area
 
 /*************
 FORMS 

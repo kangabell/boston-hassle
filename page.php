@@ -6,7 +6,7 @@
 
     <?php get_template_part('partials/page-header'); ?>
 
-    <article>
+    <article class="content-area">
     
       <?php the_content(); ?>
 
