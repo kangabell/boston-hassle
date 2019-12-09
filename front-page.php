@@ -69,7 +69,7 @@ Template Name: Homepage
       </div>
 
       <div class="events">
-        <h2>Chosen Shows</h2>
+        <h2>Hassle Picks</h2>
         <?php // upcoming events in the Chosen Shows category
           $events = tribe_get_events( array(
               'posts_per_page' => 5,
