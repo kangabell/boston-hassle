@@ -206,7 +206,7 @@ Template Name: Homepage
         <div>
           <?php
           $loop = new WP_Query( array(
-            'posts_per_page'=> 9, 
+            'posts_per_page'=> 6,
             'ignore_sticky_posts'=>true, 
             'cat'=>$picture_cat->term_id
           ) );

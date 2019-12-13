@@ -17,19 +17,15 @@ body.home {
 	}
 }
 
+.home-leaderboard {
+	margin-top: $padding;
+}
+
 .view-all {
 	display: inline-block;
 	margin-top: $padding/2;
 	@extend .small;
 	@extend .button;
-}
-
-div.picture-cat article:last-child { // hide last item, to make room
-	display: none;
-}
-
-@include breakpoint(medium) {
-
 }
 
 @include breakpoint(large) {
@@ -47,13 +43,6 @@ div.picture-cat article:last-child { // hide last item, to make room
 	.home-widget-2 > div .view-all {
 		right: 0;
 	}
-
-	div.picture-cat article { // show an extra four items
-		&:nth-last-child(4), &:nth-last-child(3), &:nth-last-child(2), &:last-child {
-			display: inline-block;
-		}
-	}
-
 }
 
 .article-sm + .article-sm {
