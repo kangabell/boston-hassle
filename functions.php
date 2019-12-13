@@ -379,6 +379,33 @@ function bhass_register_sidebars() {
         'before_title' => '<h2>',
         'after_title' => '</h2>',
     ));
+    register_sidebar(array(
+        'id' => 'home_pencil-1',
+        'name' => __('Homepage Pencil Ad #1', 'bhass'),
+        'description' => __('Space for a pencil ad on the homepage.', 'bhass'),
+        'before_widget' => '<div>',
+        'after_widget' => '</div>',
+        'before_title' => '<h2>',
+        'after_title' => '</h2>',
+    ));
+    register_sidebar(array(
+        'id' => 'home_pencil-2',
+        'name' => __('Homepage Pencil Ad #2', 'bhass'),
+        'description' => __('Another space for a pencil ad on the homepage.', 'bhass'),
+        'before_widget' => '<div>',
+        'after_widget' => '</div>',
+        'before_title' => '<h2>',
+        'after_title' => '</h2>',
+    ));
+    register_sidebar(array(
+        'id' => 'home_leaderboard',
+        'name' => __('Homepage Leaderboard Ad', 'bhass'),
+        'description' => __('Space for a leaderboard ad on the homepage.', 'bhass'),
+        'before_widget' => '<div>',
+        'after_widget' => '</div>',
+        'before_title' => '<h2>',
+        'after_title' => '</h2>',
+    ));
 }
 
 
