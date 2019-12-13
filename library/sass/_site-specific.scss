@@ -17,6 +17,11 @@ body.home {
 	}
 }
 
+.home-pencil-1,
+.home-pencil-2 {
+	display: none;
+}
+
 .home-leaderboard {
 	margin-top: $padding;
 }
@@ -26,6 +31,13 @@ body.home {
 	margin-top: $padding/2;
 	@extend .small;
 	@extend .button;
+}
+
+@include breakpoint(medium) {
+	.home-pencil-1,
+	.home-pencil-2 {
+		display: block;
+	}
 }
 
 @include breakpoint(large) {
