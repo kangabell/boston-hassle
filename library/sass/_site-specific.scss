@@ -136,10 +136,9 @@ div.picture-cat article {
 
 }
 
-/* Donation/Support Section */
+/* CTA #1: Donation/Support Section */
 
 .home div.donate {
-	background: url('../img/texture-blue.jpg') $blue;
 	padding: 0;
 	opacity: 0.8;
 	&:hover {
@@ -161,10 +160,9 @@ div.picture-cat article {
 	}
 }
 
-/* Newsletter/Mailing List Signup */
+/* CTA #2: Newsletter/Mailing List Signup */
 
 .home div.newsletter {
-	background: url('../img/texture-lt.jpg') $cream;
 	margin-top: $padding*2;
 	p {
 		margin-bottom: $padding/2;
