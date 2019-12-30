@@ -13,6 +13,20 @@ Template Name: Homepage
   $cat_3 = get_field('cat_3');
   $picture_cat = get_field('picture_cat');
 
+  $cta_img = get_field('cta_img');
+  if ( !empty( $cta_img ) ) {
+    $cta_bg = esc_url($cta_img['url']);
+  } else {
+    $cta_bg = get_template_directory_uri() . '/library/img/texture-blue.jpg';
+  }
+
+  $cta2_img = get_field('cta2_img');
+  if ( !empty( $cta2_img ) ) {
+    $cta2_bg = esc_url($cta2_img['url']);
+  } else {
+    $cta2_bg = get_template_directory_uri() . '/library/img/texture-lt.jpg';
+  }
+
 ?>
 
 <?php include 'header.php'; ?>
@@ -147,6 +161,10 @@ Template Name: Homepage
       ?>
     </div>
 
+    <div class="home-pencil-1">
+      <?php dynamic_sidebar( 'home_pencil-1' ); ?>
+    </div>
+
     <div>
 
       <?php
@@ -190,6 +208,10 @@ Template Name: Homepage
       </div>
     </div>
 
+    <div class="home-pencil-2">
+      <?php dynamic_sidebar( 'home_pencil-2' ); ?>
+    </div>
+
     <div>
 
       <!-- Category Section with Pictures -->
@@ -198,7 +220,7 @@ Template Name: Homepage
         <div>
           <?php
           $loop = new WP_Query( array(
-            'posts_per_page'=> 9, 
+            'posts_per_page'=> 6,
             'ignore_sticky_posts'=>true, 
             'cat'=>$picture_cat->term_id
           ) );
@@ -215,6 +237,9 @@ Template Name: Homepage
           ?>
         </div>
         <a class="view-all" href="<?php echo get_category_link( $picture_cat->term_id ); ?>">View All <?php echo $picture_cat->name; ?></a>
+        <div class="home-leaderboard">
+          <?php dynamic_sidebar( 'home_leaderboard' ); ?>
+        </div>
       </div>
 
       <div class="home-widget-2">
@@ -223,10 +248,18 @@ Template Name: Homepage
 
     </div>
 
-    <div class="donate cta">
-      <a href="/support">
-        <h2>$ Support Local Art &amp; Music $</h2>
-        <p class="h3">Together We Can Keep Things Strange in Boston and Beyond</p>
+    <div class="donate cta" style="background-image: url('<?php echo $cta_bg; ?>');">
+      <a href="<?php the_field('cta_link'); ?>">
+        <?php if ( get_field('cta_heading') ) : ?>
+          <h2>
+              <?php the_field('cta_heading'); ?>
+          </h2>
+        <?php endif; ?>
+        <?php if ( get_field('cta_text') ) : ?>
+          <p class="h3">
+              <?php the_field('cta_text'); ?>
+          </p>
+        <?php endif; ?>
       </a>
     </div>
 
@@ -250,10 +283,20 @@ Template Name: Homepage
 
     </div>
 
-    <div class="newsletter cta">
-      <p class="h4">The Most Relevant Mailing List of Your Life</p>
-      <h2 class="h1">Get Our Newsletter</h2>
-      <a href="https://bostonhassle.us5.list-manage.com/subscribe?u=b33396a0fbb4b5594a24fb24e&id=dbc4da5ea8" class="button large">Subscribe</a>
+    <div class="newsletter cta" style="background-image: url('<?php echo $cta2_bg; ?>');">
+
+      <?php if ( get_field('cta2_text') ) : ?>
+        <p class="h4">
+            <?php the_field('cta2_text'); ?>
+        </p>
+      <?php endif; ?>
+
+      <?php if ( get_field('cta2_heading') ) : ?>
+        <h2 class="h1">
+            <?php the_field('cta2_heading'); ?>
+        </h2>
+      <?php endif; ?>
+      <a href="<?php the_field('cta2_link'); ?>" class="button large"><?php the_field('cta2_link-text'); ?></a>
     </div>
 
   </main>
