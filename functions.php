@@ -408,6 +408,9 @@ function bhass_register_sidebars() {
     ));
 }
 
+//Sidebar custom HTML enabled. Used for 'Peanut Gallery.'
+add_filter( 'widget_text', 'do_shortcode' );
+
 
 /************* SEARCH FORM LAYOUT *****************/
 
