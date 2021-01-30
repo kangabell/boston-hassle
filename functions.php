@@ -106,11 +106,11 @@ function bhass_remove_rec_tooltip( $template ) {
 
 // Get name of first category in categories array
 function category_name() {
-        
+
     $category = get_the_category();
     $event_id = get_the_ID();
     $event_cats = wp_get_object_terms( $event_id, array( 'tribe_events_cat' ) );
-     
+
     if ( empty( $event_cats ) ) { // not an event
         $name = $category[0]->cat_name;
     } else {
@@ -190,10 +190,10 @@ function bhass_theme_support() {
     );
 
     // featured images
-    add_theme_support( 'post-thumbnails' ); 
+    add_theme_support( 'post-thumbnails' );
 
     add_image_size( 'grid-thumb', 560, 300, array( 'center', 'center') );
-    
+
 } /* end bhass theme support */
 
 /*********************
@@ -208,7 +208,7 @@ function bhass_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'bhass_logo', array(
         'sanitize_callback' => 'esc_url_raw',
     ) );
-    
+
     $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'bhass_logo', array(
         'label'    => __( 'Logo', 'bhass' ),
         'section'  => 'title_tagline',
@@ -382,7 +382,16 @@ function bhass_register_sidebars() {
     register_sidebar(array(
         'id' => 'home_pencil-1',
         'name' => __('Homepage Pencil Ad #1', 'bhass'),
-        'description' => __('Space for a pencil ad on the homepage.', 'bhass'),
+        'description' => __('Space for a 768x90 ad on the homepage.', 'bhass'),
+        'before_widget' => '<div>',
+        'after_widget' => '</div>',
+        'before_title' => '<h2>',
+        'after_title' => '</h2>',
+    ));
+    register_sidebar(array(
+        'id' => 'home_pencil-1-mobile',
+        'name' => __('Homepage Pencil Ad #1 mobile', 'bhass'),
+        'description' => __('The mobile version (468x60) of the #1 Pencil Ad on the homepage.', 'bhass'),
         'before_widget' => '<div>',
         'after_widget' => '</div>',
         'before_title' => '<h2>',
@@ -391,7 +400,16 @@ function bhass_register_sidebars() {
     register_sidebar(array(
         'id' => 'home_pencil-2',
         'name' => __('Homepage Pencil Ad #2', 'bhass'),
-        'description' => __('Another space for a pencil ad on the homepage.', 'bhass'),
+        'description' => __('Another space for a 768x90 ad on the homepage.', 'bhass'),
+        'before_widget' => '<div>',
+        'after_widget' => '</div>',
+        'before_title' => '<h2>',
+        'after_title' => '</h2>',
+    ));
+    register_sidebar(array(
+        'id' => 'home_pencil-2-mobile',
+        'name' => __('Homepage Pencil Ad #2 mobile', 'bhass'),
+        'description' => __('The mobile version (468x60) of the #12 Pencil Ad on the homepage.', 'bhass'),
         'before_widget' => '<div>',
         'after_widget' => '</div>',
         'before_title' => '<h2>',
@@ -400,14 +418,19 @@ function bhass_register_sidebars() {
     register_sidebar(array(
         'id' => 'home_leaderboard',
         'name' => __('Homepage Leaderboard Ad', 'bhass'),
-        'description' => __('Space for a leaderboard ad on the homepage.', 'bhass'),
+        'description' => __('Space for a leaderboard (600x300px or smaller) ad on the homepage.', 'bhass'),
         'before_widget' => '<div>',
         'after_widget' => '</div>',
         'before_title' => '<h2>',
         'after_title' => '</h2>',
     ));
+    
+
+
 }
 
+//Sidebar custom HTML enabled
+add_filter( 'widget_text', 'do_shortcode' );
 
 /************* SEARCH FORM LAYOUT *****************/
 
