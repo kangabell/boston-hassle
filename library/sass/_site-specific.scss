@@ -1,639 +1,677 @@
-
 /*************
 HOMEPAGE 
 *************/
 
 body.home {
-	main {
-	  padding-bottom: $padding*2;
-	}
-	article:not(.hero) p { // shorten excerpt length
-		max-height: 3em;
-		overflow: hidden;
-	}
-	article img {
-		margin-bottom: $padding/4;
-		width: 100%;
-	}
+  main {
+    padding-bottom: $padding * 2;
+  }
+  article:not(.hero) p {
+    // shorten excerpt length
+    max-height: 3em;
+    overflow: hidden;
+  }
+  article img {
+    margin-bottom: $padding/4;
+    width: 100%;
+  }
 }
 
 .home-pencil-1,
 .home-pencil-2 {
-	display: none;
+  display: none;
+}
+
+.home-pencil-1-mobile,
+.home-pencil-2-mobile {
+  display: block;
+  max-width: 468px;
+  max-height: 60px;
+  overflow: hidden;
 }
 
 .home-leaderboard {
-	margin-top: $padding;
+  margin-top: $padding;
 }
 
 .view-all {
-	display: inline-block;
-	margin-top: $padding/2;
-	@extend .small;
-	@extend .button;
+  display: inline-block;
+  margin-top: $padding/2;
+  @extend .small;
+  @extend .button;
 }
 
 @include breakpoint(medium) {
-	.home-pencil-1,
-	.home-pencil-2 {
-		display: block;
-	}
+  .home-pencil-1,
+  .home-pencil-2 {
+    display: block;
+    max-width: 780px;
+    height: 90px;
+    overflow: hidden;
+  }
+}
+
+@include breakpoint(medium) {
+  .home-pencil-1-mobile,
+  .home-pencil-2-mobile {
+    display: none;
+  }
 }
 
 @include breakpoint(large) {
-
-	/* move buttons to upper right of their sections */
-	div.category, .home-widget-2 > div /* compass widget */ {
-		position: relative;
-	}
-	.view-all {
-		margin-top: 0;
-		position: absolute;
-		right: $padding;
-		top: $padding/4;
-	}
-	.home-widget-2 > div .view-all {
-		right: 0;
-	}
+  /* move buttons to upper right of their sections */
+  div.category, .home-widget-2 > div /* compass widget */ {
+    position: relative;
+  }
+  .view-all {
+    margin-top: 0;
+    position: absolute;
+    right: $padding;
+    top: $padding/4;
+  }
+  .home-widget-2 > div .view-all {
+    right: 0;
+  }
 }
 
 .article-sm + .article-sm {
-	margin-top: $padding/2;
+  margin-top: $padding/2;
 }
 
 div.hero {
-	margin-bottom: $padding*1.5;
-	div.image img { // extra specificity for override
-		margin-top: 0;
-		margin-bottom: 0;
-		width: 100%;
-	}
-	h3 {
-		@extend .h1;
-	}
+  margin-bottom: $padding * 1.5;
+  div.image img {
+    // extra specificity for override
+    margin-top: 0;
+    margin-bottom: 0;
+    width: 100%;
+  }
+  h3 {
+    @extend .h1;
+  }
 }
 
 div.events {
-	h3 {
-		@extend .h5;
-		@include truncate(1.25em);
-	}
-	.meta {
-		margin-bottom: 0.25em;
-	}
-	article + article {
-		border-top: $border;
-		padding-top: $padding/4;
-		margin-top: $padding/4;
-	}
-	.tribe-events-cost {
-		top: $padding/4;
-		right: 0;
-		position: absolute;
-		@extend .meta;
-	}
+  h3 {
+    @extend .h5;
+    @include truncate(1.25em);
+  }
+  .meta {
+    margin-bottom: 0.25em;
+  }
+  article + article {
+    border-top: $border;
+    padding-top: $padding/4;
+    margin-top: $padding/4;
+  }
+  .tribe-events-cost {
+    top: $padding/4;
+    right: 0;
+    position: absolute;
+    @extend .meta;
+  }
 }
 
 @include breakpoint(large) {
-	div.events {
-		border-left: 1px solid $silver;
-		position: relative;
-		h2 {
-			display: inline-block;
-		}
-		.view-all {
-			right: 0;
-		}
-	}
+  div.events {
+    border-left: 1px solid $silver;
+    position: relative;
+    h2 {
+      display: inline-block;
+    }
+    .view-all {
+      right: 0;
+    }
+  }
 }
 
 /* Homepage Category Columns (e.g. Music, Art, Film) */
 
 body.home div.category {
-	h4 {
-		margin-top: 0;
-		margin-bottom: 0;
-	}
+  h4 {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 }
 
 /* Category-with-Pictures Column (i.e. Fresh Stream) */
 
 div.picture-cat article {
-	margin-bottom: $padding*.25;
+  margin-bottom: $padding * 0.25;
 }
 
 /* Recent Comments */
 
 .recent-comments-list {
-	span.comment-post {
-		@extend .h4;
-	}
-	li + li {
-		border-top: $border;
-		padding-top: $padding/4;
-		margin-top: $padding/4;
-	}
-
+  span.comment-post {
+    @extend .h4;
+  }
+  li + li {
+    border-top: $border;
+    padding-top: $padding/4;
+    margin-top: $padding/4;
+  }
 }
 
 /* CTA #1: Donation/Support Section */
 
 .home div.donate {
-	padding: 0;
-	opacity: 0.8;
-	&:hover {
-		opacity: 1;
-	}
-	h2 {
-		font-size: 4rem;
-		margin-bottom: 0;
-		position: relative;
-	}
-	a {
-		border: 6px solid $white;
-		display: block;
-		padding: $padding;
-	}
-	.icon-arrow-right {
-		color: $gray-dk;
-		font-size: 0.85em;
-	}
+  padding: 0;
+  opacity: 0.8;
+  &:hover {
+    opacity: 1;
+  }
+  h2 {
+    font-size: 4rem;
+    margin-bottom: 0;
+    position: relative;
+  }
+  a {
+    border: 6px solid $white;
+    display: block;
+    padding: $padding;
+  }
+  .icon-arrow-right {
+    color: $gray-dk;
+    font-size: 0.85em;
+  }
 }
 
 /* CTA #2: Newsletter/Mailing List Signup */
 
 .home div.newsletter {
-	margin-top: $padding*2;
-	p {
-		margin-bottom: $padding/2;
-	}
-	.icon-envelope {
-		color: $gray;
-		margin-right: $padding/4;
-	}
-	input {
-		min-width: 30%;
-		padding: $padding/3;
-	}
-	.button {
-		margin-left: $padding/2;
-	}
+  margin-top: $padding * 2;
+  p {
+    margin-bottom: $padding/2;
+  }
+  .icon-envelope {
+    color: $gray;
+    margin-right: $padding/4;
+  }
+  input {
+    min-width: 30%;
+    padding: $padding/3;
+  }
+  .button {
+    margin-left: $padding/2;
+  }
 }
-
 
 /*************
 ARCHIVE  
 *************/
 
 aside .widget {
-	margin-bottom: $padding*2;
+  margin-bottom: $padding * 2;
 }
 
 /*************
 EVENTS PAGE  
 *************/
 
-body.home .recurringinfo, body.archive .recurringinfo {
-	display: none; // hide recurring-event info
+body.home .recurringinfo,
+body.archive .recurringinfo {
+  display: none; // hide recurring-event info
 }
 
 .tribe-events-page-title {
-	text-align: left;
+  text-align: left;
 }
 
 .tribe-events-button {
-	@extend .button;
+  @extend .button;
 }
 
 body.events-archive article {
-	padding: $padding/2;
-	.meta + p { // shorten excerpt
-		height: 4.5em;
-		overflow: hidden;
-	}
-	.meta {
-		margin-bottom: $padding/4;
-	}
-	h3 + .meta {
-		margin-top: $padding/4;
-	}
-	.tribe-events-cost {
-		margin-left: 0.5em;
-	}
-	&.featured {
-		background: $white;
-	}
-	.badge {
-		position: absolute;
-		top: $padding/4;
-		right: $padding/4;
-		opacity: 0.8;
-		transform: rotate(1deg);
-	}
-	a:hover .badge {
-		opacity: 1;
-	}
+  padding: $padding/2;
+  .meta + p {
+    // shorten excerpt
+    height: 4.5em;
+    overflow: hidden;
+  }
+  .meta {
+    margin-bottom: $padding/4;
+  }
+  h3 + .meta {
+    margin-top: $padding/4;
+  }
+  .tribe-events-cost {
+    margin-left: 0.5em;
+  }
+  &.featured {
+    background: $white;
+  }
+  .badge {
+    position: absolute;
+    top: $padding/4;
+    right: $padding/4;
+    opacity: 0.8;
+    transform: rotate(1deg);
+  }
+  a:hover .badge {
+    opacity: 1;
+  }
 }
 
-#tribe-bar-collapse-toggle, .tribe-bar-views-select, .tribe-events-ical { // clean out some unwanted stuff
-	display: none;
+#tribe-bar-collapse-toggle,
+.tribe-bar-views-select,
+.tribe-events-ical {
+  // clean out some unwanted stuff
+  display: none;
 }
 
 .tribe-events-cost {
-	color: $black;
+  color: $black;
 }
 
 article:first-of-type .tribe-events-cost {
-	top: 0;
+  top: 0;
 }
 
-.tribe-events-notices { // overrides for notices style
-    background: transparent;
-    border: none;
-    color: $red;
-    margin: 0;
-    padding: 0;
+.tribe-events-notices {
+  // overrides for notices style
+  background: transparent;
+  border: none;
+  color: $red;
+  margin: 0;
+  padding: 0;
 }
 
-.tribe-events-nav-next { // pagination
-	margin-left: $padding/2;
+.tribe-events-nav-next {
+  // pagination
+  margin-left: $padding/2;
 }
 
-.tribe-bar-filters { // search form
-	margin-bottom: $padding*2;
+.tribe-bar-filters {
+  // search form
+  margin-bottom: $padding * 2;
 }
 
 .calendar-header {
-	align-items: center;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	h1 {
-		flex: 1;
-		margin-bottom: 0;
-	}
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  h1 {
+    flex: 1;
+    margin-bottom: 0;
+  }
 } //.calendar-header
 .featured-event-categories {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	text-align: center;
-	order: 3;
-	width: 100%;
-	li {
-		@extend .h4;
-		line-height: 2.25em;
-		white-space: nowrap;
-	}
-	a {
-		color: $gray;
-		padding: $padding/4;
-		&:hover {
-			color: $gray-dk;
-		}
-	}
-	@include breakpoint(large) {
-		margin-left: $padding;
-		margin-right: $padding;
-		order: 2;
-		width: auto;
-		a {
-			padding: $padding/2;
-		}
-	}
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  order: 3;
+  width: 100%;
+  li {
+    @extend .h4;
+    line-height: 2.25em;
+    white-space: nowrap;
+  }
+  a {
+    color: $gray;
+    padding: $padding/4;
+    &:hover {
+      color: $gray-dk;
+    }
+  }
+  @include breakpoint(large) {
+    margin-left: $padding;
+    margin-right: $padding;
+    order: 2;
+    width: auto;
+    a {
+      padding: $padding/2;
+    }
+  }
 }
 #tribe-events-bar {
-	order: 2;
+  order: 2;
 }
 
 /*** Views Selection ***/
 
 #tribe-bar-views-label, // "View As"
-.tribe-bar-views-toggle { // view toggle
-	display: none;
+.tribe-bar-views-toggle {
+  // view toggle
+  display: none;
 }
 
 .tribe-bar-views-list {
-	display: flex;
-	justify-content: space-between;
-	margin: 0;
-	text-align: center;
-	width: 4rem;
-	@include breakpoint(medium) {
-		width: 6rem;
-	}
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  text-align: center;
+  width: 4rem;
+  @include breakpoint(medium) {
+    width: 6rem;
+  }
 }
 
 .tribe-bar-views-option {
-	@extend .small;
-	cursor: pointer;
-	&:not(.tribe-bar-active) {
-		opacity: 0.5;
-	}
-	&.tribe-bar-active { // disable currently-active option
-		cursor: default;
-		pointer-events: none;
-	}
-	&:hover {
-		opacity: 1;
-	}
-	span { // icon
-		display: block;
-		font-size: 1.5rem;
-		margin-bottom: 0.65rem;
-		@include breakpoint(medium) {
-			font-size: 2rem;
-		}
-	}
+  @extend .small;
+  cursor: pointer;
+  &:not(.tribe-bar-active) {
+    opacity: 0.5;
+  }
+  &.tribe-bar-active {
+    // disable currently-active option
+    cursor: default;
+    pointer-events: none;
+  }
+  &:hover {
+    opacity: 1;
+  }
+  span {
+    // icon
+    display: block;
+    font-size: 1.5rem;
+    margin-bottom: 0.65rem;
+    @include breakpoint(medium) {
+      font-size: 2rem;
+    }
+  }
 }
 
 // Custom icons for view options
 .tribe-icon-list {
-	@extend [class^="icon-"];
-	@extend .icon-list;
+  @extend [class^="icon-"];
+  @extend .icon-list;
 }
 .tribe-icon-month {
-	@extend [class^="icon-"];
-	@extend .icon-calendar;
+  @extend [class^="icon-"];
+  @extend .icon-calendar;
 }
-
 
 /*** Calendar/Month/Grid View ***/
 body.events-gridview {
-	.tribe-bar-filters {
-		display: none; // hide filters (search) on month/calendar view
-	}
-	&.events-archive #tribe-events-content table .type-tribe_events {
-		padding: 0 4px;
-	}
-	.tribe-events-month-event-title {
-		height: 1.25em;
-		overflow: hidden;
-	}
-	#tribe-events-content .tribe-events-tooltip h4.entry-title {
-		line-height: 1.25em !important;
-		margin-top: 0.25em;
-	}
+  .tribe-bar-filters {
+    display: none; // hide filters (search) on month/calendar view
+  }
+  &.events-archive #tribe-events-content table .type-tribe_events {
+    padding: 0 4px;
+  }
+  .tribe-events-month-event-title {
+    height: 1.25em;
+    overflow: hidden;
+  }
+  #tribe-events-content .tribe-events-tooltip h4.entry-title {
+    line-height: 1.25em !important;
+    margin-top: 0.25em;
+  }
 }
 
 #tribe-events-content {
-	padding: 0;
-	table.tribe-events-calendar {
-		margin-bottom: $padding;
-	}
+  padding: 0;
+  table.tribe-events-calendar {
+    margin-bottom: $padding;
+  }
 }
 
-.tribe-events-past, .tribe-events-past a { // events that have already happened
-	color: $silver;
+.tribe-events-past,
+.tribe-events-past a {
+  // events that have already happened
+  color: $silver;
 }
 .tribe-events-month-event-title {
-	line-height: 1;
+  line-height: 1;
 }
 
 #tribe-events-content {
-	margin-bottom: 0;
-	.tribe-events-tooltip h4.entry-title {
-		@extend .h4;
-	}
+  margin-bottom: 0;
+  .tribe-events-tooltip h4.entry-title {
+    @extend .h4;
+  }
 }
 
 .tribe-events-event-thumb img {
-	max-width: 80px;
+  max-width: 80px;
 }
-
 
 /*** Responsive stuff for Month View ***/
 
 .tribe-mobile-day {
-	h3, > div {
-		margin-bottom: $padding;
-	}
-	.tribe-events-read-more {
-		margin-top: 0.5em;
-		@extend .small;
-	}
+  h3,
+  > div {
+    margin-bottom: $padding;
+  }
+  .tribe-events-read-more {
+    margin-top: 0.5em;
+    @extend .small;
+  }
 }
 
 #tribe-events-content .tribe-events-calendar td {
-	height: 50px;
+  height: 50px;
 }
 
 /* show a dot to represent a day with events, instead of showing the events themselves */
-.tribe-events-calendar td .tribe-events-viewmore, .tribe-events-calendar td .type-tribe_events {
-	display: none;
+.tribe-events-calendar td .tribe-events-viewmore,
+.tribe-events-calendar td .type-tribe_events {
+  display: none;
 }
 .tribe-events-calendar .tribe-events-has-events:after {
-	content:"";display:block;height:8px;width:8px;padding:0;border-radius:50%;background-color:#333;margin:5px auto;
+  content: "";
+  display: block;
+  height: 8px;
+  width: 8px;
+  padding: 0;
+  border-radius: 50%;
+  background-color: #333;
+  margin: 5px auto;
 }
 
 @include breakpoint(medium) {
-	#tribe-events-content .tribe-events-calendar td {
-		height: 110px;
-	}
-	.tribe-events-calendar td .tribe-events-viewmore, .tribe-events-calendar td .type-tribe_events {
-		display: block;
-	}
-	.tribe-events-calendar .tribe-events-has-events:after {
-		display: none;
-	}
+  #tribe-events-content .tribe-events-calendar td {
+    height: 110px;
+  }
+  .tribe-events-calendar td .tribe-events-viewmore,
+  .tribe-events-calendar td .type-tribe_events {
+    display: block;
+  }
+  .tribe-events-calendar .tribe-events-has-events:after {
+    display: none;
+  }
 }
-
 
 /*** Single Event Page ***/
 
 .tribe-events-single-section-title {
-	@extend .h2;
+  @extend .h2;
 }
 
 body.single-tribe_events {
-	.event-is-recurring {
-		@extend .meta;
-	}
-	.tribe-events-divider {
-		display: none; // hide pipe
-	}
-	.recurring-info-tooltip {
-		text-transform: none;
-	}
+  .event-is-recurring {
+    @extend .meta;
+  }
+  .tribe-events-divider {
+    display: none; // hide pipe
+  }
+  .recurring-info-tooltip {
+    text-transform: none;
+  }
 }
 
-.tribe-events-event-meta, .tribe-events-meta-group + .tribe-events-meta-group {
-	border-top: $border;
-	margin-top: $padding;
-	padding-top: $padding;
+.tribe-events-event-meta,
+.tribe-events-meta-group + .tribe-events-meta-group {
+  border-top: $border;
+  margin-top: $padding;
+  padding-top: $padding;
 }
 
 .tribe-events-meta-group {
-	margin-bottom: $padding;
+  margin-bottom: $padding;
 }
 
 @include breakpoint(large) {
-	.tribe-events-meta-group + .tribe-events-meta-group {
-		border-top: none;
-		margin-top: 0;
-		padding-top: 0;
-	}
+  .tribe-events-meta-group + .tribe-events-meta-group {
+    border-top: none;
+    margin-top: 0;
+    padding-top: 0;
+  }
 }
-
 
 /*************
 SINGLE  
 *************/
 
-body.single, body.page {
-	main header .meta a {
-		border-bottom: none;
-	}
-	main {
-		margin-bottom: $padding/2;
-	}
-	article {
-		> p:not(.small) {
-			margin-bottom: $padding/2;
-		}
-		img {
-			margin-top: $padding/2;
-			margin-bottom: $padding/2;
-		}
-	}
-	.wp-caption-text {
-		@extend .meta;
-	}
+body.single,
+body.page {
+  main header .meta a {
+    border-bottom: none;
+  }
+  main {
+    margin-bottom: $padding/2;
+  }
+  article {
+    > p:not(.small) {
+      margin-bottom: $padding/2;
+    }
+    img {
+      margin-top: $padding/2;
+      margin-bottom: $padding/2;
+    }
+  }
+  .wp-caption-text {
+    @extend .meta;
+  }
 }
 
 body.single main header {
-	h1 {
-		margin-top: $padding;
-	}
-	h1 + .meta, .subheading + .meta {
-		margin-top: $padding;
-	}
+  h1 {
+    margin-top: $padding;
+  }
+  h1 + .meta,
+  .subheading + .meta {
+    margin-top: $padding;
+  }
 }
 
 @include breakpoint(medium) {
+  body.single,
+  body.page {
+    article > p:not(.small) {
+      font-size: 1.175rem;
+    }
+  }
 
-	body.single, body.page {
-		article > p:not(.small) {
-			font-size: 1.175rem;
-		}
-	}
-
-	body.single main {
-		header {
-			text-align: center;
-		}
-		.meta {
-			font-size: 1rem;
-		}
-	}
-
+  body.single main {
+    header {
+      text-align: center;
+    }
+    .meta {
+      font-size: 1rem;
+    }
+  }
 }
 
 section.tags {
-	line-height: 1.75em;
-	margin-top: $padding*1.5;
-	margin-bottom: $padding;
-	.label {
-		margin-right: 1em;
-	}
-	a {
-		white-space: nowrap; // keep all words in each item together
-	}
+  line-height: 1.75em;
+  margin-top: $padding * 1.5;
+  margin-bottom: $padding;
+  .label {
+    margin-right: 1em;
+  }
+  a {
+    white-space: nowrap; // keep all words in each item together
+  }
 }
 
 section.related-posts {
-	border-top: $border;
-	padding-top: $padding;
-	border-bottom: $border;
-	padding-bottom: $padding;
-	h2 {
-		text-align: center;
-	}
+  border-top: $border;
+  padding-top: $padding;
+  border-bottom: $border;
+  padding-bottom: $padding;
+  h2 {
+    text-align: center;
+  }
 }
 
 section.comments {
-	margin-top: $padding;
-	h2 {
-		margin-bottom: $padding;
-	}
-	h3 {
-		margin-top: $padding;
-	}
-	.comment {
-		margin-top: $padding;
-		max-width: 48rem;
-	}
-	.comment-author {
-		cite {
-			font-style: normal;
-			font-weight: bold;
-			margin-left: $padding/4;
-			text-transform: uppercase;
-		}
-		.says {
-			display: none;
-		}
-	}
-	.comment-reply-link {
-		@extend .h4;
-	}
-	.comment-notes, .comment-awaiting-moderation, .comment-meta a {
-		color: $gray;
-		@extend .small;
-	}
-	p {
-		margin-top: $padding/2;
-	}
-	.comment-list + .comment-respond {
-		border-top: $border;
-		padding-top: $padding/2;
-		margin-top: $padding*2;
-	}
-	ul.comment-list ul.children {
-		margin-left: $padding;
-		li:before {
-			display: none;
-		}
-	}
+  margin-top: $padding;
+  h2 {
+    margin-bottom: $padding;
+  }
+  h3 {
+    margin-top: $padding;
+  }
+  .comment {
+    margin-top: $padding;
+    max-width: 48rem;
+  }
+  .comment-author {
+    cite {
+      font-style: normal;
+      font-weight: bold;
+      margin-left: $padding/4;
+      text-transform: uppercase;
+    }
+    .says {
+      display: none;
+    }
+  }
+  .comment-reply-link {
+    @extend .h4;
+  }
+  .comment-notes,
+  .comment-awaiting-moderation,
+  .comment-meta a {
+    color: $gray;
+    @extend .small;
+  }
+  p {
+    margin-top: $padding/2;
+  }
+  .comment-list + .comment-respond {
+    border-top: $border;
+    padding-top: $padding/2;
+    margin-top: $padding * 2;
+  }
+  ul.comment-list ul.children {
+    margin-left: $padding;
+    li:before {
+      display: none;
+    }
+  }
 }
 
 @include breakpoint(medium) {
-
-	section.comments {
-		.comment {
-			position: relative;
-		}
-		.comment-meta {
-			position: absolute;
-			top: $padding/2;
-			right: 0;
-		}
-		textarea {
-			width: 40rem;
-		}
-		textarea, input {
-			margin-top: $padding/4;
-			padding: 0.5em;
-		}
-	}
+  section.comments {
+    .comment {
+      position: relative;
+    }
+    .comment-meta {
+      position: absolute;
+      top: $padding/2;
+      right: 0;
+    }
+    textarea {
+      width: 40rem;
+    }
+    textarea,
+    input {
+      margin-top: $padding/4;
+      padding: 0.5em;
+    }
+  }
 }
-
 
 /*************
 SEARCH RESULTS  
 *************/
 
 body.search-no-results main {
-	p {
-		margin-top: $padding/2;
-		margin-bottom: $padding;
-	}
-	#searchform button {
-		color: $black;
-	}
-	input[type=search] {
-		width: 18rem;
-	}
+  p {
+    margin-top: $padding/2;
+    margin-bottom: $padding;
+  }
+  #searchform button {
+    color: $black;
+  }
+  input[type="search"] {
+    width: 18rem;
+  }
 }
 
 /*************
@@ -643,20 +681,20 @@ SUPPORT PAGE
 /*** Clean Up Total Donations garbage ***/
 
 #migla_donation_form {
-	.migla-panel-heading h2 {
-		font-size: 2rem !important;
-	}
-	.radio-inline label {
-		border: none !important;
-		background: rgba($white,0.8) !important;
-	}
-	.mg_StripeButton span {
-		background: $gray !important;
-	}
+  .migla-panel-heading h2 {
+    font-size: 2rem !important;
+  }
+  .radio-inline label {
+    border: none !important;
+    background: rgba($white, 0.8) !important;
+  }
+  .mg_StripeButton span {
+    background: $gray !important;
+  }
 }
 
-section.migla-panel, #sectionstripe {
-	background: transparent !important;
-	border: none !important;
+section.migla-panel,
+#sectionstripe {
+  background: transparent !important;
+  border: none !important;
 }
-

@@ -165,6 +165,10 @@ Template Name: Homepage
       <?php dynamic_sidebar( 'home_pencil-1' ); ?>
     </div>
 
+    <div class="home-pencil-1-mobile">
+      <?php dynamic_sidebar( 'home_pencil-1-mobile' ); ?>
+    </div>
+
     <div>
 
       <?php
@@ -204,11 +208,16 @@ Template Name: Homepage
             $loop->the_post();
             include 'partials/article.php';
           endwhile; wp_reset_postdata();
+     
         ?>
       </div>
     </div>
 
     <div class="home-pencil-2">
+      <?php dynamic_sidebar( 'home_pencil-2' ); ?>
+    </div>
+    
+    <div class="home-pencil-2-mobile">
       <?php dynamic_sidebar( 'home_pencil-2' ); ?>
     </div>
 
@@ -237,6 +246,8 @@ Template Name: Homepage
           ?>
         </div>
         <a class="view-all" href="<?php echo get_category_link( $picture_cat->term_id ); ?>">View All <?php echo $picture_cat->name; ?></a>
+    
+     
         <div class="home-leaderboard">
           <?php dynamic_sidebar( 'home_leaderboard' ); ?>
         </div>
