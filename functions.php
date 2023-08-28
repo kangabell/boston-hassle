@@ -105,8 +105,10 @@ function add_event_excerpt_class( $excerpt ) {
 }
 
 // Disable Recurring Info on Events List
-function bhass_remove_rec_tooltip( $template ) {
-    Tribe__Events__Pro__Main::instance()->disable_recurring_info_tooltip();
+if ( class_exists( 'Tribe__Events__Pro__Main' ) ) {
+    function bhass_remove_rec_tooltip( $template ) {
+        Tribe__Events__Pro__Main::instance()->disable_recurring_info_tooltip();
+    }
 }
 
 // Get name of first category in categories array
@@ -163,15 +165,17 @@ function bhass_scripts_and_styles() {
   }
 }
 
-function bhass_replace_tribe_events_bar() {
+if ( tribe_is_event_category() || tribe_is_in_main_loop() || tribe_is_view() || 'tribe_events' == get_post_type() ) {
+    function bhass_replace_tribe_events_bar() {
 
-    wp_dequeue_script( 'tribe-events-bar' );
+        wp_dequeue_script( 'tribe-events-bar' );
 
-    wp_enqueue_script( 'bhass-events-bar', get_stylesheet_directory_uri() . '/library/scripts/tribe-events-bar.min.js', array( 'jquery' ), '', true );
+        wp_enqueue_script( 'bhass-events-bar', get_stylesheet_directory_uri() . '/library/scripts/tribe-events-bar.min.js', array( 'jquery' ), '', true );
 
+    }
+
+    add_action( 'wp_print_scripts', 'bhass_replace_tribe_events_bar', 100 );
 }
-
-add_action( 'wp_print_scripts', 'bhass_replace_tribe_events_bar', 100 );
 
 
 /*********************
