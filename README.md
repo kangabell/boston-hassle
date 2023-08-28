@@ -2,9 +2,9 @@
 
 Author: [Kay Belardinelli](http://kangabell.co)
 
-Version: 1.3
+Version: 1.4
 
-2016-2019
+2016-2023
 
 ![Screenshot of Website](screenshot.png)
 
@@ -31,7 +31,12 @@ A custom WordPress theme, created for The Boston Hassle.
 ## Installation
 - clone the repo into your wp-content/themes folder
 - run `npm install`
-- since the stylesheet is not tracked, you'll need to create one. make a directory under `library/` called `stylesheets/`, then run `sass --watch sass:stylesheets` to track Sass changes and compile them into CSS
+- install the required WordPress plugins listed above
+- import the included JSON file into ACF under ACF->Tools
+- compile and watch the Sass for changes: `cd library` && `sass --watch sass:stylesheets`
+- create a new page, set it to the Homepage page template, and assign it to Homepage under Settings->Reading
+
+- 
 
 ## Notes
 
