@@ -4,7 +4,7 @@ Author: [Kay Belardinelli](http://kangabell.co)
 
 Version: 1.4
 
-2016-2019
+2016-2023
 
 ![Screenshot of Website](screenshot.png)
 
