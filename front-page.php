@@ -87,37 +87,42 @@ Template Name: Homepage
           ?>
         </div>
 
-        <div class="events">
-          <h2>Hassle Picks</h2>
-          <?php // upcoming events in the Chosen Shows category
-            $events = tribe_get_events( array(
-                'posts_per_page' => 5,
-                'start_date' => current_time( 'Y-m-d' ), // upcoming
-                'tax_query' => array(
-                  array(
-                    'taxonomy' => 'tribe_events_cat',
-                    'field' => 'slug',
-                    'terms' => 'chosen-shows',
+        <?php
+        if ( class_exists( 'Tribe__Events__Main' ) ) :
+        ?>
+          <div class="events">
+            <h2>Hassle Picks</h2>
+            <?php // upcoming events in the Chosen Shows category
+              $events = tribe_get_events( array(
+                  'posts_per_page' => 5,
+                  'start_date' => current_time( 'Y-m-d' ), // upcoming
+                  'tax_query' => array(
+                    array(
+                      'taxonomy' => 'tribe_events_cat',
+                      'field' => 'slug',
+                      'terms' => 'chosen-shows',
+                    )
                   )
-                )
-            ) );
-            foreach ( $events as $post ) {
-                setup_postdata( $post );
-          ?>
-            <article>
-              <p class="meta">
-                <?php echo tribe_events_event_schedule_details(); ?>
-                <?php if ( tribe_get_cost() ) : ?>
-                  <span class="tribe-events-cost"><?php echo tribe_get_cost( null, true ) ?></span>
-                <?php endif; ?>
-              </p>
-              <h3><a href="<?php echo esc_url( tribe_get_event_link() ); ?>"><?php the_title(); ?></a></h3>
-              <p class="meta category"><?php echo tribe_get_venue(); ?></p>
-            </article>
-          <?php } wp_reset_postdata(); ?>
-          <a class="view-all" href="<?php echo tribe_get_events_link(); ?>">View All</a>
-        </div>
-
+              ) );
+              foreach ( $events as $post ) {
+                  setup_postdata( $post );
+            ?>
+              <article>
+                <p class="meta">
+                  <?php echo tribe_events_event_schedule_details(); ?>
+                  <?php if ( tribe_get_cost() ) : ?>
+                    <span class="tribe-events-cost"><?php echo tribe_get_cost( null, true ) ?></span>
+                  <?php endif; ?>
+                </p>
+                <h3><a href="<?php echo esc_url( tribe_get_event_link() ); ?>"><?php the_title(); ?></a></h3>
+                <p class="meta category"><?php echo tribe_get_venue(); ?></p>
+              </article>
+            <?php } wp_reset_postdata(); ?>
+            <a class="view-all" href="<?php echo tribe_get_events_link(); ?>">View All</a>
+          </div>
+        <?php
+        endif;
+        ?>
       </div> <!-- end .primary -->
 
       <div class="secondary">
