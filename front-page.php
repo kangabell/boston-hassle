@@ -184,24 +184,30 @@ Template Name: Homepage
       <div>
 
         <?php
+        if (!empty ( $cat_1 ) ) {
           // Category #1
           $category = $cat_1;
           $class = 'category-1';
           include(locate_template('partials/category-section.php'));
+        }
         ?>
 
         <?php
+        if (!empty ( $cat_2 ) ) {
           // Category #2
           $category = $cat_2;
           $class = 'category-2';
           include(locate_template('partials/category-section.php'));
+        }
         ?>
 
         <?php
+        if (!empty ( $cat_3 ) ) {
           // Category #3
           $category = $cat_3;
           $class = 'category-3';
           include(locate_template('partials/category-section.php'));
+        }
         ?>
 
       </div>
