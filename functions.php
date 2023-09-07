@@ -48,9 +48,6 @@ add_filter('excerpt_more', 'bhass_excerpt_more');
 add_filter( 'excerpt_length', 'bhass_lengthen_excerpt', 999 );
 // add class to excerpt paragraph
 add_filter( "the_excerpt", "add_excerpt_class" );
-add_filter( "tribe_events_get_the_excerpt", "add_event_excerpt_class" );
-//remove recurring info on events in list
-add_action( 'tribe_before_get_template_part', 'bhass_remove_rec_tooltip' );
 // modify output of WordPress Popular Posts plugin
 add_filter( 'wpp_custom_html', 'bhass_popular_posts_html', 10, 2 );
 
@@ -98,17 +95,6 @@ function bhass_lengthen_excerpt( $length ) {
 function add_excerpt_class( $excerpt ) {
     $excerpt = str_replace( "<p", "<p class=\"excerpt\"", $excerpt );
     return $excerpt;
-}
-function add_event_excerpt_class( $excerpt ) {
-    $excerpt = str_replace( "<p", "<p class=\"excerpt\"", $excerpt );
-    return $excerpt;
-}
-
-// Disable Recurring Info on Events List
-if ( class_exists( 'Tribe__Events__Pro__Main' ) ) {
-    function bhass_remove_rec_tooltip( $template ) {
-        Tribe__Events__Pro__Main::instance()->disable_recurring_info_tooltip();
-    }
 }
 
 // Get name of first category in categories array
@@ -165,16 +151,15 @@ function bhass_scripts_and_styles() {
   }
 }
 
-if ( tribe_is_event_category() || tribe_is_in_main_loop() || tribe_is_view() || 'tribe_events' == get_post_type() ) {
-    function bhass_replace_tribe_events_bar() {
 
-        wp_dequeue_script( 'tribe-events-bar' );
+/*********************
+"THE EVENTS CALENDAR"
+Functions
+*********************/
 
-        wp_enqueue_script( 'bhass-events-bar', get_stylesheet_directory_uri() . '/library/scripts/tribe-events-bar.min.js', array( 'jquery' ), '', true );
+if ( class_exists( 'Tribe__Events__Main' ) ) {
 
-    }
-
-    add_action( 'wp_print_scripts', 'bhass_replace_tribe_events_bar', 100 );
+    require get_template_directory() . '/plugins/theeventscalendar.php';
 }
 
 
@@ -441,41 +426,6 @@ function bhass_article_img() {
     } else {
         echo get_template_directory_uri() . '/library/img/placeholder.jpg';
     }
-}
-
-
-/************* FEATURED EVENT CATEGORIES LIST *****************/
-
-function bhass_featured_event_categories() {
-
-    // list our category names and ID's
-    $categories = array (
-        'Hassle Shows' => '21638',
-        'Music Shows' => '9492',
-        'Film Screenings' => '21623',
-        'Art Events' => '21625'
-    );
-
-    // create wrapper
-    echo '<ul class="featured-event-categories">';
-
-    // display view-all link
-    echo '<li><a href="' . tribe_get_events_link() . '">All Shows</a></li>';
-
-    // loop through each category, displaying it as a link inside a list item
-    foreach( $categories as $name => $id ) {
-        echo '<li><a href="' ;
-        if ( tribe_is_view('month') ) {
-            echo tribe_get_gridview_link($id);
-        } else {
-            echo tribe_get_listview_link($id);
-        }
-        echo '">' . $name . '</a></li>';
-    }
-
-    // close wrapper
-    echo '</ul>';
-
 }
 
 ?>
