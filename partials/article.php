@@ -15,7 +15,7 @@ used on the homepage, archive pages, event archive pages, search results pages, 
 		// and if there's neither, use the automatic excerpt
 			if ( has_excerpt() ) {
 				the_excerpt(); 
-			} elseif ( get_field('subtitle') ) {
+			} elseif ( function_exists( 'get_field' ) && get_field('subtitle') ) {
 				echo '<p class="excerpt">';
 				the_field('subtitle');
 				echo '</p>';
