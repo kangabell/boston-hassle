@@ -8,7 +8,7 @@ used on the homepage for category-based columns.
   <?php // all articles within given category
     if ( $events ) {
       $loop = new WP_Query( array(
-        'posts_per_page'=> 5,
+        'posts_per_page'=> 4,
         'ignore_sticky_posts'=>true,
         'cat'=>$category->term_id
       ) );
