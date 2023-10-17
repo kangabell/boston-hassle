@@ -97,20 +97,6 @@ body.home div.category {
 	}
 }
 
-/* Recent Comments */
-
-.recent-comments-list {
-	span.comment-post {
-		@extend .h4;
-	}
-	li + li {
-		border-top: $border;
-		padding-top: $padding/4;
-		margin-top: $padding/4;
-	}
-
-}
-
 /* CTA #1: Donation/Support Section */
 
 .home div.donate {
