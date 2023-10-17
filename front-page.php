@@ -46,7 +46,7 @@ Template Name: Homepage
             if (have_posts()) : while (have_posts()) : the_post();
             
           ?>
-            <article class="hero"><a href="<?php the_permalink(); ?>">
+            <article><a href="<?php the_permalink(); ?>">
 
               <div class="image">
                 <div class="thumbnail">
@@ -84,17 +84,10 @@ Template Name: Homepage
         ?>
           <div class="events">
             <h2>Hassle Picks</h2>
-            <?php // upcoming events in the Chosen Shows category
+            <?php
               $events = tribe_get_events( array(
                   'posts_per_page' => 5,
-                  'start_date' => current_time( 'Y-m-d' ), // upcoming
-                  'tax_query' => array(
-                    array(
-                      'taxonomy' => 'tribe_events_cat',
-                      'field' => 'slug',
-                      'terms' => 'chosen-shows',
-                    )
-                  )
+                  'start_date' => current_time( 'Y-m-d' ) // upcoming
               ) );
               foreach ( $events as $post ) {
                   setup_postdata( $post );
@@ -165,7 +158,7 @@ Template Name: Homepage
     <?php
     if ( function_exists( 'get_field' ) ) :
     ?>
-      <div>
+      <div class="category-lists">
 
         <?php
         if (!empty ( $cat_1 ) ) {
