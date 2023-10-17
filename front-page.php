@@ -12,14 +12,6 @@ Template Name: Homepage
     $cat_1 = get_field('cat_1');
     $cat_2 = get_field('cat_2');
     $cat_3 = get_field('cat_3');
-    $picture_cat = get_field('picture_cat');
-
-    $cta_img = get_field('cta_img');
-    if ( !empty( $cta_img ) ) {
-      $cta_bg = esc_url($cta_img['url']);
-    } else {
-      $cta_bg = get_template_directory_uri() . '/library/img/texture-blue.jpg';
-    }
 
     $cta2_img = get_field('cta2_img');
     if ( !empty( $cta2_img ) ) {
@@ -214,8 +206,7 @@ Template Name: Homepage
           $loop = new WP_Query( array(
             'posts_per_page'=>8, 
             'ignore_sticky_posts'=>true,
-            'post__not_in' => $featured_ids, // exclude featured posts, since they've already appeared above
-            'category__not_in' => $picture_cat->term_id// exclude, since this has its own bigger section
+            'post__not_in' => $featured_ids // exclude featured posts, since they've already appeared above
           ) );
         } else {
           $loop = new WP_Query( array(
@@ -239,8 +230,7 @@ Template Name: Homepage
           'posts_per_page'=>8, 
           'ignore_sticky_posts'=>true, 
           'offset' => 8, 
-          'post__not_in' => $featured_ids,
-          'category__not_in' => $picture_cat->term_id
+          'post__not_in' => $featured_ids
         ) );
         while ($loop->have_posts()) : 
           $class = 'default';
