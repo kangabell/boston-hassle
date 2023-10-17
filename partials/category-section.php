@@ -7,7 +7,7 @@ used on the homepage for category-based columns.
   <h2><?php echo $category->name; ?></h2>
   <?php // all articles within given category
     $loop = new WP_Query( array(
-      'posts_per_page'=> 6, 
+      'posts_per_page'=> 5,
       'ignore_sticky_posts'=>true, 
       'cat'=>$category->term_id
     ) );
@@ -16,5 +16,4 @@ used on the homepage for category-based columns.
       include 'article-sm.php';
     endwhile; wp_reset_postdata();
   ?>
-  <a class="view-all" href="<?php echo get_category_link( $category->term_id ); ?>">View All <?php echo $category->name; ?></a>
 </div>

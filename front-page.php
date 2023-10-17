@@ -50,7 +50,7 @@ Template Name: Homepage
 
               <div class="image">
                 <div class="thumbnail">
-                  <?php the_post_thumbnail('large'); ?>
+                  <?php the_post_thumbnail('grid-large'); ?>
                 </div>
               </div>
               <div class="text">
@@ -112,10 +112,10 @@ Template Name: Homepage
 
       <div class="secondary">
 
-        <?php // 2 more Featured Posts
+        <?php // 4 more Featured Posts
 
           $args = array(
-            'posts_per_page' => 2,
+            'posts_per_page' => 4,
             'post__in' => $featured_ids,
             'orderby' => 'post__in',
             'ignore_sticky_posts' => true,
@@ -131,26 +131,6 @@ Template Name: Homepage
         ?>
 
       </div>
-
-      <div class="tertiary">
-        <?php // 2 more Featured Posts
-
-          $args = array(
-            'posts_per_page' => 2,
-            'post__in' => $featured_ids,
-            'orderby' => 'post__in',
-            'ignore_sticky_posts' => true,
-            'offset' => 3
-          );
-          query_posts ($args);
-
-          if (have_posts()) : while (have_posts()) : the_post();
-            include 'partials/article.php';
-          endwhile; endif;
-          wp_reset_query();
-
-        ?>
-      </div>
     <?php
     endif;
     ?>
@@ -158,7 +138,7 @@ Template Name: Homepage
     <?php
     if ( function_exists( 'get_field' ) ) :
     ?>
-      <div class="category-lists">
+      <div class="tertiary category-lists">
 
         <?php
         if (!empty ( $cat_1 ) ) {
@@ -197,13 +177,13 @@ Template Name: Homepage
         <?php // General stream of articles
         if ( function_exists( 'get_field' ) ) {
           $loop = new WP_Query( array(
-            'posts_per_page'=>8, 
+            'posts_per_page'=>12,
             'ignore_sticky_posts'=>true,
             'post__not_in' => $featured_ids // exclude featured posts, since they've already appeared above
           ) );
         } else {
           $loop = new WP_Query( array(
-            'posts_per_page'=>8, 
+            'posts_per_page'=>12,
             'ignore_sticky_posts'=>true,
           ) );
         }
@@ -214,25 +194,6 @@ Template Name: Homepage
         endwhile; wp_reset_postdata();
         ?>
       </div>
-    </div>
-
-    <div class="articles">
-      <div>
-        <?php // General stream of articles, continued
-        $loop = new WP_Query( array(
-          'posts_per_page'=>8, 
-          'ignore_sticky_posts'=>true, 
-          'offset' => 8, 
-          'post__not_in' => $featured_ids
-        ) );
-        while ($loop->have_posts()) : 
-          $class = 'default';
-          $loop->the_post();
-          include 'partials/article.php';
-        endwhile; wp_reset_postdata();
-        ?>
-      </div>
-
     </div>
 
     <?php

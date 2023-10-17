@@ -74,13 +74,55 @@ p.excerpt {
 body.home {
 	.hero .thumbnail {
 		display: block;
-		max-height: 12rem;
+		height: auto;
 		margin-bottom: $padding/4;
 		overflow: hidden;
 	}
 	div.events, div.category, div.secondary, div.tertiary, 
 	.articles article, div.donate {
 		margin-top: $padding;
+	}
+}
+
+// new grid layout
+
+.home main {
+	.primary {
+		grid-area: primary;
+	}
+	.secondary {
+		grid-area: secondary;
+	}
+	.tertiary {
+		grid-area: tertiary;
+	}
+	.articles {
+		grid-area: main;
+	}
+	.cta {
+		grid-area: sub;
+	}
+	@include breakpoint(medium) {
+		display: grid;
+		grid-gap: $padding;
+		grid-template-areas:
+			"secondary primary"
+			"tertiary tertiary"
+			"main main"
+			"sub sub"
+		;
+		grid-template-columns: 1fr 2fr;
+		max-width: 87.5rem;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	@include breakpoint(large) {
+		grid-template-areas:
+			"secondary primary tertiary"
+			"main main main"
+			"sub sub sub"
+		;
+		grid-template-columns: 1fr 2fr 1fr;
 	}
 }
 
@@ -137,41 +179,12 @@ body.home {
 			margin-top: 0; // reset from mobile style
 		}
 
-		div.hero {
-			@include grid-column(8);
-			.thumbnail {
-				max-height: 15rem;
+		.category-lists {
+			display: flex;
+			width: 100%;
+			.category {
+				flex: 1;
 			}
-		}
-
-		div.events {
-			@include grid-column(4);
-		}
-
-		.secondary article {
-			@include grid-column(4);
-		}
-
-		.events article {
-			@include grid-row;
-		}
-
-		.category-1, .category-2, .category-3 {
-			article {
-				@include grid-row;
-			}
-		}
-
-		.category-1 {
-			@include grid-column(12);
-		}
-
-		.category-2 {
-			@include grid-column(7);
-		}
-
-		div.tertiary article {
-			@include grid-column(6);
 		}
 
 		.articles > div {
@@ -180,6 +193,10 @@ body.home {
 
 		.articles article {
 			@include grid-column(6);
+		}
+
+		.cta {
+			width: 100%;
 		}
 	}
 
@@ -272,30 +289,16 @@ body.home {
 
 	body.home {
 
-		div.hero {
-			@include grid-column(9);
-			div.image {
-				@include grid-column(7);
-			}
-			.thumbnail {
-				max-height: 28rem;
-			}
-			div.text {
-				margin-top: $padding;
-				@include grid-column(5);
-			}
-		}
-
-		div.events {
-			@include grid-column(3);
+		div.hero .text {
+			margin-top: $padding;
 		}
 
 		.articles article {
 			@include grid-column(3);
 		}
 
-		.category-1, .category-2, .category-3 {
-			@include grid-column(4);
+		.category-lists {
+			display: block;
 		}
 
 	}

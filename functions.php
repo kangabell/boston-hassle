@@ -190,6 +190,7 @@ function bhass_theme_support() {
     add_theme_support( 'post-thumbnails' ); 
 
     add_image_size( 'grid-thumb', 560, 300, array( 'center', 'center') );
+    add_image_size( 'grid-large', 1120, 600, array( 'center', 'center') );
     
 } /* end bhass theme support */
 

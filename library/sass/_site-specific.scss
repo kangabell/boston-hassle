@@ -77,7 +77,6 @@ div.events {
 
 @include breakpoint(large) {
 	div.events {
-		border-left: 1px solid $silver;
 		position: relative;
 		h2 {
 			display: inline-block;
