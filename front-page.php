@@ -2,24 +2,28 @@
 /*
 Template Name: Homepage
 */
-?>
 
-<?php
+if ( class_exists( 'Tribe__Events__Main' ) ) :
+  $events = tribe_get_events( array(
+      'posts_per_page' => 5,
+      'start_date' => current_time( 'Y-m-d' ) // upcoming
+  ) );
+endif;
 
-  if ( function_exists( 'get_field' ) ) :
-    $featured_ids = get_field('featured_posts', false, false);
+if ( function_exists( 'get_field' ) ) :
+  $featured_ids = get_field('featured_posts', false, false);
 
-    $cat_1 = get_field('cat_1');
-    $cat_2 = get_field('cat_2');
-    $cat_3 = get_field('cat_3');
+  $cat_1 = get_field('cat_1');
+  $cat_2 = get_field('cat_2');
+  $cat_3 = get_field('cat_3');
 
-    $cta2_img = get_field('cta2_img');
-    if ( !empty( $cta2_img ) ) {
-      $cta2_bg = esc_url($cta2_img['url']);
-    } else {
-      $cta2_bg = get_template_directory_uri() . '/library/img/texture-lt.jpg';
-    }
-  endif;
+  $cta2_img = get_field('cta2_img');
+  if ( !empty( $cta2_img ) ) {
+    $cta2_bg = esc_url($cta2_img['url']);
+  } else {
+    $cta2_bg = get_template_directory_uri() . '/library/img/texture-lt.jpg';
+  }
+endif;
 
 ?>
 
@@ -81,39 +85,42 @@ Template Name: Homepage
 
         <?php
         if ( class_exists( 'Tribe__Events__Main' ) ) :
-        ?>
-          <div class="events">
-            <h2>Hassle Picks</h2>
-            <?php
-              $events = tribe_get_events( array(
-                  'posts_per_page' => 5,
-                  'start_date' => current_time( 'Y-m-d' ) // upcoming
-              ) );
-              foreach ( $events as $post ) {
-                  setup_postdata( $post );
-            ?>
-              <article>
-                <p class="meta">
-                  <?php echo tribe_events_event_schedule_details(); ?>
-                  <?php if ( tribe_get_cost() ) : ?>
-                    <span class="tribe-events-cost"><?php echo tribe_get_cost( null, true ) ?></span>
-                  <?php endif; ?>
-                </p>
-                <h3><a href="<?php echo esc_url( tribe_get_event_link() ); ?>"><?php the_title(); ?></a></h3>
-                <p class="meta category"><?php echo tribe_get_venue(); ?></p>
-              </article>
-            <?php } wp_reset_postdata(); ?>
-            <a class="view-all" href="<?php echo tribe_get_events_link(); ?>">View All</a>
-          </div>
-        <?php
+          if ( $events ) :
+          ?>
+            <div class="events">
+              <h2>Hassle Picks</h2>
+              <?php
+                $events = tribe_get_events( array(
+                    'posts_per_page' => 5,
+                    'start_date' => current_time( 'Y-m-d' ) // upcoming
+                ) );
+                foreach ( $events as $post ) {
+                    setup_postdata( $post );
+              ?>
+                <article>
+                  <p class="meta">
+                    <?php echo tribe_events_event_schedule_details(); ?>
+                    <?php if ( tribe_get_cost() ) : ?>
+                      <span class="tribe-events-cost"><?php echo tribe_get_cost( null, true ) ?></span>
+                    <?php endif; ?>
+                  </p>
+                  <h3><a href="<?php echo esc_url( tribe_get_event_link() ); ?>"><?php the_title(); ?></a></h3>
+                  <p class="meta category"><?php echo tribe_get_venue(); ?></p>
+                </article>
+              <?php } wp_reset_postdata(); ?>
+              <a class="view-all" href="<?php echo tribe_get_events_link(); ?>">View All</a>
+            </div>
+          <?php
+          endif;
         endif;
         ?>
       </div> <!-- end .primary -->
 
       <div class="secondary">
 
-        <?php // 4 more Featured Posts
+        <?php // Additional Featured Posts
 
+        if ( $events ) {
           $args = array(
             'posts_per_page' => 4,
             'post__in' => $featured_ids,
@@ -121,12 +128,22 @@ Template Name: Homepage
             'ignore_sticky_posts' => true,
             'offset' => 1
           );
-          query_posts ($args);
+        } else {
+          $args = array(
+            'posts_per_page' => 2,
+            'post__in' => $featured_ids,
+            'orderby' => 'post__in',
+            'ignore_sticky_posts' => true,
+            'offset' => 1
+          );
+        }
 
-          if (have_posts()) : while (have_posts()) : the_post();
-            include 'partials/article.php';
-          endwhile; endif;
-          wp_reset_query();
+        query_posts ($args);
+
+        if (have_posts()) : while (have_posts()) : the_post();
+          include 'partials/article.php';
+        endwhile; endif;
+        wp_reset_query();
 
         ?>
 
