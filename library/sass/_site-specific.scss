@@ -17,15 +17,6 @@ body.home {
 	}
 }
 
-.home-pencil-1,
-.home-pencil-2 {
-	display: none;
-}
-
-.home-leaderboard {
-	margin-top: $padding;
-}
-
 .view-all {
 	display: inline-block;
 	margin-top: $padding/2;
@@ -33,17 +24,10 @@ body.home {
 	@extend .button;
 }
 
-@include breakpoint(medium) {
-	.home-pencil-1,
-	.home-pencil-2 {
-		display: block;
-	}
-}
-
 @include breakpoint(large) {
 
 	/* move buttons to upper right of their sections */
-	div.category, .home-widget-2 > div /* compass widget */ {
+	div.category {
 		position: relative;
 	}
 	.view-all {
@@ -51,9 +35,6 @@ body.home {
 		position: absolute;
 		right: $padding;
 		top: $padding/4;
-	}
-	.home-widget-2 > div .view-all {
-		right: 0;
 	}
 }
 

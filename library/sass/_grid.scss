@@ -78,8 +78,8 @@ body.home {
 		margin-bottom: $padding/4;
 		overflow: hidden;
 	}
-	div.events, div.category, div.secondary, .home-widget-1, div.tertiary, 
-	.articles article, .home-widget-2, div.donate {
+	div.events, div.category, div.secondary, div.tertiary, 
+	.articles article, div.donate {
 		margin-top: $padding;
 	}
 
@@ -146,7 +146,7 @@ body.home {
 			margin-top: $padding;
 		}
 
-		article + article, div.events, .home-widget-1 {
+		article + article, div.events {
 			margin-top: 0; // reset from mobile style
 		}
 
@@ -161,7 +161,7 @@ body.home {
 			@include grid-column(4);
 		}
 
-		.secondary article, .home-widget-1 {
+		.secondary article {
 			@include grid-column(4);
 		}
 
@@ -198,7 +198,7 @@ body.home {
 		div.picture-cat {
 			@include grid-column(7);
 		}
-		.category-3, .home-widget-2 {
+		.category-3 {
 			@include grid-column(5);
 		}
 		.category-3 {

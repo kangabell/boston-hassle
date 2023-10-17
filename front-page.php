@@ -145,10 +145,6 @@ Template Name: Homepage
 
         ?>
 
-        <div class="home-widget-1">
-          <?php dynamic_sidebar( 'home_widget-1' ); ?>
-        </div>
-
       </div>
 
       <div class="tertiary">
@@ -173,10 +169,6 @@ Template Name: Homepage
     <?php
     endif;
     ?>
-
-    <div class="home-pencil-1">
-      <?php dynamic_sidebar( 'home_pencil-1' ); ?>
-    </div>
 
     <?php
     if ( function_exists( 'get_field' ) ) :
@@ -240,10 +232,6 @@ Template Name: Homepage
       </div>
     </div>
 
-    <div class="home-pencil-2">
-      <?php dynamic_sidebar( 'home_pencil-2' ); ?>
-    </div>
-
     <div>
 
       <!-- Category Section with Pictures -->
@@ -269,13 +257,6 @@ Template Name: Homepage
           ?>
         </div>
         <a class="view-all" href="<?php echo get_category_link( $picture_cat->term_id ); ?>">View All <?php echo $picture_cat->name; ?></a>
-        <div class="home-leaderboard">
-          <?php dynamic_sidebar( 'home_leaderboard' ); ?>
-        </div>
-      </div>
-
-      <div class="home-widget-2">
-        <?php dynamic_sidebar( 'home_widget-2' ); ?>
       </div>
 
     </div>
