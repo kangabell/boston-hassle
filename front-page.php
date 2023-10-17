@@ -232,56 +232,6 @@ Template Name: Homepage
       </div>
     </div>
 
-    <div>
-
-      <!-- Category Section with Pictures -->
-      <div class="<?php echo $picture_cat->slug ?> picture-cat category">
-        <h2><?php echo $picture_cat->name; ?></h2>
-        <div>
-          <?php
-          $loop = new WP_Query( array(
-            'posts_per_page'=> 6,
-            'ignore_sticky_posts'=>true, 
-            'cat'=>$picture_cat->term_id
-          ) );
-          while ($loop->have_posts()) : 
-            $loop->the_post();
-          ?>
-            <article><a href="<?php echo get_permalink(); ?>">
-                <div class="thumbnail" style="background-image: url('<?php bhass_article_img(); ?>')"></div>
-                <h3><?php echo short_title(); ?></h3>
-                <p class="meta"><?php echo get_the_author(); ?></p>
-            </a></article>
-          <?php
-          endwhile; wp_reset_postdata();
-          ?>
-        </div>
-        <a class="view-all" href="<?php echo get_category_link( $picture_cat->term_id ); ?>">View All <?php echo $picture_cat->name; ?></a>
-      </div>
-
-    </div>
-
-    <?php
-    if ( function_exists( 'get_field' ) ) :
-    ?>
-      <div class="donate cta" style="background-image: url('<?php echo $cta_bg; ?>');">
-        <a href="<?php the_field('cta_link'); ?>">
-          <?php if ( get_field('cta_heading') ) : ?>
-            <h2>
-                <?php the_field('cta_heading'); ?>
-            </h2>
-          <?php endif; ?>
-          <?php if ( get_field('cta_text') ) : ?>
-            <p class="h3">
-                <?php the_field('cta_text'); ?>
-            </p>
-          <?php endif; ?>
-        </a>
-      </div>
-    <?php
-    endif;
-    ?>
-
     <div class="articles">
       <div>
         <?php // General stream of articles, continued
