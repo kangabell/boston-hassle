@@ -57,7 +57,6 @@ div.hero {
 div.events {
 	h3 {
 		@extend .h5;
-		@include truncate(1.25em);
 	}
 	.meta {
 		margin-bottom: 0.25em;

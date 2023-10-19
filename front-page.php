@@ -5,7 +5,7 @@ Template Name: Homepage
 
 if ( class_exists( 'Tribe__Events__Main' ) ) :
   $events = tribe_get_events( array(
-      'posts_per_page' => 5,
+      'posts_per_page' => 6,
       'start_date' => current_time( 'Y-m-d' ) // upcoming
   ) );
 endif;
