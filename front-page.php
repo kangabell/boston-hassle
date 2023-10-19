@@ -90,10 +90,6 @@ endif;
             <div class="events">
               <h2>Hassle Picks</h2>
               <?php
-                $events = tribe_get_events( array(
-                    'posts_per_page' => 5,
-                    'start_date' => current_time( 'Y-m-d' ) // upcoming
-                ) );
                 foreach ( $events as $post ) {
                     setup_postdata( $post );
               ?>

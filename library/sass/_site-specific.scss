@@ -5,7 +5,7 @@ HOMEPAGE
 
 body.home {
 	main {
-	  padding-bottom: $padding*2;
+	  padding-bottom: $padding;
 	}
 	article:not(.hero) p { // shorten excerpt length
 		max-height: 3em;
@@ -122,7 +122,7 @@ body.home div.category {
 /* CTA #2: Newsletter/Mailing List Signup */
 
 .home div.newsletter {
-	margin-top: $padding*2;
+	margin-top: $padding;
 	p {
 		margin-bottom: $padding/2;
 	}

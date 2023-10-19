@@ -81,6 +81,9 @@ body.home {
 	div.events, div.category, div.secondary, div.tertiary, 
 	.articles article, div.donate {
 		margin-top: $padding;
+		@include breakpoint(medium) {
+			margin-top: 0;
+		}
 	}
 }
 
@@ -171,10 +174,6 @@ body.home {
 	/*** Homepage ***/
 	body.home {
 
-		main > div {
-			margin-top: $padding;
-		}
-
 		article + article, div.events {
 			margin-top: 0; // reset from mobile style
 		}
@@ -187,8 +186,15 @@ body.home {
 			}
 		}
 
+		// offset for article padding
 		.articles > div {
-			@include flex-wrapper;
+			margin-left: -0.9375rem;
+			margin-right: -0.9375rem;
+		}
+
+		.secondary article,
+		.articles article {
+			margin-bottom: $padding;
 		}
 
 		.articles article {
