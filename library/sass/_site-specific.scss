@@ -153,6 +153,11 @@ aside .widget {
 EVENTS PAGE  
 *************/
 
+.tribe-events-view,
+#tribe-events-pg-template {
+	background-color: initial;
+}
+
 body.home .recurringinfo, body.archive .recurringinfo {
 	display: none; // hide recurring-event info
 }
