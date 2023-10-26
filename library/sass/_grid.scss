@@ -78,12 +78,15 @@ body.home {
 		margin-bottom: $padding/4;
 		overflow: hidden;
 	}
-	div.events, div.category, div.secondary, div.tertiary, 
+	div.events, div.secondary, div.tertiary,
 	.articles article, div.donate {
 		margin-top: $padding;
 		@include breakpoint(medium) {
 			margin-top: 0;
 		}
+	}
+	div.category {
+		margin-bottom: $padding;
 	}
 }
 
@@ -186,8 +189,12 @@ body.home {
 			}
 		}
 
-		// offset for article padding
+		// add flexbox on top of floats to make this layout more reliable (someday should remove floats)
+		// also add negative margins to offset article padding
 		.articles > div {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
 			margin-left: -0.9375rem;
 			margin-right: -0.9375rem;
 		}
