@@ -13,7 +13,7 @@ URL: http://kangabell.co
 
 if ( ! defined( 'BHASS_VERSION' ) ) {
     // Replace the version number of the theme on each release.
-    define( 'BHASS_VERSION', '2.0.4' );
+    define( 'BHASS_VERSION', '2.1' );
 }
 
 // set maximum allowed width for content
@@ -50,6 +50,8 @@ add_filter( 'excerpt_length', 'bhass_lengthen_excerpt', 999 );
 add_filter( "the_excerpt", "add_excerpt_class" );
 // modify output of WordPress Popular Posts plugin
 add_filter( 'wpp_custom_html', 'bhass_popular_posts_html', 10, 2 );
+// Add support for responsive embedded content (YouTube, Vimeo, etc.).
+add_theme_support( 'responsive-embeds' );
 
 
 
