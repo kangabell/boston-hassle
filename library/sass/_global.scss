@@ -389,7 +389,7 @@ nav.pagination {
 
 /*** Widgets ***/
 
-main .widget, .home-widget { // exclude footer widgets
+main .widget { // exclude footer widgets
 	a:not(.button) {
 		@extend .h4;
 		@include underline($silver);

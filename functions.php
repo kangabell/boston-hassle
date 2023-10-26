@@ -13,7 +13,7 @@ URL: http://kangabell.co
 
 if ( ! defined( 'BHASS_VERSION' ) ) {
     // Replace the version number of the theme on each release.
-    define( 'BHASS_VERSION', '1.5' );
+    define( 'BHASS_VERSION', '2.0.4' );
 }
 
 // set maximum allowed width for content
@@ -190,6 +190,7 @@ function bhass_theme_support() {
     add_theme_support( 'post-thumbnails' ); 
 
     add_image_size( 'grid-thumb', 560, 300, array( 'center', 'center') );
+    add_image_size( 'grid-large', 1120, 600, array( 'center', 'center') );
     
 } /* end bhass theme support */
 
@@ -357,51 +358,6 @@ function bhass_register_sidebars() {
         'after_widget' => '</div>',
         'before_title' => '<h4>',
         'after_title' => '</h4>',
-    ));
-    register_sidebar(array(
-        'id' => 'home_widget-1',
-        'name' => __('Homepage Widget #1', 'bhass'),
-        'description' => __('Customizable section on the homepage.', 'bhass'),
-        'before_widget' => '<div>',
-        'after_widget' => '</div>',
-        'before_title' => '<h2>',
-        'after_title' => '</h2>',
-    ));
-    register_sidebar(array(
-        'id' => 'home_widget-2',
-        'name' => __('Homepage Widget #2', 'bhass'),
-        'description' => __('Another customizable section on the homepage.', 'bhass'),
-        'before_widget' => '<div>',
-        'after_widget' => '</div>',
-        'before_title' => '<h2>',
-        'after_title' => '</h2>',
-    ));
-    register_sidebar(array(
-        'id' => 'home_pencil-1',
-        'name' => __('Homepage Pencil Ad #1', 'bhass'),
-        'description' => __('Space for a pencil ad on the homepage.', 'bhass'),
-        'before_widget' => '<div>',
-        'after_widget' => '</div>',
-        'before_title' => '<h2>',
-        'after_title' => '</h2>',
-    ));
-    register_sidebar(array(
-        'id' => 'home_pencil-2',
-        'name' => __('Homepage Pencil Ad #2', 'bhass'),
-        'description' => __('Another space for a pencil ad on the homepage.', 'bhass'),
-        'before_widget' => '<div>',
-        'after_widget' => '</div>',
-        'before_title' => '<h2>',
-        'after_title' => '</h2>',
-    ));
-    register_sidebar(array(
-        'id' => 'home_leaderboard',
-        'name' => __('Homepage Leaderboard Ad', 'bhass'),
-        'description' => __('Space for a leaderboard ad on the homepage.', 'bhass'),
-        'before_widget' => '<div>',
-        'after_widget' => '</div>',
-        'before_title' => '<h2>',
-        'after_title' => '</h2>',
     ));
 }
 

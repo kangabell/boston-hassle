@@ -5,7 +5,7 @@ HOMEPAGE
 
 body.home {
 	main {
-	  padding-bottom: $padding*2;
+	  padding-bottom: $padding;
 	}
 	article:not(.hero) p { // shorten excerpt length
 		max-height: 3em;
@@ -17,15 +17,6 @@ body.home {
 	}
 }
 
-.home-pencil-1,
-.home-pencil-2 {
-	display: none;
-}
-
-.home-leaderboard {
-	margin-top: $padding;
-}
-
 .view-all {
 	display: inline-block;
 	margin-top: $padding/2;
@@ -33,17 +24,10 @@ body.home {
 	@extend .button;
 }
 
-@include breakpoint(medium) {
-	.home-pencil-1,
-	.home-pencil-2 {
-		display: block;
-	}
-}
-
 @include breakpoint(large) {
 
 	/* move buttons to upper right of their sections */
-	div.category, .home-widget-2 > div /* compass widget */ {
+	div.category {
 		position: relative;
 	}
 	.view-all {
@@ -51,9 +35,6 @@ body.home {
 		position: absolute;
 		right: $padding;
 		top: $padding/4;
-	}
-	.home-widget-2 > div .view-all {
-		right: 0;
 	}
 }
 
@@ -76,7 +57,6 @@ div.hero {
 div.events {
 	h3 {
 		@extend .h5;
-		@include truncate(1.25em);
 	}
 	.meta {
 		margin-bottom: 0.25em;
@@ -96,7 +76,6 @@ div.events {
 
 @include breakpoint(large) {
 	div.events {
-		border-left: 1px solid $silver;
 		position: relative;
 		h2 {
 			display: inline-block;
@@ -114,26 +93,6 @@ body.home div.category {
 		margin-top: 0;
 		margin-bottom: 0;
 	}
-}
-
-/* Category-with-Pictures Column (i.e. Fresh Stream) */
-
-div.picture-cat article {
-	margin-bottom: $padding*.25;
-}
-
-/* Recent Comments */
-
-.recent-comments-list {
-	span.comment-post {
-		@extend .h4;
-	}
-	li + li {
-		border-top: $border;
-		padding-top: $padding/4;
-		margin-top: $padding/4;
-	}
-
 }
 
 /* CTA #1: Donation/Support Section */
@@ -163,7 +122,7 @@ div.picture-cat article {
 /* CTA #2: Newsletter/Mailing List Signup */
 
 .home div.newsletter {
-	margin-top: $padding*2;
+	margin-top: $padding;
 	p {
 		margin-bottom: $padding/2;
 	}
@@ -192,6 +151,11 @@ aside .widget {
 /*************
 EVENTS PAGE  
 *************/
+
+.tribe-events-view,
+#tribe-events-pg-template {
+	background-color: initial;
+}
 
 body.home .recurringinfo, body.archive .recurringinfo {
 	display: none; // hide recurring-event info
