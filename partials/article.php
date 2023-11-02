@@ -23,7 +23,15 @@ used on the homepage, archive pages, event archive pages, search results pages, 
 				the_excerpt();
 			}
 		?>
-		<p class="meta"><?php echo get_the_author(); ?></p>
+		<p class="meta">
+			<?php
+			if ( function_exists( 'coauthors_posts_links' ) ) {
+				coauthors();
+			} else {
+				the_author();
+			}
+			?>
+		</p>
 	</div>
 
 </a></article>

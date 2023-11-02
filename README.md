@@ -2,7 +2,7 @@
 
 Author: [Kay Belardinelli](http://kangabell.co)
 
-Version: 2.1
+Version: 2.2
 
 2016-2023
 
@@ -20,6 +20,7 @@ A custom WordPress theme, created for The Boston Hassle.
 
 ## Other Supported Plugins
 
+- Co-Authors Plus
 
 ## Other Required Stuff
 
