@@ -20,7 +20,6 @@ A custom WordPress theme, created for The Boston Hassle.
 
 ## Other Supported Plugins
 
-- Total Donations
 
 ## Other Required Stuff
 
