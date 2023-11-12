@@ -225,7 +225,7 @@ body.home {
 
 	/*** PAGES WITH SIDEBARS ***/
 
-	body.archive, body.search, body.page-template-page-twocolumn {
+	body.archive, body.search, body.page-template-page-twocolumn, body.blog {
 		main {
 			@include grid-row;
 		}
@@ -263,9 +263,7 @@ body.home {
 		}
 	}
 
-	body.page:not(.home):not(.page-template-page-twocolumn),
-	body.blog,
-	body.error404 {
+	body.page:not(.home):not(.page-template-page-twocolumn), body.error404 {
 		main {
 			@include grid-column(11);
 			@include grid-col-pos(center);
@@ -320,7 +318,7 @@ body.home {
 
 	/*** PAGES WITH SIDEBARS ***/
 
-	body.archive, body.search, body.page-template-page-twocolumn {
+	body.archive, body.search, body.page-template-page-twocolumn, body.blog {
 		div.left {
 			@include grid-column(8,0);
 		}
@@ -379,8 +377,7 @@ body.home {
 		}
 	}
 
-	body.page:not(.home):not(.page-template-page-twocolumn),
-	body.blog {
+	body.page:not(.home):not(.page-template-page-twocolumn) {
 		main {
 			@include grid-column(8);
 			@include grid-col-pos(center);
