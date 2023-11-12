@@ -7,13 +7,13 @@
     <?php get_template_part('partials/page-header'); ?>
 
     <article>
-    
+
       <?php the_content(); ?>
 
     </article>
-      
-  </main>
 
   <?php endwhile; endif; ?>
+
+</main>
 
 <?php get_footer(); ?>

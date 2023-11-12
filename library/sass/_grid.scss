@@ -263,7 +263,9 @@ body.home {
 		}
 	}
 
-	body.page:not(.home):not(.page-template-page-twocolumn), body.error404 {
+	body.page:not(.home):not(.page-template-page-twocolumn),
+	body.blog,
+	body.error404 {
 		main {
 			@include grid-column(11);
 			@include grid-col-pos(center);
@@ -377,7 +379,8 @@ body.home {
 		}
 	}
 
-	body.page:not(.home):not(.page-template-page-twocolumn) {
+	body.page:not(.home):not(.page-template-page-twocolumn),
+	body.blog {
 		main {
 			@include grid-column(8);
 			@include grid-col-pos(center);
