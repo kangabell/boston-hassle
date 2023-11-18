@@ -13,7 +13,7 @@ URL: http://kangabell.co
 
 if ( ! defined( 'BHASS_VERSION' ) ) {
     // Replace the version number of the theme on each release.
-    define( 'BHASS_VERSION', '2.2' );
+    define( 'BHASS_VERSION', '2.3' );
 }
 
 // set maximum allowed width for content
