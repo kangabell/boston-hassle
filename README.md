@@ -2,7 +2,7 @@
 
 Author: [Kay Belardinelli](http://kangabell.co)
 
-Version: 2.3
+Version: 2.4
 
 2016-2023
 
