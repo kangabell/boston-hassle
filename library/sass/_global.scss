@@ -223,13 +223,8 @@ iframe {
 	width: 100%;
 }
 
-.issuuembed {
-	a {
-		border-bottom: 0 !important; // override link underlines
-	}
-	> div > div:nth-of-type(2) {
-	    opacity: 0.3; // dim issuu credit thing
-	}
+.wp-block-image a {
+	border-bottom: none !important;
 }
 
 

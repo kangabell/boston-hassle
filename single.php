@@ -25,7 +25,16 @@ SINGLE POST / ARTICLE PAGE
         </p>
       <?php endif; ?>
 
-      <p class="meta">by <?php the_author_posts_link(); ?></p>
+      <p class="meta">
+        <?php
+        _e( 'by ', 'bhass' );
+        if ( function_exists( 'coauthors_posts_links' ) ) {
+            coauthors_posts_links();
+        } else {
+            the_author_posts_link();
+        }
+        ?>  
+      </p>
 
     </header>
 
