@@ -152,291 +152,104 @@ aside .widget {
 EVENTS PAGE  
 *************/
 
-.tribe-events-view,
-#tribe-events-pg-template {
-	background-color: initial;
+/*** General ***/
+
+.tribe-common button {
+	background: transparent;
+	color: $black;
+
+	&[disabled] {
+		color: $silver;
+	}
 }
 
-body.home .recurringinfo, body.archive .recurringinfo {
-	display: none; // hide recurring-event info
-}
-
-.tribe-events-page-title {
-	text-align: left;
-}
-
-.tribe-events-button {
+.tribe-events-c-nav__list-item a {
 	@extend .button;
 }
 
-body.events-archive article {
-	padding: $padding/2;
-	.meta + p { // shorten excerpt
-		height: 4.5em;
-		overflow: hidden;
-	}
-	.meta {
-		margin-bottom: $padding/4;
-	}
-	h3 + .meta {
-		margin-top: $padding/4;
-	}
-	.tribe-events-cost {
-		margin-left: 0.5em;
-	}
-	&.featured {
-		background: $white;
-	}
-	.badge {
-		position: absolute;
-		top: $padding/4;
-		right: $padding/4;
-		opacity: 0.8;
-		transform: rotate(1deg);
-	}
-	a:hover .badge {
-		opacity: 1;
-	}
-}
+/*** Top Bar ***/
 
-#tribe-bar-collapse-toggle, .tribe-bar-views-select, .tribe-events-ical { // clean out some unwanted stuff
-	display: none;
-}
+.tribe-events-c-view-selector__content,
+.tribe-events-c-events-bar__search-container {
+	background: $white;
 
-.tribe-events-cost {
-	color: $black;
-}
-
-article:first-of-type .tribe-events-cost {
-	top: 0;
-}
-
-.tribe-events-notices { // overrides for notices style
-    background: transparent;
-    border: none;
-    color: $red;
-    margin: 0;
-    padding: 0;
-}
-
-.tribe-events-nav-next { // pagination
-	margin-left: $padding/2;
-}
-
-.tribe-bar-filters { // search form
-	margin-bottom: $padding*2;
-}
-
-.calendar-header {
-	align-items: center;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	h1 {
-		flex: 1;
-		margin-bottom: 0;
-	}
-} //.calendar-header
-.featured-event-categories {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	text-align: center;
-	order: 3;
-	width: 100%;
-	li {
-		@extend .h4;
-		line-height: 2.25em;
-		white-space: nowrap;
-	}
-	a {
-		color: $gray;
-		padding: $padding/4;
-		&:hover {
-			color: $gray-dk;
-		}
-	}
-	@include breakpoint(large) {
-		margin-left: $padding;
-		margin-right: $padding;
-		order: 2;
-		width: auto;
-		a {
-			padding: $padding/2;
-		}
-	}
-}
-#tribe-events-bar {
-	order: 2;
-}
-
-/*** Views Selection ***/
-
-#tribe-bar-views-label, // "View As"
-.tribe-bar-views-toggle { // view toggle
-	display: none;
-}
-
-.tribe-bar-views-list {
-	display: flex;
-	justify-content: space-between;
-	margin: 0;
-	text-align: center;
-	width: 4rem;
 	@include breakpoint(medium) {
-		width: 6rem;
+		background: transparent;
 	}
 }
 
-.tribe-bar-views-option {
-	@extend .small;
-	cursor: pointer;
-	&:not(.tribe-bar-active) {
-		opacity: 0.5;
-	}
-	&.tribe-bar-active { // disable currently-active option
-		cursor: default;
-		pointer-events: none;
-	}
-	&:hover {
-		opacity: 1;
-	}
-	span { // icon
-		display: block;
-		font-size: 1.5rem;
-		margin-bottom: 0.65rem;
-		@include breakpoint(medium) {
-			font-size: 2rem;
-		}
+.tribe-events-c-view-selector__list-item-text {
+	white-space: nowrap;
+}
+
+.tribe-common-c-btn.tribe-events-c-search__button {
+	background: $gray;
+	color: $white;
+
+	@include breakpoint(medium) {
+		margin-left: $padding;
 	}
 }
 
-// Custom icons for view options
-.tribe-icon-list {
-	@extend [class^="icon-"];
-	@extend .icon-list;
+/*** List View ***/
+
+.tribe-events-c-top-bar__today-button {
+	@extend .button;
 }
-.tribe-icon-month {
-	@extend [class^="icon-"];
-	@extend .icon-calendar;
+
+.tribe-events .tribe-events-calendar-list__event-date-tag {
+
+	&-weekday {
+		@extend .meta;
+		margin-bottom: 0.25em;
+	}
+
+	&-daynum {
+		@extend .h2;
+	}
 }
 
 
 /*** Calendar/Month/Grid View ***/
-body.events-gridview {
-	.tribe-bar-filters {
-		display: none; // hide filters (search) on month/calendar view
-	}
-	&.events-archive #tribe-events-content table .type-tribe_events {
-		padding: 0 4px;
-	}
-	.tribe-events-month-event-title {
-		height: 1.25em;
-		overflow: hidden;
-	}
-	#tribe-events-content .tribe-events-tooltip h4.entry-title {
-		line-height: 1.25em !important;
-		margin-top: 0.25em;
-	}
-}
 
-#tribe-events-content {
-	padding: 0;
-	table.tribe-events-calendar {
-		margin-bottom: $padding;
-	}
-}
-
-.tribe-events-past, .tribe-events-past a { // events that have already happened
-	color: $silver;
-}
-.tribe-events-month-event-title {
-	line-height: 1;
-}
-
-#tribe-events-content {
-	margin-bottom: 0;
-	.tribe-events-tooltip h4.entry-title {
-		@extend .h4;
-	}
-}
-
-.tribe-events-event-thumb img {
-	max-width: 80px;
-}
-
-
-/*** Responsive stuff for Month View ***/
-
-.tribe-mobile-day {
-	h3, > div {
-		margin-bottom: $padding;
-	}
-	.tribe-events-read-more {
-		margin-top: 0.5em;
-		@extend .small;
-	}
-}
-
-#tribe-events-content .tribe-events-calendar td {
-	height: 50px;
-}
-
-/* show a dot to represent a day with events, instead of showing the events themselves */
-.tribe-events-calendar td .tribe-events-viewmore, .tribe-events-calendar td .type-tribe_events {
-	display: none;
-}
-.tribe-events-calendar .tribe-events-has-events:after {
-	content:"";display:block;height:8px;width:8px;padding:0;border-radius:50%;background-color:#333;margin:5px auto;
-}
-
-@include breakpoint(medium) {
-	#tribe-events-content .tribe-events-calendar td {
-		height: 110px;
-	}
-	.tribe-events-calendar td .tribe-events-viewmore, .tribe-events-calendar td .type-tribe_events {
-		display: block;
-	}
-	.tribe-events-calendar .tribe-events-has-events:after {
-		display: none;
-	}
+.tribe-events-c-messages__message-icon-svg {
+	margin-right: 0.5em;
 }
 
 
 /*** Single Event Page ***/
 
-.tribe-events-single-section-title {
-	@extend .h2;
-}
-
-body.single-tribe_events {
-	.event-is-recurring {
-		@extend .meta;
-	}
-	.tribe-events-divider {
-		display: none; // hide pipe
-	}
-	.recurring-info-tooltip {
-		text-transform: none;
-	}
-}
-
-.tribe-events-event-meta, .tribe-events-meta-group + .tribe-events-meta-group {
+.tribe-events-event-meta.primary {
 	border-top: $border;
 	margin-top: $padding;
 	padding-top: $padding;
+	width: 100%;
 }
 
 .tribe-events-meta-group {
+	flex: 100%;
 	margin-bottom: $padding;
+
+	+ .tribe-events-meta-group {
+		border-top: $border;
+		padding-top: $padding;
+	}
+
+	@include breakpoint(large) {
+		flex: 1;
+
+		+ .tribe-events-meta-group {
+			border-top: none;
+		}
+	}
 }
 
-@include breakpoint(large) {
-	.tribe-events-meta-group + .tribe-events-meta-group {
-		border-top: none;
-		margin-top: 0;
-		padding-top: 0;
-	}
+.tribe-events-sub-nav a {
+	@extend .button;
+}
+
+.tribe-events-nav-next {
+	text-align: right;
 }
 
 
