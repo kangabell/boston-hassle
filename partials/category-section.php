@@ -14,7 +14,7 @@ used on the homepage for category-based columns.
       ) );
     } else {
       $loop = new WP_Query( array(
-        'posts_per_page'=> 3,
+        'posts_per_page'=> 2,
         'ignore_sticky_posts'=>true,
         'cat'=>$category->term_id
       ) );
